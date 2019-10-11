@@ -1,6 +1,9 @@
+import Link from 'next/link';
+
 const Index = () => (
   <div>
-    <p>Hello Next.js</p>
+    <Link href="/about">about</Link>
+    <div>여기는 홈 페이지입니다.</div>
   </div>
 );
 

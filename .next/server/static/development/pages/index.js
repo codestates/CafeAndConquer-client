@@ -1805,13 +1805,20 @@ const Index = () => __jsx("div", {
     lineNumber: 4
   },
   __self: undefined
-}, __jsx("p", {
+}, __jsx(next_link__WEBPACK_IMPORTED_MODULE_1___default.a, {
+  href: "/about",
   __source: {
     fileName: _jsxFileName,
     lineNumber: 5
   },
   __self: undefined
-}, "Hello Next.js"));
+}, "about"), __jsx("div", {
+  __source: {
+    fileName: _jsxFileName,
+    lineNumber: 6
+  },
+  __self: undefined
+}, "\uC5EC\uAE30\uB294 \uD648 \uD398\uC774\uC9C0\uC785\uB2C8\uB2E4."));
 
 /* harmony default export */ __webpack_exports__["default"] = (Index);
 
