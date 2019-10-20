@@ -1,9 +1,20 @@
 import React, { useEffect } from 'react';
 import { usePosition } from 'use-position';
+import Head from 'next/head';
+
 
 const Map = ({ setList }) => {
-	const { latitude, longitude, timestamp, accuracy, error } = usePosition(true);
+  const { latitude, longitude, timestamp, accuracy, error } = usePosition(true);
+
 	useEffect(() => {
+
+    // let script = document.createElement('script');
+    // script.type = "text/javascript";
+    // script.src = "//dapi.kakao.com/v2/maps/sdk.js?appkey=08621feb64d12ca619166a136815243f&libraries=services";
+    // document.head.appendChild(script);
+    // 여기서 비동기적 요소가 있나? 안되는 이유? 
+
+    console.log('map');
 		// 마커를 클릭했을 때 해당 장소의 상세정보를 보여줄 커스텀오버레이입니다
 		var placeOverlay = new kakao.maps.CustomOverlay({ zIndex: 1 }),
 			contentNode = document.createElement('div'), // 커스텀 오버레이의 컨텐츠 엘리먼트 입니다
@@ -191,41 +202,48 @@ const Map = ({ setList }) => {
 		}
 
 		// 카테고리를 클릭했을 때 호출되는 함수입니다
-		function onClickCategory() {
-			var id = this.id,
-				className = this.className;
+    function onClickCategory() {
+      var id = this.id,
+          className = this.className;
 
-			placeOverlay.setMap(null);
+      placeOverlay.setMap(null);
 
-			if (className === 'on') {
-				currCategory = '';
-				changeCategoryClass();
-				removeMarker();
-			} else {
-				currCategory = id;
-				changeCategoryClass(this);
-				searchPlaces();
-			}
-		}
+      if (className === 'on') {
+          currCategory = '';
+          changeCategoryClass();
+          removeMarker();
+      } else {
+          currCategory = id;
+          changeCategoryClass(this);
+          searchPlaces();
+      }
+    }
 
 		// 클릭된 카테고리에만 클릭된 스타일을 적용하는 함수입니다
 		function changeCategoryClass(el) {
-			var category = document.getElementById('category'),
-				children = category.children,
-				i;
+      var category = document.getElementById('category'),
+          children = category.children,
+          i;
 
-			for (i = 0; i < children.length; i++) {
-				children[i].className = '';
-			}
+      for ( i=0; i<children.length; i++ ) {
+          children[i].className = '';
+      }
 
-			if (el) {
-				el.className = 'on';
-			}
-		}
-	});
+      if (el) {
+          el.className = 'on';
+      } 
+    }}, []);
 
 	return (
 		<div>
+      <Head>
+        {/* <meta charset="utf-8"></meta> */}
+				<script
+					type="text/javascript"
+					src="//dapi.kakao.com/v2/maps/sdk.js?appkey=08621feb64d12ca619166a136815243f&libraries=services" ></script>
+			</Head>
+
+			<div style={{ margin: '12px' }}>점령하실 카페를 선택해주세요</div>
 			<div className="map_wrap">
 				<div
 					id="map"
@@ -236,41 +254,16 @@ const Map = ({ setList }) => {
 						overflow: 'hidden',
 					}}></div>
 				<ul id="category">
-					<li id="CE7" data-order="4">
-						<span className="category_bg cafe"></span>
-						카페
-					</li>
+          <li id="CE7" data-order="4"> 
+              <span className="category_bg cafe"></span>
+              카페 보기
+          </li>  
 				</ul>
 			</div>
-			<style jsx>{`
-      .map_wrap, .map_wrap * {margin:0; padding:0;font-family:'Malgun Gothic',dotum,'돋움',sans-serif;font-size:12px;}
-.map_wrap {position:relative;width:100%;height:350px;}
-#category {position:absolute;top:10px;left:10px;border-radius: 5px; border:1px solid #909090;box-shadow: 0 1px 1px rgba(0, 0, 0, 0.4);background: #fff;overflow: hidden;z-index: 2;}
-#category li {float:left;list-style: none;width:50px;px;border-right:1px solid #acacac;padding:6px 0;text-align: center; cursor: pointer;}
-#category li.on {background: #eee;}
-#category li:hover {background: #ffe6e6;border-left:1px solid #acacac;margin-left: -1px;}
-#category li:last-child{margin-right:0;border-right:0;}
-#category li span {display: block;margin:0 auto 3px;width:27px;height: 28px;}
-#category li .category_bg {background:url(http://t1.daumcdn.net/localimg/localimages/07/mapapidoc/places_category.png) no-repeat;}
-#category li .bank {background-position: -10px 0;}
-#category li .mart {background-position: -10px -36px;}
-#category li .pharmacy {background-position: -10px -72px;}
-#category li .oil {background-position: -10px -108px;}
-#category li .cafe {background-position: -10px -144px;}
-#category li .store {background-position: -10px -180px;}
-#category li.on .category_bg {background-position-x:-46px;}
-.placeinfo_wrap {position:absolute;bottom:28px;left:-150px;width:300px;}
-.placeinfo {position:relative;width:100%;border-radius:6px;border: 1px solid #ccc;border-bottom:2px solid #ddd;padding-bottom: 10px;background: #fff;}
-.placeinfo:nth-of-type(n) {border:0; box-shadow:0px 1px 2px #888;}
-.placeinfo_wrap .after {content:'';position:relative;margin-left:-12px;left:50%;width:22px;height:12px;background:url('http://t1.daumcdn.net/localimg/localimages/07/mapapidoc/vertex_white.png')}
-.placeinfo a, .placeinfo a:hover, .placeinfo a:active{color:#fff;text-decoration: none;}
-.placeinfo a, .placeinfo span {display: block;text-overflow: ellipsis;overflow: hidden;white-space: nowrap;}
-.placeinfo span {margin:5px 5px 0 5px;cursor: default;font-size:13px;}
-.placeinfo .title {font-weight: bold; font-size:14px;border-radius: 6px 6px 0 0;margin: -1px -1px 0 -1px;padding:10px; color: #fff;background: #d95050;background: #d95050 url(http://t1.daumcdn.net/localimg/localimages/07/mapapidoc/arrow_white.png) no-repeat right 14px center;}
-.placeinfo .tel {color:#0f7833;}
-.placeinfo .jibun {color:#999;font-size:11px;margin-top:0;}`}</style>
 		</div>
 	);
 };
+
+//jsx도 render를 한번 하면 딱 한번만 불리나? 
 
 export { Map };

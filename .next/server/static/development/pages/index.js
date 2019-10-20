@@ -1269,7 +1269,7 @@ class Router {
       if (true) {
         const {
           isValidElementType
-        } = __webpack_require__(/*! react-is */ "react-is");
+        } = __webpack_require__(/*! react-is */ "./node_modules/next/node_modules/react-is/index.js");
 
         if (!isValidElementType(Component)) {
           throw new Error(`The default export is not a React Component in page: "${pathname}"`);
@@ -1781,6 +1781,262 @@ module.exports = __webpack_require__(/*! ./dist/client/link */ "./node_modules/n
 
 /***/ }),
 
+/***/ "./node_modules/next/node_modules/react-is/cjs/react-is.development.js":
+/*!*****************************************************************************!*\
+  !*** ./node_modules/next/node_modules/react-is/cjs/react-is.development.js ***!
+  \*****************************************************************************/
+/*! no static exports found */
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+/** @license React v16.8.6
+ * react-is.development.js
+ *
+ * Copyright (c) Facebook, Inc. and its affiliates.
+ *
+ * This source code is licensed under the MIT license found in the
+ * LICENSE file in the root directory of this source tree.
+ */
+
+
+
+
+
+if (true) {
+  (function() {
+'use strict';
+
+Object.defineProperty(exports, '__esModule', { value: true });
+
+// The Symbol used to tag the ReactElement-like types. If there is no native Symbol
+// nor polyfill, then a plain number is used for performance.
+var hasSymbol = typeof Symbol === 'function' && Symbol.for;
+
+var REACT_ELEMENT_TYPE = hasSymbol ? Symbol.for('react.element') : 0xeac7;
+var REACT_PORTAL_TYPE = hasSymbol ? Symbol.for('react.portal') : 0xeaca;
+var REACT_FRAGMENT_TYPE = hasSymbol ? Symbol.for('react.fragment') : 0xeacb;
+var REACT_STRICT_MODE_TYPE = hasSymbol ? Symbol.for('react.strict_mode') : 0xeacc;
+var REACT_PROFILER_TYPE = hasSymbol ? Symbol.for('react.profiler') : 0xead2;
+var REACT_PROVIDER_TYPE = hasSymbol ? Symbol.for('react.provider') : 0xeacd;
+var REACT_CONTEXT_TYPE = hasSymbol ? Symbol.for('react.context') : 0xeace;
+var REACT_ASYNC_MODE_TYPE = hasSymbol ? Symbol.for('react.async_mode') : 0xeacf;
+var REACT_CONCURRENT_MODE_TYPE = hasSymbol ? Symbol.for('react.concurrent_mode') : 0xeacf;
+var REACT_FORWARD_REF_TYPE = hasSymbol ? Symbol.for('react.forward_ref') : 0xead0;
+var REACT_SUSPENSE_TYPE = hasSymbol ? Symbol.for('react.suspense') : 0xead1;
+var REACT_MEMO_TYPE = hasSymbol ? Symbol.for('react.memo') : 0xead3;
+var REACT_LAZY_TYPE = hasSymbol ? Symbol.for('react.lazy') : 0xead4;
+
+function isValidElementType(type) {
+  return typeof type === 'string' || typeof type === 'function' ||
+  // Note: its typeof might be other than 'symbol' or 'number' if it's a polyfill.
+  type === REACT_FRAGMENT_TYPE || type === REACT_CONCURRENT_MODE_TYPE || type === REACT_PROFILER_TYPE || type === REACT_STRICT_MODE_TYPE || type === REACT_SUSPENSE_TYPE || typeof type === 'object' && type !== null && (type.$$typeof === REACT_LAZY_TYPE || type.$$typeof === REACT_MEMO_TYPE || type.$$typeof === REACT_PROVIDER_TYPE || type.$$typeof === REACT_CONTEXT_TYPE || type.$$typeof === REACT_FORWARD_REF_TYPE);
+}
+
+/**
+ * Forked from fbjs/warning:
+ * https://github.com/facebook/fbjs/blob/e66ba20ad5be433eb54423f2b097d829324d9de6/packages/fbjs/src/__forks__/warning.js
+ *
+ * Only change is we use console.warn instead of console.error,
+ * and do nothing when 'console' is not supported.
+ * This really simplifies the code.
+ * ---
+ * Similar to invariant but only logs a warning if the condition is not met.
+ * This can be used to log issues in development environments in critical
+ * paths. Removing the logging code for production environments will keep the
+ * same logic and follow the same code paths.
+ */
+
+var lowPriorityWarning = function () {};
+
+{
+  var printWarning = function (format) {
+    for (var _len = arguments.length, args = Array(_len > 1 ? _len - 1 : 0), _key = 1; _key < _len; _key++) {
+      args[_key - 1] = arguments[_key];
+    }
+
+    var argIndex = 0;
+    var message = 'Warning: ' + format.replace(/%s/g, function () {
+      return args[argIndex++];
+    });
+    if (typeof console !== 'undefined') {
+      console.warn(message);
+    }
+    try {
+      // --- Welcome to debugging React ---
+      // This error was thrown as a convenience so that you can use this stack
+      // to find the callsite that caused this warning to fire.
+      throw new Error(message);
+    } catch (x) {}
+  };
+
+  lowPriorityWarning = function (condition, format) {
+    if (format === undefined) {
+      throw new Error('`lowPriorityWarning(condition, format, ...args)` requires a warning ' + 'message argument');
+    }
+    if (!condition) {
+      for (var _len2 = arguments.length, args = Array(_len2 > 2 ? _len2 - 2 : 0), _key2 = 2; _key2 < _len2; _key2++) {
+        args[_key2 - 2] = arguments[_key2];
+      }
+
+      printWarning.apply(undefined, [format].concat(args));
+    }
+  };
+}
+
+var lowPriorityWarning$1 = lowPriorityWarning;
+
+function typeOf(object) {
+  if (typeof object === 'object' && object !== null) {
+    var $$typeof = object.$$typeof;
+    switch ($$typeof) {
+      case REACT_ELEMENT_TYPE:
+        var type = object.type;
+
+        switch (type) {
+          case REACT_ASYNC_MODE_TYPE:
+          case REACT_CONCURRENT_MODE_TYPE:
+          case REACT_FRAGMENT_TYPE:
+          case REACT_PROFILER_TYPE:
+          case REACT_STRICT_MODE_TYPE:
+          case REACT_SUSPENSE_TYPE:
+            return type;
+          default:
+            var $$typeofType = type && type.$$typeof;
+
+            switch ($$typeofType) {
+              case REACT_CONTEXT_TYPE:
+              case REACT_FORWARD_REF_TYPE:
+              case REACT_PROVIDER_TYPE:
+                return $$typeofType;
+              default:
+                return $$typeof;
+            }
+        }
+      case REACT_LAZY_TYPE:
+      case REACT_MEMO_TYPE:
+      case REACT_PORTAL_TYPE:
+        return $$typeof;
+    }
+  }
+
+  return undefined;
+}
+
+// AsyncMode is deprecated along with isAsyncMode
+var AsyncMode = REACT_ASYNC_MODE_TYPE;
+var ConcurrentMode = REACT_CONCURRENT_MODE_TYPE;
+var ContextConsumer = REACT_CONTEXT_TYPE;
+var ContextProvider = REACT_PROVIDER_TYPE;
+var Element = REACT_ELEMENT_TYPE;
+var ForwardRef = REACT_FORWARD_REF_TYPE;
+var Fragment = REACT_FRAGMENT_TYPE;
+var Lazy = REACT_LAZY_TYPE;
+var Memo = REACT_MEMO_TYPE;
+var Portal = REACT_PORTAL_TYPE;
+var Profiler = REACT_PROFILER_TYPE;
+var StrictMode = REACT_STRICT_MODE_TYPE;
+var Suspense = REACT_SUSPENSE_TYPE;
+
+var hasWarnedAboutDeprecatedIsAsyncMode = false;
+
+// AsyncMode should be deprecated
+function isAsyncMode(object) {
+  {
+    if (!hasWarnedAboutDeprecatedIsAsyncMode) {
+      hasWarnedAboutDeprecatedIsAsyncMode = true;
+      lowPriorityWarning$1(false, 'The ReactIs.isAsyncMode() alias has been deprecated, ' + 'and will be removed in React 17+. Update your code to use ' + 'ReactIs.isConcurrentMode() instead. It has the exact same API.');
+    }
+  }
+  return isConcurrentMode(object) || typeOf(object) === REACT_ASYNC_MODE_TYPE;
+}
+function isConcurrentMode(object) {
+  return typeOf(object) === REACT_CONCURRENT_MODE_TYPE;
+}
+function isContextConsumer(object) {
+  return typeOf(object) === REACT_CONTEXT_TYPE;
+}
+function isContextProvider(object) {
+  return typeOf(object) === REACT_PROVIDER_TYPE;
+}
+function isElement(object) {
+  return typeof object === 'object' && object !== null && object.$$typeof === REACT_ELEMENT_TYPE;
+}
+function isForwardRef(object) {
+  return typeOf(object) === REACT_FORWARD_REF_TYPE;
+}
+function isFragment(object) {
+  return typeOf(object) === REACT_FRAGMENT_TYPE;
+}
+function isLazy(object) {
+  return typeOf(object) === REACT_LAZY_TYPE;
+}
+function isMemo(object) {
+  return typeOf(object) === REACT_MEMO_TYPE;
+}
+function isPortal(object) {
+  return typeOf(object) === REACT_PORTAL_TYPE;
+}
+function isProfiler(object) {
+  return typeOf(object) === REACT_PROFILER_TYPE;
+}
+function isStrictMode(object) {
+  return typeOf(object) === REACT_STRICT_MODE_TYPE;
+}
+function isSuspense(object) {
+  return typeOf(object) === REACT_SUSPENSE_TYPE;
+}
+
+exports.typeOf = typeOf;
+exports.AsyncMode = AsyncMode;
+exports.ConcurrentMode = ConcurrentMode;
+exports.ContextConsumer = ContextConsumer;
+exports.ContextProvider = ContextProvider;
+exports.Element = Element;
+exports.ForwardRef = ForwardRef;
+exports.Fragment = Fragment;
+exports.Lazy = Lazy;
+exports.Memo = Memo;
+exports.Portal = Portal;
+exports.Profiler = Profiler;
+exports.StrictMode = StrictMode;
+exports.Suspense = Suspense;
+exports.isValidElementType = isValidElementType;
+exports.isAsyncMode = isAsyncMode;
+exports.isConcurrentMode = isConcurrentMode;
+exports.isContextConsumer = isContextConsumer;
+exports.isContextProvider = isContextProvider;
+exports.isElement = isElement;
+exports.isForwardRef = isForwardRef;
+exports.isFragment = isFragment;
+exports.isLazy = isLazy;
+exports.isMemo = isMemo;
+exports.isPortal = isPortal;
+exports.isProfiler = isProfiler;
+exports.isStrictMode = isStrictMode;
+exports.isSuspense = isSuspense;
+  })();
+}
+
+
+/***/ }),
+
+/***/ "./node_modules/next/node_modules/react-is/index.js":
+/*!**********************************************************!*\
+  !*** ./node_modules/next/node_modules/react-is/index.js ***!
+  \**********************************************************/
+/*! no static exports found */
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+
+
+if (false) {} else {
+  module.exports = __webpack_require__(/*! ./cjs/react-is.development.js */ "./node_modules/next/node_modules/react-is/cjs/react-is.development.js");
+}
+
+
+/***/ }),
+
 /***/ "./pages/index.js":
 /*!************************!*\
   !*** ./pages/index.js ***!
@@ -1794,33 +2050,469 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_0__);
 /* harmony import */ var next_link__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! next/link */ "./node_modules/next/link.js");
 /* harmony import */ var next_link__WEBPACK_IMPORTED_MODULE_1___default = /*#__PURE__*/__webpack_require__.n(next_link__WEBPACK_IMPORTED_MODULE_1__);
-var _jsxFileName = "/Users/gomidev/Documents/Projects/CafeAndConquer-client/pages/index.js";
+/* harmony import */ var _map__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./map */ "./pages/map.js");
+/* harmony import */ var _registerList__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ./registerList */ "./pages/registerList.js");
+/* harmony import */ var _style_css__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ../style.css */ "./style.css");
+/* harmony import */ var _style_css__WEBPACK_IMPORTED_MODULE_4___default = /*#__PURE__*/__webpack_require__.n(_style_css__WEBPACK_IMPORTED_MODULE_4__);
+var _jsxFileName = "/Users/yonggyukwon/Downloads/\u110F\u1169\u1103\u1175\u11BC/\u110F\u1169\u1103\u1173\u1109\u1173\u1110\u1166\u110B\u1175\u110E\u1173/Flex/CafeAndConquer-client/pages/index.js";
+var __jsx = react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement;
+// fix: 카페 점령된것/점령 안된것 모양, 숫자,
+// todo: 기본으로 카페 목록들 클릭이 돼서 나오게
+// todo:지도에 확대/축소 표시 붙이기, 현위치 버튼.
+// todo:일단 되게 만들기 
+// todo:Link href와 a href 로 /register로 가게 될 때의 차이?
+// 노란 라인 없애기
+// 카카오 맵 구조 다시한번 보기 
+// prettier가 안되는 이유?? 
+//  console이 서버에 떴다가 , 클라이언트쪽에 떴다가 왔다갔다 뜨는건 왜 그러나
+// https://github.com/zeit/next-plugins/tree/master/packages/next-css 깃헙 설명에 css module이 있다는 것과 없다는 것의 차이가 뭔지 모르겠음. 
+// css 파일을 map에만 import하니까 안됨. 오히려 index.js에만 넣으면 됨. 
 
+
+
+
+
+
+const Home = () => {
+  const {
+    0: list,
+    1: setList
+  } = Object(react__WEBPACK_IMPORTED_MODULE_0__["useState"])([]);
+  const changeList = Object(react__WEBPACK_IMPORTED_MODULE_0__["useCallback"])(data => {
+    setList(data);
+  }, []);
+  console.log('index');
+  return __jsx("div", {
+    __source: {
+      fileName: _jsxFileName,
+      lineNumber: 31
+    },
+    __self: undefined
+  }, __jsx(_map__WEBPACK_IMPORTED_MODULE_2__["Map"], {
+    setList: changeList,
+    __source: {
+      fileName: _jsxFileName,
+      lineNumber: 32
+    },
+    __self: undefined
+  }), __jsx(_registerList__WEBPACK_IMPORTED_MODULE_3__["default"], {
+    list: list,
+    __source: {
+      fileName: _jsxFileName,
+      lineNumber: 33
+    },
+    __self: undefined
+  }));
+};
+
+/* harmony default export */ __webpack_exports__["default"] = (Home);
+
+/***/ }),
+
+/***/ "./pages/map.js":
+/*!**********************!*\
+  !*** ./pages/map.js ***!
+  \**********************/
+/*! exports provided: Map */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "Map", function() { return Map; });
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! react */ "react");
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_0__);
+/* harmony import */ var use_position__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! use-position */ "use-position");
+/* harmony import */ var use_position__WEBPACK_IMPORTED_MODULE_1___default = /*#__PURE__*/__webpack_require__.n(use_position__WEBPACK_IMPORTED_MODULE_1__);
+/* harmony import */ var next_head__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! next/head */ "next/head");
+/* harmony import */ var next_head__WEBPACK_IMPORTED_MODULE_2___default = /*#__PURE__*/__webpack_require__.n(next_head__WEBPACK_IMPORTED_MODULE_2__);
+var _jsxFileName = "/Users/yonggyukwon/Downloads/\u110F\u1169\u1103\u1175\u11BC/\u110F\u1169\u1103\u1173\u1109\u1173\u1110\u1166\u110B\u1175\u110E\u1173/Flex/CafeAndConquer-client/pages/map.js";
 var __jsx = react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement;
 
 
-const Index = () => __jsx("div", {
-  __source: {
-    fileName: _jsxFileName,
-    lineNumber: 4
-  },
-  __self: undefined
-}, __jsx(next_link__WEBPACK_IMPORTED_MODULE_1___default.a, {
-  href: "/about",
-  __source: {
-    fileName: _jsxFileName,
-    lineNumber: 5
-  },
-  __self: undefined
-}, "about"), __jsx("div", {
-  __source: {
-    fileName: _jsxFileName,
-    lineNumber: 6
-  },
-  __self: undefined
-}, "\uC5EC\uAE30\uB294 \uD648 \uD398\uC774\uC9C0\uC785\uB2C8\uB2E4."));
 
-/* harmony default export */ __webpack_exports__["default"] = (Index);
+
+const Map = ({
+  setList
+}) => {
+  const {
+    latitude,
+    longitude,
+    timestamp,
+    accuracy,
+    error
+  } = Object(use_position__WEBPACK_IMPORTED_MODULE_1__["usePosition"])(true);
+  Object(react__WEBPACK_IMPORTED_MODULE_0__["useEffect"])(() => {
+    // let script = document.createElement('script');
+    // script.type = "text/javascript";
+    // script.src = "//dapi.kakao.com/v2/maps/sdk.js?appkey=08621feb64d12ca619166a136815243f&libraries=services";
+    // document.head.appendChild(script);
+    // 여기서 비동기적 요소가 있나? 안되는 이유? 
+    console.log('map'); // 마커를 클릭했을 때 해당 장소의 상세정보를 보여줄 커스텀오버레이입니다
+
+    var placeOverlay = new kakao.maps.CustomOverlay({
+      zIndex: 1
+    }),
+        contentNode = document.createElement('div'),
+        // 커스텀 오버레이의 컨텐츠 엘리먼트 입니다
+    markers = [],
+        // 마커를 담을 배열입니다
+    currCategory = ''; // 현재 선택된 카테고리를 가지고 있을 변수입니다
+
+    var mapContainer = document.getElementById('map'),
+        // 지도를 표시할 div
+    mapOption = {
+      center: new kakao.maps.LatLng(37.566826, 126.9786567),
+      // 지도의 중심좌표
+      level: 4 // 지도의 확대 레벨
+
+    }; // 지도를 생성합니다
+
+    var map = new kakao.maps.Map(mapContainer, mapOption); // 장소 검색 객체를 생성합니다
+
+    var ps = new kakao.maps.services.Places(map); // 지도에 idle 이벤트를 등록합니다
+
+    kakao.maps.event.addListener(map, 'idle', searchPlaces); // 커스텀 오버레이의 컨텐츠 노드에 css class를 추가합니다
+
+    contentNode.className = 'placeinfo_wrap'; // 커스텀 오버레이의 컨텐츠 노드에 mousedown, touchstart 이벤트가 발생했을때
+    // 지도 객체에 이벤트가 전달되지 않도록 이벤트 핸들러로 kakao.maps.event.preventMap 메소드를 등록합니다
+
+    addEventHandle(contentNode, 'mousedown', kakao.maps.event.preventMap);
+    addEventHandle(contentNode, 'touchstart', kakao.maps.event.preventMap); // 커스텀 오버레이 컨텐츠를 설정합니다
+
+    placeOverlay.setContent(contentNode); // console.log(placeOverlay);
+    // 각 카테고리에 클릭 이벤트를 등록합니다
+
+    addCategoryClickEvent(); // 엘리먼트에 이벤트 핸들러를 등록하는 함수입니다
+
+    function addEventHandle(target, type, callback) {
+      if (target.addEventListener) {
+        target.addEventListener(type, callback);
+      } else {
+        target.attachEvent('on' + type, callback);
+      }
+    } // 카테고리 검색을 요청하는 함수입니다
+
+
+    function searchPlaces() {
+      if (!currCategory) {
+        return;
+      } // 커스텀 오버레이를 숨깁니다
+
+
+      placeOverlay.setMap(null); // 지도에 표시되고 있는 마커를 제거합니다
+
+      removeMarker();
+      ps.categorySearch(currCategory, placesSearchCB, {
+        useMapBounds: true
+      });
+    } // 장소검색이 완료됐을 때 호출되는 콜백함수 입니다
+
+
+    function placesSearchCB(data, status, pagination) {
+      if (status === kakao.maps.services.Status.OK) {
+        displayPlaces(data);
+        setList(data);
+      } else if (status === kakao.maps.services.Status.ZERO_RESULT) {// 검색결과가 없는경우 해야할 처리가 있다면 이곳에 작성해 주세요
+      } else if (status === kakao.maps.services.Status.ERROR) {// 에러로 인해 검색결과가 나오지 않은 경우 해야할 처리가 있다면 이곳에 작성해 주세요
+      }
+    } // 지도에 마커를 표출하는 함수입니다
+
+
+    function displayPlaces(places) {
+      // 몇번째 카테고리가 선택되어 있는지 얻어옵니다
+      // 이 순서는 스프라이트 이미지에서의 위치를 계산하는데 사용됩니다
+      var order = document.getElementById(currCategory).getAttribute('data-order');
+
+      for (var i = 0; i < places.length; i++) {
+        // 마커를 생성하고 지도에 표시합니다
+        var marker = addMarker(new kakao.maps.LatLng(places[i].y, places[i].x), order); // 마커와 검색결과 항목을 클릭 했을 때
+        // 장소정보를 표출하도록 클릭 이벤트를 등록합니다
+
+        (function (marker, place) {
+          kakao.maps.event.addListener(marker, 'click', function () {
+            displayPlaceInfo(place);
+          });
+        })(marker, places[i]);
+      }
+    } // 마커를 생성하고 지도 위에 마커를 표시하는 함수입니다
+
+
+    function addMarker(position, order) {
+      var imageSrc = 'http://t1.daumcdn.net/localimg/localimages/07/mapapidoc/places_category.png',
+          // 마커 이미지 url, 스프라이트 이미지를 씁니다
+      imageSize = new kakao.maps.Size(27, 28),
+          // 마커 이미지의 크기
+      imgOptions = {
+        spriteSize: new kakao.maps.Size(72, 208),
+        // 스프라이트 이미지의 크기
+        spriteOrigin: new kakao.maps.Point(46, order * 36),
+        // 스프라이트 이미지 중 사용할 영역의 좌상단 좌표
+        offset: new kakao.maps.Point(11, 28) // 마커 좌표에 일치시킬 이미지 내에서의 좌표
+
+      },
+          markerImage = new kakao.maps.MarkerImage(imageSrc, imageSize, imgOptions),
+          marker = new kakao.maps.Marker({
+        position: position,
+        // 마커의 위치
+        image: markerImage
+      });
+      marker.setMap(map); // 지도 위에 마커를 표출합니다
+
+      markers.push(marker); // 배열에 생성된 마커를 추가합니다
+
+      return marker;
+    } // 지도 위에 표시되고 있는 마커를 모두 제거합니다
+
+
+    function removeMarker() {
+      for (var i = 0; i < markers.length; i++) {
+        markers[i].setMap(null);
+      }
+
+      markers = [];
+    } // 클릭한 마커에 대한 장소 상세정보를 커스텀 오버레이로 표시하는 함수입니다
+
+
+    function displayPlaceInfo(place) {
+      var content = '<div class="placeinfo">' + '   <a class="title" href="' + place.place_url + '" target="_blank" title="' + place.place_name + '">' + place.place_name + '</a>';
+
+      if (place.road_address_name) {
+        content += '    <span title="' + place.road_address_name + '">' + place.road_address_name + '</span>' + '  <span class="jibun" title="' + place.address_name + '">(지번 : ' + place.address_name + ')</span>';
+      } else {
+        content += '    <span title="' + place.address_name + '">' + place.address_name + '</span>';
+      }
+
+      content += '    <span class="tel">' + place.phone + '</span>' + '</div>' + '<div class="after"></div>';
+      contentNode.innerHTML = content;
+      placeOverlay.setPosition(new kakao.maps.LatLng(place.y, place.x));
+      placeOverlay.setMap(map);
+    } // 각 카테고리에 클릭 이벤트를 등록합니다
+
+
+    function addCategoryClickEvent() {
+      var category = document.getElementById('category'),
+          children = category.children;
+
+      for (var i = 0; i < children.length; i++) {
+        children[i].onclick = onClickCategory;
+      }
+    } // 카테고리를 클릭했을 때 호출되는 함수입니다
+
+
+    function onClickCategory() {
+      var id = this.id,
+          className = this.className;
+      placeOverlay.setMap(null);
+
+      if (className === 'on') {
+        currCategory = '';
+        changeCategoryClass();
+        removeMarker();
+      } else {
+        currCategory = id;
+        changeCategoryClass(this);
+        searchPlaces();
+      }
+    } // 클릭된 카테고리에만 클릭된 스타일을 적용하는 함수입니다
+
+
+    function changeCategoryClass(el) {
+      var category = document.getElementById('category'),
+          children = category.children,
+          i;
+
+      for (i = 0; i < children.length; i++) {
+        children[i].className = '';
+      }
+
+      if (el) {
+        el.className = 'on';
+      }
+    }
+  }, []);
+  return __jsx("div", {
+    __source: {
+      fileName: _jsxFileName,
+      lineNumber: 238
+    },
+    __self: undefined
+  }, __jsx(next_head__WEBPACK_IMPORTED_MODULE_2___default.a, {
+    __source: {
+      fileName: _jsxFileName,
+      lineNumber: 239
+    },
+    __self: undefined
+  }, __jsx("script", {
+    type: "text/javascript",
+    src: "//dapi.kakao.com/v2/maps/sdk.js?appkey=08621feb64d12ca619166a136815243f&libraries=services",
+    __source: {
+      fileName: _jsxFileName,
+      lineNumber: 241
+    },
+    __self: undefined
+  })), __jsx("div", {
+    style: {
+      margin: '12px'
+    },
+    __source: {
+      fileName: _jsxFileName,
+      lineNumber: 246
+    },
+    __self: undefined
+  }, "\uC810\uB839\uD558\uC2E4 \uCE74\uD398\uB97C \uC120\uD0DD\uD574\uC8FC\uC138\uC694"), __jsx("div", {
+    className: "map_wrap",
+    __source: {
+      fileName: _jsxFileName,
+      lineNumber: 247
+    },
+    __self: undefined
+  }, __jsx("div", {
+    id: "map",
+    style: {
+      width: '100%',
+      height: '100%',
+      position: 'relative',
+      overflow: 'hidden'
+    },
+    __source: {
+      fileName: _jsxFileName,
+      lineNumber: 248
+    },
+    __self: undefined
+  }), __jsx("ul", {
+    id: "category",
+    __source: {
+      fileName: _jsxFileName,
+      lineNumber: 256
+    },
+    __self: undefined
+  }, __jsx("li", {
+    id: "CE7",
+    "data-order": "4",
+    __source: {
+      fileName: _jsxFileName,
+      lineNumber: 257
+    },
+    __self: undefined
+  }, __jsx("span", {
+    className: "category_bg cafe",
+    __source: {
+      fileName: _jsxFileName,
+      lineNumber: 258
+    },
+    __self: undefined
+  }), "\uCE74\uD398 \uBCF4\uAE30"))));
+}; //jsx도 render를 한번 하면 딱 한번만 불리나? 
+
+
+
+
+/***/ }),
+
+/***/ "./pages/registerList.js":
+/*!*******************************!*\
+  !*** ./pages/registerList.js ***!
+  \*******************************/
+/*! exports provided: default */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! react */ "react");
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_0__);
+var _jsxFileName = "/Users/yonggyukwon/Downloads/\u110F\u1169\u1103\u1175\u11BC/\u110F\u1169\u1103\u1173\u1109\u1173\u1110\u1166\u110B\u1175\u110E\u1173/Flex/CafeAndConquer-client/pages/registerList.js";
+
+var __jsx = react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement;
+
+const registerList = ({
+  list
+}) => {
+  console.log('register');
+  const cafeList = list.map((elm, key) => {
+    return __jsx("li", {
+      key: key,
+      __source: {
+        fileName: _jsxFileName,
+        lineNumber: 5
+      },
+      __self: undefined
+    }, __jsx("ul", {
+      __source: {
+        fileName: _jsxFileName,
+        lineNumber: 6
+      },
+      __self: undefined
+    }, __jsx("li", {
+      __source: {
+        fileName: _jsxFileName,
+        lineNumber: 7
+      },
+      __self: undefined
+    }, __jsx("span", {
+      __source: {
+        fileName: _jsxFileName,
+        lineNumber: 8
+      },
+      __self: undefined
+    }, key + 1, ". ", elm.place_name)), __jsx("li", {
+      __source: {
+        fileName: _jsxFileName,
+        lineNumber: 12
+      },
+      __self: undefined
+    }, __jsx("span", {
+      __source: {
+        fileName: _jsxFileName,
+        lineNumber: 13
+      },
+      __self: undefined
+    }, elm.phone)), __jsx("li", {
+      __source: {
+        fileName: _jsxFileName,
+        lineNumber: 15
+      },
+      __self: undefined
+    }, __jsx("span", {
+      __source: {
+        fileName: _jsxFileName,
+        lineNumber: 16
+      },
+      __self: undefined
+    }, elm.address_name))), __jsx("br", {
+      __source: {
+        fileName: _jsxFileName,
+        lineNumber: 19
+      },
+      __self: undefined
+    }));
+  });
+  return __jsx("div", {
+    __source: {
+      fileName: _jsxFileName,
+      lineNumber: 25
+    },
+    __self: undefined
+  }, "\uCE74\uD398 \uBAA9\uB85D", __jsx("ul", {
+    __source: {
+      fileName: _jsxFileName,
+      lineNumber: 27
+    },
+    __self: undefined
+  }, cafeList));
+};
+
+/* harmony default export */ __webpack_exports__["default"] = (registerList);
+
+/***/ }),
+
+/***/ "./style.css":
+/*!*******************!*\
+  !*** ./style.css ***!
+  \*******************/
+/*! no static exports found */
+/***/ (function(module, exports) {
+
+
 
 /***/ }),
 
@@ -1831,7 +2523,7 @@ const Index = () => __jsx("div", {
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
-module.exports = __webpack_require__(/*! /Users/gomidev/Documents/Projects/CafeAndConquer-client/pages/index.js */"./pages/index.js");
+module.exports = __webpack_require__(/*! /Users/yonggyukwon/Downloads/코딩/코드스테이츠/Flex/CafeAndConquer-client/pages/index.js */"./pages/index.js");
 
 
 /***/ }),
@@ -1913,6 +2605,17 @@ module.exports = require("core-js/library/fn/promise");
 
 /***/ }),
 
+/***/ "next/head":
+/*!****************************!*\
+  !*** external "next/head" ***!
+  \****************************/
+/*! no static exports found */
+/***/ (function(module, exports) {
+
+module.exports = require("next/head");
+
+/***/ }),
+
 /***/ "prop-types":
 /*!*****************************!*\
   !*** external "prop-types" ***!
@@ -1946,17 +2649,6 @@ module.exports = require("react");
 
 /***/ }),
 
-/***/ "react-is":
-/*!***************************!*\
-  !*** external "react-is" ***!
-  \***************************/
-/*! no static exports found */
-/***/ (function(module, exports) {
-
-module.exports = require("react-is");
-
-/***/ }),
-
 /***/ "url":
 /*!**********************!*\
   !*** external "url" ***!
@@ -1965,6 +2657,17 @@ module.exports = require("react-is");
 /***/ (function(module, exports) {
 
 module.exports = require("url");
+
+/***/ }),
+
+/***/ "use-position":
+/*!*******************************!*\
+  !*** external "use-position" ***!
+  \*******************************/
+/*! no static exports found */
+/***/ (function(module, exports) {
+
+module.exports = require("use-position");
 
 /***/ })
 

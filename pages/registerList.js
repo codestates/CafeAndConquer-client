@@ -1,4 +1,5 @@
 const registerList = ({ list }) => {
+  console.log('register');
 	const cafeList = list.map((elm, key) => {
 		return (
 			<li key={key}>
