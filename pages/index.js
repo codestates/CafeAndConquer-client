@@ -1,9 +1,11 @@
 import Link from 'next/link';
+import Header from '../components/Header';
+// import BasicInfo from '../components/BasicInfo';
 
 const Index = () => (
   <div>
-    <Link href="/about">about</Link>
-    <div>여기는 홈 페이지입니다.</div>
+    <Header />
+    {/* <BasicInfo /> */}
   </div>
 );
 
