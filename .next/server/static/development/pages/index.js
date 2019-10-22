@@ -156,8 +156,6 @@ function BasicInfo(props) {
     console.log(current);
   };
 
-  const lat = position.lat;
-
   const registerCafeHandler = () => {
     next_router__WEBPACK_IMPORTED_MODULE_4___default.a.push({
       pathname: '/register',

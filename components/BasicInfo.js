@@ -72,7 +72,7 @@ export default function BasicInfo(props) {
     console.log(current);
   };
 
-  const lat = position.lat
+
   const registerCafeHandler = () => {
     Router.push({
       pathname: '/register',
