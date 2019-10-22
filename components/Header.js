@@ -3,8 +3,7 @@ import { usePosition } from 'use-position';
 import React, { useState } from 'react';
 import Link from 'next/link';
 import Router from 'next/router';
-
-import Popup from 'reactjs-popup';
+import SignModal from './SignModal';
 
 const useInput = (initialValue) => {
   const [value, setValue] = useState(initialValue);
@@ -18,6 +17,17 @@ const useInput = (initialValue) => {
   };
   return { value, onChange };
 };
+
+
+// 이런 형태로 리펙토링
+// const useSign = () => {
+//   const [show, setShow] = useState(false);
+//   console.log(show);
+//   const showSign = () => {
+//     setShow(!show);
+//   };
+//   return { showSign };
+// };
 
 // 문제2. 현재 위치를 어떻게 넘겨줄 것인가?
 const searchBtnHandler = (value, current) => {
@@ -34,18 +44,21 @@ const Header = () => {
     lng: longitude,
     err: error,
   };
-
   let searchAddress = useSearch.value;
   if (useSearch.value === '') {
     searchAddress = '[id]';
   }
-
   const handleKeyPress = (e) => {
     if (e.charCode === 13) {
       if (useSearch.value !== '') {
         Router.push(`/search/${useSearch.value}`);
       }
     }
+  };
+
+  const [show, setShow] = useState(false);
+  const showSign = () => {
+    setShow(!show);
   };
 
   return (
@@ -65,11 +78,10 @@ const Header = () => {
       </SearchFrame>
       <TopMenuBtton>
         {/* 의문1. link를 감싸는 방법을 왜 써야하며 다른 방법은 없는가? */}
-        <Link href="/sign">
-          <Popup trigger={<button> Sign</button>} position="right center">
-            <div >Popup content here !!</div>
-          </Popup>
-        </Link>
+        <button onClick={() => showSign()}>sign</button>
+        <SignModal onClose={showSign} show={show}>
+          환영합니다
+        </SignModal>
         <Link href="/login">
           <a style={{ padding: '10px' }}>login</a>
         </Link>
@@ -106,7 +118,6 @@ const SearchFrame = styled.div`
   left: 25%;
   width: 50%;
   height: 70px;
- 
 `;
 
 const Search = styled.input.attrs({

@@ -2239,7 +2239,7 @@ const login = props => {
       lineNumber: 89
     },
     __self: undefined
-  }, "Facebook \uB85C\uADF8\uC778"))));
+  }, "kakao \uB85C\uADF8\uC778"))));
 };
 
 /* harmony default export */ __webpack_exports__["default"] = (login);

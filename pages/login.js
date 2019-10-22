@@ -87,7 +87,7 @@ const login = (props) => {
           <p style={{ position: 'relative', left: '90px' }}>비밀번호찾기</p>
           <LoginBtn onClick={() => LoginHandler()}>LOGIN</LoginBtn>
           <FaceLoginBtn onClick={() => FaceBookHandler()}>
-            Facebook 로그인
+            kakao 로그인
           </FaceLoginBtn>
         </InputFrame>
       </MainFrame>
