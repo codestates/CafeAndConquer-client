@@ -88,7 +88,7 @@ module.exports =
 /******/
 /******/
 /******/ 	// Load entry module and return exports
-/******/ 	return __webpack_require__(__webpack_require__.s = 3);
+/******/ 	return __webpack_require__(__webpack_require__.s = 4);
 /******/ })
 /************************************************************************/
 /******/ ({
@@ -111,8 +111,11 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var use_position__WEBPACK_IMPORTED_MODULE_2___default = /*#__PURE__*/__webpack_require__.n(use_position__WEBPACK_IMPORTED_MODULE_2__);
 /* harmony import */ var next_link__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! next/link */ "./node_modules/next/link.js");
 /* harmony import */ var next_link__WEBPACK_IMPORTED_MODULE_3___default = /*#__PURE__*/__webpack_require__.n(next_link__WEBPACK_IMPORTED_MODULE_3__);
+/* harmony import */ var next_router__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! next/router */ "next/router");
+/* harmony import */ var next_router__WEBPACK_IMPORTED_MODULE_4___default = /*#__PURE__*/__webpack_require__.n(next_router__WEBPACK_IMPORTED_MODULE_4__);
 var _jsxFileName = "/Users/hasubin/Desktop/C&C/CafeAndConquer-client/components/BasicInfo.js";
 var __jsx = react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement;
+
 
 
 
@@ -153,71 +156,71 @@ function BasicInfo(props) {
     console.log(current);
   };
 
+  const lat = position.lat;
+
   const registerCafeHandler = () => {
-    let toClick = document.getElementById('register');
-    console.log(toClick);
+    next_router__WEBPACK_IMPORTED_MODULE_4___default.a.push({
+      pathname: '/register',
+      query: {
+        lat: position.lat,
+        lng: position.lng
+      }
+    });
   };
 
   return __jsx(MainFrame, {
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 77
+      lineNumber: 83
     },
     __self: this
   }, __jsx(MainLogo, {
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 78
+      lineNumber: 84
     },
     __self: this
   }, "Cafe&Conqeur"), __jsx(MainInfo, {
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 79
+      lineNumber: 85
     },
     __self: this
   }, "\uCE74\uD398\uB97C \uBC1C\uACAC\uD558\uACE0 \uB4F1\uB85D\uD558\uC138\uC694"), __jsx("ul", {
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 80
+      lineNumber: 86
     },
     __self: this
   }, __jsx(next_link__WEBPACK_IMPORTED_MODULE_3___default.a, {
     href: "/search/[id]",
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 82
+      lineNumber: 88
     },
     __self: this
   }, __jsx(CurrentLocation, {
     onClick: () => currentLocationHandler(position),
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 83
-    },
-    __self: this
-  }, "\uAC00\uAE4C\uC6B4 \uCE74\uD398")), __jsx(next_link__WEBPACK_IMPORTED_MODULE_3___default.a, {
-    href: "/register",
-    __source: {
-      fileName: _jsxFileName,
-      lineNumber: 87
-    },
-    __self: this
-  }, __jsx(RegisterCafe, {
-    onClick: registerCafeHandler,
-    __source: {
-      fileName: _jsxFileName,
-      lineNumber: 88
-    },
-    __self: this
-  }, __jsx("a", {
-    id: "register",
-    __source: {
-      fileName: _jsxFileName,
       lineNumber: 89
     },
     __self: this
-  }, "\uB4F1\uB85D\uD558\uAE30"))), "]"));
+  }, "\uAC00\uAE4C\uC6B4 \uCE74\uD398")), __jsx(RegisterCafe, {
+    onClick: registerCafeHandler,
+    __source: {
+      fileName: _jsxFileName,
+      lineNumber: 93
+    },
+    __self: this
+  }, __jsx("a", {
+    itemProp: position,
+    __source: {
+      fileName: _jsxFileName,
+      lineNumber: 94
+    },
+    __self: this
+  }, "\uB4F1\uB85D\uD558\uAE30"))));
 }
 
 /***/ }),
@@ -2556,7 +2559,7 @@ const Index = () => __jsx("div", {
 
 /***/ }),
 
-/***/ 3:
+/***/ 4:
 /*!******************************!*\
   !*** multi ./pages/index.js ***!
   \******************************/

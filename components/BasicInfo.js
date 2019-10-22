@@ -3,6 +3,8 @@ import React from 'react';
 import { usePosition } from 'use-position';
 import Link from 'next/link';
 
+import Router from 'next/router';
+
 const MainFrame = styled.div`
   position: absolute;
   top: 14%;
@@ -69,9 +71,13 @@ export default function BasicInfo(props) {
   const currentLocationHandler = (current) => {
     console.log(current);
   };
+
+  const lat = position.lat
   const registerCafeHandler = () => {
-    let toClick = document.getElementById('register');
-    console.log(toClick);
+    Router.push({
+      pathname: '/register',
+      query: { lat: position.lat, lng: position.lng },
+    });
   };
   return (
     <MainFrame>
@@ -84,12 +90,9 @@ export default function BasicInfo(props) {
             가까운 카페
           </CurrentLocation>
         </Link>
-        <Link href="/register">
-          <RegisterCafe onClick={registerCafeHandler}>
-            <a id="register">등록하기</a>
-          </RegisterCafe>
-        </Link>
-        ]
+        <RegisterCafe onClick={registerCafeHandler}>
+          <a itemProp={position}>등록하기</a>
+        </RegisterCafe>
       </ul>
     </MainFrame>
   );
