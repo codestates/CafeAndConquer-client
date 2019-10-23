@@ -15,7 +15,7 @@ const MainFrame = styled.div`
   background-repeat: no-repeat;
   z-index: 0;
   /* display:block;
-  overflow:hidden; */
+  overflow:scroll; */
 `;
 
 const MainLogo = styled.h1`

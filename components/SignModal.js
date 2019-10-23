@@ -1,5 +1,6 @@
-import React from 'react';
+import React, { useEffect } from 'react';
 import styled from 'styled-components';
+import Head from 'next/head';
 
 const MyModal = styled.div`
   background: rgba(0, 0, 0, 0.25);
@@ -20,7 +21,13 @@ const Content = styled.div`
   height: auto;
 `;
 
+
 const modal = (props) => {
+  // modal 공부
+  // if 문으로 
+
+ 
+
   const onClose = (e) => {
     props.onClose && props.onClose(e);
   };
@@ -32,9 +39,8 @@ const modal = (props) => {
       <Content>
         <h3>신규 회원가입</h3>
         <p>{props.children}</p>
-        <p>
-          <button>카카오톡 회원가입</button>
-        </p>
+        <a id="kakao-login-btn"></a>
+        <a href="http://developers.kakao.com/logout"></a>
         <button
           onClick={(e) => {
             onClose(e);

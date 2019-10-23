@@ -233,20 +233,23 @@ function BasicInfo(props) {
 "use strict";
 __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _babel_runtime_corejs2_helpers_esm_extends__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! @babel/runtime-corejs2/helpers/esm/extends */ "./node_modules/@babel/runtime-corejs2/helpers/esm/extends.js");
-/* harmony import */ var styled_components__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! styled-components */ "styled-components");
-/* harmony import */ var styled_components__WEBPACK_IMPORTED_MODULE_1___default = /*#__PURE__*/__webpack_require__.n(styled_components__WEBPACK_IMPORTED_MODULE_1__);
-/* harmony import */ var use_position__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! use-position */ "use-position");
-/* harmony import */ var use_position__WEBPACK_IMPORTED_MODULE_2___default = /*#__PURE__*/__webpack_require__.n(use_position__WEBPACK_IMPORTED_MODULE_2__);
-/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! react */ "react");
-/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_3___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_3__);
-/* harmony import */ var next_link__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! next/link */ "./node_modules/next/link.js");
-/* harmony import */ var next_link__WEBPACK_IMPORTED_MODULE_4___default = /*#__PURE__*/__webpack_require__.n(next_link__WEBPACK_IMPORTED_MODULE_4__);
-/* harmony import */ var next_router__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! next/router */ "next/router");
-/* harmony import */ var next_router__WEBPACK_IMPORTED_MODULE_5___default = /*#__PURE__*/__webpack_require__.n(next_router__WEBPACK_IMPORTED_MODULE_5__);
-/* harmony import */ var _SignModal__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! ./SignModal */ "./components/SignModal.js");
+/* harmony import */ var _babel_runtime_corejs2_core_js_json_stringify__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! @babel/runtime-corejs2/core-js/json/stringify */ "./node_modules/@babel/runtime-corejs2/core-js/json/stringify.js");
+/* harmony import */ var _babel_runtime_corejs2_core_js_json_stringify__WEBPACK_IMPORTED_MODULE_1___default = /*#__PURE__*/__webpack_require__.n(_babel_runtime_corejs2_core_js_json_stringify__WEBPACK_IMPORTED_MODULE_1__);
+/* harmony import */ var styled_components__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! styled-components */ "styled-components");
+/* harmony import */ var styled_components__WEBPACK_IMPORTED_MODULE_2___default = /*#__PURE__*/__webpack_require__.n(styled_components__WEBPACK_IMPORTED_MODULE_2__);
+/* harmony import */ var use_position__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! use-position */ "use-position");
+/* harmony import */ var use_position__WEBPACK_IMPORTED_MODULE_3___default = /*#__PURE__*/__webpack_require__.n(use_position__WEBPACK_IMPORTED_MODULE_3__);
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! react */ "react");
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_4___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_4__);
+/* harmony import */ var next_link__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! next/link */ "./node_modules/next/link.js");
+/* harmony import */ var next_link__WEBPACK_IMPORTED_MODULE_5___default = /*#__PURE__*/__webpack_require__.n(next_link__WEBPACK_IMPORTED_MODULE_5__);
+/* harmony import */ var next_router__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! next/router */ "next/router");
+/* harmony import */ var next_router__WEBPACK_IMPORTED_MODULE_6___default = /*#__PURE__*/__webpack_require__.n(next_router__WEBPACK_IMPORTED_MODULE_6__);
+/* harmony import */ var _SignModal__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(/*! ./SignModal */ "./components/SignModal.js");
+
 
 var _jsxFileName = "/Users/hasubin/Desktop/C&C/CafeAndConquer-client/components/Header.js";
-var __jsx = react__WEBPACK_IMPORTED_MODULE_3___default.a.createElement;
+var __jsx = react__WEBPACK_IMPORTED_MODULE_4___default.a.createElement;
 
 
 
@@ -258,7 +261,7 @@ const useInput = initialValue => {
   const {
     0: value,
     1: setValue
-  } = Object(react__WEBPACK_IMPORTED_MODULE_3__["useState"])(initialValue);
+  } = Object(react__WEBPACK_IMPORTED_MODULE_4__["useState"])(initialValue);
 
   const onChange = event => {
     // Destructuring assignment
@@ -299,7 +302,7 @@ const Header = () => {
     latitude,
     longitude,
     error
-  } = Object(use_position__WEBPACK_IMPORTED_MODULE_2__["usePosition"])();
+  } = Object(use_position__WEBPACK_IMPORTED_MODULE_3__["usePosition"])();
   const position = {
     lat: latitude,
     lng: longitude,
@@ -314,7 +317,7 @@ const Header = () => {
   const handleKeyPress = e => {
     if (e.charCode === 13) {
       if (useSearch.value !== '') {
-        next_router__WEBPACK_IMPORTED_MODULE_5___default.a.push(`/search/${useSearch.value}`);
+        next_router__WEBPACK_IMPORTED_MODULE_6___default.a.push(`/search/${useSearch.value}`);
       }
     }
   };
@@ -322,35 +325,49 @@ const Header = () => {
   const {
     0: show,
     1: setShow
-  } = Object(react__WEBPACK_IMPORTED_MODULE_3__["useState"])(false);
+  } = Object(react__WEBPACK_IMPORTED_MODULE_4__["useState"])(false);
 
   const showSign = () => {
     setShow(!show);
   };
 
+  Object(react__WEBPACK_IMPORTED_MODULE_4__["useEffect"])(() => {
+    console.log(1); //api key 수정 후 올릴 것
+
+    Kakao.init('api_key');
+    Kakao.Auth.createLoginButton({
+      container: '#kakao-login-btn',
+      success: function (authObj) {
+        alert(_babel_runtime_corejs2_core_js_json_stringify__WEBPACK_IMPORTED_MODULE_1___default()(authObj));
+      },
+      fail: function (err) {
+        alert(_babel_runtime_corejs2_core_js_json_stringify__WEBPACK_IMPORTED_MODULE_1___default()(err));
+      }
+    });
+  }, []);
   return __jsx(MainFrame, {
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 65
+      lineNumber: 79
     },
     __self: undefined
-  }, __jsx(next_link__WEBPACK_IMPORTED_MODULE_4___default.a, {
+  }, __jsx(next_link__WEBPACK_IMPORTED_MODULE_5___default.a, {
     href: "/",
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 66
+      lineNumber: 80
     },
     __self: undefined
   }, __jsx(Logo, {
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 67
+      lineNumber: 81
     },
     __self: undefined
   }, "C&C")), __jsx(SearchFrame, {
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 69
+      lineNumber: 83
     },
     __self: undefined
   }, __jsx(Search, Object(_babel_runtime_corejs2_helpers_esm_extends__WEBPACK_IMPORTED_MODULE_0__["default"])({
@@ -358,50 +375,49 @@ const Header = () => {
   }, useSearch, {
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 71
+      lineNumber: 85
     },
     __self: undefined
-  })), __jsx(next_link__WEBPACK_IMPORTED_MODULE_4___default.a, {
+  })), __jsx(next_link__WEBPACK_IMPORTED_MODULE_5___default.a, {
     href: "/search/[id]",
     as: `/search/${searchAddress}`,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 72
+      lineNumber: 86
     },
     __self: undefined
   }, __jsx(Button, {
     onClick: () => searchBtnHandler(useSearch.value, position),
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 74
+      lineNumber: 88
     },
     __self: undefined
   }, "\uD0D0\uC0C9"))), __jsx(TopMenuBtton, {
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 79
+      lineNumber: 93
     },
     __self: undefined
-  }, __jsx("button", {
-    onClick: () => showSign(),
+  }, __jsx("a", {
+    id: "kakao-login-btn",
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 81
+      lineNumber: 95
     },
     __self: undefined
-  }, "sign"), __jsx(_SignModal__WEBPACK_IMPORTED_MODULE_6__["default"], {
-    onClose: showSign,
-    show: show,
+  }), __jsx("a", {
+    href: "http://developers.kakao.com/logout",
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 82
+      lineNumber: 96
     },
     __self: undefined
-  }, "\uD658\uC601\uD569\uB2C8\uB2E4"), __jsx(next_link__WEBPACK_IMPORTED_MODULE_4___default.a, {
+  }), __jsx(next_link__WEBPACK_IMPORTED_MODULE_5___default.a, {
     href: "/login",
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 85
+      lineNumber: 97
     },
     __self: undefined
   }, __jsx("a", {
@@ -410,36 +426,36 @@ const Header = () => {
     },
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 86
+      lineNumber: 98
     },
     __self: undefined
   }, "login"))));
 };
 
-const MainFrame = styled_components__WEBPACK_IMPORTED_MODULE_1___default.a.div.withConfig({
+const MainFrame = styled_components__WEBPACK_IMPORTED_MODULE_2___default.a.div.withConfig({
   displayName: "Header__MainFrame",
   componentId: "sc-1yui16o-0"
 })(["position:fixed;height:100px;max-width:100%;width:100%;top:0;left:0;background-color:lightgray;z-index:10;"]);
-const Logo = styled_components__WEBPACK_IMPORTED_MODULE_1___default.a.a.withConfig({
+const Logo = styled_components__WEBPACK_IMPORTED_MODULE_2___default.a.a.withConfig({
   displayName: "Header__Logo",
   componentId: "sc-1yui16o-1"
 })(["position:relative;top:18%;left:3%;font-family:Monospace,Helvetica,sans-serif;position:absolute;font-size:3.4rem;text-decoration:none;"]);
-const SearchFrame = styled_components__WEBPACK_IMPORTED_MODULE_1___default.a.div.withConfig({
+const SearchFrame = styled_components__WEBPACK_IMPORTED_MODULE_2___default.a.div.withConfig({
   displayName: "Header__SearchFrame",
   componentId: "sc-1yui16o-2"
 })(["position:relative;top:10%;left:25%;width:50%;height:70px;"]);
-const Search = styled_components__WEBPACK_IMPORTED_MODULE_1___default.a.input.attrs({
+const Search = styled_components__WEBPACK_IMPORTED_MODULE_2___default.a.input.attrs({
   placeholder: '지역 또는 카페 탐색하기',
   type: 'text'
 }).withConfig({
   displayName: "Header__Search",
   componentId: "sc-1yui16o-3"
 })(["position:relative;top:20%;width:70%;padding-left:45px;height:44px;border:0px;border:3px solid #ff7f00;font-size:18px;color:#ff7f00;background:url(https://s3-ap-northeast-1.amazonaws.com/dcicons/new/images/web/common/search@2x.png) no-repeat left;background-size:40px;outline:none;&:focus{border-color:blue;}"]);
-const Button = styled_components__WEBPACK_IMPORTED_MODULE_1___default.a.button.attrs({}).withConfig({
+const Button = styled_components__WEBPACK_IMPORTED_MODULE_2___default.a.button.attrs({}).withConfig({
   displayName: "Header__Button",
   componentId: "sc-1yui16o-4"
 })(["position:relative;top:15%;width:40px;height:50px;"]);
-const TopMenuBtton = styled_components__WEBPACK_IMPORTED_MODULE_1___default.a.div.withConfig({
+const TopMenuBtton = styled_components__WEBPACK_IMPORTED_MODULE_2___default.a.div.withConfig({
   displayName: "Header__TopMenuBtton",
   componentId: "sc-1yui16o-5"
 })(["position:absolute;top:35%;left:70%;height:30px;width:25%;text-align:center;"]);
@@ -460,8 +476,11 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_0__);
 /* harmony import */ var styled_components__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! styled-components */ "styled-components");
 /* harmony import */ var styled_components__WEBPACK_IMPORTED_MODULE_1___default = /*#__PURE__*/__webpack_require__.n(styled_components__WEBPACK_IMPORTED_MODULE_1__);
+/* harmony import */ var next_head__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! next/head */ "next/head");
+/* harmony import */ var next_head__WEBPACK_IMPORTED_MODULE_2___default = /*#__PURE__*/__webpack_require__.n(next_head__WEBPACK_IMPORTED_MODULE_2__);
 var _jsxFileName = "/Users/hasubin/Desktop/C&C/CafeAndConquer-client/components/SignModal.js";
 var __jsx = react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement;
+
 
 
 const MyModal = styled_components__WEBPACK_IMPORTED_MODULE_1___default.a.div.withConfig({
@@ -474,6 +493,8 @@ const Content = styled_components__WEBPACK_IMPORTED_MODULE_1___default.a.div.wit
 })(["background:white;padding:1rem;width:400px;height:auto;"]);
 
 const modal = props => {
+  // modal 공부
+  // if 문으로 
   const onClose = e => {
     props.onClose && props.onClose(e);
   };
@@ -485,52 +506,65 @@ const modal = props => {
   return __jsx(MyModal, {
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 31
+      lineNumber: 38
     },
     __self: undefined
   }, __jsx(Content, {
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 32
+      lineNumber: 39
     },
     __self: undefined
   }, __jsx("h3", {
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 33
+      lineNumber: 40
     },
     __self: undefined
   }, "\uC2E0\uADDC \uD68C\uC6D0\uAC00\uC785"), __jsx("p", {
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 34
+      lineNumber: 41
     },
     __self: undefined
-  }, props.children), __jsx("p", {
+  }, props.children), __jsx("a", {
+    id: "kakao-login-btn",
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 35
+      lineNumber: 42
     },
     __self: undefined
-  }, __jsx("button", {
+  }), __jsx("a", {
+    href: "http://developers.kakao.com/logout",
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 36
+      lineNumber: 43
     },
     __self: undefined
-  }, "\uCE74\uCE74\uC624\uD1A1 \uD68C\uC6D0\uAC00\uC785")), __jsx("button", {
+  }), __jsx("button", {
     onClick: e => {
       onClose(e);
     },
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 38
+      lineNumber: 44
     },
     __self: undefined
   }, "Close")));
 };
 
 /* harmony default export */ __webpack_exports__["default"] = (modal);
+
+/***/ }),
+
+/***/ "./node_modules/@babel/runtime-corejs2/core-js/json/stringify.js":
+/*!***********************************************************************!*\
+  !*** ./node_modules/@babel/runtime-corejs2/core-js/json/stringify.js ***!
+  \***********************************************************************/
+/*! no static exports found */
+/***/ (function(module, exports, __webpack_require__) {
+
+module.exports = __webpack_require__(/*! core-js/library/fn/json/stringify */ "core-js/library/fn/json/stringify");
 
 /***/ }),
 
@@ -2569,6 +2603,17 @@ module.exports = __webpack_require__(/*! /Users/hasubin/Desktop/C&C/CafeAndConqu
 
 /***/ }),
 
+/***/ "core-js/library/fn/json/stringify":
+/*!****************************************************!*\
+  !*** external "core-js/library/fn/json/stringify" ***!
+  \****************************************************/
+/*! no static exports found */
+/***/ (function(module, exports) {
+
+module.exports = require("core-js/library/fn/json/stringify");
+
+/***/ }),
+
 /***/ "core-js/library/fn/map":
 /*!*****************************************!*\
   !*** external "core-js/library/fn/map" ***!
@@ -2643,6 +2688,17 @@ module.exports = require("core-js/library/fn/object/keys");
 /***/ (function(module, exports) {
 
 module.exports = require("core-js/library/fn/promise");
+
+/***/ }),
+
+/***/ "next/head":
+/*!****************************!*\
+  !*** external "next/head" ***!
+  \****************************/
+/*! no static exports found */
+/***/ (function(module, exports) {
+
+module.exports = require("next/head");
 
 /***/ }),
 

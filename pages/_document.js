@@ -11,6 +11,7 @@ export default class MyDocument extends Document {
       <html>
         <Head>
           <title>My page</title>
+          <script src="https://developers.kakao.com/sdk/js/kakao.min.js"></script>
         </Head>
         <body>
           <Main />

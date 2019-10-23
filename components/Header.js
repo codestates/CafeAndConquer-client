@@ -1,6 +1,6 @@
 import styled from 'styled-components';
 import { usePosition } from 'use-position';
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import Link from 'next/link';
 import Router from 'next/router';
 import SignModal from './SignModal';
@@ -17,7 +17,6 @@ const useInput = (initialValue) => {
   };
   return { value, onChange };
 };
-
 
 // 이런 형태로 리펙토링
 // const useSign = () => {
@@ -60,6 +59,21 @@ const Header = () => {
   const showSign = () => {
     setShow(!show);
   };
+  useEffect(() => {
+    console.log(1);
+    //api key 수정 후 올릴 것
+    Kakao.init('api_key');
+
+    Kakao.Auth.createLoginButton({
+      container: '#kakao-login-btn',
+      success: function(authObj) {
+        alert(JSON.stringify(authObj));
+      },
+      fail: function(err) {
+        alert(JSON.stringify(err));
+      },
+    });
+  }, []);
 
   return (
     <MainFrame>
@@ -78,10 +92,8 @@ const Header = () => {
       </SearchFrame>
       <TopMenuBtton>
         {/* 의문1. link를 감싸는 방법을 왜 써야하며 다른 방법은 없는가? */}
-        <button onClick={() => showSign()}>sign</button>
-        <SignModal onClose={showSign} show={show}>
-          환영합니다
-        </SignModal>
+        <a id="kakao-login-btn"></a>
+        <a href="http://developers.kakao.com/logout"></a>
         <Link href="/login">
           <a style={{ padding: '10px' }}>login</a>
         </Link>
