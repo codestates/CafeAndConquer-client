@@ -93,6 +93,28 @@ module.exports =
 /************************************************************************/
 /******/ ({
 
+/***/ "./map.scss":
+/*!******************!*\
+  !*** ./map.scss ***!
+  \******************/
+/*! no static exports found */
+/***/ (function(module, exports) {
+
+
+
+/***/ }),
+
+/***/ "./modal.scss":
+/*!********************!*\
+  !*** ./modal.scss ***!
+  \********************/
+/*! no static exports found */
+/***/ (function(module, exports) {
+
+
+
+/***/ }),
+
 /***/ "./node_modules/@babel/runtime-corejs2/core-js/map.js":
 /*!************************************************************!*\
   !*** ./node_modules/@babel/runtime-corejs2/core-js/map.js ***!
@@ -2048,32 +2070,47 @@ if (false) {} else {
 __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! react */ "react");
 /* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_0__);
-/* harmony import */ var next_link__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! next/link */ "./node_modules/next/link.js");
-/* harmony import */ var next_link__WEBPACK_IMPORTED_MODULE_1___default = /*#__PURE__*/__webpack_require__.n(next_link__WEBPACK_IMPORTED_MODULE_1__);
-/* harmony import */ var _map__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./map */ "./pages/map.js");
-/* harmony import */ var _registerList__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ./registerList */ "./pages/registerList.js");
-/* harmony import */ var _style_css__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ../style.css */ "./style.css");
-/* harmony import */ var _style_css__WEBPACK_IMPORTED_MODULE_4___default = /*#__PURE__*/__webpack_require__.n(_style_css__WEBPACK_IMPORTED_MODULE_4__);
+/* harmony import */ var _map__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./map */ "./pages/map.js");
+/* harmony import */ var _registerList__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./registerList */ "./pages/registerList.js");
+/* harmony import */ var _style_scss__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ../style.scss */ "./style.scss");
+/* harmony import */ var _style_scss__WEBPACK_IMPORTED_MODULE_3___default = /*#__PURE__*/__webpack_require__.n(_style_scss__WEBPACK_IMPORTED_MODULE_3__);
+/* harmony import */ var _map_scss__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ../map.scss */ "./map.scss");
+/* harmony import */ var _map_scss__WEBPACK_IMPORTED_MODULE_4___default = /*#__PURE__*/__webpack_require__.n(_map_scss__WEBPACK_IMPORTED_MODULE_4__);
+/* harmony import */ var _modal_scss__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! ../modal.scss */ "./modal.scss");
+/* harmony import */ var _modal_scss__WEBPACK_IMPORTED_MODULE_5___default = /*#__PURE__*/__webpack_require__.n(_modal_scss__WEBPACK_IMPORTED_MODULE_5__);
+/* harmony import */ var _modal__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! ./modal */ "./pages/modal.js");
+/* harmony import */ var styled_components__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(/*! styled-components */ "styled-components");
+/* harmony import */ var styled_components__WEBPACK_IMPORTED_MODULE_7___default = /*#__PURE__*/__webpack_require__.n(styled_components__WEBPACK_IMPORTED_MODULE_7__);
 var _jsxFileName = "/Users/yonggyukwon/Downloads/\u110F\u1169\u1103\u1175\u11BC/\u110F\u1169\u1103\u1173\u1109\u1173\u1110\u1166\u110B\u1175\u110E\u1173/Flex/CafeAndConquer-client/pages/index.js";
 var __jsx = react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement;
 // fix: 카페 점령된것/점령 안된것 모양, 숫자,
 // todo: 기본으로 카페 목록들 클릭이 돼서 나오게
-// todo:지도에 확대/축소 표시 붙이기, 현위치 버튼.
-// todo:일단 되게 만들기 
+// todo: 현위치 버튼.
 // todo:Link href와 a href 로 /register로 가게 될 때의 차이?
-// 노란 라인 없애기
-// 카카오 맵 구조 다시한번 보기 
-// prettier가 안되는 이유?? 
-//  console이 서버에 떴다가 , 클라이언트쪽에 떴다가 왔다갔다 뜨는건 왜 그러나
+// 노란 라인 없애기, warning 없애기. styled components랑 관련 있는듯??? 
+// prettier가 됐다, 안됐다 하는 이유?? 
+// console이 서버에 떴다가 , 클라이언트쪽에 떴다가 왔다갔다 뜨는건 왜 그러나
+// 검색으로도 찾을 수 있게 만들어야 함. 
 // https://github.com/zeit/next-plugins/tree/master/packages/next-css 깃헙 설명에 css module이 있다는 것과 없다는 것의 차이가 뭔지 모르겠음. 
-// css 파일을 map에만 import하니까 안됨. 오히려 index.js에만 넣으면 됨. 
+// css 파일을 map에만 import하니까 안됨. 오히려 index.js에만 넣으면 됨. 하나에서 scss랑 css를 동시에 못 쓰는 듯. 
+// 클릭할때 뜨는 레이아웃 보이는 파란 선 뭐지?? 
+// 클릭시 등록하겠습니까? confirm 창 디자인 변경  
+// 등록하기 누르면 modal로 선택할 수 있게 (반응형 앱?).
+// 
+// modal을 팝업처럼 튀어나오게 하는 방법 & modal이면 다른 키가 안 눌려야 하는데 눌리네. 주변 약간 어둡게 바꾸면서... 
+// map api 다시 완전 파악하고, 내 입맛에 맞게 수정을 좀 해야 함. 
+// styled components 적용시키기 - 안되는 부분. 너무 하나에만 매달려 있었음. 이게 왜 되는지 모르겠음. 
+ // import Link from 'next/link';
 
 
 
 
 
 
-const Home = () => {
+
+
+
+const Index = () => {
   const {
     0: list,
     1: setList
@@ -2081,31 +2118,94 @@ const Home = () => {
   const changeList = Object(react__WEBPACK_IMPORTED_MODULE_0__["useCallback"])(data => {
     setList(data);
   }, []);
-  console.log('index');
+  const {
+    0: showed,
+    1: setShowed
+  } = Object(react__WEBPACK_IMPORTED_MODULE_0__["useState"])(false);
+
+  const showModal = boolean => {
+    setShowed(boolean);
+  };
+
+  const {
+    0: cafeInfo,
+    1: setCafeInfo
+  } = Object(react__WEBPACK_IMPORTED_MODULE_0__["useState"])({
+    name: '',
+    phone: '',
+    address: ''
+  });
+
+  const confirmRegister = (name, phone, address) => {
+    if (confirm('등록하시겠습니까?')) {
+      // showModal(true);
+      // setCafeInfo({name, phone, address})
+      Object(_modal__WEBPACK_IMPORTED_MODULE_6__["default"])({
+        showModal,
+        cafeInfo
+      });
+    }
+  }; // console.log('index')
+
+
   return __jsx("div", {
+    className: "grid-container",
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 31
+      lineNumber: 62
     },
     __self: undefined
-  }, __jsx(_map__WEBPACK_IMPORTED_MODULE_2__["Map"], {
+  }, __jsx(HH1, {
+    __source: {
+      fileName: _jsxFileName,
+      lineNumber: 63
+    },
+    __self: undefined
+  }, " cafe & conquer "), __jsx("div", {
+    className: "grid-map",
+    __source: {
+      fileName: _jsxFileName,
+      lineNumber: 64
+    },
+    __self: undefined
+  }, __jsx(_map__WEBPACK_IMPORTED_MODULE_1__["Map"], {
     setList: changeList,
+    confirmRegister: confirmRegister,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 32
+      lineNumber: 65
     },
     __self: undefined
-  }), __jsx(_registerList__WEBPACK_IMPORTED_MODULE_3__["default"], {
-    list: list,
+  })), __jsx("div", {
+    className: "grid-register",
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 33
+      lineNumber: 67
+    },
+    __self: undefined
+  }, __jsx(_registerList__WEBPACK_IMPORTED_MODULE_2__["default"], {
+    list: list,
+    confirmRegister: confirmRegister,
+    __source: {
+      fileName: _jsxFileName,
+      lineNumber: 68
+    },
+    __self: undefined
+  })), __jsx("div", {
+    id: "modal",
+    __source: {
+      fileName: _jsxFileName,
+      lineNumber: 71
     },
     __self: undefined
   }));
 };
 
-/* harmony default export */ __webpack_exports__["default"] = (Home);
+const HH1 = styled_components__WEBPACK_IMPORTED_MODULE_7___default.a.h2`
+  font-size: 30px;
+  color: gray;
+`;
+/* harmony default export */ __webpack_exports__["default"] = (Index);
 
 /***/ }),
 
@@ -2132,7 +2232,8 @@ var __jsx = react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement;
 
 
 const Map = ({
-  setList
+  setList,
+  confirmRegister
 }) => {
   const {
     latitude,
@@ -2141,14 +2242,21 @@ const Map = ({
     accuracy,
     error
   } = Object(use_position__WEBPACK_IMPORTED_MODULE_1__["usePosition"])(true);
+  const {
+    0: zooms,
+    1: setZooms
+  } = Object(react__WEBPACK_IMPORTED_MODULE_0__["useState"])([]); // const [zoomIn, zoomOut] = zooms;
+  // console.log(zooms);
+  // console이 왜 [] 1번, 들어간걸로는 3번이 불리지?? useState 빼고 실험해보기. 아, useEffect 안이 새로 불리지 않는 거지 바깥의 내용은 Map이 새로 불리면서 계속 불리는듯. 
+
   Object(react__WEBPACK_IMPORTED_MODULE_0__["useEffect"])(() => {
     // let script = document.createElement('script');
     // script.type = "text/javascript";
     // script.src = "//dapi.kakao.com/v2/maps/sdk.js?appkey=08621feb64d12ca619166a136815243f&libraries=services";
     // document.head.appendChild(script);
     // 여기서 비동기적 요소가 있나? 안되는 이유? 
-    console.log('map'); // 마커를 클릭했을 때 해당 장소의 상세정보를 보여줄 커스텀오버레이입니다
-
+    // console.log('map');
+    // 마커를 클릭했을 때 해당 장소의 상세정보를 보여줄 커스텀오버레이입니다
     var placeOverlay = new kakao.maps.CustomOverlay({
       zIndex: 1
     }),
@@ -2231,6 +2339,11 @@ const Map = ({
         (function (marker, place) {
           kakao.maps.event.addListener(marker, 'click', function () {
             displayPlaceInfo(place);
+            console.log(place);
+
+            document.querySelector('.conquerInMap').onclick = () => {
+              confirmRegister(place.place_name, place.phone, place.address_name);
+            };
           });
         })(marker, places[i]);
       }
@@ -2274,7 +2387,7 @@ const Map = ({
 
 
     function displayPlaceInfo(place) {
-      var content = '<div class="placeinfo">' + '   <a class="title" href="' + place.place_url + '" target="_blank" title="' + place.place_name + '">' + place.place_name + '</a>';
+      var content = '<div class="placeinfo">' + '   <a class="title" href="' + place.place_url + '" target="_blank" title="' + place.place_name + '">' + place.place_name + '</a>' + '<button class="conquerInMap">정복하기</button>';
 
       if (place.road_address_name) {
         content += '    <span title="' + place.road_address_name + '">' + place.road_address_name + '</span>' + '  <span class="jibun" title="' + place.address_name + '">(지번 : ' + place.address_name + ')</span>';
@@ -2328,18 +2441,30 @@ const Map = ({
       if (el) {
         el.className = 'on';
       }
+    } // 지도 확대, 축소 컨트롤에서 확대 버튼을 누르면 호출되어 지도를 확대하는 함수입니다
+
+
+    function zoomIn() {
+      map.setLevel(map.getLevel() - 1);
+    } // 지도 확대, 축소 컨트롤에서 축소 버튼을 누르면 호출되어 지도를 확대하는 함수입니다
+
+
+    function zoomOut() {
+      map.setLevel(map.getLevel() + 1);
     }
+
+    setZooms([zoomIn, zoomOut]);
   }, []);
   return __jsx("div", {
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 238
+      lineNumber: 268
     },
     __self: undefined
   }, __jsx(next_head__WEBPACK_IMPORTED_MODULE_2___default.a, {
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 239
+      lineNumber: 269
     },
     __self: undefined
   }, __jsx("script", {
@@ -2347,7 +2472,7 @@ const Map = ({
     src: "//dapi.kakao.com/v2/maps/sdk.js?appkey=08621feb64d12ca619166a136815243f&libraries=services",
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 241
+      lineNumber: 270
     },
     __self: undefined
   })), __jsx("div", {
@@ -2356,14 +2481,20 @@ const Map = ({
     },
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 246
+      lineNumber: 275
     },
     __self: undefined
-  }, "\uC810\uB839\uD558\uC2E4 \uCE74\uD398\uB97C \uC120\uD0DD\uD574\uC8FC\uC138\uC694"), __jsx("div", {
+  }, "\uC810\uB839\uD560 \uCE74\uD398\uB97C \uC120\uD0DD\uD574\uC8FC\uC138\uC694.", __jsx("br", {
+    __source: {
+      fileName: _jsxFileName,
+      lineNumber: 276
+    },
+    __self: undefined
+  }), "\uC810\uB839\uD560 \uCE74\uD398\uAC00 \uBCF4\uC774\uC9C0 \uC54A\uC73C\uBA74 \uD574\uB2F9 \uCE74\uD398\uC758 \uC704\uCE58 \uBD80\uADFC\uC5D0\uC11C \uC9C0\uB3C4 \uD655\uB300\uB97C \uB20C\uB7EC\uC8FC\uC138\uC694"), __jsx("div", {
     className: "map_wrap",
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 247
+      lineNumber: 278
     },
     __self: undefined
   }, __jsx("div", {
@@ -2376,14 +2507,14 @@ const Map = ({
     },
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 248
+      lineNumber: 279
     },
     __self: undefined
   }), __jsx("ul", {
     id: "category",
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 256
+      lineNumber: 287
     },
     __self: undefined
   }, __jsx("li", {
@@ -2391,21 +2522,281 @@ const Map = ({
     "data-order": "4",
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 257
+      lineNumber: 288
     },
     __self: undefined
   }, __jsx("span", {
     className: "category_bg cafe",
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 258
+      lineNumber: 289
     },
     __self: undefined
-  }), "\uCE74\uD398 \uBCF4\uAE30"))));
+  }), "\uCE74\uD398 \uBCF4\uAE30")), __jsx("div", {
+    className: "custom_zoomcontrol radius_border",
+    __source: {
+      fileName: _jsxFileName,
+      lineNumber: 293
+    },
+    __self: undefined
+  }, __jsx("span", {
+    onClick: zooms[0],
+    __source: {
+      fileName: _jsxFileName,
+      lineNumber: 294
+    },
+    __self: undefined
+  }, __jsx("img", {
+    src: "http://t1.daumcdn.net/localimg/localimages/07/mapapidoc/ico_plus.png",
+    alt: "\uD655\uB300",
+    __source: {
+      fileName: _jsxFileName,
+      lineNumber: 294
+    },
+    __self: undefined
+  })), __jsx("span", {
+    onClick: zooms[1],
+    __source: {
+      fileName: _jsxFileName,
+      lineNumber: 295
+    },
+    __self: undefined
+  }, __jsx("img", {
+    src: "http://t1.daumcdn.net/localimg/localimages/07/mapapidoc/ico_minus.png",
+    alt: "\uCD95\uC18C",
+    __source: {
+      fileName: _jsxFileName,
+      lineNumber: 295
+    },
+    __self: undefined
+  })))));
 }; //jsx도 render를 한번 하면 딱 한번만 불리나? 
 
 
 
+
+/***/ }),
+
+/***/ "./pages/modal.js":
+/*!************************!*\
+  !*** ./pages/modal.js ***!
+  \************************/
+/*! exports provided: default */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! react */ "react");
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_0__);
+/* harmony import */ var react_dom__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! react-dom */ "react-dom");
+/* harmony import */ var react_dom__WEBPACK_IMPORTED_MODULE_1___default = /*#__PURE__*/__webpack_require__.n(react_dom__WEBPACK_IMPORTED_MODULE_1__);
+/* harmony import */ var _modal_scss__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ../modal.scss */ "./modal.scss");
+/* harmony import */ var _modal_scss__WEBPACK_IMPORTED_MODULE_2___default = /*#__PURE__*/__webpack_require__.n(_modal_scss__WEBPACK_IMPORTED_MODULE_2__);
+/* harmony import */ var next_head__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! next/head */ "next/head");
+/* harmony import */ var next_head__WEBPACK_IMPORTED_MODULE_3___default = /*#__PURE__*/__webpack_require__.n(next_head__WEBPACK_IMPORTED_MODULE_3__);
+/* harmony import */ var react_star_ratings__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! react-star-ratings */ "react-star-ratings");
+/* harmony import */ var react_star_ratings__WEBPACK_IMPORTED_MODULE_4___default = /*#__PURE__*/__webpack_require__.n(react_star_ratings__WEBPACK_IMPORTED_MODULE_4__);
+var _jsxFileName = "/Users/yonggyukwon/Downloads/\u110F\u1169\u1103\u1175\u11BC/\u110F\u1169\u1103\u1173\u1109\u1173\u1110\u1166\u110B\u1175\u110E\u1173/Flex/CafeAndConquer-client/pages/modal.js";
+var __jsx = react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement;
+
+ // import ReactDOM from "react-dom";
+
+
+
+
+
+const Modal = ({
+  showModal,
+  cafeInfo
+}) => {
+  const {
+    0: starRate,
+    1: setStarRate
+  } = Object(react__WEBPACK_IMPORTED_MODULE_0__["useState"])(0);
+  return __jsx("div", {
+    className: "modal",
+    id: "modal",
+    __source: {
+      fileName: _jsxFileName,
+      lineNumber: 12
+    },
+    __self: undefined
+  }, __jsx(next_head__WEBPACK_IMPORTED_MODULE_3___default.a, {
+    __source: {
+      fileName: _jsxFileName,
+      lineNumber: 13
+    },
+    __self: undefined
+  }, __jsx("link", {
+    rel: "stylesheet",
+    href: "https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css",
+    __source: {
+      fileName: _jsxFileName,
+      lineNumber: 14
+    },
+    __self: undefined
+  })), __jsx("h2", {
+    __source: {
+      fileName: _jsxFileName,
+      lineNumber: 16
+    },
+    __self: undefined
+  }, __jsx("span", {
+    style: {
+      color: 'red'
+    },
+    __source: {
+      fileName: _jsxFileName,
+      lineNumber: 16
+    },
+    __self: undefined
+  }, cafeInfo.name), " \uCE74\uD398\uC5D0 \uB300\uD55C \uC810\uB839\uC744 \uC9C4\uD589\uD569\uB2C8\uB2E4"), __jsx("div", {
+    className: "content",
+    __source: {
+      fileName: _jsxFileName,
+      lineNumber: 17
+    },
+    __self: undefined
+  }, __jsx("div", {
+    __source: {
+      fileName: _jsxFileName,
+      lineNumber: 18
+    },
+    __self: undefined
+  }, "24\uC2DC\uAC04 \uCE74\uD398\uC778\uAC00\uC694?"), __jsx("input", {
+    type: "radio",
+    name: "24hr",
+    value: "true",
+    __source: {
+      fileName: _jsxFileName,
+      lineNumber: 21
+    },
+    __self: undefined
+  }), " \uB124", __jsx("input", {
+    type: "radio",
+    name: "24hr",
+    value: "false",
+    __source: {
+      fileName: _jsxFileName,
+      lineNumber: 22
+    },
+    __self: undefined
+  }), " \uC544\uB2C8\uC624", __jsx("br", {
+    __source: {
+      fileName: _jsxFileName,
+      lineNumber: 23
+    },
+    __self: undefined
+  }), __jsx("br", {
+    __source: {
+      fileName: _jsxFileName,
+      lineNumber: 23
+    },
+    __self: undefined
+  }), __jsx("div", {
+    __source: {
+      fileName: _jsxFileName,
+      lineNumber: 24
+    },
+    __self: undefined
+  }, "\uCF58\uC13C\uD2B8\uB294 \uD48D\uC871\uD55C\uAC00\uC694?"), __jsx("input", {
+    type: "radio",
+    name: "concent",
+    value: "true",
+    __source: {
+      fileName: _jsxFileName,
+      lineNumber: 27
+    },
+    __self: undefined
+  }), " \uBD80\uC871", __jsx("input", {
+    type: "radio",
+    name: "concent",
+    value: "false",
+    __source: {
+      fileName: _jsxFileName,
+      lineNumber: 28
+    },
+    __self: undefined
+  }), " \uADF8\uB7ED\uC800\uB7ED", __jsx("input", {
+    type: "radio",
+    name: "concent",
+    value: "true",
+    __source: {
+      fileName: _jsxFileName,
+      lineNumber: 29
+    },
+    __self: undefined
+  }), " \uB109\uB109", __jsx("br", {
+    __source: {
+      fileName: _jsxFileName,
+      lineNumber: 30
+    },
+    __self: undefined
+  }), __jsx("br", {
+    __source: {
+      fileName: _jsxFileName,
+      lineNumber: 30
+    },
+    __self: undefined
+  }), __jsx("div", {
+    __source: {
+      fileName: _jsxFileName,
+      lineNumber: 31
+    },
+    __self: undefined
+  }, "\uCE74\uD398\uC5D0 \uB300\uD55C \uC885\uD569\uC801\uC778 \uB2F9\uC2E0\uC758 \uD3C9\uC810\uC740?"), __jsx(react_star_ratings__WEBPACK_IMPORTED_MODULE_4___default.a, {
+    rating: starRate,
+    starRatedColor: "#f9ca24",
+    changeRating: setStarRate,
+    numberOfStars: 5,
+    name: "totalRate",
+    starDimension: "25px",
+    starSpacing: "0px",
+    __source: {
+      fileName: _jsxFileName,
+      lineNumber: 34
+    },
+    __self: undefined
+  })), __jsx("div", {
+    className: "actions",
+    __source: {
+      fileName: _jsxFileName,
+      lineNumber: 44
+    },
+    __self: undefined
+  }, __jsx("button", {
+    className: "conquer-button",
+    onClick: () => {
+      console.log('점령완료');
+      showModal(false); //db로 정보 날리기 
+    },
+    __source: {
+      fileName: _jsxFileName,
+      lineNumber: 45
+    },
+    __self: undefined
+  }, "\uC810\uB839\uD558\uAE30"), __jsx("button", {
+    className: "cancel-button",
+    onClick: () => {
+      console.log('점령취소');
+      showModal(false);
+    },
+    __source: {
+      fileName: _jsxFileName,
+      lineNumber: 50
+    },
+    __self: undefined
+  }, "\uCDE8\uC18C")));
+};
+
+const RenderModal = ({
+  showModal,
+  cafeInfo
+}) => {
+  return react_dom__WEBPACK_IMPORTED_MODULE_1___default.a.createPortal(Modal, document.querySelector("#modal"));
+};
+
+/* harmony default export */ __webpack_exports__["default"] = (RenderModal); // hook 형태로 바꾸기.
 
 /***/ }),
 
@@ -2420,95 +2811,188 @@ const Map = ({
 __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! react */ "react");
 /* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_0__);
+/* harmony import */ var next_link__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! next/link */ "./node_modules/next/link.js");
+/* harmony import */ var next_link__WEBPACK_IMPORTED_MODULE_1___default = /*#__PURE__*/__webpack_require__.n(next_link__WEBPACK_IMPORTED_MODULE_1__);
+/* harmony import */ var styled_components__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! styled-components */ "styled-components");
+/* harmony import */ var styled_components__WEBPACK_IMPORTED_MODULE_2___default = /*#__PURE__*/__webpack_require__.n(styled_components__WEBPACK_IMPORTED_MODULE_2__);
 var _jsxFileName = "/Users/yonggyukwon/Downloads/\u110F\u1169\u1103\u1175\u11BC/\u110F\u1169\u1103\u1173\u1109\u1173\u1110\u1166\u110B\u1175\u110E\u1173/Flex/CafeAndConquer-client/pages/registerList.js";
 
 var __jsx = react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement;
 
+ // confirm 팝업의 디자인을 변경할 수 있나? 아님 confirm 말고, 다른 팝업 써야 하나? 
+// li 태그 칸 차지하는 block -> inline 변경 ..... 좀 더 세련된 방식으로 변경해야 할듯. 
+// 저 위의 ../components/modal.js 여기 페이지에 components가 2개인데 어떻게 뜨나? 기본 export default로 설정한 애만 나가나? 
+
 const registerList = ({
-  list
+  list,
+  confirmRegister
 }) => {
-  console.log('register');
+  // console.log('register');
   const cafeList = list.map((elm, key) => {
-    return __jsx("li", {
+    return __jsx(next_link__WEBPACK_IMPORTED_MODULE_1___default.a, {
+      href: "/",
       key: key,
-      __source: {
-        fileName: _jsxFileName,
-        lineNumber: 5
-      },
-      __self: undefined
-    }, __jsx("ul", {
-      __source: {
-        fileName: _jsxFileName,
-        lineNumber: 6
-      },
-      __self: undefined
-    }, __jsx("li", {
-      __source: {
-        fileName: _jsxFileName,
-        lineNumber: 7
-      },
-      __self: undefined
-    }, __jsx("span", {
-      __source: {
-        fileName: _jsxFileName,
-        lineNumber: 8
-      },
-      __self: undefined
-    }, key + 1, ". ", elm.place_name)), __jsx("li", {
-      __source: {
-        fileName: _jsxFileName,
-        lineNumber: 12
-      },
-      __self: undefined
-    }, __jsx("span", {
-      __source: {
-        fileName: _jsxFileName,
-        lineNumber: 13
-      },
-      __self: undefined
-    }, elm.phone)), __jsx("li", {
       __source: {
         fileName: _jsxFileName,
         lineNumber: 15
       },
       __self: undefined
-    }, __jsx("span", {
+    }, __jsx(LiName, {
+      key: key,
+      id: "one-list",
       __source: {
         fileName: _jsxFileName,
         lineNumber: 16
       },
       __self: undefined
-    }, elm.address_name))), __jsx("br", {
+    }, __jsx("div", {
+      className: "grid-container",
+      __source: {
+        fileName: _jsxFileName,
+        lineNumber: 17
+      },
+      __self: undefined
+    }, __jsx(DivList, {
+      __source: {
+        fileName: _jsxFileName,
+        lineNumber: 18
+      },
+      __self: undefined
+    }, __jsx(UL, {
       __source: {
         fileName: _jsxFileName,
         lineNumber: 19
       },
       __self: undefined
-    }));
+    }, __jsx(LiName, {
+      __source: {
+        fileName: _jsxFileName,
+        lineNumber: 20
+      },
+      __self: undefined
+    }, key + 1, ". ", elm.place_name), elm.phone ? __jsx(LiPhone, {
+      __source: {
+        fileName: _jsxFileName,
+        lineNumber: 23
+      },
+      __self: undefined
+    }, elm.phone) : null, __jsx(LiAddress, {
+      __source: {
+        fileName: _jsxFileName,
+        lineNumber: 26
+      },
+      __self: undefined
+    }, elm.address_name))), __jsx(DivButtons, {
+      __source: {
+        fileName: _jsxFileName,
+        lineNumber: 31
+      },
+      __self: undefined
+    }, __jsx("div", {
+      __source: {
+        fileName: _jsxFileName,
+        lineNumber: 32
+      },
+      __self: undefined
+    }, __jsx(ConquerButton, {
+      onClick: () => {
+        confirmRegister(elm.place_name, elm.phone, elm.address_name);
+      },
+      __source: {
+        fileName: _jsxFileName,
+        lineNumber: 33
+      },
+      __self: undefined
+    }, "\uC810\uB839\uD558\uAE30")), __jsx("div", {
+      __source: {
+        fileName: _jsxFileName,
+        lineNumber: 35
+      },
+      __self: undefined
+    }, __jsx("button", {
+      onClick: () => {
+        confirmRegister(elm.place_name, elm.phone, elm.address_name);
+      },
+      __source: {
+        fileName: _jsxFileName,
+        lineNumber: 36
+      },
+      __self: undefined
+    }, "\uC218\uC815\uD558\uAE30")), __jsx("div", {
+      __source: {
+        fileName: _jsxFileName,
+        lineNumber: 38
+      },
+      __self: undefined
+    }, __jsx("button", {
+      onClick: () => {
+        confirmRegister(elm.place_name, elm.phone, elm.address_name);
+      },
+      __source: {
+        fileName: _jsxFileName,
+        lineNumber: 39
+      },
+      __self: undefined
+    }, "\uC0AD\uC81C\uD558\uAE30"))))));
   });
   return __jsx("div", {
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 25
+      lineNumber: 51
     },
     __self: undefined
-  }, "\uCE74\uD398 \uBAA9\uB85D", __jsx("ul", {
+  }, __jsx("br", {
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 27
+      lineNumber: 52
+    },
+    __self: undefined
+  }), __jsx(UL, {
+    className: "cafe-list",
+    __source: {
+      fileName: _jsxFileName,
+      lineNumber: 53
     },
     __self: undefined
   }, cafeList));
 };
 
+const UL = styled_components__WEBPACK_IMPORTED_MODULE_2___default.a.ul`
+  padding-left: 10px;
+  list-style: none;
+`;
+const LiName = styled_components__WEBPACK_IMPORTED_MODULE_2___default.a.li`
+  list-style: none;
+`;
+const LiPhone = styled_components__WEBPACK_IMPORTED_MODULE_2___default.a.li`
+  font: 13px solid gray;
+  padding-left: 12px;
+  list-style: none;
+`;
+const LiAddress = styled_components__WEBPACK_IMPORTED_MODULE_2___default.a.li`
+  font: 13px solid gray;
+  padding-left: 12px;
+  list-style: none;
+`;
+const DivList = styled_components__WEBPACK_IMPORTED_MODULE_2___default.a.div`
+  grid-column: 1;
+`;
+const DivButtons = styled_components__WEBPACK_IMPORTED_MODULE_2___default.a.div`
+  grid-column: 2;
+`;
+const ConquerButton = styled_components__WEBPACK_IMPORTED_MODULE_2___default.a.button`
+  background-color: #eccc68;
+`; // 신기하게 ul에 display: inline; 붙이니까 점이 사라짐. 
+// <style jsx >global로 해야하는 이유? global로 해야 뿌려진 다음것도 다 바꿔주게 되는건가? 
+
 /* harmony default export */ __webpack_exports__["default"] = (registerList);
 
 /***/ }),
 
-/***/ "./style.css":
-/*!*******************!*\
-  !*** ./style.css ***!
-  \*******************/
+/***/ "./style.scss":
+/*!********************!*\
+  !*** ./style.scss ***!
+  \********************/
 /*! no static exports found */
 /***/ (function(module, exports) {
 
@@ -2646,6 +3130,39 @@ module.exports = require("prop-types-exact");
 /***/ (function(module, exports) {
 
 module.exports = require("react");
+
+/***/ }),
+
+/***/ "react-dom":
+/*!****************************!*\
+  !*** external "react-dom" ***!
+  \****************************/
+/*! no static exports found */
+/***/ (function(module, exports) {
+
+module.exports = require("react-dom");
+
+/***/ }),
+
+/***/ "react-star-ratings":
+/*!*************************************!*\
+  !*** external "react-star-ratings" ***!
+  \*************************************/
+/*! no static exports found */
+/***/ (function(module, exports) {
+
+module.exports = require("react-star-ratings");
+
+/***/ }),
+
+/***/ "styled-components":
+/*!************************************!*\
+  !*** external "styled-components" ***!
+  \************************************/
+/*! no static exports found */
+/***/ (function(module, exports) {
+
+module.exports = require("styled-components");
 
 /***/ }),
 

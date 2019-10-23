@@ -1,0 +1,15 @@
+.grid-container {
+  display: grid;
+  grid-template-columns: 60% 40%;
+  padding: 10px;
+}
+.grid-map {
+  grid-column: 1;
+  border: 1px solid gray;
+}
+.grid-register {
+  grid-column: 2;
+  border: 1px solid gray;
+}
+
+//-------------------------------------------------------------

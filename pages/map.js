@@ -1,11 +1,17 @@
-import React, { useEffect } from 'react';
+import React, { useState, useEffect } from 'react';
 import { usePosition } from 'use-position';
 import Head from 'next/head';
 
 
-const Map = ({ setList }) => {
+const Map = ({ setList, confirmRegister }) => {
   const { latitude, longitude, timestamp, accuracy, error } = usePosition(true);
 
+  const [zooms, setZooms] = useState([]);
+  // const [zoomIn, zoomOut] = zooms;
+  // console.log(zooms);
+  // console이 왜 [] 1번, 들어간걸로는 3번이 불리지?? useState 빼고 실험해보기. 아, useEffect 안이 새로 불리지 않는 거지 바깥의 내용은 Map이 새로 불리면서 계속 불리는듯. 
+
+ 
 	useEffect(() => {
 
     // let script = document.createElement('script');
@@ -14,12 +20,13 @@ const Map = ({ setList }) => {
     // document.head.appendChild(script);
     // 여기서 비동기적 요소가 있나? 안되는 이유? 
 
-    console.log('map');
+    // console.log('map');
 		// 마커를 클릭했을 때 해당 장소의 상세정보를 보여줄 커스텀오버레이입니다
 		var placeOverlay = new kakao.maps.CustomOverlay({ zIndex: 1 }),
-			contentNode = document.createElement('div'), // 커스텀 오버레이의 컨텐츠 엘리먼트 입니다
+      contentNode = document.createElement('div'), // 커스텀 오버레이의 컨텐츠 엘리먼트 입니다
 			markers = [], // 마커를 담을 배열입니다
-			currCategory = ''; // 현재 선택된 카테고리를 가지고 있을 변수입니다
+      currCategory = ''; // 현재 선택된 카테고리를 가지고 있을 변수입니다
+ 
 
 		var mapContainer = document.getElementById('map'), // 지도를 표시할 div
 			mapOption = {
@@ -79,7 +86,7 @@ const Map = ({ setList }) => {
 		function placesSearchCB(data, status, pagination) {
 			if (status === kakao.maps.services.Status.OK) {
 				displayPlaces(data);
-				setList(data);
+        setList(data);
 			} else if (status === kakao.maps.services.Status.ZERO_RESULT) {
 				// 검색결과가 없는경우 해야할 처리가 있다면 이곳에 작성해 주세요
 			} else if (status === kakao.maps.services.Status.ERROR) {
@@ -90,7 +97,8 @@ const Map = ({ setList }) => {
 		// 지도에 마커를 표출하는 함수입니다
 		function displayPlaces(places) {
 			// 몇번째 카테고리가 선택되어 있는지 얻어옵니다
-			// 이 순서는 스프라이트 이미지에서의 위치를 계산하는데 사용됩니다
+      // 이 순서는 스프라이트 이미지에서의 위치를 계산하는데 사용됩니다
+      
 			var order = document
 				.getElementById(currCategory)
 				.getAttribute('data-order');
@@ -106,10 +114,14 @@ const Map = ({ setList }) => {
 				// 장소정보를 표출하도록 클릭 이벤트를 등록합니다
 				(function(marker, place) {
 					kakao.maps.event.addListener(marker, 'click', function() {
-						displayPlaceInfo(place);
+            displayPlaceInfo(place);
+            console.log(place)
+            document.querySelector('.conquerInMap').onclick = (()=> {confirmRegister(place.place_name, place.phone, place.address_name)});
 					});
 				})(marker, places[i]);
-			}
+      }
+      
+      
 		}
 
 		// 마커를 생성하고 지도 위에 마커를 표시하는 함수입니다
@@ -156,7 +168,8 @@ const Map = ({ setList }) => {
 				place.place_name +
 				'">' +
 				place.place_name +
-				'</a>';
+        '</a>' + '<button class="conquerInMap">정복하기</button>';
+
 
 			if (place.road_address_name) {
 				content +=
@@ -169,7 +182,7 @@ const Map = ({ setList }) => {
 					place.address_name +
 					'">(지번 : ' +
 					place.address_name +
-					')</span>';
+					')</span>' ;
 			} else {
 				content +=
 					'    <span title="' +
@@ -186,7 +199,7 @@ const Map = ({ setList }) => {
 				'</div>' +
 				'<div class="after"></div>';
 
-			contentNode.innerHTML = content;
+      contentNode.innerHTML = content;
 			placeOverlay.setPosition(new kakao.maps.LatLng(place.y, place.x));
 			placeOverlay.setMap(map);
 		}
@@ -232,18 +245,36 @@ const Map = ({ setList }) => {
       if (el) {
           el.className = 'on';
       } 
-    }}, []);
+    }
+
+    // 지도 확대, 축소 컨트롤에서 확대 버튼을 누르면 호출되어 지도를 확대하는 함수입니다
+    function zoomIn() {
+      map.setLevel(map.getLevel() - 1);
+    }
+
+    // 지도 확대, 축소 컨트롤에서 축소 버튼을 누르면 호출되어 지도를 확대하는 함수입니다
+    function zoomOut() {
+      map.setLevel(map.getLevel() + 1);
+    }
+
+    setZooms([zoomIn, zoomOut])
+        
+
+      
+
+  }, []);
 
 	return (
 		<div>
       <Head>
-        {/* <meta charset="utf-8"></meta> */}
 				<script
 					type="text/javascript"
 					src="//dapi.kakao.com/v2/maps/sdk.js?appkey=08621feb64d12ca619166a136815243f&libraries=services" ></script>
 			</Head>
 
-			<div style={{ margin: '12px' }}>점령하실 카페를 선택해주세요</div>
+			<div style={{ margin: '12px' }}>점령할 카페를 선택해주세요. 
+      <br/>
+      점령할 카페가 보이지 않으면 해당 카페의 위치 부근에서 지도 확대를 눌러주세요</div>
 			<div className="map_wrap">
 				<div
 					id="map"
@@ -259,6 +290,11 @@ const Map = ({ setList }) => {
               카페 보기
           </li>  
 				</ul>
+        <div className="custom_zoomcontrol radius_border"> 
+          <span onClick={zooms[0]}><img src="http://t1.daumcdn.net/localimg/localimages/07/mapapidoc/ico_plus.png" alt="확대" /></span>  
+          <span onClick={zooms[1]}><img src="http://t1.daumcdn.net/localimg/localimages/07/mapapidoc/ico_minus.png" alt="축소" /></span>
+        </div>
+          {/* 여기 좀 더 의미론적으로 바꾸기. zooms[0] 이런식으로 말고.  */}
 			</div>
 		</div>
 	);
