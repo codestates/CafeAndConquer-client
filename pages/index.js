@@ -1,11 +1,11 @@
 import Link from 'next/link';
 import Header from '../components/Header';
-// import BasicInfo from '../components/BasicInfo';
+import BasicInfo from '../components/BasicInfo';
 
 const Index = () => (
   <div>
     <Header />
-    {/* <BasicInfo /> */}
+    <BasicInfo />
   </div>
 );
 
