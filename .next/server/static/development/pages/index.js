@@ -245,12 +245,10 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var next_link__WEBPACK_IMPORTED_MODULE_5___default = /*#__PURE__*/__webpack_require__.n(next_link__WEBPACK_IMPORTED_MODULE_5__);
 /* harmony import */ var next_router__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! next/router */ "next/router");
 /* harmony import */ var next_router__WEBPACK_IMPORTED_MODULE_6___default = /*#__PURE__*/__webpack_require__.n(next_router__WEBPACK_IMPORTED_MODULE_6__);
-/* harmony import */ var _SignModal__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(/*! ./SignModal */ "./components/SignModal.js");
 
 
 var _jsxFileName = "/Users/hasubin/Desktop/C&C/CafeAndConquer-client/components/Header.js";
 var __jsx = react__WEBPACK_IMPORTED_MODULE_4___default.a.createElement;
-
 
 
 
@@ -460,100 +458,6 @@ const TopMenuBtton = styled_components__WEBPACK_IMPORTED_MODULE_2___default.a.di
   componentId: "sc-1yui16o-5"
 })(["position:absolute;top:35%;left:70%;height:30px;width:25%;text-align:center;"]);
 /* harmony default export */ __webpack_exports__["default"] = (Header);
-
-/***/ }),
-
-/***/ "./components/SignModal.js":
-/*!*********************************!*\
-  !*** ./components/SignModal.js ***!
-  \*********************************/
-/*! exports provided: default */
-/***/ (function(module, __webpack_exports__, __webpack_require__) {
-
-"use strict";
-__webpack_require__.r(__webpack_exports__);
-/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! react */ "react");
-/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_0__);
-/* harmony import */ var styled_components__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! styled-components */ "styled-components");
-/* harmony import */ var styled_components__WEBPACK_IMPORTED_MODULE_1___default = /*#__PURE__*/__webpack_require__.n(styled_components__WEBPACK_IMPORTED_MODULE_1__);
-/* harmony import */ var next_head__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! next/head */ "next/head");
-/* harmony import */ var next_head__WEBPACK_IMPORTED_MODULE_2___default = /*#__PURE__*/__webpack_require__.n(next_head__WEBPACK_IMPORTED_MODULE_2__);
-var _jsxFileName = "/Users/hasubin/Desktop/C&C/CafeAndConquer-client/components/SignModal.js";
-var __jsx = react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement;
-
-
-
-const MyModal = styled_components__WEBPACK_IMPORTED_MODULE_1___default.a.div.withConfig({
-  displayName: "SignModal__MyModal",
-  componentId: "sc-10g5qwm-0"
-})(["background:rgba(0,0,0,0.25);position:fixed;left:0;top:0;height:100%;width:100%;display:flex;align-items:center;justify-content:center;"]);
-const Content = styled_components__WEBPACK_IMPORTED_MODULE_1___default.a.div.withConfig({
-  displayName: "SignModal__Content",
-  componentId: "sc-10g5qwm-1"
-})(["background:white;padding:1rem;width:400px;height:auto;"]);
-
-const modal = props => {
-  // modal 공부
-  // if 문으로 
-  const onClose = e => {
-    props.onClose && props.onClose(e);
-  };
-
-  if (!props.show) {
-    return null;
-  }
-
-  return __jsx(MyModal, {
-    __source: {
-      fileName: _jsxFileName,
-      lineNumber: 38
-    },
-    __self: undefined
-  }, __jsx(Content, {
-    __source: {
-      fileName: _jsxFileName,
-      lineNumber: 39
-    },
-    __self: undefined
-  }, __jsx("h3", {
-    __source: {
-      fileName: _jsxFileName,
-      lineNumber: 40
-    },
-    __self: undefined
-  }, "\uC2E0\uADDC \uD68C\uC6D0\uAC00\uC785"), __jsx("p", {
-    __source: {
-      fileName: _jsxFileName,
-      lineNumber: 41
-    },
-    __self: undefined
-  }, props.children), __jsx("a", {
-    id: "kakao-login-btn",
-    __source: {
-      fileName: _jsxFileName,
-      lineNumber: 42
-    },
-    __self: undefined
-  }), __jsx("a", {
-    href: "http://developers.kakao.com/logout",
-    __source: {
-      fileName: _jsxFileName,
-      lineNumber: 43
-    },
-    __self: undefined
-  }), __jsx("button", {
-    onClick: e => {
-      onClose(e);
-    },
-    __source: {
-      fileName: _jsxFileName,
-      lineNumber: 44
-    },
-    __self: undefined
-  }, "Close")));
-};
-
-/* harmony default export */ __webpack_exports__["default"] = (modal);
 
 /***/ }),
 
@@ -2688,17 +2592,6 @@ module.exports = require("core-js/library/fn/object/keys");
 /***/ (function(module, exports) {
 
 module.exports = require("core-js/library/fn/promise");
-
-/***/ }),
-
-/***/ "next/head":
-/*!****************************!*\
-  !*** external "next/head" ***!
-  \****************************/
-/*! no static exports found */
-/***/ (function(module, exports) {
-
-module.exports = require("next/head");
 
 /***/ }),
 

@@ -3,7 +3,7 @@ import { usePosition } from 'use-position';
 import React, { useState, useEffect } from 'react';
 import Link from 'next/link';
 import Router from 'next/router';
-import SignModal from './SignModal';
+
 
 const useInput = (initialValue) => {
   const [value, setValue] = useState(initialValue);
