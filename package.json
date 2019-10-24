@@ -4,7 +4,7 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "dev": "next",
+    "dev": "next && node components/SingupInit.js",
     "build": "next build",
     "start": "next start"
   },

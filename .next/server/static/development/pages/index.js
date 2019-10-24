@@ -93,6 +93,20 @@ module.exports =
 /************************************************************************/
 /******/ ({
 
+/***/ "./Secret.js":
+/*!*******************!*\
+  !*** ./Secret.js ***!
+  \*******************/
+/*! no static exports found */
+/***/ (function(module, exports) {
+
+const SIGN_API_KEY = 'cad26943f3f53f49ee29f15228abed78';
+module.exports = {
+  SIGN_API_KEY: SIGN_API_KEY
+};
+
+/***/ }),
+
 /***/ "./components/BasicInfo.js":
 /*!*********************************!*\
   !*** ./components/BasicInfo.js ***!
@@ -275,17 +289,7 @@ const useInput = initialValue => {
     value,
     onChange
   };
-}; // 이런 형태로 리펙토링
-// const useSign = () => {
-//   const [show, setShow] = useState(false);
-//   console.log(show);
-//   const showSign = () => {
-//     setShow(!show);
-//   };
-//   return { showSign };
-// };
-// 문제2. 현재 위치를 어떻게 넘겨줄 것인가?
-
+};
 
 const searchBtnHandler = (value, current) => {
   if (value === '') {
@@ -331,26 +335,26 @@ const Header = () => {
   return __jsx(MainFrame, {
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 65
+      lineNumber: 54
     },
     __self: undefined
   }, __jsx(next_link__WEBPACK_IMPORTED_MODULE_4___default.a, {
     href: "/",
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 66
+      lineNumber: 55
     },
     __self: undefined
   }, __jsx(Logo, {
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 67
+      lineNumber: 56
     },
     __self: undefined
   }, "C&C")), __jsx(SearchFrame, {
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 69
+      lineNumber: 58
     },
     __self: undefined
   }, __jsx(Search, Object(_babel_runtime_corejs2_helpers_esm_extends__WEBPACK_IMPORTED_MODULE_0__["default"])({
@@ -358,7 +362,7 @@ const Header = () => {
   }, useSearch, {
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 71
+      lineNumber: 60
     },
     __self: undefined
   })), __jsx(next_link__WEBPACK_IMPORTED_MODULE_4___default.a, {
@@ -366,42 +370,43 @@ const Header = () => {
     as: `/search/${searchAddress}`,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 72
+      lineNumber: 61
     },
     __self: undefined
   }, __jsx(Button, {
     onClick: () => searchBtnHandler(useSearch.value, position),
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 74
+      lineNumber: 63
     },
     __self: undefined
   }, "\uD0D0\uC0C9"))), __jsx(TopMenuBtton, {
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 79
+      lineNumber: 68
     },
     __self: undefined
   }, __jsx("button", {
     onClick: () => showSign(),
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 81
+      lineNumber: 70
     },
     __self: undefined
   }, "sign"), __jsx(_SignModal__WEBPACK_IMPORTED_MODULE_6__["default"], {
     onClose: showSign,
     show: show,
+    count: 0,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 82
+      lineNumber: 71
     },
     __self: undefined
   }, "\uD658\uC601\uD569\uB2C8\uB2E4"), __jsx(next_link__WEBPACK_IMPORTED_MODULE_4___default.a, {
     href: "/login",
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 85
+      lineNumber: 74
     },
     __self: undefined
   }, __jsx("a", {
@@ -410,7 +415,7 @@ const Header = () => {
     },
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 86
+      lineNumber: 75
     },
     __self: undefined
   }, "login"))));
@@ -456,24 +461,30 @@ const TopMenuBtton = styled_components__WEBPACK_IMPORTED_MODULE_1___default.a.di
 
 "use strict";
 __webpack_require__.r(__webpack_exports__);
-/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! react */ "react");
-/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_0__);
-/* harmony import */ var styled_components__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! styled-components */ "styled-components");
-/* harmony import */ var styled_components__WEBPACK_IMPORTED_MODULE_1___default = /*#__PURE__*/__webpack_require__.n(styled_components__WEBPACK_IMPORTED_MODULE_1__);
+/* harmony import */ var _babel_runtime_corejs2_core_js_json_stringify__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! @babel/runtime-corejs2/core-js/json/stringify */ "./node_modules/@babel/runtime-corejs2/core-js/json/stringify.js");
+/* harmony import */ var _babel_runtime_corejs2_core_js_json_stringify__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(_babel_runtime_corejs2_core_js_json_stringify__WEBPACK_IMPORTED_MODULE_0__);
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! react */ "react");
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_1___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_1__);
+/* harmony import */ var styled_components__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! styled-components */ "styled-components");
+/* harmony import */ var styled_components__WEBPACK_IMPORTED_MODULE_2___default = /*#__PURE__*/__webpack_require__.n(styled_components__WEBPACK_IMPORTED_MODULE_2__);
+
 var _jsxFileName = "/Users/hasubin/Desktop/C&C/CafeAndConquer-client/components/SignModal.js";
-var __jsx = react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement;
+var __jsx = react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement;
 
 
-const MyModal = styled_components__WEBPACK_IMPORTED_MODULE_1___default.a.div.withConfig({
+
+const SIGN_API_KEY = __webpack_require__(/*! ../Secret */ "./Secret.js").SIGN_API_KEY;
+
+const MyModal = styled_components__WEBPACK_IMPORTED_MODULE_2___default.a.div.withConfig({
   displayName: "SignModal__MyModal",
   componentId: "sc-10g5qwm-0"
 })(["background:rgba(0,0,0,0.25);position:fixed;left:0;top:0;height:100%;width:100%;display:flex;align-items:center;justify-content:center;"]);
-const Content = styled_components__WEBPACK_IMPORTED_MODULE_1___default.a.div.withConfig({
+const Content = styled_components__WEBPACK_IMPORTED_MODULE_2___default.a.div.withConfig({
   displayName: "SignModal__Content",
   componentId: "sc-10g5qwm-1"
 })(["background:white;padding:1rem;width:400px;height:auto;"]);
 
-const modal = props => {
+const SignModal = props => {
   const onClose = e => {
     props.onClose && props.onClose(e);
   };
@@ -482,55 +493,80 @@ const modal = props => {
     return null;
   }
 
+  Object(react__WEBPACK_IMPORTED_MODULE_1__["useEffect"])(() => {
+    Kakao.init(SIGN_API_KEY);
+    Kakao.Auth.createLoginButton({
+      container: '#kakao-login-btn',
+      success: function (authObj) {
+        alert(_babel_runtime_corejs2_core_js_json_stringify__WEBPACK_IMPORTED_MODULE_0___default()(authObj));
+      },
+      fail: function (err) {
+        alert(_babel_runtime_corejs2_core_js_json_stringify__WEBPACK_IMPORTED_MODULE_0___default()(err));
+      }
+    });
+  }, []);
   return __jsx(MyModal, {
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 31
+      lineNumber: 46
     },
     __self: undefined
   }, __jsx(Content, {
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 32
+      lineNumber: 47
     },
     __self: undefined
   }, __jsx("h3", {
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 33
+      lineNumber: 48
     },
     __self: undefined
   }, "\uC2E0\uADDC \uD68C\uC6D0\uAC00\uC785"), __jsx("p", {
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 34
+      lineNumber: 49
     },
     __self: undefined
-  }, props.children), __jsx("p", {
+  }, props.children), __jsx("a", {
+    id: "kakao-login-btn",
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 35
+      lineNumber: 50
     },
     __self: undefined
-  }, __jsx("button", {
+  }), __jsx("a", {
+    href: "http://developers.kakao.com/logout",
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 36
+      lineNumber: 51
     },
     __self: undefined
-  }, "\uCE74\uCE74\uC624\uD1A1 \uD68C\uC6D0\uAC00\uC785")), __jsx("button", {
+  }), __jsx("button", {
     onClick: e => {
       onClose(e);
     },
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 38
+      lineNumber: 52
     },
     __self: undefined
   }, "Close")));
 };
 
-/* harmony default export */ __webpack_exports__["default"] = (modal);
+/* harmony default export */ __webpack_exports__["default"] = (SignModal);
+
+/***/ }),
+
+/***/ "./node_modules/@babel/runtime-corejs2/core-js/json/stringify.js":
+/*!***********************************************************************!*\
+  !*** ./node_modules/@babel/runtime-corejs2/core-js/json/stringify.js ***!
+  \***********************************************************************/
+/*! no static exports found */
+/***/ (function(module, exports, __webpack_require__) {
+
+module.exports = __webpack_require__(/*! core-js/library/fn/json/stringify */ "core-js/library/fn/json/stringify");
 
 /***/ }),
 
@@ -2566,6 +2602,17 @@ const Index = () => __jsx("div", {
 
 module.exports = __webpack_require__(/*! /Users/hasubin/Desktop/C&C/CafeAndConquer-client/pages/index.js */"./pages/index.js");
 
+
+/***/ }),
+
+/***/ "core-js/library/fn/json/stringify":
+/*!****************************************************!*\
+  !*** external "core-js/library/fn/json/stringify" ***!
+  \****************************************************/
+/*! no static exports found */
+/***/ (function(module, exports) {
+
+module.exports = require("core-js/library/fn/json/stringify");
 
 /***/ }),
 

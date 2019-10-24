@@ -1241,13 +1241,14 @@ class MyDocument extends next_document__WEBPACK_IMPORTED_MODULE_1___default.a {
         lineNumber: 12
       },
       __self: this
-    }, __jsx("title", {
+    }, __jsx("script", {
+      src: "https://developers.kakao.com/sdk/js/kakao.min.js",
       __source: {
         fileName: _jsxFileName,
         lineNumber: 13
       },
       __self: this
-    }, "My page")), __jsx("body", {
+    })), __jsx("body", {
       __source: {
         fileName: _jsxFileName,
         lineNumber: 15
@@ -1256,13 +1257,13 @@ class MyDocument extends next_document__WEBPACK_IMPORTED_MODULE_1___default.a {
     }, __jsx(next_document__WEBPACK_IMPORTED_MODULE_1__["Main"], {
       __source: {
         fileName: _jsxFileName,
-        lineNumber: 16
+        lineNumber: 21
       },
       __self: this
     }), __jsx(next_document__WEBPACK_IMPORTED_MODULE_1__["NextScript"], {
       __source: {
         fileName: _jsxFileName,
-        lineNumber: 17
+        lineNumber: 22
       },
       __self: this
     })));
