@@ -68,7 +68,7 @@ const Header = () => {
       <TopMenuBtton>
         {/* 의문1. link를 감싸는 방법을 왜 써야하며 다른 방법은 없는가? */}
         <button onClick={() => showSign()}>sign</button>
-        <SignModal onClose={showSign} show={show} count={0}>
+        <SignModal onClose={showSign} show={show} alreadyCalled={false}>
           환영합니다
         </SignModal>
         <Link href="/login">

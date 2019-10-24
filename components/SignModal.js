@@ -1,6 +1,7 @@
 import React, { useEffect } from 'react';
 import styled from 'styled-components';
 const SIGN_API_KEY = require('../Secret').SIGN_API_KEY;
+let alReadyCalled;
 
 const MyModal = styled.div`
   background: rgba(0, 0, 0, 0.25);
@@ -22,15 +23,21 @@ const Content = styled.div`
 `;
 
 const SignModal = (props) => {
+ 
   const onClose = (e) => {
+    alReadyCalled = true;
+    console.log(alReadyCalled)
     props.onClose && props.onClose(e);
   };
   if (!props.show) {
     return null;
   }
-
+  
   useEffect(() => {
-    Kakao.init(SIGN_API_KEY);
+    if (!alReadyCalled) {
+      Kakao.init(SIGN_API_KEY);
+    }
+
     Kakao.Auth.createLoginButton({
       container: '#kakao-login-btn',
       success: function(authObj) {
@@ -42,12 +49,17 @@ const SignModal = (props) => {
     });
   }, []);
 
+  const closeKakao = () => {
+    setTimeout(onClose, 1000);
+  };
+
+  console.log(alReadyCalled);
   return (
     <MyModal>
       <Content>
         <h3>신규 회원가입</h3>
         <p>{props.children}</p>
-        <a id="kakao-login-btn"></a>
+        <a onClick={closeKakao} id="kakao-login-btn"></a>
         <a href="http://developers.kakao.com/logout"></a>
         <button
           onClick={(e) => {

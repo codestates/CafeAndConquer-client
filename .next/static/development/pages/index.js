@@ -302,7 +302,7 @@ var Header = function Header() {
   }, "sign"), __jsx(_SignModal__WEBPACK_IMPORTED_MODULE_6__["default"], {
     onClose: showSign,
     show: show,
-    count: 0,
+    alreadyCalled: false,
     __source: {
       fileName: _jsxFileName,
       lineNumber: 71
@@ -380,6 +380,7 @@ var __jsx = react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement;
 
 var SIGN_API_KEY = __webpack_require__(/*! ../Secret */ "./Secret.js").SIGN_API_KEY;
 
+var alReadyCalled;
 var MyModal = styled_components__WEBPACK_IMPORTED_MODULE_2__["default"].div.withConfig({
   displayName: "SignModal__MyModal",
   componentId: "sc-10g5qwm-0"
@@ -391,6 +392,8 @@ var Content = styled_components__WEBPACK_IMPORTED_MODULE_2__["default"].div.with
 
 var SignModal = function SignModal(props) {
   var onClose = function onClose(e) {
+    alReadyCalled = true;
+    console.log(alReadyCalled);
     props.onClose && props.onClose(e);
   };
 
@@ -399,7 +402,10 @@ var SignModal = function SignModal(props) {
   }
 
   Object(react__WEBPACK_IMPORTED_MODULE_1__["useEffect"])(function () {
-    Kakao.init(SIGN_API_KEY);
+    if (!alReadyCalled) {
+      Kakao.init(SIGN_API_KEY);
+    }
+
     Kakao.Auth.createLoginButton({
       container: '#kakao-login-btn',
       success: function success(authObj) {
@@ -410,42 +416,49 @@ var SignModal = function SignModal(props) {
       }
     });
   }, []);
+
+  var closeKakao = function closeKakao() {
+    setTimeout(onClose, 1000);
+  };
+
+  console.log(alReadyCalled);
   return __jsx(MyModal, {
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 46
+      lineNumber: 58
     },
     __self: this
   }, __jsx(Content, {
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 47
+      lineNumber: 59
     },
     __self: this
   }, __jsx("h3", {
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 48
+      lineNumber: 60
     },
     __self: this
   }, "\uC2E0\uADDC \uD68C\uC6D0\uAC00\uC785"), __jsx("p", {
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 49
+      lineNumber: 61
     },
     __self: this
   }, props.children), __jsx("a", {
+    onClick: closeKakao,
     id: "kakao-login-btn",
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 50
+      lineNumber: 62
     },
     __self: this
   }), __jsx("a", {
     href: "http://developers.kakao.com/logout",
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 51
+      lineNumber: 63
     },
     __self: this
   }), __jsx("button", {
@@ -454,7 +467,7 @@ var SignModal = function SignModal(props) {
     },
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 52
+      lineNumber: 64
     },
     __self: this
   }, "Close")));
