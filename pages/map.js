@@ -115,8 +115,7 @@ const Map = ({ setList, confirmRegister }) => {
 				(function(marker, place) {
 					kakao.maps.event.addListener(marker, 'click', function() {
             displayPlaceInfo(place);
-            console.log(place)
-            document.querySelector('.conquerInMap').onclick = (()=> {confirmRegister(place.place_name, place.phone, place.address_name)});
+            document.querySelector('.conquerInMap').onclick = (()=> {confirmRegister(place)});
 					});
 				})(marker, places[i]);
       }

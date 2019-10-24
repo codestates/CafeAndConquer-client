@@ -2082,25 +2082,8 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var styled_components__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(/*! styled-components */ "styled-components");
 /* harmony import */ var styled_components__WEBPACK_IMPORTED_MODULE_7___default = /*#__PURE__*/__webpack_require__.n(styled_components__WEBPACK_IMPORTED_MODULE_7__);
 var _jsxFileName = "/Users/yonggyukwon/Downloads/\u110F\u1169\u1103\u1175\u11BC/\u110F\u1169\u1103\u1173\u1109\u1173\u1110\u1166\u110B\u1175\u110E\u1173/Flex/CafeAndConquer-client/pages/index.js";
+
 var __jsx = react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement;
-// fix: 카페 점령된것/점령 안된것 모양, 숫자,
-// todo: 기본으로 카페 목록들 클릭이 돼서 나오게
-// todo: 현위치 버튼.
-// todo:Link href와 a href 로 /register로 가게 될 때의 차이?
-// 노란 라인 없애기, warning 없애기. styled components랑 관련 있는듯??? 
-// prettier가 됐다, 안됐다 하는 이유?? 
-// console이 서버에 떴다가 , 클라이언트쪽에 떴다가 왔다갔다 뜨는건 왜 그러나
-// 검색으로도 찾을 수 있게 만들어야 함. 
-// https://github.com/zeit/next-plugins/tree/master/packages/next-css 깃헙 설명에 css module이 있다는 것과 없다는 것의 차이가 뭔지 모르겠음. 
-// css 파일을 map에만 import하니까 안됨. 오히려 index.js에만 넣으면 됨. 하나에서 scss랑 css를 동시에 못 쓰는 듯. 
-// 클릭할때 뜨는 레이아웃 보이는 파란 선 뭐지?? 
-// 클릭시 등록하겠습니까? confirm 창 디자인 변경  
-// 등록하기 누르면 modal로 선택할 수 있게 (반응형 앱?).
-// 
-// modal을 팝업처럼 튀어나오게 하는 방법 & modal이면 다른 키가 안 눌려야 하는데 눌리네. 주변 약간 어둡게 바꾸면서... 
-// map api 다시 완전 파악하고, 내 입맛에 맞게 수정을 좀 해야 함. 
-// styled components 적용시키기 - 안되는 부분. 너무 하나에만 매달려 있었음. 이게 왜 되는지 모르겠음. 
- // import Link from 'next/link';
 
 
 
@@ -2136,36 +2119,63 @@ const Index = () => {
     address: ''
   });
 
-  const confirmRegister = (name, phone, address) => {
+  const confirmRegister = place => {
     if (confirm('등록하시겠습니까?')) {
-      // showModal(true);
-      // setCafeInfo({name, phone, address})
-      Object(_modal__WEBPACK_IMPORTED_MODULE_6__["default"])({
-        showModal,
-        cafeInfo
-      });
+      showModal(true);
+      setCafeInfo({
+        name: place.place_name,
+        phone: place.phone,
+        address: place.address_name
+      }); // 여기에 등록시키는 정보 전달하면서 API에 따라 등록. 
     }
-  }; // console.log('index')
+  };
 
+  const confirmDelete = place => {
+    if (confirm('정복한 카페 정보를 삭제하시겠습니까? (해당카페의 정복자만 가능합니다)')) {// 일단 유저가 정복한 사람이 맞는지 확인 
+      // 맞으면 삭제 처리 , 아니면 이 카페의 정복자가 아니므로 삭제할 수 없습니다. 
+      // 삭제용 모달 필요?? 
+      // 여기에 삭제시키는 정보 전달하면서 API에 따라 등록. 
+    }
+  };
+
+  const confirmEdit = place => {
+    if (confirm('정복한 카페 정보를 수정하시겠습니까?')) {// 수정용 모달은 등록용과 비슷하게 띄워야 할듯. 디폴트값 선택된 채로 ?  
+      // 여기에 수정시키는 정보 전달하면서 API에 따라 등록. 
+    }
+  };
 
   return __jsx("div", {
+    __source: {
+      fileName: _jsxFileName,
+      lineNumber: 52
+    },
+    __self: undefined
+  }, showed ? __jsx(_modal__WEBPACK_IMPORTED_MODULE_6__["default"], {
+    showModal: showModal,
+    cafeInfo: cafeInfo,
+    __source: {
+      fileName: _jsxFileName,
+      lineNumber: 53
+    },
+    __self: undefined
+  }) : null, __jsx("div", {
     className: "grid-container",
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 62
+      lineNumber: 54
     },
     __self: undefined
-  }, __jsx(HH1, {
+  }, __jsx(Subject, {
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 63
+      lineNumber: 55
     },
     __self: undefined
   }, " cafe & conquer "), __jsx("div", {
     className: "grid-map",
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 64
+      lineNumber: 56
     },
     __self: undefined
   }, __jsx(_map__WEBPACK_IMPORTED_MODULE_1__["Map"], {
@@ -2173,38 +2183,34 @@ const Index = () => {
     confirmRegister: confirmRegister,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 65
+      lineNumber: 57
     },
     __self: undefined
   })), __jsx("div", {
     className: "grid-register",
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 67
+      lineNumber: 59
     },
     __self: undefined
   }, __jsx(_registerList__WEBPACK_IMPORTED_MODULE_2__["default"], {
     list: list,
     confirmRegister: confirmRegister,
+    confirmEdit: confirmEdit,
+    confirmDelete: confirmDelete,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 68
+      lineNumber: 60
     },
     __self: undefined
-  })), __jsx("div", {
-    id: "modal",
-    __source: {
-      fileName: _jsxFileName,
-      lineNumber: 71
-    },
-    __self: undefined
-  }));
+  }))));
 };
 
-const HH1 = styled_components__WEBPACK_IMPORTED_MODULE_7___default.a.h2`
-  font-size: 30px;
-  color: gray;
-`;
+const Subject = styled_components__WEBPACK_IMPORTED_MODULE_7___default.a.h2.withConfig({
+  displayName: "pages__Subject",
+  componentId: "sc-117pu9t-0"
+})(["font-size:30px;color:#eccc68;"]); // 왜 여기서 matching이 틀렸다는 문구가 뜨는지 잘 모르겠음. 
+
 /* harmony default export */ __webpack_exports__["default"] = (Index);
 
 /***/ }),
@@ -2339,10 +2345,9 @@ const Map = ({
         (function (marker, place) {
           kakao.maps.event.addListener(marker, 'click', function () {
             displayPlaceInfo(place);
-            console.log(place);
 
             document.querySelector('.conquerInMap').onclick = () => {
-              confirmRegister(place.place_name, place.phone, place.address_name);
+              confirmRegister(place);
             };
           });
         })(marker, places[i]);
@@ -2458,13 +2463,13 @@ const Map = ({
   return __jsx("div", {
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 268
+      lineNumber: 267
     },
     __self: undefined
   }, __jsx(next_head__WEBPACK_IMPORTED_MODULE_2___default.a, {
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 269
+      lineNumber: 268
     },
     __self: undefined
   }, __jsx("script", {
@@ -2472,7 +2477,7 @@ const Map = ({
     src: "//dapi.kakao.com/v2/maps/sdk.js?appkey=08621feb64d12ca619166a136815243f&libraries=services",
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 270
+      lineNumber: 269
     },
     __self: undefined
   })), __jsx("div", {
@@ -2481,20 +2486,20 @@ const Map = ({
     },
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 275
+      lineNumber: 274
     },
     __self: undefined
   }, "\uC810\uB839\uD560 \uCE74\uD398\uB97C \uC120\uD0DD\uD574\uC8FC\uC138\uC694.", __jsx("br", {
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 276
+      lineNumber: 275
     },
     __self: undefined
   }), "\uC810\uB839\uD560 \uCE74\uD398\uAC00 \uBCF4\uC774\uC9C0 \uC54A\uC73C\uBA74 \uD574\uB2F9 \uCE74\uD398\uC758 \uC704\uCE58 \uBD80\uADFC\uC5D0\uC11C \uC9C0\uB3C4 \uD655\uB300\uB97C \uB20C\uB7EC\uC8FC\uC138\uC694"), __jsx("div", {
     className: "map_wrap",
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 278
+      lineNumber: 277
     },
     __self: undefined
   }, __jsx("div", {
@@ -2507,14 +2512,14 @@ const Map = ({
     },
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 279
+      lineNumber: 278
     },
     __self: undefined
   }), __jsx("ul", {
     id: "category",
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 287
+      lineNumber: 286
     },
     __self: undefined
   }, __jsx("li", {
@@ -2522,28 +2527,28 @@ const Map = ({
     "data-order": "4",
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 288
+      lineNumber: 287
     },
     __self: undefined
   }, __jsx("span", {
     className: "category_bg cafe",
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 289
+      lineNumber: 288
     },
     __self: undefined
   }), "\uCE74\uD398 \uBCF4\uAE30")), __jsx("div", {
     className: "custom_zoomcontrol radius_border",
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 293
+      lineNumber: 292
     },
     __self: undefined
   }, __jsx("span", {
     onClick: zooms[0],
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 294
+      lineNumber: 293
     },
     __self: undefined
   }, __jsx("img", {
@@ -2551,14 +2556,14 @@ const Map = ({
     alt: "\uD655\uB300",
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 294
+      lineNumber: 293
     },
     __self: undefined
   })), __jsx("span", {
     onClick: zooms[1],
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 295
+      lineNumber: 294
     },
     __self: undefined
   }, __jsx("img", {
@@ -2566,7 +2571,7 @@ const Map = ({
     alt: "\uCD95\uC18C",
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 295
+      lineNumber: 294
     },
     __self: undefined
   })))));
@@ -2588,17 +2593,15 @@ const Map = ({
 __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! react */ "react");
 /* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_0__);
-/* harmony import */ var react_dom__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! react-dom */ "react-dom");
-/* harmony import */ var react_dom__WEBPACK_IMPORTED_MODULE_1___default = /*#__PURE__*/__webpack_require__.n(react_dom__WEBPACK_IMPORTED_MODULE_1__);
-/* harmony import */ var _modal_scss__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ../modal.scss */ "./modal.scss");
-/* harmony import */ var _modal_scss__WEBPACK_IMPORTED_MODULE_2___default = /*#__PURE__*/__webpack_require__.n(_modal_scss__WEBPACK_IMPORTED_MODULE_2__);
-/* harmony import */ var next_head__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! next/head */ "next/head");
-/* harmony import */ var next_head__WEBPACK_IMPORTED_MODULE_3___default = /*#__PURE__*/__webpack_require__.n(next_head__WEBPACK_IMPORTED_MODULE_3__);
-/* harmony import */ var react_star_ratings__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! react-star-ratings */ "react-star-ratings");
-/* harmony import */ var react_star_ratings__WEBPACK_IMPORTED_MODULE_4___default = /*#__PURE__*/__webpack_require__.n(react_star_ratings__WEBPACK_IMPORTED_MODULE_4__);
+/* harmony import */ var _modal_scss__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ../modal.scss */ "./modal.scss");
+/* harmony import */ var _modal_scss__WEBPACK_IMPORTED_MODULE_1___default = /*#__PURE__*/__webpack_require__.n(_modal_scss__WEBPACK_IMPORTED_MODULE_1__);
+/* harmony import */ var next_head__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! next/head */ "next/head");
+/* harmony import */ var next_head__WEBPACK_IMPORTED_MODULE_2___default = /*#__PURE__*/__webpack_require__.n(next_head__WEBPACK_IMPORTED_MODULE_2__);
+/* harmony import */ var react_star_ratings__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! react-star-ratings */ "react-star-ratings");
+/* harmony import */ var react_star_ratings__WEBPACK_IMPORTED_MODULE_3___default = /*#__PURE__*/__webpack_require__.n(react_star_ratings__WEBPACK_IMPORTED_MODULE_3__);
 var _jsxFileName = "/Users/yonggyukwon/Downloads/\u110F\u1169\u1103\u1175\u11BC/\u110F\u1169\u1103\u1173\u1109\u1173\u1110\u1166\u110B\u1175\u110E\u1173/Flex/CafeAndConquer-client/pages/modal.js";
-var __jsx = react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement;
 
+var __jsx = react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement;
  // import ReactDOM from "react-dom";
 
 
@@ -2618,13 +2621,13 @@ const Modal = ({
     id: "modal",
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 12
+      lineNumber: 11
     },
     __self: undefined
-  }, __jsx(next_head__WEBPACK_IMPORTED_MODULE_3___default.a, {
+  }, __jsx(next_head__WEBPACK_IMPORTED_MODULE_2___default.a, {
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 13
+      lineNumber: 12
     },
     __self: undefined
   }, __jsx("link", {
@@ -2632,10 +2635,17 @@ const Modal = ({
     href: "https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css",
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 14
+      lineNumber: 13
     },
     __self: undefined
-  })), __jsx("h2", {
+  })), __jsx("div", {
+    className: "content",
+    __source: {
+      fileName: _jsxFileName,
+      lineNumber: 15
+    },
+    __self: undefined
+  }, __jsx("h2", {
     __source: {
       fileName: _jsxFileName,
       lineNumber: 16
@@ -2744,7 +2754,7 @@ const Modal = ({
       lineNumber: 31
     },
     __self: undefined
-  }, "\uCE74\uD398\uC5D0 \uB300\uD55C \uC885\uD569\uC801\uC778 \uB2F9\uC2E0\uC758 \uD3C9\uC810\uC740?"), __jsx(react_star_ratings__WEBPACK_IMPORTED_MODULE_4___default.a, {
+  }, "\uCE74\uD398\uC5D0 \uB300\uD55C \uC885\uD569\uC801\uC778 \uB2F9\uC2E0\uC758 \uD3C9\uC810\uC740?"), __jsx(react_star_ratings__WEBPACK_IMPORTED_MODULE_3___default.a, {
     rating: starRate,
     starRatedColor: "#f9ca24",
     changeRating: setStarRate,
@@ -2786,17 +2796,10 @@ const Modal = ({
       lineNumber: 50
     },
     __self: undefined
-  }, "\uCDE8\uC18C")));
+  }, "\uCDE8\uC18C"))));
 };
 
-const RenderModal = ({
-  showModal,
-  cafeInfo
-}) => {
-  return react_dom__WEBPACK_IMPORTED_MODULE_1___default.a.createPortal(Modal, document.querySelector("#modal"));
-};
-
-/* harmony default export */ __webpack_exports__["default"] = (RenderModal); // hook 형태로 바꾸기.
+/* harmony default export */ __webpack_exports__["default"] = (Modal);
 
 /***/ }),
 
@@ -2825,7 +2828,9 @@ var __jsx = react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement;
 
 const registerList = ({
   list,
-  confirmRegister
+  confirmRegister,
+  confirmDelete,
+  confirmEdit
 }) => {
   // console.log('register');
   const cafeList = list.map((elm, key) => {
@@ -2834,7 +2839,7 @@ const registerList = ({
       key: key,
       __source: {
         fileName: _jsxFileName,
-        lineNumber: 15
+        lineNumber: 14
       },
       __self: undefined
     }, __jsx(LiName, {
@@ -2842,95 +2847,95 @@ const registerList = ({
       id: "one-list",
       __source: {
         fileName: _jsxFileName,
-        lineNumber: 16
+        lineNumber: 15
       },
       __self: undefined
     }, __jsx("div", {
       className: "grid-container",
       __source: {
         fileName: _jsxFileName,
-        lineNumber: 17
+        lineNumber: 16
       },
       __self: undefined
     }, __jsx(DivList, {
       __source: {
         fileName: _jsxFileName,
-        lineNumber: 18
+        lineNumber: 17
       },
       __self: undefined
     }, __jsx(UL, {
       __source: {
         fileName: _jsxFileName,
-        lineNumber: 19
+        lineNumber: 18
       },
       __self: undefined
     }, __jsx(LiName, {
       __source: {
         fileName: _jsxFileName,
-        lineNumber: 20
+        lineNumber: 19
       },
       __self: undefined
     }, key + 1, ". ", elm.place_name), elm.phone ? __jsx(LiPhone, {
       __source: {
         fileName: _jsxFileName,
-        lineNumber: 23
+        lineNumber: 22
       },
       __self: undefined
     }, elm.phone) : null, __jsx(LiAddress, {
       __source: {
         fileName: _jsxFileName,
-        lineNumber: 26
+        lineNumber: 25
       },
       __self: undefined
     }, elm.address_name))), __jsx(DivButtons, {
       __source: {
         fileName: _jsxFileName,
-        lineNumber: 31
+        lineNumber: 30
       },
       __self: undefined
     }, __jsx("div", {
       __source: {
         fileName: _jsxFileName,
-        lineNumber: 32
+        lineNumber: 31
       },
       __self: undefined
     }, __jsx(ConquerButton, {
       onClick: () => {
-        confirmRegister(elm.place_name, elm.phone, elm.address_name);
+        confirmRegister(elm);
       },
       __source: {
         fileName: _jsxFileName,
-        lineNumber: 33
+        lineNumber: 32
       },
       __self: undefined
     }, "\uC810\uB839\uD558\uAE30")), __jsx("div", {
       __source: {
         fileName: _jsxFileName,
-        lineNumber: 35
+        lineNumber: 34
       },
       __self: undefined
     }, __jsx("button", {
       onClick: () => {
-        confirmRegister(elm.place_name, elm.phone, elm.address_name);
+        confirmEdit(elm);
       },
       __source: {
         fileName: _jsxFileName,
-        lineNumber: 36
+        lineNumber: 35
       },
       __self: undefined
     }, "\uC218\uC815\uD558\uAE30")), __jsx("div", {
       __source: {
         fileName: _jsxFileName,
-        lineNumber: 38
+        lineNumber: 37
       },
       __self: undefined
     }, __jsx("button", {
       onClick: () => {
-        confirmRegister(elm.place_name, elm.phone, elm.address_name);
+        confirmDelete(elm);
       },
       __source: {
         fileName: _jsxFileName,
-        lineNumber: 39
+        lineNumber: 38
       },
       __self: undefined
     }, "\uC0AD\uC81C\uD558\uAE30"))))));
@@ -2938,51 +2943,52 @@ const registerList = ({
   return __jsx("div", {
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 51
+      lineNumber: 50
     },
     __self: undefined
   }, __jsx("br", {
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 52
+      lineNumber: 51
     },
     __self: undefined
   }), __jsx(UL, {
-    className: "cafe-list",
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 53
+      lineNumber: 52
     },
     __self: undefined
   }, cafeList));
 };
 
-const UL = styled_components__WEBPACK_IMPORTED_MODULE_2___default.a.ul`
-  padding-left: 10px;
-  list-style: none;
-`;
-const LiName = styled_components__WEBPACK_IMPORTED_MODULE_2___default.a.li`
-  list-style: none;
-`;
-const LiPhone = styled_components__WEBPACK_IMPORTED_MODULE_2___default.a.li`
-  font: 13px solid gray;
-  padding-left: 12px;
-  list-style: none;
-`;
-const LiAddress = styled_components__WEBPACK_IMPORTED_MODULE_2___default.a.li`
-  font: 13px solid gray;
-  padding-left: 12px;
-  list-style: none;
-`;
-const DivList = styled_components__WEBPACK_IMPORTED_MODULE_2___default.a.div`
-  grid-column: 1;
-`;
-const DivButtons = styled_components__WEBPACK_IMPORTED_MODULE_2___default.a.div`
-  grid-column: 2;
-`;
-const ConquerButton = styled_components__WEBPACK_IMPORTED_MODULE_2___default.a.button`
-  background-color: #eccc68;
-`; // 신기하게 ul에 display: inline; 붙이니까 점이 사라짐. 
+const UL = styled_components__WEBPACK_IMPORTED_MODULE_2___default.a.ul.withConfig({
+  displayName: "registerList__UL",
+  componentId: "sc-1484dgo-0"
+})(["padding-left:10px;list-style:none;"]);
+const LiName = styled_components__WEBPACK_IMPORTED_MODULE_2___default.a.li.withConfig({
+  displayName: "registerList__LiName",
+  componentId: "sc-1484dgo-1"
+})(["list-style:none;"]);
+const LiPhone = styled_components__WEBPACK_IMPORTED_MODULE_2___default.a.li.withConfig({
+  displayName: "registerList__LiPhone",
+  componentId: "sc-1484dgo-2"
+})(["font:13px solid gray;padding-left:12px;list-style:none;"]);
+const LiAddress = styled_components__WEBPACK_IMPORTED_MODULE_2___default.a.li.withConfig({
+  displayName: "registerList__LiAddress",
+  componentId: "sc-1484dgo-3"
+})(["font:13px solid gray;padding-left:12px;list-style:none;"]);
+const DivList = styled_components__WEBPACK_IMPORTED_MODULE_2___default.a.div.withConfig({
+  displayName: "registerList__DivList",
+  componentId: "sc-1484dgo-4"
+})(["grid-column:1;"]);
+const DivButtons = styled_components__WEBPACK_IMPORTED_MODULE_2___default.a.div.withConfig({
+  displayName: "registerList__DivButtons",
+  componentId: "sc-1484dgo-5"
+})(["grid-column:2;"]);
+const ConquerButton = styled_components__WEBPACK_IMPORTED_MODULE_2___default.a.button.withConfig({
+  displayName: "registerList__ConquerButton",
+  componentId: "sc-1484dgo-6"
+})(["background-color:#eccc68;"]); // 신기하게 ul에 display: inline; 붙이니까 점이 사라짐. 
 // <style jsx >global로 해야하는 이유? global로 해야 뿌려진 다음것도 다 바꿔주게 되는건가? 
 
 /* harmony default export */ __webpack_exports__["default"] = (registerList);
@@ -3130,17 +3136,6 @@ module.exports = require("prop-types-exact");
 /***/ (function(module, exports) {
 
 module.exports = require("react");
-
-/***/ }),
-
-/***/ "react-dom":
-/*!****************************!*\
-  !*** external "react-dom" ***!
-  \****************************/
-/*! no static exports found */
-/***/ (function(module, exports) {
-
-module.exports = require("react-dom");
 
 /***/ }),
 

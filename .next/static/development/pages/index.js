@@ -77,17 +77,6 @@ module.exports = __webpack_require__(/*! core-js/library/fn/object/create */ "./
 
 /***/ }),
 
-/***/ "./node_modules/@babel/runtime-corejs2/core-js/object/define-properties.js":
-/*!*********************************************************************************!*\
-  !*** ./node_modules/@babel/runtime-corejs2/core-js/object/define-properties.js ***!
-  \*********************************************************************************/
-/*! no static exports found */
-/***/ (function(module, exports, __webpack_require__) {
-
-module.exports = __webpack_require__(/*! core-js/library/fn/object/define-properties */ "./node_modules/core-js/library/fn/object/define-properties.js");
-
-/***/ }),
-
 /***/ "./node_modules/@babel/runtime-corejs2/core-js/object/define-property.js":
 /*!*******************************************************************************!*\
   !*** ./node_modules/@babel/runtime-corejs2/core-js/object/define-property.js ***!
@@ -96,17 +85,6 @@ module.exports = __webpack_require__(/*! core-js/library/fn/object/define-proper
 /***/ (function(module, exports, __webpack_require__) {
 
 module.exports = __webpack_require__(/*! core-js/library/fn/object/define-property */ "./node_modules/core-js/library/fn/object/define-property.js");
-
-/***/ }),
-
-/***/ "./node_modules/@babel/runtime-corejs2/core-js/object/freeze.js":
-/*!**********************************************************************!*\
-  !*** ./node_modules/@babel/runtime-corejs2/core-js/object/freeze.js ***!
-  \**********************************************************************/
-/*! no static exports found */
-/***/ (function(module, exports, __webpack_require__) {
-
-module.exports = __webpack_require__(/*! core-js/library/fn/object/freeze */ "./node_modules/core-js/library/fn/object/freeze.js");
 
 /***/ }),
 
@@ -406,36 +384,6 @@ function _createClass(Constructor, protoProps, staticProps) {
 }
 
 module.exports = _createClass;
-
-/***/ }),
-
-/***/ "./node_modules/@babel/runtime-corejs2/helpers/esm/taggedTemplateLiteral.js":
-/*!**********************************************************************************!*\
-  !*** ./node_modules/@babel/runtime-corejs2/helpers/esm/taggedTemplateLiteral.js ***!
-  \**********************************************************************************/
-/*! exports provided: default */
-/***/ (function(module, __webpack_exports__, __webpack_require__) {
-
-"use strict";
-__webpack_require__.r(__webpack_exports__);
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "default", function() { return _taggedTemplateLiteral; });
-/* harmony import */ var _core_js_object_define_properties__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ../../core-js/object/define-properties */ "./node_modules/@babel/runtime-corejs2/core-js/object/define-properties.js");
-/* harmony import */ var _core_js_object_define_properties__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(_core_js_object_define_properties__WEBPACK_IMPORTED_MODULE_0__);
-/* harmony import */ var _core_js_object_freeze__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ../../core-js/object/freeze */ "./node_modules/@babel/runtime-corejs2/core-js/object/freeze.js");
-/* harmony import */ var _core_js_object_freeze__WEBPACK_IMPORTED_MODULE_1___default = /*#__PURE__*/__webpack_require__.n(_core_js_object_freeze__WEBPACK_IMPORTED_MODULE_1__);
-
-
-function _taggedTemplateLiteral(strings, raw) {
-  if (!raw) {
-    raw = strings.slice(0);
-  }
-
-  return _core_js_object_freeze__WEBPACK_IMPORTED_MODULE_1___default()(_core_js_object_define_properties__WEBPACK_IMPORTED_MODULE_0___default()(strings, {
-    raw: {
-      value: _core_js_object_freeze__WEBPACK_IMPORTED_MODULE_1___default()(raw)
-    }
-  }));
-}
 
 /***/ }),
 
@@ -1076,22 +1024,6 @@ module.exports = function create(P, D) {
 
 /***/ }),
 
-/***/ "./node_modules/core-js/library/fn/object/define-properties.js":
-/*!*********************************************************************!*\
-  !*** ./node_modules/core-js/library/fn/object/define-properties.js ***!
-  \*********************************************************************/
-/*! no static exports found */
-/***/ (function(module, exports, __webpack_require__) {
-
-__webpack_require__(/*! ../../modules/es6.object.define-properties */ "./node_modules/core-js/library/modules/es6.object.define-properties.js");
-var $Object = __webpack_require__(/*! ../../modules/_core */ "./node_modules/core-js/library/modules/_core.js").Object;
-module.exports = function defineProperties(T, D) {
-  return $Object.defineProperties(T, D);
-};
-
-
-/***/ }),
-
 /***/ "./node_modules/core-js/library/fn/object/define-property.js":
 /*!*******************************************************************!*\
   !*** ./node_modules/core-js/library/fn/object/define-property.js ***!
@@ -1104,19 +1036,6 @@ var $Object = __webpack_require__(/*! ../../modules/_core */ "./node_modules/cor
 module.exports = function defineProperty(it, key, desc) {
   return $Object.defineProperty(it, key, desc);
 };
-
-
-/***/ }),
-
-/***/ "./node_modules/core-js/library/fn/object/freeze.js":
-/*!**********************************************************!*\
-  !*** ./node_modules/core-js/library/fn/object/freeze.js ***!
-  \**********************************************************/
-/*! no static exports found */
-/***/ (function(module, exports, __webpack_require__) {
-
-__webpack_require__(/*! ../../modules/es6.object.freeze */ "./node_modules/core-js/library/modules/es6.object.freeze.js");
-module.exports = __webpack_require__(/*! ../../modules/_core */ "./node_modules/core-js/library/modules/_core.js").Object.freeze;
 
 
 /***/ }),
@@ -3822,20 +3741,6 @@ $export($export.S, 'Object', { create: __webpack_require__(/*! ./_object-create 
 
 /***/ }),
 
-/***/ "./node_modules/core-js/library/modules/es6.object.define-properties.js":
-/*!******************************************************************************!*\
-  !*** ./node_modules/core-js/library/modules/es6.object.define-properties.js ***!
-  \******************************************************************************/
-/*! no static exports found */
-/***/ (function(module, exports, __webpack_require__) {
-
-var $export = __webpack_require__(/*! ./_export */ "./node_modules/core-js/library/modules/_export.js");
-// 19.1.2.3 / 15.2.3.7 Object.defineProperties(O, Properties)
-$export($export.S + $export.F * !__webpack_require__(/*! ./_descriptors */ "./node_modules/core-js/library/modules/_descriptors.js"), 'Object', { defineProperties: __webpack_require__(/*! ./_object-dps */ "./node_modules/core-js/library/modules/_object-dps.js") });
-
-
-/***/ }),
-
 /***/ "./node_modules/core-js/library/modules/es6.object.define-property.js":
 /*!****************************************************************************!*\
   !*** ./node_modules/core-js/library/modules/es6.object.define-property.js ***!
@@ -3846,26 +3751,6 @@ $export($export.S + $export.F * !__webpack_require__(/*! ./_descriptors */ "./no
 var $export = __webpack_require__(/*! ./_export */ "./node_modules/core-js/library/modules/_export.js");
 // 19.1.2.4 / 15.2.3.6 Object.defineProperty(O, P, Attributes)
 $export($export.S + $export.F * !__webpack_require__(/*! ./_descriptors */ "./node_modules/core-js/library/modules/_descriptors.js"), 'Object', { defineProperty: __webpack_require__(/*! ./_object-dp */ "./node_modules/core-js/library/modules/_object-dp.js").f });
-
-
-/***/ }),
-
-/***/ "./node_modules/core-js/library/modules/es6.object.freeze.js":
-/*!*******************************************************************!*\
-  !*** ./node_modules/core-js/library/modules/es6.object.freeze.js ***!
-  \*******************************************************************/
-/*! no static exports found */
-/***/ (function(module, exports, __webpack_require__) {
-
-// 19.1.2.5 Object.freeze(O)
-var isObject = __webpack_require__(/*! ./_is-object */ "./node_modules/core-js/library/modules/_is-object.js");
-var meta = __webpack_require__(/*! ./_meta */ "./node_modules/core-js/library/modules/_meta.js").onFreeze;
-
-__webpack_require__(/*! ./_object-sap */ "./node_modules/core-js/library/modules/_object-sap.js")('freeze', function ($freeze) {
-  return function freeze(it) {
-    return $freeze && isObject(it) ? $freeze(meta(it)) : it;
-  };
-});
 
 
 /***/ }),
@@ -9971,17 +9856,6 @@ exports.encode = exports.stringify = __webpack_require__(/*! ./encode */ "./node
 
 /***/ }),
 
-/***/ "./node_modules/react-dom/index.js":
-/*!***********************************************************************************************!*\
-  !*** delegated ./node_modules/react-dom/index.js from dll-reference dll_13346faca0e924a89b24 ***!
-  \***********************************************************************************************/
-/*! no static exports found */
-/***/ (function(module, exports, __webpack_require__) {
-
-module.exports = (__webpack_require__(/*! dll-reference dll_13346faca0e924a89b24 */ "dll-reference dll_13346faca0e924a89b24"))("./node_modules/react-dom/index.js");
-
-/***/ }),
-
 /***/ "./node_modules/react-is/cjs/react-is.development.js":
 /*!***********************************************************!*\
   !*** ./node_modules/react-is/cjs/react-is.development.js ***!
@@ -14964,51 +14838,21 @@ module.exports = function(module) {
 
 "use strict";
 __webpack_require__.r(__webpack_exports__);
-/* harmony import */ var _babel_runtime_corejs2_helpers_esm_taggedTemplateLiteral__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! @babel/runtime-corejs2/helpers/esm/taggedTemplateLiteral */ "./node_modules/@babel/runtime-corejs2/helpers/esm/taggedTemplateLiteral.js");
-/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! react */ "./node_modules/react/index.js");
-/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_1___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_1__);
-/* harmony import */ var _map__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./map */ "./pages/map.js");
-/* harmony import */ var _registerList__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ./registerList */ "./pages/registerList.js");
-/* harmony import */ var _style_scss__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ../style.scss */ "./style.scss");
-/* harmony import */ var _style_scss__WEBPACK_IMPORTED_MODULE_4___default = /*#__PURE__*/__webpack_require__.n(_style_scss__WEBPACK_IMPORTED_MODULE_4__);
-/* harmony import */ var _map_scss__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! ../map.scss */ "./map.scss");
-/* harmony import */ var _map_scss__WEBPACK_IMPORTED_MODULE_5___default = /*#__PURE__*/__webpack_require__.n(_map_scss__WEBPACK_IMPORTED_MODULE_5__);
-/* harmony import */ var _modal_scss__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! ../modal.scss */ "./modal.scss");
-/* harmony import */ var _modal_scss__WEBPACK_IMPORTED_MODULE_6___default = /*#__PURE__*/__webpack_require__.n(_modal_scss__WEBPACK_IMPORTED_MODULE_6__);
-/* harmony import */ var _modal__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(/*! ./modal */ "./pages/modal.js");
-/* harmony import */ var styled_components__WEBPACK_IMPORTED_MODULE_8__ = __webpack_require__(/*! styled-components */ "./node_modules/styled-components/dist/styled-components.browser.esm.js");
-
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! react */ "./node_modules/react/index.js");
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_0__);
+/* harmony import */ var _map__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./map */ "./pages/map.js");
+/* harmony import */ var _registerList__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./registerList */ "./pages/registerList.js");
+/* harmony import */ var _style_scss__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ../style.scss */ "./style.scss");
+/* harmony import */ var _style_scss__WEBPACK_IMPORTED_MODULE_3___default = /*#__PURE__*/__webpack_require__.n(_style_scss__WEBPACK_IMPORTED_MODULE_3__);
+/* harmony import */ var _map_scss__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ../map.scss */ "./map.scss");
+/* harmony import */ var _map_scss__WEBPACK_IMPORTED_MODULE_4___default = /*#__PURE__*/__webpack_require__.n(_map_scss__WEBPACK_IMPORTED_MODULE_4__);
+/* harmony import */ var _modal_scss__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! ../modal.scss */ "./modal.scss");
+/* harmony import */ var _modal_scss__WEBPACK_IMPORTED_MODULE_5___default = /*#__PURE__*/__webpack_require__.n(_modal_scss__WEBPACK_IMPORTED_MODULE_5__);
+/* harmony import */ var _modal__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! ./modal */ "./pages/modal.js");
+/* harmony import */ var styled_components__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(/*! styled-components */ "./node_modules/styled-components/dist/styled-components.browser.esm.js");
 var _jsxFileName = "/Users/yonggyukwon/Downloads/\u110F\u1169\u1103\u1175\u11BC/\u110F\u1169\u1103\u1173\u1109\u1173\u1110\u1166\u110B\u1175\u110E\u1173/Flex/CafeAndConquer-client/pages/index.js";
-var __jsx = react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement;
 
-function _templateObject() {
-  var data = Object(_babel_runtime_corejs2_helpers_esm_taggedTemplateLiteral__WEBPACK_IMPORTED_MODULE_0__["default"])(["\n  font-size: 30px;\n  color: gray;\n"]);
-
-  _templateObject = function _templateObject() {
-    return data;
-  };
-
-  return data;
-}
-
-// fix: 카페 점령된것/점령 안된것 모양, 숫자,
-// todo: 기본으로 카페 목록들 클릭이 돼서 나오게
-// todo: 현위치 버튼.
-// todo:Link href와 a href 로 /register로 가게 될 때의 차이?
-// 노란 라인 없애기, warning 없애기. styled components랑 관련 있는듯??? 
-// prettier가 됐다, 안됐다 하는 이유?? 
-// console이 서버에 떴다가 , 클라이언트쪽에 떴다가 왔다갔다 뜨는건 왜 그러나
-// 검색으로도 찾을 수 있게 만들어야 함. 
-// https://github.com/zeit/next-plugins/tree/master/packages/next-css 깃헙 설명에 css module이 있다는 것과 없다는 것의 차이가 뭔지 모르겠음. 
-// css 파일을 map에만 import하니까 안됨. 오히려 index.js에만 넣으면 됨. 하나에서 scss랑 css를 동시에 못 쓰는 듯. 
-// 클릭할때 뜨는 레이아웃 보이는 파란 선 뭐지?? 
-// 클릭시 등록하겠습니까? confirm 창 디자인 변경  
-// 등록하기 누르면 modal로 선택할 수 있게 (반응형 앱?).
-// 
-// modal을 팝업처럼 튀어나오게 하는 방법 & modal이면 다른 키가 안 눌려야 하는데 눌리네. 주변 약간 어둡게 바꾸면서... 
-// map api 다시 완전 파악하고, 내 입맛에 맞게 수정을 좀 해야 함. 
-// styled components 적용시키기 - 안되는 부분. 너무 하나에만 매달려 있었음. 이게 왜 되는지 모르겠음. 
- // import Link from 'next/link';
+var __jsx = react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement;
 
 
 
@@ -15019,15 +14863,15 @@ function _templateObject() {
 
 
 var Index = function Index() {
-  var _useState = Object(react__WEBPACK_IMPORTED_MODULE_1__["useState"])([]),
+  var _useState = Object(react__WEBPACK_IMPORTED_MODULE_0__["useState"])([]),
       list = _useState[0],
       setList = _useState[1];
 
-  var changeList = Object(react__WEBPACK_IMPORTED_MODULE_1__["useCallback"])(function (data) {
+  var changeList = Object(react__WEBPACK_IMPORTED_MODULE_0__["useCallback"])(function (data) {
     setList(data);
   }, []);
 
-  var _useState2 = Object(react__WEBPACK_IMPORTED_MODULE_1__["useState"])(false),
+  var _useState2 = Object(react__WEBPACK_IMPORTED_MODULE_0__["useState"])(false),
       showed = _useState2[0],
       setShowed = _useState2[1];
 
@@ -15035,7 +14879,7 @@ var Index = function Index() {
     setShowed(_boolean);
   };
 
-  var _useState3 = Object(react__WEBPACK_IMPORTED_MODULE_1__["useState"])({
+  var _useState3 = Object(react__WEBPACK_IMPORTED_MODULE_0__["useState"])({
     name: '',
     phone: '',
     address: ''
@@ -15043,72 +14887,98 @@ var Index = function Index() {
       cafeInfo = _useState3[0],
       setCafeInfo = _useState3[1];
 
-  var confirmRegister = function confirmRegister(name, phone, address) {
+  var confirmRegister = function confirmRegister(place) {
     if (confirm('등록하시겠습니까?')) {
-      // showModal(true);
-      // setCafeInfo({name, phone, address})
-      Object(_modal__WEBPACK_IMPORTED_MODULE_7__["default"])({
-        showModal: showModal,
-        cafeInfo: cafeInfo
-      });
+      showModal(true);
+      setCafeInfo({
+        name: place.place_name,
+        phone: place.phone,
+        address: place.address_name
+      }); // 여기에 등록시키는 정보 전달하면서 API에 따라 등록. 
     }
-  }; // console.log('index')
+  };
 
+  var confirmDelete = function confirmDelete(place) {
+    if (confirm('정복한 카페 정보를 삭제하시겠습니까? (해당카페의 정복자만 가능합니다)')) {// 일단 유저가 정복한 사람이 맞는지 확인 
+      // 맞으면 삭제 처리 , 아니면 이 카페의 정복자가 아니므로 삭제할 수 없습니다. 
+      // 삭제용 모달 필요?? 
+      // 여기에 삭제시키는 정보 전달하면서 API에 따라 등록. 
+    }
+  };
+
+  var confirmEdit = function confirmEdit(place) {
+    if (confirm('정복한 카페 정보를 수정하시겠습니까?')) {// 수정용 모달은 등록용과 비슷하게 띄워야 할듯. 디폴트값 선택된 채로 ?  
+      // 여기에 수정시키는 정보 전달하면서 API에 따라 등록. 
+    }
+  };
 
   return __jsx("div", {
+    __source: {
+      fileName: _jsxFileName,
+      lineNumber: 52
+    },
+    __self: this
+  }, showed ? __jsx(_modal__WEBPACK_IMPORTED_MODULE_6__["default"], {
+    showModal: showModal,
+    cafeInfo: cafeInfo,
+    __source: {
+      fileName: _jsxFileName,
+      lineNumber: 53
+    },
+    __self: this
+  }) : null, __jsx("div", {
     className: "grid-container",
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 62
+      lineNumber: 54
     },
     __self: this
-  }, __jsx(HH1, {
+  }, __jsx(Subject, {
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 63
+      lineNumber: 55
     },
     __self: this
   }, " cafe & conquer "), __jsx("div", {
     className: "grid-map",
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 64
+      lineNumber: 56
     },
     __self: this
-  }, __jsx(_map__WEBPACK_IMPORTED_MODULE_2__["Map"], {
+  }, __jsx(_map__WEBPACK_IMPORTED_MODULE_1__["Map"], {
     setList: changeList,
     confirmRegister: confirmRegister,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 65
+      lineNumber: 57
     },
     __self: this
   })), __jsx("div", {
     className: "grid-register",
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 67
+      lineNumber: 59
     },
     __self: this
-  }, __jsx(_registerList__WEBPACK_IMPORTED_MODULE_3__["default"], {
+  }, __jsx(_registerList__WEBPACK_IMPORTED_MODULE_2__["default"], {
     list: list,
     confirmRegister: confirmRegister,
+    confirmEdit: confirmEdit,
+    confirmDelete: confirmDelete,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 68
+      lineNumber: 60
     },
     __self: this
-  })), __jsx("div", {
-    id: "modal",
-    __source: {
-      fileName: _jsxFileName,
-      lineNumber: 71
-    },
-    __self: this
-  }));
+  }))));
 };
 
-var HH1 = styled_components__WEBPACK_IMPORTED_MODULE_8__["default"].h2(_templateObject());
+var Subject = styled_components__WEBPACK_IMPORTED_MODULE_7__["default"].h2.withConfig({
+  displayName: "pages__Subject",
+  componentId: "sc-117pu9t-0"
+})(["font-size:30px;color:#eccc68;"]); // 왜 여기서 matching이 틀렸다는 문구가 뜨는지 잘 모르겠음. 
+
 /* harmony default export */ __webpack_exports__["default"] = (Index);
 
 /***/ }),
@@ -15243,10 +15113,9 @@ var Map = function Map(_ref) {
         (function (marker, place) {
           kakao.maps.event.addListener(marker, 'click', function () {
             displayPlaceInfo(place);
-            console.log(place);
 
             document.querySelector('.conquerInMap').onclick = function () {
-              confirmRegister(place.place_name, place.phone, place.address_name);
+              confirmRegister(place);
             };
           });
         })(marker, places[i]);
@@ -15362,13 +15231,13 @@ var Map = function Map(_ref) {
   return __jsx("div", {
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 268
+      lineNumber: 267
     },
     __self: this
   }, __jsx(next_head__WEBPACK_IMPORTED_MODULE_2___default.a, {
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 269
+      lineNumber: 268
     },
     __self: this
   }, __jsx("script", {
@@ -15376,7 +15245,7 @@ var Map = function Map(_ref) {
     src: "//dapi.kakao.com/v2/maps/sdk.js?appkey=08621feb64d12ca619166a136815243f&libraries=services",
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 270
+      lineNumber: 269
     },
     __self: this
   })), __jsx("div", {
@@ -15385,20 +15254,20 @@ var Map = function Map(_ref) {
     },
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 275
+      lineNumber: 274
     },
     __self: this
   }, "\uC810\uB839\uD560 \uCE74\uD398\uB97C \uC120\uD0DD\uD574\uC8FC\uC138\uC694.", __jsx("br", {
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 276
+      lineNumber: 275
     },
     __self: this
   }), "\uC810\uB839\uD560 \uCE74\uD398\uAC00 \uBCF4\uC774\uC9C0 \uC54A\uC73C\uBA74 \uD574\uB2F9 \uCE74\uD398\uC758 \uC704\uCE58 \uBD80\uADFC\uC5D0\uC11C \uC9C0\uB3C4 \uD655\uB300\uB97C \uB20C\uB7EC\uC8FC\uC138\uC694"), __jsx("div", {
     className: "map_wrap",
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 278
+      lineNumber: 277
     },
     __self: this
   }, __jsx("div", {
@@ -15411,14 +15280,14 @@ var Map = function Map(_ref) {
     },
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 279
+      lineNumber: 278
     },
     __self: this
   }), __jsx("ul", {
     id: "category",
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 287
+      lineNumber: 286
     },
     __self: this
   }, __jsx("li", {
@@ -15426,28 +15295,28 @@ var Map = function Map(_ref) {
     "data-order": "4",
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 288
+      lineNumber: 287
     },
     __self: this
   }, __jsx("span", {
     className: "category_bg cafe",
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 289
+      lineNumber: 288
     },
     __self: this
   }), "\uCE74\uD398 \uBCF4\uAE30")), __jsx("div", {
     className: "custom_zoomcontrol radius_border",
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 293
+      lineNumber: 292
     },
     __self: this
   }, __jsx("span", {
     onClick: zooms[0],
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 294
+      lineNumber: 293
     },
     __self: this
   }, __jsx("img", {
@@ -15455,14 +15324,14 @@ var Map = function Map(_ref) {
     alt: "\uD655\uB300",
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 294
+      lineNumber: 293
     },
     __self: this
   })), __jsx("span", {
     onClick: zooms[1],
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 295
+      lineNumber: 294
     },
     __self: this
   }, __jsx("img", {
@@ -15470,7 +15339,7 @@ var Map = function Map(_ref) {
     alt: "\uCD95\uC18C",
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 295
+      lineNumber: 294
     },
     __self: this
   })))));
@@ -15492,17 +15361,15 @@ var Map = function Map(_ref) {
 __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! react */ "./node_modules/react/index.js");
 /* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_0__);
-/* harmony import */ var react_dom__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! react-dom */ "./node_modules/react-dom/index.js");
-/* harmony import */ var react_dom__WEBPACK_IMPORTED_MODULE_1___default = /*#__PURE__*/__webpack_require__.n(react_dom__WEBPACK_IMPORTED_MODULE_1__);
-/* harmony import */ var _modal_scss__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ../modal.scss */ "./modal.scss");
-/* harmony import */ var _modal_scss__WEBPACK_IMPORTED_MODULE_2___default = /*#__PURE__*/__webpack_require__.n(_modal_scss__WEBPACK_IMPORTED_MODULE_2__);
-/* harmony import */ var next_head__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! next/head */ "./node_modules/next/dist/next-server/lib/head.js");
-/* harmony import */ var next_head__WEBPACK_IMPORTED_MODULE_3___default = /*#__PURE__*/__webpack_require__.n(next_head__WEBPACK_IMPORTED_MODULE_3__);
-/* harmony import */ var react_star_ratings__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! react-star-ratings */ "./node_modules/react-star-ratings/build/index.js");
-/* harmony import */ var react_star_ratings__WEBPACK_IMPORTED_MODULE_4___default = /*#__PURE__*/__webpack_require__.n(react_star_ratings__WEBPACK_IMPORTED_MODULE_4__);
+/* harmony import */ var _modal_scss__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ../modal.scss */ "./modal.scss");
+/* harmony import */ var _modal_scss__WEBPACK_IMPORTED_MODULE_1___default = /*#__PURE__*/__webpack_require__.n(_modal_scss__WEBPACK_IMPORTED_MODULE_1__);
+/* harmony import */ var next_head__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! next/head */ "./node_modules/next/dist/next-server/lib/head.js");
+/* harmony import */ var next_head__WEBPACK_IMPORTED_MODULE_2___default = /*#__PURE__*/__webpack_require__.n(next_head__WEBPACK_IMPORTED_MODULE_2__);
+/* harmony import */ var react_star_ratings__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! react-star-ratings */ "./node_modules/react-star-ratings/build/index.js");
+/* harmony import */ var react_star_ratings__WEBPACK_IMPORTED_MODULE_3___default = /*#__PURE__*/__webpack_require__.n(react_star_ratings__WEBPACK_IMPORTED_MODULE_3__);
 var _jsxFileName = "/Users/yonggyukwon/Downloads/\u110F\u1169\u1103\u1175\u11BC/\u110F\u1169\u1103\u1173\u1109\u1173\u1110\u1166\u110B\u1175\u110E\u1173/Flex/CafeAndConquer-client/pages/modal.js";
-var __jsx = react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement;
 
+var __jsx = react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement;
  // import ReactDOM from "react-dom";
 
 
@@ -15522,13 +15389,13 @@ var Modal = function Modal(_ref) {
     id: "modal",
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 12
+      lineNumber: 11
     },
     __self: this
-  }, __jsx(next_head__WEBPACK_IMPORTED_MODULE_3___default.a, {
+  }, __jsx(next_head__WEBPACK_IMPORTED_MODULE_2___default.a, {
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 13
+      lineNumber: 12
     },
     __self: this
   }, __jsx("link", {
@@ -15536,10 +15403,17 @@ var Modal = function Modal(_ref) {
     href: "https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css",
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 14
+      lineNumber: 13
     },
     __self: this
-  })), __jsx("h2", {
+  })), __jsx("div", {
+    className: "content",
+    __source: {
+      fileName: _jsxFileName,
+      lineNumber: 15
+    },
+    __self: this
+  }, __jsx("h2", {
     __source: {
       fileName: _jsxFileName,
       lineNumber: 16
@@ -15648,7 +15522,7 @@ var Modal = function Modal(_ref) {
       lineNumber: 31
     },
     __self: this
-  }, "\uCE74\uD398\uC5D0 \uB300\uD55C \uC885\uD569\uC801\uC778 \uB2F9\uC2E0\uC758 \uD3C9\uC810\uC740?"), __jsx(react_star_ratings__WEBPACK_IMPORTED_MODULE_4___default.a, {
+  }, "\uCE74\uD398\uC5D0 \uB300\uD55C \uC885\uD569\uC801\uC778 \uB2F9\uC2E0\uC758 \uD3C9\uC810\uC740?"), __jsx(react_star_ratings__WEBPACK_IMPORTED_MODULE_3___default.a, {
     rating: starRate,
     starRatedColor: "#f9ca24",
     changeRating: setStarRate,
@@ -15690,16 +15564,10 @@ var Modal = function Modal(_ref) {
       lineNumber: 50
     },
     __self: this
-  }, "\uCDE8\uC18C")));
+  }, "\uCDE8\uC18C"))));
 };
 
-var RenderModal = function RenderModal(_ref2) {
-  var showModal = _ref2.showModal,
-      cafeInfo = _ref2.cafeInfo;
-  return react_dom__WEBPACK_IMPORTED_MODULE_1___default.a.createPortal(Modal, document.querySelector("#modal"));
-};
-
-/* harmony default export */ __webpack_exports__["default"] = (RenderModal); // hook 형태로 바꾸기.
+/* harmony default export */ __webpack_exports__["default"] = (Modal);
 
 /***/ }),
 
@@ -15712,87 +15580,14 @@ var RenderModal = function RenderModal(_ref2) {
 
 "use strict";
 __webpack_require__.r(__webpack_exports__);
-/* harmony import */ var _babel_runtime_corejs2_helpers_esm_taggedTemplateLiteral__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! @babel/runtime-corejs2/helpers/esm/taggedTemplateLiteral */ "./node_modules/@babel/runtime-corejs2/helpers/esm/taggedTemplateLiteral.js");
-/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! react */ "./node_modules/react/index.js");
-/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_1___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_1__);
-/* harmony import */ var next_link__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! next/link */ "./node_modules/next/link.js");
-/* harmony import */ var next_link__WEBPACK_IMPORTED_MODULE_2___default = /*#__PURE__*/__webpack_require__.n(next_link__WEBPACK_IMPORTED_MODULE_2__);
-/* harmony import */ var styled_components__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! styled-components */ "./node_modules/styled-components/dist/styled-components.browser.esm.js");
-
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! react */ "./node_modules/react/index.js");
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_0__);
+/* harmony import */ var next_link__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! next/link */ "./node_modules/next/link.js");
+/* harmony import */ var next_link__WEBPACK_IMPORTED_MODULE_1___default = /*#__PURE__*/__webpack_require__.n(next_link__WEBPACK_IMPORTED_MODULE_1__);
+/* harmony import */ var styled_components__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! styled-components */ "./node_modules/styled-components/dist/styled-components.browser.esm.js");
 var _jsxFileName = "/Users/yonggyukwon/Downloads/\u110F\u1169\u1103\u1175\u11BC/\u110F\u1169\u1103\u1173\u1109\u1173\u1110\u1166\u110B\u1175\u110E\u1173/Flex/CafeAndConquer-client/pages/registerList.js";
 
-var __jsx = react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement;
-
-function _templateObject7() {
-  var data = Object(_babel_runtime_corejs2_helpers_esm_taggedTemplateLiteral__WEBPACK_IMPORTED_MODULE_0__["default"])(["\n  background-color: #eccc68;\n"]);
-
-  _templateObject7 = function _templateObject7() {
-    return data;
-  };
-
-  return data;
-}
-
-function _templateObject6() {
-  var data = Object(_babel_runtime_corejs2_helpers_esm_taggedTemplateLiteral__WEBPACK_IMPORTED_MODULE_0__["default"])(["\n  grid-column: 2;\n"]);
-
-  _templateObject6 = function _templateObject6() {
-    return data;
-  };
-
-  return data;
-}
-
-function _templateObject5() {
-  var data = Object(_babel_runtime_corejs2_helpers_esm_taggedTemplateLiteral__WEBPACK_IMPORTED_MODULE_0__["default"])(["\n  grid-column: 1;\n"]);
-
-  _templateObject5 = function _templateObject5() {
-    return data;
-  };
-
-  return data;
-}
-
-function _templateObject4() {
-  var data = Object(_babel_runtime_corejs2_helpers_esm_taggedTemplateLiteral__WEBPACK_IMPORTED_MODULE_0__["default"])(["\n  font: 13px solid gray;\n  padding-left: 12px;\n  list-style: none;\n"]);
-
-  _templateObject4 = function _templateObject4() {
-    return data;
-  };
-
-  return data;
-}
-
-function _templateObject3() {
-  var data = Object(_babel_runtime_corejs2_helpers_esm_taggedTemplateLiteral__WEBPACK_IMPORTED_MODULE_0__["default"])(["\n  font: 13px solid gray;\n  padding-left: 12px;\n  list-style: none;\n"]);
-
-  _templateObject3 = function _templateObject3() {
-    return data;
-  };
-
-  return data;
-}
-
-function _templateObject2() {
-  var data = Object(_babel_runtime_corejs2_helpers_esm_taggedTemplateLiteral__WEBPACK_IMPORTED_MODULE_0__["default"])(["\n  list-style: none;\n"]);
-
-  _templateObject2 = function _templateObject2() {
-    return data;
-  };
-
-  return data;
-}
-
-function _templateObject() {
-  var data = Object(_babel_runtime_corejs2_helpers_esm_taggedTemplateLiteral__WEBPACK_IMPORTED_MODULE_0__["default"])(["\n  padding-left: 10px;\n  list-style: none;\n"]);
-
-  _templateObject = function _templateObject() {
-    return data;
-  };
-
-  return data;
-}
-
+var __jsx = react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement;
 
  // confirm 팝업의 디자인을 변경할 수 있나? 아님 confirm 말고, 다른 팝업 써야 하나? 
 // li 태그 칸 차지하는 block -> inline 변경 ..... 좀 더 세련된 방식으로 변경해야 할듯. 
@@ -15800,15 +15595,17 @@ function _templateObject() {
 
 var registerList = function registerList(_ref) {
   var list = _ref.list,
-      confirmRegister = _ref.confirmRegister;
+      confirmRegister = _ref.confirmRegister,
+      confirmDelete = _ref.confirmDelete,
+      confirmEdit = _ref.confirmEdit;
   // console.log('register');
   var cafeList = list.map(function (elm, key) {
-    return __jsx(next_link__WEBPACK_IMPORTED_MODULE_2___default.a, {
+    return __jsx(next_link__WEBPACK_IMPORTED_MODULE_1___default.a, {
       href: "/",
       key: key,
       __source: {
         fileName: _jsxFileName,
-        lineNumber: 15
+        lineNumber: 14
       },
       __self: this
     }, __jsx(LiName, {
@@ -15816,95 +15613,95 @@ var registerList = function registerList(_ref) {
       id: "one-list",
       __source: {
         fileName: _jsxFileName,
-        lineNumber: 16
+        lineNumber: 15
       },
       __self: this
     }, __jsx("div", {
       className: "grid-container",
       __source: {
         fileName: _jsxFileName,
-        lineNumber: 17
+        lineNumber: 16
       },
       __self: this
     }, __jsx(DivList, {
       __source: {
         fileName: _jsxFileName,
-        lineNumber: 18
+        lineNumber: 17
       },
       __self: this
     }, __jsx(UL, {
       __source: {
         fileName: _jsxFileName,
-        lineNumber: 19
+        lineNumber: 18
       },
       __self: this
     }, __jsx(LiName, {
       __source: {
         fileName: _jsxFileName,
-        lineNumber: 20
+        lineNumber: 19
       },
       __self: this
     }, key + 1, ". ", elm.place_name), elm.phone ? __jsx(LiPhone, {
       __source: {
         fileName: _jsxFileName,
-        lineNumber: 23
+        lineNumber: 22
       },
       __self: this
     }, elm.phone) : null, __jsx(LiAddress, {
       __source: {
         fileName: _jsxFileName,
-        lineNumber: 26
+        lineNumber: 25
       },
       __self: this
     }, elm.address_name))), __jsx(DivButtons, {
       __source: {
         fileName: _jsxFileName,
-        lineNumber: 31
+        lineNumber: 30
       },
       __self: this
     }, __jsx("div", {
       __source: {
         fileName: _jsxFileName,
-        lineNumber: 32
+        lineNumber: 31
       },
       __self: this
     }, __jsx(ConquerButton, {
       onClick: function onClick() {
-        confirmRegister(elm.place_name, elm.phone, elm.address_name);
+        confirmRegister(elm);
       },
       __source: {
         fileName: _jsxFileName,
-        lineNumber: 33
+        lineNumber: 32
       },
       __self: this
     }, "\uC810\uB839\uD558\uAE30")), __jsx("div", {
       __source: {
         fileName: _jsxFileName,
-        lineNumber: 35
+        lineNumber: 34
       },
       __self: this
     }, __jsx("button", {
       onClick: function onClick() {
-        confirmRegister(elm.place_name, elm.phone, elm.address_name);
+        confirmEdit(elm);
       },
       __source: {
         fileName: _jsxFileName,
-        lineNumber: 36
+        lineNumber: 35
       },
       __self: this
     }, "\uC218\uC815\uD558\uAE30")), __jsx("div", {
       __source: {
         fileName: _jsxFileName,
-        lineNumber: 38
+        lineNumber: 37
       },
       __self: this
     }, __jsx("button", {
       onClick: function onClick() {
-        confirmRegister(elm.place_name, elm.phone, elm.address_name);
+        confirmDelete(elm);
       },
       __source: {
         fileName: _jsxFileName,
-        lineNumber: 39
+        lineNumber: 38
       },
       __self: this
     }, "\uC0AD\uC81C\uD558\uAE30"))))));
@@ -15912,32 +15709,52 @@ var registerList = function registerList(_ref) {
   return __jsx("div", {
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 51
+      lineNumber: 50
     },
     __self: this
   }, __jsx("br", {
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 52
+      lineNumber: 51
     },
     __self: this
   }), __jsx(UL, {
-    className: "cafe-list",
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 53
+      lineNumber: 52
     },
     __self: this
   }, cafeList));
 };
 
-var UL = styled_components__WEBPACK_IMPORTED_MODULE_3__["default"].ul(_templateObject());
-var LiName = styled_components__WEBPACK_IMPORTED_MODULE_3__["default"].li(_templateObject2());
-var LiPhone = styled_components__WEBPACK_IMPORTED_MODULE_3__["default"].li(_templateObject3());
-var LiAddress = styled_components__WEBPACK_IMPORTED_MODULE_3__["default"].li(_templateObject4());
-var DivList = styled_components__WEBPACK_IMPORTED_MODULE_3__["default"].div(_templateObject5());
-var DivButtons = styled_components__WEBPACK_IMPORTED_MODULE_3__["default"].div(_templateObject6());
-var ConquerButton = styled_components__WEBPACK_IMPORTED_MODULE_3__["default"].button(_templateObject7()); // 신기하게 ul에 display: inline; 붙이니까 점이 사라짐. 
+var UL = styled_components__WEBPACK_IMPORTED_MODULE_2__["default"].ul.withConfig({
+  displayName: "registerList__UL",
+  componentId: "sc-1484dgo-0"
+})(["padding-left:10px;list-style:none;"]);
+var LiName = styled_components__WEBPACK_IMPORTED_MODULE_2__["default"].li.withConfig({
+  displayName: "registerList__LiName",
+  componentId: "sc-1484dgo-1"
+})(["list-style:none;"]);
+var LiPhone = styled_components__WEBPACK_IMPORTED_MODULE_2__["default"].li.withConfig({
+  displayName: "registerList__LiPhone",
+  componentId: "sc-1484dgo-2"
+})(["font:13px solid gray;padding-left:12px;list-style:none;"]);
+var LiAddress = styled_components__WEBPACK_IMPORTED_MODULE_2__["default"].li.withConfig({
+  displayName: "registerList__LiAddress",
+  componentId: "sc-1484dgo-3"
+})(["font:13px solid gray;padding-left:12px;list-style:none;"]);
+var DivList = styled_components__WEBPACK_IMPORTED_MODULE_2__["default"].div.withConfig({
+  displayName: "registerList__DivList",
+  componentId: "sc-1484dgo-4"
+})(["grid-column:1;"]);
+var DivButtons = styled_components__WEBPACK_IMPORTED_MODULE_2__["default"].div.withConfig({
+  displayName: "registerList__DivButtons",
+  componentId: "sc-1484dgo-5"
+})(["grid-column:2;"]);
+var ConquerButton = styled_components__WEBPACK_IMPORTED_MODULE_2__["default"].button.withConfig({
+  displayName: "registerList__ConquerButton",
+  componentId: "sc-1484dgo-6"
+})(["background-color:#eccc68;"]); // 신기하게 ul에 display: inline; 붙이니까 점이 사라짐. 
 // <style jsx >global로 해야하는 이유? global로 해야 뿌려진 다음것도 다 바꿔주게 되는건가? 
 
 /* harmony default export */ __webpack_exports__["default"] = (registerList);

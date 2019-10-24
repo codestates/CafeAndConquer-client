@@ -4,10 +4,9 @@ import styled from 'styled-components'
 // confirm 팝업의 디자인을 변경할 수 있나? 아님 confirm 말고, 다른 팝업 써야 하나? 
 // li 태그 칸 차지하는 block -> inline 변경 ..... 좀 더 세련된 방식으로 변경해야 할듯. 
 
-
 // 저 위의 ../components/modal.js 여기 페이지에 components가 2개인데 어떻게 뜨나? 기본 export default로 설정한 애만 나가나? 
 
-const registerList = ({ list, confirmRegister }) => {
+const registerList = ({ list, confirmRegister, confirmDelete, confirmEdit }) => {
 
   // console.log('register');
 	const cafeList = list.map((elm, key) => {
@@ -30,13 +29,13 @@ const registerList = ({ list, confirmRegister }) => {
             </DivList>
             <DivButtons>
               <div> 
-                <ConquerButton onClick={()=> {confirmRegister(elm.place_name, elm.phone, elm.address_name)}}>점령하기</ConquerButton>
+                <ConquerButton onClick={()=> {confirmRegister(elm)}}>점령하기</ConquerButton>
               </div>
               <div>
-                <button onClick={()=> {confirmRegister(elm.place_name, elm.phone, elm.address_name)}}>수정하기</button>
+                <button onClick={()=> {confirmEdit(elm)}}>수정하기</button>
               </div>
               <div>
-                <button onClick={()=> {confirmRegister(elm.place_name, elm.phone, elm.address_name)}}>삭제하기</button>
+                <button onClick={()=> {confirmDelete(elm)}}>삭제하기</button>
               </div>
             </DivButtons>
           </div>
@@ -50,7 +49,7 @@ const registerList = ({ list, confirmRegister }) => {
 	return (
 		<div>
       <br />
-			<UL className="cafe-list">{cafeList}</UL>
+			<UL>{cafeList}</UL>
 		</div>
 	);
 };
