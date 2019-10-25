@@ -1,6 +1,6 @@
 import Link from 'next/link';
 import styled from 'styled-components';
-import search from '../pages/search/[id]';
+import search from './[id]';
 
 const Mainframe = styled.div`
   position: absolute;
@@ -17,7 +17,7 @@ const db = ['info1', 'info2', 'info3'];
 const SearchForm = (props) => {
   let name = props.name;
 
-  // 작동 안 됨
+ 
   if (name === '[id]') {
     name = "' '";
   }

@@ -273,15 +273,13 @@ var __jsx = react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement;
 var Logo = styled_components__WEBPACK_IMPORTED_MODULE_1__["default"].a.withConfig({
   displayName: "LogoImage__Logo",
   componentId: "sc-15fn9iy-0"
-})(["position:relative;top:18%;left:3%;font-family:Monospace,Helvetica,sans-serif;position:absolute;font-size:3.4rem;text-decoration:none;&:hover{cursor:pointer;}"]);
-
-var BacktoHome = function BacktoHome() {
-  console.log('BTH is Ok');
-  setInterval(function () {
-    console.log('a');
-    next_router__WEBPACK_IMPORTED_MODULE_3___default.a.push('/');
-  }, 1000);
-};
+})(["position:relative;top:18%;left:3%;font-family:Monospace,Helvetica,sans-serif;position:absolute;font-size:3.4rem;text-decoration:none;&:hover{cursor:pointer;}"]); // const BacktoHome = () => {
+//   console.log('BTH is Ok');
+//   setInterval(() => {
+//     console.log('a');
+//     Router.push('/');
+//   }, 1000);
+// };
 
 var LogoImage = function LogoImage() {
   return __jsx(next_link__WEBPACK_IMPORTED_MODULE_2___default.a, {

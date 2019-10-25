@@ -1,6 +1,6 @@
 import React from 'react';
 import Header from '../../components/Header';
-import SearchForm from '../../components/SearchForm';
+import SearchForm from './SearchForm';
 import { useRouter } from 'next/router';
 
 const search = (props) => {
@@ -17,4 +17,3 @@ const search = (props) => {
 };
 
 export default search;
-
