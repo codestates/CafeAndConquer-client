@@ -4818,7 +4818,7 @@ function connect(options) {
       error.name = err.name;
       error.stack = err.stack; // __NEXT_DIST_DIR is provided by webpack
 
-      (0, _sourceMapSupport.rewriteStacktrace)(error, "/Users/gomidev/Documents/Projects/CafeAndConquer-client/.next");
+      (0, _sourceMapSupport.rewriteStacktrace)(error, "/Users/hasubin/Desktop/CafeAndConquer-client/.next");
       return error;
     }
   };

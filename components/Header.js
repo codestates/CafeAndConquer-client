@@ -38,8 +38,11 @@ const Header = () => {
   }
   const handleKeyPress = (e) => {
     if (e.charCode === 13) {
-      if (useSearch.value !== '') {
-        Router.push(`/search/${useSearch.value}`);
+      if (searchAddress !== '') {
+        Router.push({
+          pathname: `/search/${searchAddress}`,
+          query: { lat: position.lat, lng: position.lng },
+        });
       }
     }
   };
@@ -55,10 +58,8 @@ const Header = () => {
         <Logo>C&C</Logo>
       </Link>
       <SearchFrame>
-        {/* 비구조화 할당 // 노마드코더 */}
         <Search onKeyPress={handleKeyPress} {...useSearch} />
         <Link href="/search/[id]" as={`/search/${searchAddress}`}>
-          {/* 위도 정보, 검색  정보  넘기기? */}
           <Button onClick={() => searchBtnHandler(useSearch.value, position)}>
             탐색
           </Button>
@@ -67,7 +68,7 @@ const Header = () => {
       <TopMenuBtton>
         {/* 의문1. link를 감싸는 방법을 왜 써야하며 다른 방법은 없는가? */}
         <button onClick={() => showSign()}>sign</button>
-        <SignModal onClose={showSign} show={show} alreadyCalled={false}>
+        <SignModal onClose={showSign} show={show}>
           환영합니다
         </SignModal>
         <Link href="/login">
