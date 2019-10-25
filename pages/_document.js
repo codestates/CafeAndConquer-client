@@ -1,4 +1,4 @@
-import Document, { Head, Main, NextScript } from "next/document";
+import Document, { Head, Main, NextScript } from 'next/document';
 
 export default class MyDocument extends Document {
   static getInitialProps({ renderPage }) {
@@ -10,9 +10,14 @@ export default class MyDocument extends Document {
     return (
       <html>
         <Head>
-          <title>My page</title>
+          <script src="https://developers.kakao.com/sdk/js/kakao.min.js"></script>
         </Head>
         <body>
+          {/* <Head>
+            <script type="text/javascript">
+              {Kakao.init('cad26943f3f53f49ee29f15228abed78')};
+            </script>
+          </Head> */}
           <Main />
           <NextScript />
         </body>

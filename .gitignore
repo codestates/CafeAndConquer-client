@@ -27,3 +27,6 @@ test/**/next-env.d.ts
 
 # example output
 examples/**/out
+
+# API_KEY
+Secret.js

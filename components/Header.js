@@ -1,6 +1,6 @@
 import styled from 'styled-components';
 import { usePosition } from 'use-position';
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import Link from 'next/link';
 import Router from 'next/router';
 import SignModal from './SignModal';
@@ -19,17 +19,6 @@ const useInput = (initialValue) => {
 };
 
 
-// 이런 형태로 리펙토링
-// const useSign = () => {
-//   const [show, setShow] = useState(false);
-//   console.log(show);
-//   const showSign = () => {
-//     setShow(!show);
-//   };
-//   return { showSign };
-// };
-
-// 문제2. 현재 위치를 어떻게 넘겨줄 것인가?
 const searchBtnHandler = (value, current) => {
   if (value === '') {
     console.log(current);
@@ -79,7 +68,7 @@ const Header = () => {
       <TopMenuBtton>
         {/* 의문1. link를 감싸는 방법을 왜 써야하며 다른 방법은 없는가? */}
         <button onClick={() => showSign()}>sign</button>
-        <SignModal onClose={showSign} show={show}>
+        <SignModal onClose={showSign} show={show} alreadyCalled={false}>
           환영합니다
         </SignModal>
         <Link href="/login">

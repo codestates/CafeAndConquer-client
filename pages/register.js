@@ -8,6 +8,7 @@ const register = () => {
   console.log('lat : ', router.query.lat);
   console.log('lng : ', router.query.lng);
 
+  
   return (
     <div>
       <Header />

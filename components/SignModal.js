@@ -1,5 +1,7 @@
-import React from 'react';
+import React, { useEffect } from 'react';
 import styled from 'styled-components';
+const SIGN_API_KEY = require('../Secret').SIGN_API_KEY;
+let alReadyCalled;
 
 const MyModal = styled.div`
   background: rgba(0, 0, 0, 0.25);
@@ -20,21 +22,45 @@ const Content = styled.div`
   height: auto;
 `;
 
-const modal = (props) => {
+const SignModal = (props) => {
+ 
   const onClose = (e) => {
+    alReadyCalled = true;
+    console.log(alReadyCalled)
     props.onClose && props.onClose(e);
   };
   if (!props.show) {
     return null;
   }
+  
+  useEffect(() => {
+    if (!alReadyCalled) {
+      Kakao.init(SIGN_API_KEY);
+    }
+
+    Kakao.Auth.createLoginButton({
+      container: '#kakao-login-btn',
+      success: function(authObj) {
+        alert(JSON.stringify(authObj));
+      },
+      fail: function(err) {
+        alert(JSON.stringify(err));
+      },
+    });
+  }, []);
+
+  const closeKakao = () => {
+    setTimeout(onClose, 1000);
+  };
+
+  console.log(alReadyCalled);
   return (
     <MyModal>
       <Content>
         <h3>신규 회원가입</h3>
         <p>{props.children}</p>
-        <p>
-          <button>카카오톡 회원가입</button>
-        </p>
+        <a onClick={closeKakao} id="kakao-login-btn"></a>
+        <a href="http://developers.kakao.com/logout"></a>
         <button
           onClick={(e) => {
             onClose(e);
@@ -47,4 +73,4 @@ const modal = (props) => {
   );
 };
 
-export default modal;
+export default SignModal;
