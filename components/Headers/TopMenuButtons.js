@@ -12,13 +12,8 @@ const TopMenuBtton = styled.div`
 `;
 
 const TopMenuButtons = (props) => {
-  const [show, setShow] = useState(false);
-  const showSign = () => {
-    setShow(!show);
-  };
   return (
     <TopMenuBtton>
-        
         {props.children}
     </TopMenuBtton>
   );

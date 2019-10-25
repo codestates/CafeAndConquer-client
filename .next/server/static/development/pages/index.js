@@ -88,7 +88,7 @@ module.exports =
 /******/
 /******/
 /******/ 	// Load entry module and return exports
-/******/ 	return __webpack_require__(__webpack_require__.s = 3);
+/******/ 	return __webpack_require__(__webpack_require__.s = 5);
 /******/ })
 /************************************************************************/
 /******/ ({
@@ -349,8 +349,11 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var styled_components__WEBPACK_IMPORTED_MODULE_1___default = /*#__PURE__*/__webpack_require__.n(styled_components__WEBPACK_IMPORTED_MODULE_1__);
 /* harmony import */ var next_link__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! next/link */ "./node_modules/next/link.js");
 /* harmony import */ var next_link__WEBPACK_IMPORTED_MODULE_2___default = /*#__PURE__*/__webpack_require__.n(next_link__WEBPACK_IMPORTED_MODULE_2__);
+/* harmony import */ var next_router__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! next/router */ "next/router");
+/* harmony import */ var next_router__WEBPACK_IMPORTED_MODULE_3___default = /*#__PURE__*/__webpack_require__.n(next_router__WEBPACK_IMPORTED_MODULE_3__);
 var _jsxFileName = "/Users/hasubin/Desktop/CafeAndConquer-client/components/Headers/LogoImage.js";
 var __jsx = react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement;
+
 
 
 
@@ -359,18 +362,27 @@ const Logo = styled_components__WEBPACK_IMPORTED_MODULE_1___default.a.a.withConf
   componentId: "sc-15fn9iy-0"
 })(["position:relative;top:18%;left:3%;font-family:Monospace,Helvetica,sans-serif;position:absolute;font-size:3.4rem;text-decoration:none;&:hover{cursor:pointer;}"]);
 
+const BacktoHome = () => {
+  console.log('BTH is Ok');
+  setInterval(() => {
+    console.log('a');
+    next_router__WEBPACK_IMPORTED_MODULE_3___default.a.push('/');
+  }, 100);
+};
+
 const LogoImage = () => {
   return __jsx(next_link__WEBPACK_IMPORTED_MODULE_2___default.a, {
     href: "/",
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 19
+      lineNumber: 29
     },
     __self: undefined
   }, __jsx(Logo, {
+    onClick: BacktoHome,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 20
+      lineNumber: 30
     },
     __self: undefined
   }, "C&C"));
@@ -447,6 +459,11 @@ const useInput = initialValue => {
   };
 };
 
+const searchBtnHandler = (value, current) => {
+  if (value === '') {// console.log(current);
+  }
+};
+
 const SearchBox = props => {
   let useSearch = useInput('');
   const {
@@ -481,7 +498,7 @@ const SearchBox = props => {
   return __jsx(SearchFrame, {
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 84
+      lineNumber: 90
     },
     __self: undefined
   }, __jsx(Search, Object(_babel_runtime_corejs2_helpers_esm_extends__WEBPACK_IMPORTED_MODULE_0__["default"])({
@@ -489,7 +506,7 @@ const SearchBox = props => {
   }, useSearch, {
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 85
+      lineNumber: 91
     },
     __self: undefined
   })), __jsx(next_link__WEBPACK_IMPORTED_MODULE_3___default.a, {
@@ -497,17 +514,17 @@ const SearchBox = props => {
     as: `/search/${searchAddress}`,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 86
+      lineNumber: 92
     },
     __self: undefined
   }, __jsx(Button, {
     onClick: () => searchBtnHandler(useSearch.value, position),
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 87
+      lineNumber: 93
     },
     __self: undefined
-  }, "\uD0D0\uC0C9")), props.children);
+  }, "\uD0D0\uC0C9")));
 };
 
 /* harmony default export */ __webpack_exports__["default"] = (SearchBox);
@@ -657,7 +674,7 @@ const TopMenuButtons = props => {
   return __jsx(TopMenuBtton, {
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 19
+      lineNumber: 16
     },
     __self: undefined
   }, props.children);
@@ -2458,7 +2475,7 @@ const Index = () => {
 
 /***/ }),
 
-/***/ 3:
+/***/ 5:
 /*!******************************!*\
   !*** multi ./pages/index.js ***!
   \******************************/

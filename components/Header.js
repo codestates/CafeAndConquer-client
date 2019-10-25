@@ -1,3 +1,4 @@
+
 import styled from 'styled-components';
 import { usePosition } from 'use-position';
 import React, { useState, useEffect } from 'react';
@@ -18,7 +19,6 @@ const MainFrame = styled.div`
   left: 0;
   background-color: lightgray;
   z-index: 10;
-  /* border: 1px solid black; */
 `;
 
 const Header = () => {
@@ -29,7 +29,7 @@ const Header = () => {
 
   return (
     <MainFrame>
-      {/* 로고 링크가 작동 가끔 안 됨 이유를 모르겠음. 호버 처리해야함  */}
+      {/* 로고 링크가 작동 안 되는 이유를 모르겠음.   */}
       <LogoImage />
       <SearchBox />
       <TopMenuBttons>

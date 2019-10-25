@@ -256,8 +256,11 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var styled_components__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! styled-components */ "./node_modules/styled-components/dist/styled-components.browser.esm.js");
 /* harmony import */ var next_link__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! next/link */ "./node_modules/next/link.js");
 /* harmony import */ var next_link__WEBPACK_IMPORTED_MODULE_2___default = /*#__PURE__*/__webpack_require__.n(next_link__WEBPACK_IMPORTED_MODULE_2__);
+/* harmony import */ var next_router__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! next/router */ "./node_modules/next/dist/client/router.js");
+/* harmony import */ var next_router__WEBPACK_IMPORTED_MODULE_3___default = /*#__PURE__*/__webpack_require__.n(next_router__WEBPACK_IMPORTED_MODULE_3__);
 var _jsxFileName = "/Users/hasubin/Desktop/CafeAndConquer-client/components/Headers/LogoImage.js";
 var __jsx = react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement;
+
 
 
 
@@ -266,18 +269,27 @@ var Logo = styled_components__WEBPACK_IMPORTED_MODULE_1__["default"].a.withConfi
   componentId: "sc-15fn9iy-0"
 })(["position:relative;top:18%;left:3%;font-family:Monospace,Helvetica,sans-serif;position:absolute;font-size:3.4rem;text-decoration:none;&:hover{cursor:pointer;}"]);
 
+var BacktoHome = function BacktoHome() {
+  console.log('BTH is Ok');
+  setInterval(function () {
+    console.log('a');
+    next_router__WEBPACK_IMPORTED_MODULE_3___default.a.push('/');
+  }, 100);
+};
+
 var LogoImage = function LogoImage() {
   return __jsx(next_link__WEBPACK_IMPORTED_MODULE_2___default.a, {
     href: "/",
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 19
+      lineNumber: 29
     },
     __self: this
   }, __jsx(Logo, {
+    onClick: BacktoHome,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 20
+      lineNumber: 30
     },
     __self: this
   }, "C&C"));
@@ -348,6 +360,11 @@ var useInput = function useInput(initialValue) {
   };
 };
 
+var searchBtnHandler = function searchBtnHandler(value, current) {
+  if (value === '') {// console.log(current);
+  }
+};
+
 var SearchBox = function SearchBox(props) {
   var useSearch = useInput('');
 
@@ -383,7 +400,7 @@ var SearchBox = function SearchBox(props) {
   return __jsx(SearchFrame, {
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 84
+      lineNumber: 90
     },
     __self: this
   }, __jsx(Search, Object(_babel_runtime_corejs2_helpers_esm_extends__WEBPACK_IMPORTED_MODULE_0__["default"])({
@@ -391,7 +408,7 @@ var SearchBox = function SearchBox(props) {
   }, useSearch, {
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 85
+      lineNumber: 91
     },
     __self: this
   })), __jsx(next_link__WEBPACK_IMPORTED_MODULE_3___default.a, {
@@ -399,7 +416,7 @@ var SearchBox = function SearchBox(props) {
     as: "/search/".concat(searchAddress),
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 86
+      lineNumber: 92
     },
     __self: this
   }, __jsx(Button, {
@@ -408,10 +425,10 @@ var SearchBox = function SearchBox(props) {
     },
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 87
+      lineNumber: 93
     },
     __self: this
-  }, "\uD0D0\uC0C9")), props.children);
+  }, "\uD0D0\uC0C9")));
 };
 
 /* harmony default export */ __webpack_exports__["default"] = (SearchBox);
@@ -559,7 +576,7 @@ var TopMenuButtons = function TopMenuButtons(props) {
   return __jsx(TopMenuBtton, {
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 19
+      lineNumber: 16
     },
     __self: this
   }, props.children);
@@ -13974,7 +13991,7 @@ var Index = function Index() {
 
 /***/ }),
 
-/***/ 0:
+/***/ 2:
 /*!****************************************************************************************************************************************!*\
   !*** multi next-client-pages-loader?page=%2F&absolutePagePath=%2FUsers%2Fhasubin%2FDesktop%2FCafeAndConquer-client%2Fpages%2Findex.js ***!
   \****************************************************************************************************************************************/
@@ -13997,5 +14014,5 @@ module.exports = dll_13346faca0e924a89b24;
 
 /***/ })
 
-},[[0,"static/runtime/webpack.js","styles"]]]);
+},[[2,"static/runtime/webpack.js","styles"]]]);
 //# sourceMappingURL=index.js.map
