@@ -4,7 +4,7 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "dev": "next",
+    "dev": "next && node components/SingupInit.js",
     "build": "next build",
     "start": "next start"
   },
@@ -27,6 +27,7 @@
     "react": "^16.10.2",
     "react-dom": "^16.10.2",
     "react-star-ratings": "^2.3.0",
+    "reactjs-popup": "^1.5.0",
     "styled-components": "^4.4.0",
     "use-position": "^0.0.6"
   },

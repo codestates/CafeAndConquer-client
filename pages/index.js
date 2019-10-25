@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 import { useState, useCallback } from 'react';
 import { Map } from './map';
 import RegisterList from './registerList';
@@ -70,5 +71,17 @@ const Subject = styled.h2`
   color: #eccc68;
 `
 // 왜 여기서 matching이 틀렸다는 문구가 뜨는지 잘 모르겠음. 
+=======
+import Link from 'next/link';
+import Header from '../components/Header';
+import BasicInfo from '../components/BasicInfo';
+
+const Index = () => (
+  <div>
+    <Header />
+    <BasicInfo />
+  </div>
+);
+>>>>>>> develop
 
 export default Index;
