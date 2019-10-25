@@ -18,7 +18,6 @@ const useInput = (initialValue) => {
   return { value, onChange };
 };
 
-
 const searchBtnHandler = (value, current) => {
   if (value === '') {
     console.log(current);

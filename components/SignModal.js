@@ -22,16 +22,15 @@ const Content = styled.div`
 `;
 
 const SignModal = (props) => {
- 
   const onClose = (e) => {
     alReadyCalled = true;
-    console.log(alReadyCalled)
+    console.log(alReadyCalled);
     props.onClose && props.onClose(e);
   };
   if (!props.show) {
     return null;
   }
-  
+
   useEffect(() => {
     if (!alReadyCalled) {
       Kakao.init(process.env.KAKAO_LOGIN_KEY);
@@ -53,6 +52,7 @@ const SignModal = (props) => {
   };
 
   console.log(alReadyCalled);
+  
   return (
     <MyModal>
       <Content>

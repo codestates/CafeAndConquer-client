@@ -27,6 +27,7 @@ const SearchForm = ({ name }) => {
       </p>
     );
   }
+
   return (
     <Mainframe>
       <h1 style={{ position: 'relative', left: '15%' }}>

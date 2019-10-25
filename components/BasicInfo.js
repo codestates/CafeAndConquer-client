@@ -2,7 +2,6 @@ import styled from 'styled-components';
 import React from 'react';
 import { usePosition } from 'use-position';
 import Link from 'next/link';
-
 import Router from 'next/router';
 
 const MainFrame = styled.div`
@@ -61,7 +60,7 @@ const RegisterCafe = styled.button`
   /* display: block; */
 `;
 
-export default function BasicInfo(props) {
+export default function BasicInfo() {
   const { latitude, longitude, error } = usePosition();
   const position = {
     lat: latitude,
@@ -72,13 +71,13 @@ export default function BasicInfo(props) {
     console.log(current);
   };
 
-
   const registerCafeHandler = () => {
     Router.push({
       pathname: '/register',
       query: { lat: position.lat, lng: position.lng },
     });
   };
+
   return (
     <MainFrame>
       <MainLogo>Cafe&Conqeur</MainLogo>
