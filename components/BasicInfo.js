@@ -74,7 +74,7 @@ export default function BasicInfo() {
   const registerCafeHandler = () => {
     Router.push({
       pathname: '/register',
-      query: { lat: position.lat, lng: position.lng },
+      // query: { lat: position.lat, lng: position.lng },
     });
   };
 

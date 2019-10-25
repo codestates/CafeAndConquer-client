@@ -64,11 +64,8 @@ function BasicInfo() {
 
   var registerCafeHandler = function registerCafeHandler() {
     next_router__WEBPACK_IMPORTED_MODULE_4___default.a.push({
-      pathname: '/register',
-      query: {
-        lat: position.lat,
-        lng: position.lng
-      }
+      pathname: '/register' // query: { lat: position.lat, lng: position.lng },
+
     });
   };
 
@@ -181,25 +178,25 @@ var Header = function Header() {
   return __jsx(MainFrame, {
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 31
+      lineNumber: 30
     },
     __self: this
   }, __jsx(_Headers_LogoImage__WEBPACK_IMPORTED_MODULE_6__["default"], {
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 33
+      lineNumber: 32
     },
     __self: this
   }), __jsx(_Headers_SearchBox__WEBPACK_IMPORTED_MODULE_7__["default"], {
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 34
+      lineNumber: 33
     },
     __self: this
   }), __jsx(_headers_TopMenuButtons__WEBPACK_IMPORTED_MODULE_8__["default"], {
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 35
+      lineNumber: 34
     },
     __self: this
   }, __jsx("button", {
@@ -208,7 +205,7 @@ var Header = function Header() {
     },
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 36
+      lineNumber: 35
     },
     __self: this
   }, "sign"), __jsx(_SignModal__WEBPACK_IMPORTED_MODULE_5__["default"], {
@@ -216,14 +213,14 @@ var Header = function Header() {
     show: show,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 37
+      lineNumber: 36
     },
     __self: this
   }, "\uD658\uC601\uD569\uB2C8\uB2E4"), __jsx(next_link__WEBPACK_IMPORTED_MODULE_3___default.a, {
     href: "/login",
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 40
+      lineNumber: 39
     },
     __self: this
   }, __jsx("a", {
@@ -232,7 +229,7 @@ var Header = function Header() {
     },
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 41
+      lineNumber: 40
     },
     __self: this
   }, "login"))));

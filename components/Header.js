@@ -1,4 +1,3 @@
-
 import styled from 'styled-components';
 import { usePosition } from 'use-position';
 import React, { useState, useEffect } from 'react';
