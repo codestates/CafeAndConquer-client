@@ -28,5 +28,10 @@ test/**/next-env.d.ts
 # example output
 examples/**/out
 
+<<<<<<< HEAD
+# todo 
+todo.md
+=======
 # API_KEY
 Secret.js
+>>>>>>> develop
