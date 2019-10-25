@@ -48,7 +48,7 @@ const SignModal = (props) => {
   }, []);
 
   const closeKakao = () => {
-    setTimeout(onClose, 1000);
+    // setTimeout(onClose, 1000);
   };
 
   console.log(alReadyCalled);

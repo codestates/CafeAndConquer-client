@@ -1,5 +1,7 @@
 import React, { useState } from 'react';
+import Link from 'next/link';
 import styled from 'styled-components';
+import SignModal from '../SignModal';
 
 const TopMenuBtton = styled.div`
   position: absolute;
@@ -12,9 +14,19 @@ const TopMenuBtton = styled.div`
 `;
 
 const TopMenuButtons = (props) => {
+  const [show, setShow] = useState(false);
+  const showSign = () => {
+    setShow(!show);
+  };
   return (
     <TopMenuBtton>
-        {props.children}
+      <button onClick={() => showSign()}>sign</button>
+      <SignModal onClose={showSign} show={show}>
+        환영합니다
+      </SignModal>
+      <Link href="/login">
+        <a style={{ padding: '10px' }}>login</a>
+      </Link>
     </TopMenuBtton>
   );
 };

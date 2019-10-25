@@ -1,13 +1,10 @@
 import styled from 'styled-components';
-import { usePosition } from 'use-position';
-import React, { useState, useEffect } from 'react';
-import Link from 'next/link';
-import Router from 'next/router';
-import SignModal from './SignModal';
+import React from 'react';
 
 import LogoImage from './Headers/LogoImage';
 import SearchBox from './Headers/SearchBox';
 import TopMenuBttons from './headers/TopMenuButtons';
+import AfterLogin from './Headers/AfterLogin';
 
 const MainFrame = styled.div`
   position: fixed;
@@ -20,26 +17,20 @@ const MainFrame = styled.div`
   z-index: 10;
 `;
 
-const Header = () => {
-  const [show, setShow] = useState(false);
-  const showSign = () => {
-    setShow(!show);
-  };
+const Header = ({ logined }) => {
+  let menuButtons = <TopMenuBttons />;
+
+  // 로그인 유무에 따라 바뀜
+  // if(logined){
+  //   menuButtons = <AfterLogin />
+  // }
 
   return (
     <MainFrame>
       {/* 로고 링크가 작동 안 되는 이유를 모르겠음.   */}
       <LogoImage />
       <SearchBox />
-      <TopMenuBttons>
-        <button onClick={() => showSign()}>sign</button>
-        <SignModal onClose={showSign} show={show}>
-          환영합니다
-        </SignModal>
-        <Link href="/login">
-          <a style={{ padding: '10px' }}>login</a>
-        </Link>
-      </TopMenuBttons>
+      {menuButtons}
     </MainFrame>
   );
 };

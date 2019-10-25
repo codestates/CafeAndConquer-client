@@ -138,23 +138,14 @@ function BasicInfo() {
 "use strict";
 __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var styled_components__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! styled-components */ "./node_modules/styled-components/dist/styled-components.browser.esm.js");
-/* harmony import */ var use_position__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! use-position */ "./node_modules/use-position/dist/usePosition.min.js");
-/* harmony import */ var use_position__WEBPACK_IMPORTED_MODULE_1___default = /*#__PURE__*/__webpack_require__.n(use_position__WEBPACK_IMPORTED_MODULE_1__);
-/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! react */ "./node_modules/react/index.js");
-/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_2___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_2__);
-/* harmony import */ var next_link__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! next/link */ "./node_modules/next/link.js");
-/* harmony import */ var next_link__WEBPACK_IMPORTED_MODULE_3___default = /*#__PURE__*/__webpack_require__.n(next_link__WEBPACK_IMPORTED_MODULE_3__);
-/* harmony import */ var next_router__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! next/router */ "./node_modules/next/dist/client/router.js");
-/* harmony import */ var next_router__WEBPACK_IMPORTED_MODULE_4___default = /*#__PURE__*/__webpack_require__.n(next_router__WEBPACK_IMPORTED_MODULE_4__);
-/* harmony import */ var _SignModal__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! ./SignModal */ "./components/SignModal.js");
-/* harmony import */ var _Headers_LogoImage__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! ./Headers/LogoImage */ "./components/Headers/LogoImage.js");
-/* harmony import */ var _Headers_SearchBox__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(/*! ./Headers/SearchBox */ "./components/Headers/SearchBox.js");
-/* harmony import */ var _headers_TopMenuButtons__WEBPACK_IMPORTED_MODULE_8__ = __webpack_require__(/*! ./headers/TopMenuButtons */ "./components/headers/TopMenuButtons.js");
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! react */ "./node_modules/react/index.js");
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_1___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_1__);
+/* harmony import */ var _Headers_LogoImage__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./Headers/LogoImage */ "./components/Headers/LogoImage.js");
+/* harmony import */ var _Headers_SearchBox__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ./Headers/SearchBox */ "./components/Headers/SearchBox.js");
+/* harmony import */ var _headers_TopMenuButtons__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ./headers/TopMenuButtons */ "./components/headers/TopMenuButtons.js");
+/* harmony import */ var _Headers_AfterLogin__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! ./Headers/AfterLogin */ "./components/Headers/AfterLogin.js");
 var _jsxFileName = "/Users/hasubin/Desktop/CafeAndConquer-client/components/Header.js";
-var __jsx = react__WEBPACK_IMPORTED_MODULE_2___default.a.createElement;
-
-
-
+var __jsx = react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement;
 
 
 
@@ -166,76 +157,88 @@ var MainFrame = styled_components__WEBPACK_IMPORTED_MODULE_0__["default"].div.wi
   componentId: "sc-1yui16o-0"
 })(["position:fixed;height:100px;max-width:100%;width:100%;top:0;left:0;background-color:lightgray;z-index:10;"]);
 
-var Header = function Header() {
-  var _useState = Object(react__WEBPACK_IMPORTED_MODULE_2__["useState"])(false),
-      show = _useState[0],
-      setShow = _useState[1];
+var Header = function Header(_ref) {
+  var logined = _ref.logined;
 
-  var showSign = function showSign() {
-    setShow(!show);
-  };
+  var menuButtons = __jsx(_headers_TopMenuButtons__WEBPACK_IMPORTED_MODULE_4__["default"], {
+    __source: {
+      fileName: _jsxFileName,
+      lineNumber: 21
+    },
+    __self: this
+  }); // 로그인 유무에 따라 바뀜
+  // if(logined){
+  //   menuButtons = <AfterLogin />
+  // }
+
 
   return __jsx(MainFrame, {
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 30
+      lineNumber: 29
     },
     __self: this
-  }, __jsx(_Headers_LogoImage__WEBPACK_IMPORTED_MODULE_6__["default"], {
+  }, __jsx(_Headers_LogoImage__WEBPACK_IMPORTED_MODULE_2__["default"], {
+    __source: {
+      fileName: _jsxFileName,
+      lineNumber: 31
+    },
+    __self: this
+  }), __jsx(_Headers_SearchBox__WEBPACK_IMPORTED_MODULE_3__["default"], {
     __source: {
       fileName: _jsxFileName,
       lineNumber: 32
     },
     __self: this
-  }), __jsx(_Headers_SearchBox__WEBPACK_IMPORTED_MODULE_7__["default"], {
-    __source: {
-      fileName: _jsxFileName,
-      lineNumber: 33
-    },
-    __self: this
-  }), __jsx(_headers_TopMenuButtons__WEBPACK_IMPORTED_MODULE_8__["default"], {
-    __source: {
-      fileName: _jsxFileName,
-      lineNumber: 34
-    },
-    __self: this
-  }, __jsx("button", {
-    onClick: function onClick() {
-      return showSign();
-    },
-    __source: {
-      fileName: _jsxFileName,
-      lineNumber: 35
-    },
-    __self: this
-  }, "sign"), __jsx(_SignModal__WEBPACK_IMPORTED_MODULE_5__["default"], {
-    onClose: showSign,
-    show: show,
-    __source: {
-      fileName: _jsxFileName,
-      lineNumber: 36
-    },
-    __self: this
-  }, "\uD658\uC601\uD569\uB2C8\uB2E4"), __jsx(next_link__WEBPACK_IMPORTED_MODULE_3___default.a, {
-    href: "/login",
-    __source: {
-      fileName: _jsxFileName,
-      lineNumber: 39
-    },
-    __self: this
-  }, __jsx("a", {
-    style: {
-      padding: '10px'
-    },
-    __source: {
-      fileName: _jsxFileName,
-      lineNumber: 40
-    },
-    __self: this
-  }, "login"))));
+  }), menuButtons);
 };
 
 /* harmony default export */ __webpack_exports__["default"] = (Header);
+
+/***/ }),
+
+/***/ "./components/Headers/AfterLogin.js":
+/*!******************************************!*\
+  !*** ./components/Headers/AfterLogin.js ***!
+  \******************************************/
+/*! exports provided: default */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! react */ "./node_modules/react/index.js");
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_0__);
+/* harmony import */ var next_link__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! next/link */ "./node_modules/next/link.js");
+/* harmony import */ var next_link__WEBPACK_IMPORTED_MODULE_1___default = /*#__PURE__*/__webpack_require__.n(next_link__WEBPACK_IMPORTED_MODULE_1__);
+/* harmony import */ var styled_components__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! styled-components */ "./node_modules/styled-components/dist/styled-components.browser.esm.js");
+var _jsxFileName = "/Users/hasubin/Desktop/CafeAndConquer-client/components/Headers/AfterLogin.js";
+var __jsx = react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement;
+
+
+
+var TopMenuBtton = styled_components__WEBPACK_IMPORTED_MODULE_2__["default"].div.withConfig({
+  displayName: "AfterLogin__TopMenuBtton",
+  componentId: "sc-1qz9e2x-0"
+})(["position:absolute;top:35%;left:70%;height:30px;width:25%;text-align:center;"]);
+
+var AfterLogin = function AfterLogin(props) {
+  return __jsx(TopMenuBtton, {
+    __source: {
+      fileName: _jsxFileName,
+      lineNumber: 17
+    },
+    __self: this
+  }, __jsx(next_link__WEBPACK_IMPORTED_MODULE_1___default.a, {
+    href: "/",
+    __source: {
+      fileName: _jsxFileName,
+      lineNumber: 18
+    },
+    __self: this
+  }, "logout"));
+};
+
+/* harmony default export */ __webpack_exports__["default"] = (AfterLogin);
 
 /***/ }),
 
@@ -271,7 +274,7 @@ var BacktoHome = function BacktoHome() {
   setInterval(function () {
     console.log('a');
     next_router__WEBPACK_IMPORTED_MODULE_3___default.a.push('/');
-  }, 100);
+  }, 1000);
 };
 
 var LogoImage = function LogoImage() {
@@ -283,7 +286,6 @@ var LogoImage = function LogoImage() {
     },
     __self: this
   }, __jsx(Logo, {
-    onClick: BacktoHome,
     __source: {
       fileName: _jsxFileName,
       lineNumber: 30
@@ -488,8 +490,7 @@ var SignModal = function SignModal(props) {
     });
   }, []);
 
-  var closeKakao = function closeKakao() {
-    setTimeout(onClose, 1000);
+  var closeKakao = function closeKakao() {// setTimeout(onClose, 1000);
   };
 
   console.log(alReadyCalled);
@@ -559,24 +560,70 @@ var SignModal = function SignModal(props) {
 __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! react */ "./node_modules/react/index.js");
 /* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_0__);
-/* harmony import */ var styled_components__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! styled-components */ "./node_modules/styled-components/dist/styled-components.browser.esm.js");
+/* harmony import */ var next_link__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! next/link */ "./node_modules/next/link.js");
+/* harmony import */ var next_link__WEBPACK_IMPORTED_MODULE_1___default = /*#__PURE__*/__webpack_require__.n(next_link__WEBPACK_IMPORTED_MODULE_1__);
+/* harmony import */ var styled_components__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! styled-components */ "./node_modules/styled-components/dist/styled-components.browser.esm.js");
+/* harmony import */ var _SignModal__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ../SignModal */ "./components/SignModal.js");
 var _jsxFileName = "/Users/hasubin/Desktop/CafeAndConquer-client/components/headers/TopMenuButtons.js";
 var __jsx = react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement;
 
 
-var TopMenuBtton = styled_components__WEBPACK_IMPORTED_MODULE_1__["default"].div.withConfig({
+
+
+var TopMenuBtton = styled_components__WEBPACK_IMPORTED_MODULE_2__["default"].div.withConfig({
   displayName: "TopMenuButtons__TopMenuBtton",
   componentId: "sc-15jctfp-0"
 })(["position:absolute;top:35%;left:70%;height:30px;width:25%;text-align:center;"]);
 
 var TopMenuButtons = function TopMenuButtons(props) {
+  var _useState = Object(react__WEBPACK_IMPORTED_MODULE_0__["useState"])(false),
+      show = _useState[0],
+      setShow = _useState[1];
+
+  var showSign = function showSign() {
+    setShow(!show);
+  };
+
   return __jsx(TopMenuBtton, {
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 16
+      lineNumber: 22
     },
     __self: this
-  }, props.children);
+  }, __jsx("button", {
+    onClick: function onClick() {
+      return showSign();
+    },
+    __source: {
+      fileName: _jsxFileName,
+      lineNumber: 23
+    },
+    __self: this
+  }, "sign"), __jsx(_SignModal__WEBPACK_IMPORTED_MODULE_3__["default"], {
+    onClose: showSign,
+    show: show,
+    __source: {
+      fileName: _jsxFileName,
+      lineNumber: 24
+    },
+    __self: this
+  }, "\uD658\uC601\uD569\uB2C8\uB2E4"), __jsx(next_link__WEBPACK_IMPORTED_MODULE_1___default.a, {
+    href: "/login",
+    __source: {
+      fileName: _jsxFileName,
+      lineNumber: 27
+    },
+    __self: this
+  }, __jsx("a", {
+    style: {
+      padding: '10px'
+    },
+    __source: {
+      fileName: _jsxFileName,
+      lineNumber: 28
+    },
+    __self: this
+  }, "login")));
 };
 
 /* harmony default export */ __webpack_exports__["default"] = (TopMenuButtons);
@@ -13988,7 +14035,7 @@ var Index = function Index() {
 
 /***/ }),
 
-/***/ 2:
+/***/ 0:
 /*!****************************************************************************************************************************************!*\
   !*** multi next-client-pages-loader?page=%2F&absolutePagePath=%2FUsers%2Fhasubin%2FDesktop%2FCafeAndConquer-client%2Fpages%2Findex.js ***!
   \****************************************************************************************************************************************/
@@ -14011,5 +14058,5 @@ module.exports = dll_13346faca0e924a89b24;
 
 /***/ })
 
-},[[2,"static/runtime/webpack.js","styles"]]]);
+},[[0,"static/runtime/webpack.js","styles"]]]);
 //# sourceMappingURL=index.js.map

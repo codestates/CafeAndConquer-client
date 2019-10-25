@@ -21,13 +21,13 @@ const BacktoHome = () => {
   setInterval(() => {
     console.log('a');
     Router.push('/');
-  }, 100);
+  }, 1000);
 };
 
 const LogoImage = () => {
   return (
     <Link href="/">
-      <Logo onClick={BacktoHome}>C&C</Logo>
+      <Logo>C&C</Logo>
     </Link>
   );
 };
