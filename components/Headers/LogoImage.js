@@ -9,6 +9,10 @@ const Logo = styled.a`
   position: absolute;
   font-size: 3.4rem;
   text-decoration: none;
+
+  &:hover {
+    cursor: pointer;
+  }
 `;
 const LogoImage = () => {
   return (
