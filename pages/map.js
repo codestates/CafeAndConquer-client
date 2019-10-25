@@ -16,7 +16,7 @@ const Map = ({ setList, confirmRegister }) => {
 
     // let script = document.createElement('script');
     // script.type = "text/javascript";
-    // script.src = "//dapi.kakao.com/v2/maps/sdk.js?appkey=08621feb64d12ca619166a136815243f&libraries=services";
+    // script.src = `//dapi.kakao.com/v2/maps/sdk.js?appkey=${process.env.KAKAO_API_MAP_KEY}&libraries=services`;
     // document.head.appendChild(script);
     // 여기서 비동기적 요소가 있나? 안되는 이유? 
 
@@ -268,7 +268,7 @@ const Map = ({ setList, confirmRegister }) => {
       <Head>
 				<script
 					type="text/javascript"
-					src="//dapi.kakao.com/v2/maps/sdk.js?appkey=08621feb64d12ca619166a136815243f&libraries=services" ></script>
+					src={`//dapi.kakao.com/v2/maps/sdk.js?appkey=${process.env.KAKAO_API_MAP_KEY}&libraries=services`} ></script>
 			</Head>
 
 			<div style={{ margin: '12px' }}>점령할 카페를 선택해주세요. 

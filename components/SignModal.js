@@ -1,6 +1,5 @@
 import React, { useEffect } from 'react';
 import styled from 'styled-components';
-const SIGN_API_KEY = require('../Secret').SIGN_API_KEY;
 let alReadyCalled;
 
 const MyModal = styled.div`
@@ -35,7 +34,7 @@ const SignModal = (props) => {
   
   useEffect(() => {
     if (!alReadyCalled) {
-      Kakao.init(SIGN_API_KEY);
+      Kakao.init(process.env.KAKAO_LOGIN_KEY);
     }
 
     Kakao.Auth.createLoginButton({

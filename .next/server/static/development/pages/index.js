@@ -93,25 +93,476 @@ module.exports =
 /************************************************************************/
 /******/ ({
 
-/***/ "./map.scss":
-/*!******************!*\
-  !*** ./map.scss ***!
-  \******************/
-/*! no static exports found */
-/***/ (function(module, exports) {
+/***/ "./components/BasicInfo.js":
+/*!*********************************!*\
+  !*** ./components/BasicInfo.js ***!
+  \*********************************/
+/*! exports provided: default */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "default", function() { return BasicInfo; });
+/* harmony import */ var styled_components__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! styled-components */ "styled-components");
+/* harmony import */ var styled_components__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(styled_components__WEBPACK_IMPORTED_MODULE_0__);
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! react */ "react");
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_1___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_1__);
+/* harmony import */ var use_position__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! use-position */ "use-position");
+/* harmony import */ var use_position__WEBPACK_IMPORTED_MODULE_2___default = /*#__PURE__*/__webpack_require__.n(use_position__WEBPACK_IMPORTED_MODULE_2__);
+/* harmony import */ var next_link__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! next/link */ "./node_modules/next/link.js");
+/* harmony import */ var next_link__WEBPACK_IMPORTED_MODULE_3___default = /*#__PURE__*/__webpack_require__.n(next_link__WEBPACK_IMPORTED_MODULE_3__);
+/* harmony import */ var next_router__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! next/router */ "next/router");
+/* harmony import */ var next_router__WEBPACK_IMPORTED_MODULE_4___default = /*#__PURE__*/__webpack_require__.n(next_router__WEBPACK_IMPORTED_MODULE_4__);
+var _jsxFileName = "/Users/gomidev/Documents/Projects/CafeAndConquer-client/components/BasicInfo.js";
+var __jsx = react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement;
 
 
+
+
+
+const MainFrame = styled_components__WEBPACK_IMPORTED_MODULE_0___default.a.div.withConfig({
+  displayName: "BasicInfo__MainFrame",
+  componentId: "sc-1i6b2vz-0"
+})(["position:absolute;top:14%;left:0;height:100vh;width:100vw;background-image:url('https://images.unsplash.com/photo-1422207049116-cfaf69531072?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1440&q=80');background-repeat:no-repeat;z-index:0;"]);
+const MainLogo = styled_components__WEBPACK_IMPORTED_MODULE_0___default.a.h1.withConfig({
+  displayName: "BasicInfo__MainLogo",
+  componentId: "sc-1i6b2vz-1"
+})(["font-family:Monospace,Helvetica,sans-serif;position:absolute;font-size:4.5rem;color:black;width:100%;top:15%;margin:0 auto;text-align:center;text-shadow:2px 0 0 #fff,-2px 0 0 #fff,0 2px 0 #fff,0 -2px 0 #fff,1px 1px #fff,-1px -1px 0 #fff,1px -1px 0 #fff,-1px 1px 0 #fff;"]);
+const MainInfo = styled_components__WEBPACK_IMPORTED_MODULE_0___default.a.h2.withConfig({
+  displayName: "BasicInfo__MainInfo",
+  componentId: "sc-1i6b2vz-2"
+})(["font-family:Monospace,Helvetica,sans-serif;position:relative;font-size:2.5rem;color:black;width:100%;top:35%;margin:0 auto;text-align:center;text-shadow:2px 0 0 #fff,-2px 0 0 #fff,0 2px 0 #fff,0 -2px 0 #fff,1px 1px #fff,-1px -1px 0 #fff,1px -1px 0 #fff,-1px 1px 0 #fff;"]);
+const CurrentLocation = styled_components__WEBPACK_IMPORTED_MODULE_0___default.a.button.attrs({}).withConfig({
+  displayName: "BasicInfo__CurrentLocation",
+  componentId: "sc-1i6b2vz-3"
+})(["position:absolute;top:50%;left:23%;width:25%;height:25%;"]);
+const RegisterCafe = styled_components__WEBPACK_IMPORTED_MODULE_0___default.a.button.withConfig({
+  displayName: "BasicInfo__RegisterCafe",
+  componentId: "sc-1i6b2vz-4"
+})(["position:absolute;top:50%;right:23%;width:25%;height:25%;"]);
+function BasicInfo(props) {
+  const {
+    latitude,
+    longitude,
+    error
+  } = Object(use_position__WEBPACK_IMPORTED_MODULE_2__["usePosition"])();
+  const position = {
+    lat: latitude,
+    lng: longitude,
+    err: error
+  };
+
+  const currentLocationHandler = current => {
+    console.log(current);
+  };
+
+  const registerCafeHandler = () => {
+    next_router__WEBPACK_IMPORTED_MODULE_4___default.a.push({
+      pathname: '/register',
+      query: {
+        lat: position.lat,
+        lng: position.lng
+      }
+    });
+  };
+
+  return __jsx(MainFrame, {
+    __source: {
+      fileName: _jsxFileName,
+      lineNumber: 83
+    },
+    __self: this
+  }, __jsx(MainLogo, {
+    __source: {
+      fileName: _jsxFileName,
+      lineNumber: 84
+    },
+    __self: this
+  }, "Cafe&Conqeur"), __jsx(MainInfo, {
+    __source: {
+      fileName: _jsxFileName,
+      lineNumber: 85
+    },
+    __self: this
+  }, "\uCE74\uD398\uB97C \uBC1C\uACAC\uD558\uACE0 \uB4F1\uB85D\uD558\uC138\uC694"), __jsx("ul", {
+    __source: {
+      fileName: _jsxFileName,
+      lineNumber: 86
+    },
+    __self: this
+  }, __jsx(next_link__WEBPACK_IMPORTED_MODULE_3___default.a, {
+    href: "/search/[id]",
+    __source: {
+      fileName: _jsxFileName,
+      lineNumber: 88
+    },
+    __self: this
+  }, __jsx(CurrentLocation, {
+    onClick: () => currentLocationHandler(position),
+    __source: {
+      fileName: _jsxFileName,
+      lineNumber: 89
+    },
+    __self: this
+  }, "\uAC00\uAE4C\uC6B4 \uCE74\uD398")), __jsx(RegisterCafe, {
+    onClick: registerCafeHandler,
+    __source: {
+      fileName: _jsxFileName,
+      lineNumber: 93
+    },
+    __self: this
+  }, __jsx("a", {
+    itemProp: position,
+    __source: {
+      fileName: _jsxFileName,
+      lineNumber: 94
+    },
+    __self: this
+  }, "\uB4F1\uB85D\uD558\uAE30"))));
+}
 
 /***/ }),
 
-/***/ "./modal.scss":
-/*!********************!*\
-  !*** ./modal.scss ***!
-  \********************/
+/***/ "./components/Header.js":
+/*!******************************!*\
+  !*** ./components/Header.js ***!
+  \******************************/
+/*! exports provided: default */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony import */ var _babel_runtime_corejs2_helpers_esm_extends__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! @babel/runtime-corejs2/helpers/esm/extends */ "./node_modules/@babel/runtime-corejs2/helpers/esm/extends.js");
+/* harmony import */ var styled_components__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! styled-components */ "styled-components");
+/* harmony import */ var styled_components__WEBPACK_IMPORTED_MODULE_1___default = /*#__PURE__*/__webpack_require__.n(styled_components__WEBPACK_IMPORTED_MODULE_1__);
+/* harmony import */ var use_position__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! use-position */ "use-position");
+/* harmony import */ var use_position__WEBPACK_IMPORTED_MODULE_2___default = /*#__PURE__*/__webpack_require__.n(use_position__WEBPACK_IMPORTED_MODULE_2__);
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! react */ "react");
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_3___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_3__);
+/* harmony import */ var next_link__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! next/link */ "./node_modules/next/link.js");
+/* harmony import */ var next_link__WEBPACK_IMPORTED_MODULE_4___default = /*#__PURE__*/__webpack_require__.n(next_link__WEBPACK_IMPORTED_MODULE_4__);
+/* harmony import */ var next_router__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! next/router */ "next/router");
+/* harmony import */ var next_router__WEBPACK_IMPORTED_MODULE_5___default = /*#__PURE__*/__webpack_require__.n(next_router__WEBPACK_IMPORTED_MODULE_5__);
+/* harmony import */ var _SignModal__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! ./SignModal */ "./components/SignModal.js");
+
+var _jsxFileName = "/Users/gomidev/Documents/Projects/CafeAndConquer-client/components/Header.js";
+var __jsx = react__WEBPACK_IMPORTED_MODULE_3___default.a.createElement;
+
+
+
+
+
+
+
+const useInput = initialValue => {
+  const {
+    0: value,
+    1: setValue
+  } = Object(react__WEBPACK_IMPORTED_MODULE_3__["useState"])(initialValue);
+
+  const onChange = event => {
+    // Destructuring assignment
+    // evnt.target.value
+    const {
+      target: {
+        value
+      }
+    } = event;
+    setValue(value);
+  };
+
+  return {
+    value,
+    onChange
+  };
+};
+
+const searchBtnHandler = (value, current) => {
+  if (value === '') {
+    console.log(current);
+  }
+};
+
+const Header = () => {
+  let useSearch = useInput('');
+  const {
+    latitude,
+    longitude,
+    error
+  } = Object(use_position__WEBPACK_IMPORTED_MODULE_2__["usePosition"])();
+  const position = {
+    lat: latitude,
+    lng: longitude,
+    err: error
+  };
+  let searchAddress = useSearch.value;
+
+  if (useSearch.value === '') {
+    searchAddress = '[id]';
+  }
+
+  const handleKeyPress = e => {
+    if (e.charCode === 13) {
+      if (useSearch.value !== '') {
+        next_router__WEBPACK_IMPORTED_MODULE_5___default.a.push(`/search/${useSearch.value}`);
+      }
+    }
+  };
+
+  const {
+    0: show,
+    1: setShow
+  } = Object(react__WEBPACK_IMPORTED_MODULE_3__["useState"])(false);
+
+  const showSign = () => {
+    setShow(!show);
+  };
+
+  return __jsx(MainFrame, {
+    __source: {
+      fileName: _jsxFileName,
+      lineNumber: 54
+    },
+    __self: undefined
+  }, __jsx(next_link__WEBPACK_IMPORTED_MODULE_4___default.a, {
+    href: "/",
+    __source: {
+      fileName: _jsxFileName,
+      lineNumber: 55
+    },
+    __self: undefined
+  }, __jsx(Logo, {
+    __source: {
+      fileName: _jsxFileName,
+      lineNumber: 56
+    },
+    __self: undefined
+  }, "C&C")), __jsx(SearchFrame, {
+    __source: {
+      fileName: _jsxFileName,
+      lineNumber: 58
+    },
+    __self: undefined
+  }, __jsx(Search, Object(_babel_runtime_corejs2_helpers_esm_extends__WEBPACK_IMPORTED_MODULE_0__["default"])({
+    onKeyPress: handleKeyPress
+  }, useSearch, {
+    __source: {
+      fileName: _jsxFileName,
+      lineNumber: 60
+    },
+    __self: undefined
+  })), __jsx(next_link__WEBPACK_IMPORTED_MODULE_4___default.a, {
+    href: "/search/[id]",
+    as: `/search/${searchAddress}`,
+    __source: {
+      fileName: _jsxFileName,
+      lineNumber: 61
+    },
+    __self: undefined
+  }, __jsx(Button, {
+    onClick: () => searchBtnHandler(useSearch.value, position),
+    __source: {
+      fileName: _jsxFileName,
+      lineNumber: 63
+    },
+    __self: undefined
+  }, "\uD0D0\uC0C9"))), __jsx(TopMenuBtton, {
+    __source: {
+      fileName: _jsxFileName,
+      lineNumber: 68
+    },
+    __self: undefined
+  }, __jsx("button", {
+    onClick: () => showSign(),
+    __source: {
+      fileName: _jsxFileName,
+      lineNumber: 70
+    },
+    __self: undefined
+  }, "sign"), __jsx(_SignModal__WEBPACK_IMPORTED_MODULE_6__["default"], {
+    onClose: showSign,
+    show: show,
+    alreadyCalled: false,
+    __source: {
+      fileName: _jsxFileName,
+      lineNumber: 71
+    },
+    __self: undefined
+  }, "\uD658\uC601\uD569\uB2C8\uB2E4"), __jsx(next_link__WEBPACK_IMPORTED_MODULE_4___default.a, {
+    href: "/login",
+    __source: {
+      fileName: _jsxFileName,
+      lineNumber: 74
+    },
+    __self: undefined
+  }, __jsx("a", {
+    style: {
+      padding: '10px'
+    },
+    __source: {
+      fileName: _jsxFileName,
+      lineNumber: 75
+    },
+    __self: undefined
+  }, "login"))));
+};
+
+const MainFrame = styled_components__WEBPACK_IMPORTED_MODULE_1___default.a.div.withConfig({
+  displayName: "Header__MainFrame",
+  componentId: "sc-1yui16o-0"
+})(["position:fixed;height:100px;max-width:100%;width:100%;top:0;left:0;background-color:lightgray;z-index:10;"]);
+const Logo = styled_components__WEBPACK_IMPORTED_MODULE_1___default.a.a.withConfig({
+  displayName: "Header__Logo",
+  componentId: "sc-1yui16o-1"
+})(["position:relative;top:18%;left:3%;font-family:Monospace,Helvetica,sans-serif;position:absolute;font-size:3.4rem;text-decoration:none;"]);
+const SearchFrame = styled_components__WEBPACK_IMPORTED_MODULE_1___default.a.div.withConfig({
+  displayName: "Header__SearchFrame",
+  componentId: "sc-1yui16o-2"
+})(["position:relative;top:10%;left:25%;width:50%;height:70px;"]);
+const Search = styled_components__WEBPACK_IMPORTED_MODULE_1___default.a.input.attrs({
+  placeholder: '지역 또는 카페 탐색하기',
+  type: 'text'
+}).withConfig({
+  displayName: "Header__Search",
+  componentId: "sc-1yui16o-3"
+})(["position:relative;top:20%;width:70%;padding-left:45px;height:44px;border:0px;border:3px solid #ff7f00;font-size:18px;color:#ff7f00;background:url(https://s3-ap-northeast-1.amazonaws.com/dcicons/new/images/web/common/search@2x.png) no-repeat left;background-size:40px;outline:none;&:focus{border-color:blue;}"]);
+const Button = styled_components__WEBPACK_IMPORTED_MODULE_1___default.a.button.attrs({}).withConfig({
+  displayName: "Header__Button",
+  componentId: "sc-1yui16o-4"
+})(["position:relative;top:15%;width:40px;height:50px;"]);
+const TopMenuBtton = styled_components__WEBPACK_IMPORTED_MODULE_1___default.a.div.withConfig({
+  displayName: "Header__TopMenuBtton",
+  componentId: "sc-1yui16o-5"
+})(["position:absolute;top:35%;left:70%;height:30px;width:25%;text-align:center;"]);
+/* harmony default export */ __webpack_exports__["default"] = (Header);
+
+/***/ }),
+
+/***/ "./components/SignModal.js":
+/*!*********************************!*\
+  !*** ./components/SignModal.js ***!
+  \*********************************/
+/*! exports provided: default */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony import */ var _babel_runtime_corejs2_core_js_json_stringify__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! @babel/runtime-corejs2/core-js/json/stringify */ "./node_modules/@babel/runtime-corejs2/core-js/json/stringify.js");
+/* harmony import */ var _babel_runtime_corejs2_core_js_json_stringify__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(_babel_runtime_corejs2_core_js_json_stringify__WEBPACK_IMPORTED_MODULE_0__);
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! react */ "react");
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_1___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_1__);
+/* harmony import */ var styled_components__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! styled-components */ "styled-components");
+/* harmony import */ var styled_components__WEBPACK_IMPORTED_MODULE_2___default = /*#__PURE__*/__webpack_require__.n(styled_components__WEBPACK_IMPORTED_MODULE_2__);
+
+var _jsxFileName = "/Users/gomidev/Documents/Projects/CafeAndConquer-client/components/SignModal.js";
+var __jsx = react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement;
+
+
+let alReadyCalled;
+const MyModal = styled_components__WEBPACK_IMPORTED_MODULE_2___default.a.div.withConfig({
+  displayName: "SignModal__MyModal",
+  componentId: "sc-10g5qwm-0"
+})(["background:rgba(0,0,0,0.25);position:fixed;left:0;top:0;height:100%;width:100%;display:flex;align-items:center;justify-content:center;"]);
+const Content = styled_components__WEBPACK_IMPORTED_MODULE_2___default.a.div.withConfig({
+  displayName: "SignModal__Content",
+  componentId: "sc-10g5qwm-1"
+})(["background:white;padding:1rem;width:400px;height:auto;"]);
+
+const SignModal = props => {
+  const onClose = e => {
+    alReadyCalled = true;
+    console.log(alReadyCalled);
+    props.onClose && props.onClose(e);
+  };
+
+  if (!props.show) {
+    return null;
+  }
+
+  Object(react__WEBPACK_IMPORTED_MODULE_1__["useEffect"])(() => {
+    if (!alReadyCalled) {
+      Kakao.init(process.env.KAKAO_LOGIN_KEY);
+    }
+
+    Kakao.Auth.createLoginButton({
+      container: '#kakao-login-btn',
+      success: function (authObj) {
+        alert(_babel_runtime_corejs2_core_js_json_stringify__WEBPACK_IMPORTED_MODULE_0___default()(authObj));
+      },
+      fail: function (err) {
+        alert(_babel_runtime_corejs2_core_js_json_stringify__WEBPACK_IMPORTED_MODULE_0___default()(err));
+      }
+    });
+  }, []);
+
+  const closeKakao = () => {
+    setTimeout(onClose, 1000);
+  };
+
+  console.log(alReadyCalled);
+  return __jsx(MyModal, {
+    __source: {
+      fileName: _jsxFileName,
+      lineNumber: 57
+    },
+    __self: undefined
+  }, __jsx(Content, {
+    __source: {
+      fileName: _jsxFileName,
+      lineNumber: 58
+    },
+    __self: undefined
+  }, __jsx("h3", {
+    __source: {
+      fileName: _jsxFileName,
+      lineNumber: 59
+    },
+    __self: undefined
+  }, "\uC2E0\uADDC \uD68C\uC6D0\uAC00\uC785"), __jsx("p", {
+    __source: {
+      fileName: _jsxFileName,
+      lineNumber: 60
+    },
+    __self: undefined
+  }, props.children), __jsx("a", {
+    onClick: closeKakao,
+    id: "kakao-login-btn",
+    __source: {
+      fileName: _jsxFileName,
+      lineNumber: 61
+    },
+    __self: undefined
+  }), __jsx("a", {
+    href: "http://developers.kakao.com/logout",
+    __source: {
+      fileName: _jsxFileName,
+      lineNumber: 62
+    },
+    __self: undefined
+  }), __jsx("button", {
+    onClick: e => {
+      onClose(e);
+    },
+    __source: {
+      fileName: _jsxFileName,
+      lineNumber: 63
+    },
+    __self: undefined
+  }, "Close")));
+};
+
+/* harmony default export */ __webpack_exports__["default"] = (SignModal);
+
+/***/ }),
+
+/***/ "./node_modules/@babel/runtime-corejs2/core-js/json/stringify.js":
+/*!***********************************************************************!*\
+  !*** ./node_modules/@babel/runtime-corejs2/core-js/json/stringify.js ***!
+  \***********************************************************************/
 /*! no static exports found */
-/***/ (function(module, exports) {
+/***/ (function(module, exports, __webpack_require__) {
 
-
+module.exports = __webpack_require__(/*! core-js/library/fn/json/stringify */ "core-js/library/fn/json/stringify");
 
 /***/ }),
 
@@ -189,6 +640,39 @@ module.exports = __webpack_require__(/*! core-js/library/fn/object/keys */ "core
 /***/ (function(module, exports, __webpack_require__) {
 
 module.exports = __webpack_require__(/*! core-js/library/fn/promise */ "core-js/library/fn/promise");
+
+/***/ }),
+
+/***/ "./node_modules/@babel/runtime-corejs2/helpers/esm/extends.js":
+/*!********************************************************************!*\
+  !*** ./node_modules/@babel/runtime-corejs2/helpers/esm/extends.js ***!
+  \********************************************************************/
+/*! exports provided: default */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "default", function() { return _extends; });
+/* harmony import */ var _core_js_object_assign__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ../../core-js/object/assign */ "./node_modules/@babel/runtime-corejs2/core-js/object/assign.js");
+/* harmony import */ var _core_js_object_assign__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(_core_js_object_assign__WEBPACK_IMPORTED_MODULE_0__);
+
+function _extends() {
+  _extends = _core_js_object_assign__WEBPACK_IMPORTED_MODULE_0___default.a || function (target) {
+    for (var i = 1; i < arguments.length; i++) {
+      var source = arguments[i];
+
+      for (var key in source) {
+        if (Object.prototype.hasOwnProperty.call(source, key)) {
+          target[key] = source[key];
+        }
+      }
+    }
+
+    return target;
+  };
+
+  return _extends.apply(this, arguments);
+}
 
 /***/ }),
 
@@ -1291,7 +1775,7 @@ class Router {
       if (true) {
         const {
           isValidElementType
-        } = __webpack_require__(/*! react-is */ "./node_modules/next/node_modules/react-is/index.js");
+        } = __webpack_require__(/*! react-is */ "react-is");
 
         if (!isValidElementType(Component)) {
           throw new Error(`The default export is not a React Component in page: "${pathname}"`);
@@ -1803,262 +2287,6 @@ module.exports = __webpack_require__(/*! ./dist/client/link */ "./node_modules/n
 
 /***/ }),
 
-/***/ "./node_modules/next/node_modules/react-is/cjs/react-is.development.js":
-/*!*****************************************************************************!*\
-  !*** ./node_modules/next/node_modules/react-is/cjs/react-is.development.js ***!
-  \*****************************************************************************/
-/*! no static exports found */
-/***/ (function(module, exports, __webpack_require__) {
-
-"use strict";
-/** @license React v16.8.6
- * react-is.development.js
- *
- * Copyright (c) Facebook, Inc. and its affiliates.
- *
- * This source code is licensed under the MIT license found in the
- * LICENSE file in the root directory of this source tree.
- */
-
-
-
-
-
-if (true) {
-  (function() {
-'use strict';
-
-Object.defineProperty(exports, '__esModule', { value: true });
-
-// The Symbol used to tag the ReactElement-like types. If there is no native Symbol
-// nor polyfill, then a plain number is used for performance.
-var hasSymbol = typeof Symbol === 'function' && Symbol.for;
-
-var REACT_ELEMENT_TYPE = hasSymbol ? Symbol.for('react.element') : 0xeac7;
-var REACT_PORTAL_TYPE = hasSymbol ? Symbol.for('react.portal') : 0xeaca;
-var REACT_FRAGMENT_TYPE = hasSymbol ? Symbol.for('react.fragment') : 0xeacb;
-var REACT_STRICT_MODE_TYPE = hasSymbol ? Symbol.for('react.strict_mode') : 0xeacc;
-var REACT_PROFILER_TYPE = hasSymbol ? Symbol.for('react.profiler') : 0xead2;
-var REACT_PROVIDER_TYPE = hasSymbol ? Symbol.for('react.provider') : 0xeacd;
-var REACT_CONTEXT_TYPE = hasSymbol ? Symbol.for('react.context') : 0xeace;
-var REACT_ASYNC_MODE_TYPE = hasSymbol ? Symbol.for('react.async_mode') : 0xeacf;
-var REACT_CONCURRENT_MODE_TYPE = hasSymbol ? Symbol.for('react.concurrent_mode') : 0xeacf;
-var REACT_FORWARD_REF_TYPE = hasSymbol ? Symbol.for('react.forward_ref') : 0xead0;
-var REACT_SUSPENSE_TYPE = hasSymbol ? Symbol.for('react.suspense') : 0xead1;
-var REACT_MEMO_TYPE = hasSymbol ? Symbol.for('react.memo') : 0xead3;
-var REACT_LAZY_TYPE = hasSymbol ? Symbol.for('react.lazy') : 0xead4;
-
-function isValidElementType(type) {
-  return typeof type === 'string' || typeof type === 'function' ||
-  // Note: its typeof might be other than 'symbol' or 'number' if it's a polyfill.
-  type === REACT_FRAGMENT_TYPE || type === REACT_CONCURRENT_MODE_TYPE || type === REACT_PROFILER_TYPE || type === REACT_STRICT_MODE_TYPE || type === REACT_SUSPENSE_TYPE || typeof type === 'object' && type !== null && (type.$$typeof === REACT_LAZY_TYPE || type.$$typeof === REACT_MEMO_TYPE || type.$$typeof === REACT_PROVIDER_TYPE || type.$$typeof === REACT_CONTEXT_TYPE || type.$$typeof === REACT_FORWARD_REF_TYPE);
-}
-
-/**
- * Forked from fbjs/warning:
- * https://github.com/facebook/fbjs/blob/e66ba20ad5be433eb54423f2b097d829324d9de6/packages/fbjs/src/__forks__/warning.js
- *
- * Only change is we use console.warn instead of console.error,
- * and do nothing when 'console' is not supported.
- * This really simplifies the code.
- * ---
- * Similar to invariant but only logs a warning if the condition is not met.
- * This can be used to log issues in development environments in critical
- * paths. Removing the logging code for production environments will keep the
- * same logic and follow the same code paths.
- */
-
-var lowPriorityWarning = function () {};
-
-{
-  var printWarning = function (format) {
-    for (var _len = arguments.length, args = Array(_len > 1 ? _len - 1 : 0), _key = 1; _key < _len; _key++) {
-      args[_key - 1] = arguments[_key];
-    }
-
-    var argIndex = 0;
-    var message = 'Warning: ' + format.replace(/%s/g, function () {
-      return args[argIndex++];
-    });
-    if (typeof console !== 'undefined') {
-      console.warn(message);
-    }
-    try {
-      // --- Welcome to debugging React ---
-      // This error was thrown as a convenience so that you can use this stack
-      // to find the callsite that caused this warning to fire.
-      throw new Error(message);
-    } catch (x) {}
-  };
-
-  lowPriorityWarning = function (condition, format) {
-    if (format === undefined) {
-      throw new Error('`lowPriorityWarning(condition, format, ...args)` requires a warning ' + 'message argument');
-    }
-    if (!condition) {
-      for (var _len2 = arguments.length, args = Array(_len2 > 2 ? _len2 - 2 : 0), _key2 = 2; _key2 < _len2; _key2++) {
-        args[_key2 - 2] = arguments[_key2];
-      }
-
-      printWarning.apply(undefined, [format].concat(args));
-    }
-  };
-}
-
-var lowPriorityWarning$1 = lowPriorityWarning;
-
-function typeOf(object) {
-  if (typeof object === 'object' && object !== null) {
-    var $$typeof = object.$$typeof;
-    switch ($$typeof) {
-      case REACT_ELEMENT_TYPE:
-        var type = object.type;
-
-        switch (type) {
-          case REACT_ASYNC_MODE_TYPE:
-          case REACT_CONCURRENT_MODE_TYPE:
-          case REACT_FRAGMENT_TYPE:
-          case REACT_PROFILER_TYPE:
-          case REACT_STRICT_MODE_TYPE:
-          case REACT_SUSPENSE_TYPE:
-            return type;
-          default:
-            var $$typeofType = type && type.$$typeof;
-
-            switch ($$typeofType) {
-              case REACT_CONTEXT_TYPE:
-              case REACT_FORWARD_REF_TYPE:
-              case REACT_PROVIDER_TYPE:
-                return $$typeofType;
-              default:
-                return $$typeof;
-            }
-        }
-      case REACT_LAZY_TYPE:
-      case REACT_MEMO_TYPE:
-      case REACT_PORTAL_TYPE:
-        return $$typeof;
-    }
-  }
-
-  return undefined;
-}
-
-// AsyncMode is deprecated along with isAsyncMode
-var AsyncMode = REACT_ASYNC_MODE_TYPE;
-var ConcurrentMode = REACT_CONCURRENT_MODE_TYPE;
-var ContextConsumer = REACT_CONTEXT_TYPE;
-var ContextProvider = REACT_PROVIDER_TYPE;
-var Element = REACT_ELEMENT_TYPE;
-var ForwardRef = REACT_FORWARD_REF_TYPE;
-var Fragment = REACT_FRAGMENT_TYPE;
-var Lazy = REACT_LAZY_TYPE;
-var Memo = REACT_MEMO_TYPE;
-var Portal = REACT_PORTAL_TYPE;
-var Profiler = REACT_PROFILER_TYPE;
-var StrictMode = REACT_STRICT_MODE_TYPE;
-var Suspense = REACT_SUSPENSE_TYPE;
-
-var hasWarnedAboutDeprecatedIsAsyncMode = false;
-
-// AsyncMode should be deprecated
-function isAsyncMode(object) {
-  {
-    if (!hasWarnedAboutDeprecatedIsAsyncMode) {
-      hasWarnedAboutDeprecatedIsAsyncMode = true;
-      lowPriorityWarning$1(false, 'The ReactIs.isAsyncMode() alias has been deprecated, ' + 'and will be removed in React 17+. Update your code to use ' + 'ReactIs.isConcurrentMode() instead. It has the exact same API.');
-    }
-  }
-  return isConcurrentMode(object) || typeOf(object) === REACT_ASYNC_MODE_TYPE;
-}
-function isConcurrentMode(object) {
-  return typeOf(object) === REACT_CONCURRENT_MODE_TYPE;
-}
-function isContextConsumer(object) {
-  return typeOf(object) === REACT_CONTEXT_TYPE;
-}
-function isContextProvider(object) {
-  return typeOf(object) === REACT_PROVIDER_TYPE;
-}
-function isElement(object) {
-  return typeof object === 'object' && object !== null && object.$$typeof === REACT_ELEMENT_TYPE;
-}
-function isForwardRef(object) {
-  return typeOf(object) === REACT_FORWARD_REF_TYPE;
-}
-function isFragment(object) {
-  return typeOf(object) === REACT_FRAGMENT_TYPE;
-}
-function isLazy(object) {
-  return typeOf(object) === REACT_LAZY_TYPE;
-}
-function isMemo(object) {
-  return typeOf(object) === REACT_MEMO_TYPE;
-}
-function isPortal(object) {
-  return typeOf(object) === REACT_PORTAL_TYPE;
-}
-function isProfiler(object) {
-  return typeOf(object) === REACT_PROFILER_TYPE;
-}
-function isStrictMode(object) {
-  return typeOf(object) === REACT_STRICT_MODE_TYPE;
-}
-function isSuspense(object) {
-  return typeOf(object) === REACT_SUSPENSE_TYPE;
-}
-
-exports.typeOf = typeOf;
-exports.AsyncMode = AsyncMode;
-exports.ConcurrentMode = ConcurrentMode;
-exports.ContextConsumer = ContextConsumer;
-exports.ContextProvider = ContextProvider;
-exports.Element = Element;
-exports.ForwardRef = ForwardRef;
-exports.Fragment = Fragment;
-exports.Lazy = Lazy;
-exports.Memo = Memo;
-exports.Portal = Portal;
-exports.Profiler = Profiler;
-exports.StrictMode = StrictMode;
-exports.Suspense = Suspense;
-exports.isValidElementType = isValidElementType;
-exports.isAsyncMode = isAsyncMode;
-exports.isConcurrentMode = isConcurrentMode;
-exports.isContextConsumer = isContextConsumer;
-exports.isContextProvider = isContextProvider;
-exports.isElement = isElement;
-exports.isForwardRef = isForwardRef;
-exports.isFragment = isFragment;
-exports.isLazy = isLazy;
-exports.isMemo = isMemo;
-exports.isPortal = isPortal;
-exports.isProfiler = isProfiler;
-exports.isStrictMode = isStrictMode;
-exports.isSuspense = isSuspense;
-  })();
-}
-
-
-/***/ }),
-
-/***/ "./node_modules/next/node_modules/react-is/index.js":
-/*!**********************************************************!*\
-  !*** ./node_modules/next/node_modules/react-is/index.js ***!
-  \**********************************************************/
-/*! no static exports found */
-/***/ (function(module, exports, __webpack_require__) {
-
-"use strict";
-
-
-if (false) {} else {
-  module.exports = __webpack_require__(/*! ./cjs/react-is.development.js */ "./node_modules/next/node_modules/react-is/cjs/react-is.development.js");
-}
-
-
-/***/ }),
-
 /***/ "./pages/index.js":
 /*!************************!*\
   !*** ./pages/index.js ***!
@@ -2070,939 +2298,38 @@ if (false) {} else {
 __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! react */ "react");
 /* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_0__);
-/* harmony import */ var _map__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./map */ "./pages/map.js");
-/* harmony import */ var _registerList__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./registerList */ "./pages/registerList.js");
-/* harmony import */ var _style_scss__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ../style.scss */ "./style.scss");
-/* harmony import */ var _style_scss__WEBPACK_IMPORTED_MODULE_3___default = /*#__PURE__*/__webpack_require__.n(_style_scss__WEBPACK_IMPORTED_MODULE_3__);
-/* harmony import */ var _map_scss__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ../map.scss */ "./map.scss");
-/* harmony import */ var _map_scss__WEBPACK_IMPORTED_MODULE_4___default = /*#__PURE__*/__webpack_require__.n(_map_scss__WEBPACK_IMPORTED_MODULE_4__);
-/* harmony import */ var _modal_scss__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! ../modal.scss */ "./modal.scss");
-/* harmony import */ var _modal_scss__WEBPACK_IMPORTED_MODULE_5___default = /*#__PURE__*/__webpack_require__.n(_modal_scss__WEBPACK_IMPORTED_MODULE_5__);
-/* harmony import */ var _modal__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! ./modal */ "./pages/modal.js");
-/* harmony import */ var styled_components__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(/*! styled-components */ "styled-components");
-/* harmony import */ var styled_components__WEBPACK_IMPORTED_MODULE_7___default = /*#__PURE__*/__webpack_require__.n(styled_components__WEBPACK_IMPORTED_MODULE_7__);
-var _jsxFileName = "/Users/yonggyukwon/Downloads/\u110F\u1169\u1103\u1175\u11BC/\u110F\u1169\u1103\u1173\u1109\u1173\u1110\u1166\u110B\u1175\u110E\u1173/Flex/CafeAndConquer-client/pages/index.js";
-
-var __jsx = react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement;
-
-
-
-
-
-
-
-
-
-const Index = () => {
-  const {
-    0: list,
-    1: setList
-  } = Object(react__WEBPACK_IMPORTED_MODULE_0__["useState"])([]);
-  const changeList = Object(react__WEBPACK_IMPORTED_MODULE_0__["useCallback"])(data => {
-    setList(data);
-  }, []);
-  const {
-    0: showed,
-    1: setShowed
-  } = Object(react__WEBPACK_IMPORTED_MODULE_0__["useState"])(false);
-
-  const showModal = boolean => {
-    setShowed(boolean);
-  };
-
-  const {
-    0: cafeInfo,
-    1: setCafeInfo
-  } = Object(react__WEBPACK_IMPORTED_MODULE_0__["useState"])({
-    name: '',
-    phone: '',
-    address: ''
-  });
-
-  const confirmRegister = place => {
-    if (confirm('등록하시겠습니까?')) {
-      showModal(true);
-      setCafeInfo({
-        name: place.place_name,
-        phone: place.phone,
-        address: place.address_name
-      }); // 여기에 등록시키는 정보 전달하면서 API에 따라 등록. 
-    }
-  };
-
-  const confirmDelete = place => {
-    if (confirm('정복한 카페 정보를 삭제하시겠습니까? (해당카페의 정복자만 가능합니다)')) {// 일단 유저가 정복한 사람이 맞는지 확인 
-      // 맞으면 삭제 처리 , 아니면 이 카페의 정복자가 아니므로 삭제할 수 없습니다. 
-      // 삭제용 모달 필요?? 
-      // 여기에 삭제시키는 정보 전달하면서 API에 따라 등록. 
-    }
-  };
-
-  const confirmEdit = place => {
-    if (confirm('정복한 카페 정보를 수정하시겠습니까?')) {// 수정용 모달은 등록용과 비슷하게 띄워야 할듯. 디폴트값 선택된 채로 ?  
-      // 여기에 수정시키는 정보 전달하면서 API에 따라 등록. 
-    }
-  };
-
-  return __jsx("div", {
-    __source: {
-      fileName: _jsxFileName,
-      lineNumber: 52
-    },
-    __self: undefined
-  }, showed ? __jsx(_modal__WEBPACK_IMPORTED_MODULE_6__["default"], {
-    showModal: showModal,
-    cafeInfo: cafeInfo,
-    __source: {
-      fileName: _jsxFileName,
-      lineNumber: 53
-    },
-    __self: undefined
-  }) : null, __jsx("div", {
-    className: "grid-container",
-    __source: {
-      fileName: _jsxFileName,
-      lineNumber: 54
-    },
-    __self: undefined
-  }, __jsx(Subject, {
-    __source: {
-      fileName: _jsxFileName,
-      lineNumber: 55
-    },
-    __self: undefined
-  }, " cafe & conquer "), __jsx("div", {
-    className: "grid-map",
-    __source: {
-      fileName: _jsxFileName,
-      lineNumber: 56
-    },
-    __self: undefined
-  }, __jsx(_map__WEBPACK_IMPORTED_MODULE_1__["Map"], {
-    setList: changeList,
-    confirmRegister: confirmRegister,
-    __source: {
-      fileName: _jsxFileName,
-      lineNumber: 57
-    },
-    __self: undefined
-  })), __jsx("div", {
-    className: "grid-register",
-    __source: {
-      fileName: _jsxFileName,
-      lineNumber: 59
-    },
-    __self: undefined
-  }, __jsx(_registerList__WEBPACK_IMPORTED_MODULE_2__["default"], {
-    list: list,
-    confirmRegister: confirmRegister,
-    confirmEdit: confirmEdit,
-    confirmDelete: confirmDelete,
-    __source: {
-      fileName: _jsxFileName,
-      lineNumber: 60
-    },
-    __self: undefined
-  }))));
-};
-
-const Subject = styled_components__WEBPACK_IMPORTED_MODULE_7___default.a.h2.withConfig({
-  displayName: "pages__Subject",
-  componentId: "sc-117pu9t-0"
-})(["font-size:30px;color:#eccc68;"]); // 왜 여기서 matching이 틀렸다는 문구가 뜨는지 잘 모르겠음. 
-
-/* harmony default export */ __webpack_exports__["default"] = (Index);
-
-/***/ }),
-
-/***/ "./pages/map.js":
-/*!**********************!*\
-  !*** ./pages/map.js ***!
-  \**********************/
-/*! exports provided: Map */
-/***/ (function(module, __webpack_exports__, __webpack_require__) {
-
-"use strict";
-__webpack_require__.r(__webpack_exports__);
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "Map", function() { return Map; });
-/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! react */ "react");
-/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_0__);
-/* harmony import */ var use_position__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! use-position */ "use-position");
-/* harmony import */ var use_position__WEBPACK_IMPORTED_MODULE_1___default = /*#__PURE__*/__webpack_require__.n(use_position__WEBPACK_IMPORTED_MODULE_1__);
-/* harmony import */ var next_head__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! next/head */ "next/head");
-/* harmony import */ var next_head__WEBPACK_IMPORTED_MODULE_2___default = /*#__PURE__*/__webpack_require__.n(next_head__WEBPACK_IMPORTED_MODULE_2__);
-var _jsxFileName = "/Users/yonggyukwon/Downloads/\u110F\u1169\u1103\u1175\u11BC/\u110F\u1169\u1103\u1173\u1109\u1173\u1110\u1166\u110B\u1175\u110E\u1173/Flex/CafeAndConquer-client/pages/map.js";
-var __jsx = react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement;
-
-
-
-
-const Map = ({
-  setList,
-  confirmRegister
-}) => {
-  const {
-    latitude,
-    longitude,
-    timestamp,
-    accuracy,
-    error
-  } = Object(use_position__WEBPACK_IMPORTED_MODULE_1__["usePosition"])(true);
-  const {
-    0: zooms,
-    1: setZooms
-  } = Object(react__WEBPACK_IMPORTED_MODULE_0__["useState"])([]); // const [zoomIn, zoomOut] = zooms;
-  // console.log(zooms);
-  // console이 왜 [] 1번, 들어간걸로는 3번이 불리지?? useState 빼고 실험해보기. 아, useEffect 안이 새로 불리지 않는 거지 바깥의 내용은 Map이 새로 불리면서 계속 불리는듯. 
-
-  Object(react__WEBPACK_IMPORTED_MODULE_0__["useEffect"])(() => {
-    // let script = document.createElement('script');
-    // script.type = "text/javascript";
-    // script.src = "//dapi.kakao.com/v2/maps/sdk.js?appkey=08621feb64d12ca619166a136815243f&libraries=services";
-    // document.head.appendChild(script);
-    // 여기서 비동기적 요소가 있나? 안되는 이유? 
-    // console.log('map');
-    // 마커를 클릭했을 때 해당 장소의 상세정보를 보여줄 커스텀오버레이입니다
-    var placeOverlay = new kakao.maps.CustomOverlay({
-      zIndex: 1
-    }),
-        contentNode = document.createElement('div'),
-        // 커스텀 오버레이의 컨텐츠 엘리먼트 입니다
-    markers = [],
-        // 마커를 담을 배열입니다
-    currCategory = ''; // 현재 선택된 카테고리를 가지고 있을 변수입니다
-
-    var mapContainer = document.getElementById('map'),
-        // 지도를 표시할 div
-    mapOption = {
-      center: new kakao.maps.LatLng(37.566826, 126.9786567),
-      // 지도의 중심좌표
-      level: 4 // 지도의 확대 레벨
-
-    }; // 지도를 생성합니다
-
-    var map = new kakao.maps.Map(mapContainer, mapOption); // 장소 검색 객체를 생성합니다
-
-    var ps = new kakao.maps.services.Places(map); // 지도에 idle 이벤트를 등록합니다
-
-    kakao.maps.event.addListener(map, 'idle', searchPlaces); // 커스텀 오버레이의 컨텐츠 노드에 css class를 추가합니다
-
-    contentNode.className = 'placeinfo_wrap'; // 커스텀 오버레이의 컨텐츠 노드에 mousedown, touchstart 이벤트가 발생했을때
-    // 지도 객체에 이벤트가 전달되지 않도록 이벤트 핸들러로 kakao.maps.event.preventMap 메소드를 등록합니다
-
-    addEventHandle(contentNode, 'mousedown', kakao.maps.event.preventMap);
-    addEventHandle(contentNode, 'touchstart', kakao.maps.event.preventMap); // 커스텀 오버레이 컨텐츠를 설정합니다
-
-    placeOverlay.setContent(contentNode); // console.log(placeOverlay);
-    // 각 카테고리에 클릭 이벤트를 등록합니다
-
-    addCategoryClickEvent(); // 엘리먼트에 이벤트 핸들러를 등록하는 함수입니다
-
-    function addEventHandle(target, type, callback) {
-      if (target.addEventListener) {
-        target.addEventListener(type, callback);
-      } else {
-        target.attachEvent('on' + type, callback);
-      }
-    } // 카테고리 검색을 요청하는 함수입니다
-
-
-    function searchPlaces() {
-      if (!currCategory) {
-        return;
-      } // 커스텀 오버레이를 숨깁니다
-
-
-      placeOverlay.setMap(null); // 지도에 표시되고 있는 마커를 제거합니다
-
-      removeMarker();
-      ps.categorySearch(currCategory, placesSearchCB, {
-        useMapBounds: true
-      });
-    } // 장소검색이 완료됐을 때 호출되는 콜백함수 입니다
-
-
-    function placesSearchCB(data, status, pagination) {
-      if (status === kakao.maps.services.Status.OK) {
-        displayPlaces(data);
-        setList(data);
-      } else if (status === kakao.maps.services.Status.ZERO_RESULT) {// 검색결과가 없는경우 해야할 처리가 있다면 이곳에 작성해 주세요
-      } else if (status === kakao.maps.services.Status.ERROR) {// 에러로 인해 검색결과가 나오지 않은 경우 해야할 처리가 있다면 이곳에 작성해 주세요
-      }
-    } // 지도에 마커를 표출하는 함수입니다
-
-
-    function displayPlaces(places) {
-      // 몇번째 카테고리가 선택되어 있는지 얻어옵니다
-      // 이 순서는 스프라이트 이미지에서의 위치를 계산하는데 사용됩니다
-      var order = document.getElementById(currCategory).getAttribute('data-order');
-
-      for (var i = 0; i < places.length; i++) {
-        // 마커를 생성하고 지도에 표시합니다
-        var marker = addMarker(new kakao.maps.LatLng(places[i].y, places[i].x), order); // 마커와 검색결과 항목을 클릭 했을 때
-        // 장소정보를 표출하도록 클릭 이벤트를 등록합니다
-
-        (function (marker, place) {
-          kakao.maps.event.addListener(marker, 'click', function () {
-            displayPlaceInfo(place);
-
-            document.querySelector('.conquerInMap').onclick = () => {
-              confirmRegister(place);
-            };
-          });
-        })(marker, places[i]);
-      }
-    } // 마커를 생성하고 지도 위에 마커를 표시하는 함수입니다
-
-
-    function addMarker(position, order) {
-      var imageSrc = 'http://t1.daumcdn.net/localimg/localimages/07/mapapidoc/places_category.png',
-          // 마커 이미지 url, 스프라이트 이미지를 씁니다
-      imageSize = new kakao.maps.Size(27, 28),
-          // 마커 이미지의 크기
-      imgOptions = {
-        spriteSize: new kakao.maps.Size(72, 208),
-        // 스프라이트 이미지의 크기
-        spriteOrigin: new kakao.maps.Point(46, order * 36),
-        // 스프라이트 이미지 중 사용할 영역의 좌상단 좌표
-        offset: new kakao.maps.Point(11, 28) // 마커 좌표에 일치시킬 이미지 내에서의 좌표
-
-      },
-          markerImage = new kakao.maps.MarkerImage(imageSrc, imageSize, imgOptions),
-          marker = new kakao.maps.Marker({
-        position: position,
-        // 마커의 위치
-        image: markerImage
-      });
-      marker.setMap(map); // 지도 위에 마커를 표출합니다
-
-      markers.push(marker); // 배열에 생성된 마커를 추가합니다
-
-      return marker;
-    } // 지도 위에 표시되고 있는 마커를 모두 제거합니다
-
-
-    function removeMarker() {
-      for (var i = 0; i < markers.length; i++) {
-        markers[i].setMap(null);
-      }
-
-      markers = [];
-    } // 클릭한 마커에 대한 장소 상세정보를 커스텀 오버레이로 표시하는 함수입니다
-
-
-    function displayPlaceInfo(place) {
-      var content = '<div class="placeinfo">' + '   <a class="title" href="' + place.place_url + '" target="_blank" title="' + place.place_name + '">' + place.place_name + '</a>' + '<button class="conquerInMap">정복하기</button>';
-
-      if (place.road_address_name) {
-        content += '    <span title="' + place.road_address_name + '">' + place.road_address_name + '</span>' + '  <span class="jibun" title="' + place.address_name + '">(지번 : ' + place.address_name + ')</span>';
-      } else {
-        content += '    <span title="' + place.address_name + '">' + place.address_name + '</span>';
-      }
-
-      content += '    <span class="tel">' + place.phone + '</span>' + '</div>' + '<div class="after"></div>';
-      contentNode.innerHTML = content;
-      placeOverlay.setPosition(new kakao.maps.LatLng(place.y, place.x));
-      placeOverlay.setMap(map);
-    } // 각 카테고리에 클릭 이벤트를 등록합니다
-
-
-    function addCategoryClickEvent() {
-      var category = document.getElementById('category'),
-          children = category.children;
-
-      for (var i = 0; i < children.length; i++) {
-        children[i].onclick = onClickCategory;
-      }
-    } // 카테고리를 클릭했을 때 호출되는 함수입니다
-
-
-    function onClickCategory() {
-      var id = this.id,
-          className = this.className;
-      placeOverlay.setMap(null);
-
-      if (className === 'on') {
-        currCategory = '';
-        changeCategoryClass();
-        removeMarker();
-      } else {
-        currCategory = id;
-        changeCategoryClass(this);
-        searchPlaces();
-      }
-    } // 클릭된 카테고리에만 클릭된 스타일을 적용하는 함수입니다
-
-
-    function changeCategoryClass(el) {
-      var category = document.getElementById('category'),
-          children = category.children,
-          i;
-
-      for (i = 0; i < children.length; i++) {
-        children[i].className = '';
-      }
-
-      if (el) {
-        el.className = 'on';
-      }
-    } // 지도 확대, 축소 컨트롤에서 확대 버튼을 누르면 호출되어 지도를 확대하는 함수입니다
-
-
-    function zoomIn() {
-      map.setLevel(map.getLevel() - 1);
-    } // 지도 확대, 축소 컨트롤에서 축소 버튼을 누르면 호출되어 지도를 확대하는 함수입니다
-
-
-    function zoomOut() {
-      map.setLevel(map.getLevel() + 1);
-    }
-
-    setZooms([zoomIn, zoomOut]);
-  }, []);
-  return __jsx("div", {
-    __source: {
-      fileName: _jsxFileName,
-      lineNumber: 267
-    },
-    __self: undefined
-  }, __jsx(next_head__WEBPACK_IMPORTED_MODULE_2___default.a, {
-    __source: {
-      fileName: _jsxFileName,
-      lineNumber: 268
-    },
-    __self: undefined
-  }, __jsx("script", {
-    type: "text/javascript",
-    src: "//dapi.kakao.com/v2/maps/sdk.js?appkey=08621feb64d12ca619166a136815243f&libraries=services",
-    __source: {
-      fileName: _jsxFileName,
-      lineNumber: 269
-    },
-    __self: undefined
-  })), __jsx("div", {
-    style: {
-      margin: '12px'
-    },
-    __source: {
-      fileName: _jsxFileName,
-      lineNumber: 274
-    },
-    __self: undefined
-  }, "\uC810\uB839\uD560 \uCE74\uD398\uB97C \uC120\uD0DD\uD574\uC8FC\uC138\uC694.", __jsx("br", {
-    __source: {
-      fileName: _jsxFileName,
-      lineNumber: 275
-    },
-    __self: undefined
-  }), "\uC810\uB839\uD560 \uCE74\uD398\uAC00 \uBCF4\uC774\uC9C0 \uC54A\uC73C\uBA74 \uD574\uB2F9 \uCE74\uD398\uC758 \uC704\uCE58 \uBD80\uADFC\uC5D0\uC11C \uC9C0\uB3C4 \uD655\uB300\uB97C \uB20C\uB7EC\uC8FC\uC138\uC694"), __jsx("div", {
-    className: "map_wrap",
-    __source: {
-      fileName: _jsxFileName,
-      lineNumber: 277
-    },
-    __self: undefined
-  }, __jsx("div", {
-    id: "map",
-    style: {
-      width: '100%',
-      height: '100%',
-      position: 'relative',
-      overflow: 'hidden'
-    },
-    __source: {
-      fileName: _jsxFileName,
-      lineNumber: 278
-    },
-    __self: undefined
-  }), __jsx("ul", {
-    id: "category",
-    __source: {
-      fileName: _jsxFileName,
-      lineNumber: 286
-    },
-    __self: undefined
-  }, __jsx("li", {
-    id: "CE7",
-    "data-order": "4",
-    __source: {
-      fileName: _jsxFileName,
-      lineNumber: 287
-    },
-    __self: undefined
-  }, __jsx("span", {
-    className: "category_bg cafe",
-    __source: {
-      fileName: _jsxFileName,
-      lineNumber: 288
-    },
-    __self: undefined
-  }), "\uCE74\uD398 \uBCF4\uAE30")), __jsx("div", {
-    className: "custom_zoomcontrol radius_border",
-    __source: {
-      fileName: _jsxFileName,
-      lineNumber: 292
-    },
-    __self: undefined
-  }, __jsx("span", {
-    onClick: zooms[0],
-    __source: {
-      fileName: _jsxFileName,
-      lineNumber: 293
-    },
-    __self: undefined
-  }, __jsx("img", {
-    src: "http://t1.daumcdn.net/localimg/localimages/07/mapapidoc/ico_plus.png",
-    alt: "\uD655\uB300",
-    __source: {
-      fileName: _jsxFileName,
-      lineNumber: 293
-    },
-    __self: undefined
-  })), __jsx("span", {
-    onClick: zooms[1],
-    __source: {
-      fileName: _jsxFileName,
-      lineNumber: 294
-    },
-    __self: undefined
-  }, __jsx("img", {
-    src: "http://t1.daumcdn.net/localimg/localimages/07/mapapidoc/ico_minus.png",
-    alt: "\uCD95\uC18C",
-    __source: {
-      fileName: _jsxFileName,
-      lineNumber: 294
-    },
-    __self: undefined
-  })))));
-}; //jsx도 render를 한번 하면 딱 한번만 불리나? 
-
-
-
-
-/***/ }),
-
-/***/ "./pages/modal.js":
-/*!************************!*\
-  !*** ./pages/modal.js ***!
-  \************************/
-/*! exports provided: default */
-/***/ (function(module, __webpack_exports__, __webpack_require__) {
-
-"use strict";
-__webpack_require__.r(__webpack_exports__);
-/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! react */ "react");
-/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_0__);
-/* harmony import */ var _modal_scss__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ../modal.scss */ "./modal.scss");
-/* harmony import */ var _modal_scss__WEBPACK_IMPORTED_MODULE_1___default = /*#__PURE__*/__webpack_require__.n(_modal_scss__WEBPACK_IMPORTED_MODULE_1__);
-/* harmony import */ var next_head__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! next/head */ "next/head");
-/* harmony import */ var next_head__WEBPACK_IMPORTED_MODULE_2___default = /*#__PURE__*/__webpack_require__.n(next_head__WEBPACK_IMPORTED_MODULE_2__);
-/* harmony import */ var react_star_ratings__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! react-star-ratings */ "react-star-ratings");
-/* harmony import */ var react_star_ratings__WEBPACK_IMPORTED_MODULE_3___default = /*#__PURE__*/__webpack_require__.n(react_star_ratings__WEBPACK_IMPORTED_MODULE_3__);
-var _jsxFileName = "/Users/yonggyukwon/Downloads/\u110F\u1169\u1103\u1175\u11BC/\u110F\u1169\u1103\u1173\u1109\u1173\u1110\u1166\u110B\u1175\u110E\u1173/Flex/CafeAndConquer-client/pages/modal.js";
-
-var __jsx = react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement;
- // import ReactDOM from "react-dom";
-
-
-
-
-
-const Modal = ({
-  showModal,
-  cafeInfo
-}) => {
-  const {
-    0: starRate,
-    1: setStarRate
-  } = Object(react__WEBPACK_IMPORTED_MODULE_0__["useState"])(0);
-  return __jsx("div", {
-    className: "modal",
-    id: "modal",
-    __source: {
-      fileName: _jsxFileName,
-      lineNumber: 11
-    },
-    __self: undefined
-  }, __jsx(next_head__WEBPACK_IMPORTED_MODULE_2___default.a, {
-    __source: {
-      fileName: _jsxFileName,
-      lineNumber: 12
-    },
-    __self: undefined
-  }, __jsx("link", {
-    rel: "stylesheet",
-    href: "https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css",
-    __source: {
-      fileName: _jsxFileName,
-      lineNumber: 13
-    },
-    __self: undefined
-  })), __jsx("div", {
-    className: "content",
-    __source: {
-      fileName: _jsxFileName,
-      lineNumber: 15
-    },
-    __self: undefined
-  }, __jsx("h2", {
-    __source: {
-      fileName: _jsxFileName,
-      lineNumber: 16
-    },
-    __self: undefined
-  }, __jsx("span", {
-    style: {
-      color: 'red'
-    },
-    __source: {
-      fileName: _jsxFileName,
-      lineNumber: 16
-    },
-    __self: undefined
-  }, cafeInfo.name), " \uCE74\uD398\uC5D0 \uB300\uD55C \uC810\uB839\uC744 \uC9C4\uD589\uD569\uB2C8\uB2E4"), __jsx("div", {
-    className: "content",
-    __source: {
-      fileName: _jsxFileName,
-      lineNumber: 17
-    },
-    __self: undefined
-  }, __jsx("div", {
-    __source: {
-      fileName: _jsxFileName,
-      lineNumber: 18
-    },
-    __self: undefined
-  }, "24\uC2DC\uAC04 \uCE74\uD398\uC778\uAC00\uC694?"), __jsx("input", {
-    type: "radio",
-    name: "24hr",
-    value: "true",
-    __source: {
-      fileName: _jsxFileName,
-      lineNumber: 21
-    },
-    __self: undefined
-  }), " \uB124", __jsx("input", {
-    type: "radio",
-    name: "24hr",
-    value: "false",
-    __source: {
-      fileName: _jsxFileName,
-      lineNumber: 22
-    },
-    __self: undefined
-  }), " \uC544\uB2C8\uC624", __jsx("br", {
-    __source: {
-      fileName: _jsxFileName,
-      lineNumber: 23
-    },
-    __self: undefined
-  }), __jsx("br", {
-    __source: {
-      fileName: _jsxFileName,
-      lineNumber: 23
-    },
-    __self: undefined
-  }), __jsx("div", {
-    __source: {
-      fileName: _jsxFileName,
-      lineNumber: 24
-    },
-    __self: undefined
-  }, "\uCF58\uC13C\uD2B8\uB294 \uD48D\uC871\uD55C\uAC00\uC694?"), __jsx("input", {
-    type: "radio",
-    name: "concent",
-    value: "true",
-    __source: {
-      fileName: _jsxFileName,
-      lineNumber: 27
-    },
-    __self: undefined
-  }), " \uBD80\uC871", __jsx("input", {
-    type: "radio",
-    name: "concent",
-    value: "false",
-    __source: {
-      fileName: _jsxFileName,
-      lineNumber: 28
-    },
-    __self: undefined
-  }), " \uADF8\uB7ED\uC800\uB7ED", __jsx("input", {
-    type: "radio",
-    name: "concent",
-    value: "true",
-    __source: {
-      fileName: _jsxFileName,
-      lineNumber: 29
-    },
-    __self: undefined
-  }), " \uB109\uB109", __jsx("br", {
-    __source: {
-      fileName: _jsxFileName,
-      lineNumber: 30
-    },
-    __self: undefined
-  }), __jsx("br", {
-    __source: {
-      fileName: _jsxFileName,
-      lineNumber: 30
-    },
-    __self: undefined
-  }), __jsx("div", {
-    __source: {
-      fileName: _jsxFileName,
-      lineNumber: 31
-    },
-    __self: undefined
-  }, "\uCE74\uD398\uC5D0 \uB300\uD55C \uC885\uD569\uC801\uC778 \uB2F9\uC2E0\uC758 \uD3C9\uC810\uC740?"), __jsx(react_star_ratings__WEBPACK_IMPORTED_MODULE_3___default.a, {
-    rating: starRate,
-    starRatedColor: "#f9ca24",
-    changeRating: setStarRate,
-    numberOfStars: 5,
-    name: "totalRate",
-    starDimension: "25px",
-    starSpacing: "0px",
-    __source: {
-      fileName: _jsxFileName,
-      lineNumber: 34
-    },
-    __self: undefined
-  })), __jsx("div", {
-    className: "actions",
-    __source: {
-      fileName: _jsxFileName,
-      lineNumber: 44
-    },
-    __self: undefined
-  }, __jsx("button", {
-    className: "conquer-button",
-    onClick: () => {
-      console.log('점령완료');
-      showModal(false); //db로 정보 날리기 
-    },
-    __source: {
-      fileName: _jsxFileName,
-      lineNumber: 45
-    },
-    __self: undefined
-  }, "\uC810\uB839\uD558\uAE30"), __jsx("button", {
-    className: "cancel-button",
-    onClick: () => {
-      console.log('점령취소');
-      showModal(false);
-    },
-    __source: {
-      fileName: _jsxFileName,
-      lineNumber: 50
-    },
-    __self: undefined
-  }, "\uCDE8\uC18C"))));
-};
-
-/* harmony default export */ __webpack_exports__["default"] = (Modal);
-
-/***/ }),
-
-/***/ "./pages/registerList.js":
-/*!*******************************!*\
-  !*** ./pages/registerList.js ***!
-  \*******************************/
-/*! exports provided: default */
-/***/ (function(module, __webpack_exports__, __webpack_require__) {
-
-"use strict";
-__webpack_require__.r(__webpack_exports__);
-/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! react */ "react");
-/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_0__);
 /* harmony import */ var next_link__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! next/link */ "./node_modules/next/link.js");
 /* harmony import */ var next_link__WEBPACK_IMPORTED_MODULE_1___default = /*#__PURE__*/__webpack_require__.n(next_link__WEBPACK_IMPORTED_MODULE_1__);
-/* harmony import */ var styled_components__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! styled-components */ "styled-components");
-/* harmony import */ var styled_components__WEBPACK_IMPORTED_MODULE_2___default = /*#__PURE__*/__webpack_require__.n(styled_components__WEBPACK_IMPORTED_MODULE_2__);
-var _jsxFileName = "/Users/yonggyukwon/Downloads/\u110F\u1169\u1103\u1175\u11BC/\u110F\u1169\u1103\u1173\u1109\u1173\u1110\u1166\u110B\u1175\u110E\u1173/Flex/CafeAndConquer-client/pages/registerList.js";
+/* harmony import */ var _components_Header__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ../components/Header */ "./components/Header.js");
+/* harmony import */ var _components_BasicInfo__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ../components/BasicInfo */ "./components/BasicInfo.js");
+var _jsxFileName = "/Users/gomidev/Documents/Projects/CafeAndConquer-client/pages/index.js";
 
 var __jsx = react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement;
 
- // confirm 팝업의 디자인을 변경할 수 있나? 아님 confirm 말고, 다른 팝업 써야 하나? 
-// li 태그 칸 차지하는 block -> inline 변경 ..... 좀 더 세련된 방식으로 변경해야 할듯. 
-// 저 위의 ../components/modal.js 여기 페이지에 components가 2개인데 어떻게 뜨나? 기본 export default로 설정한 애만 나가나? 
-
-const registerList = ({
-  list,
-  confirmRegister,
-  confirmDelete,
-  confirmEdit
-}) => {
-  // console.log('register');
-  const cafeList = list.map((elm, key) => {
-    return __jsx(next_link__WEBPACK_IMPORTED_MODULE_1___default.a, {
-      href: "/",
-      key: key,
-      __source: {
-        fileName: _jsxFileName,
-        lineNumber: 14
-      },
-      __self: undefined
-    }, __jsx(LiName, {
-      key: key,
-      id: "one-list",
-      __source: {
-        fileName: _jsxFileName,
-        lineNumber: 15
-      },
-      __self: undefined
-    }, __jsx("div", {
-      className: "grid-container",
-      __source: {
-        fileName: _jsxFileName,
-        lineNumber: 16
-      },
-      __self: undefined
-    }, __jsx(DivList, {
-      __source: {
-        fileName: _jsxFileName,
-        lineNumber: 17
-      },
-      __self: undefined
-    }, __jsx(UL, {
-      __source: {
-        fileName: _jsxFileName,
-        lineNumber: 18
-      },
-      __self: undefined
-    }, __jsx(LiName, {
-      __source: {
-        fileName: _jsxFileName,
-        lineNumber: 19
-      },
-      __self: undefined
-    }, key + 1, ". ", elm.place_name), elm.phone ? __jsx(LiPhone, {
-      __source: {
-        fileName: _jsxFileName,
-        lineNumber: 22
-      },
-      __self: undefined
-    }, elm.phone) : null, __jsx(LiAddress, {
-      __source: {
-        fileName: _jsxFileName,
-        lineNumber: 25
-      },
-      __self: undefined
-    }, elm.address_name))), __jsx(DivButtons, {
-      __source: {
-        fileName: _jsxFileName,
-        lineNumber: 30
-      },
-      __self: undefined
-    }, __jsx("div", {
-      __source: {
-        fileName: _jsxFileName,
-        lineNumber: 31
-      },
-      __self: undefined
-    }, __jsx(ConquerButton, {
-      onClick: () => {
-        confirmRegister(elm);
-      },
-      __source: {
-        fileName: _jsxFileName,
-        lineNumber: 32
-      },
-      __self: undefined
-    }, "\uC810\uB839\uD558\uAE30")), __jsx("div", {
-      __source: {
-        fileName: _jsxFileName,
-        lineNumber: 34
-      },
-      __self: undefined
-    }, __jsx("button", {
-      onClick: () => {
-        confirmEdit(elm);
-      },
-      __source: {
-        fileName: _jsxFileName,
-        lineNumber: 35
-      },
-      __self: undefined
-    }, "\uC218\uC815\uD558\uAE30")), __jsx("div", {
-      __source: {
-        fileName: _jsxFileName,
-        lineNumber: 37
-      },
-      __self: undefined
-    }, __jsx("button", {
-      onClick: () => {
-        confirmDelete(elm);
-      },
-      __source: {
-        fileName: _jsxFileName,
-        lineNumber: 38
-      },
-      __self: undefined
-    }, "\uC0AD\uC81C\uD558\uAE30"))))));
-  });
-  return __jsx("div", {
-    __source: {
-      fileName: _jsxFileName,
-      lineNumber: 50
-    },
-    __self: undefined
-  }, __jsx("br", {
-    __source: {
-      fileName: _jsxFileName,
-      lineNumber: 51
-    },
-    __self: undefined
-  }), __jsx(UL, {
-    __source: {
-      fileName: _jsxFileName,
-      lineNumber: 52
-    },
-    __self: undefined
-  }, cafeList));
-};
-
-const UL = styled_components__WEBPACK_IMPORTED_MODULE_2___default.a.ul.withConfig({
-  displayName: "registerList__UL",
-  componentId: "sc-1484dgo-0"
-})(["padding-left:10px;list-style:none;"]);
-const LiName = styled_components__WEBPACK_IMPORTED_MODULE_2___default.a.li.withConfig({
-  displayName: "registerList__LiName",
-  componentId: "sc-1484dgo-1"
-})(["list-style:none;"]);
-const LiPhone = styled_components__WEBPACK_IMPORTED_MODULE_2___default.a.li.withConfig({
-  displayName: "registerList__LiPhone",
-  componentId: "sc-1484dgo-2"
-})(["font:13px solid gray;padding-left:12px;list-style:none;"]);
-const LiAddress = styled_components__WEBPACK_IMPORTED_MODULE_2___default.a.li.withConfig({
-  displayName: "registerList__LiAddress",
-  componentId: "sc-1484dgo-3"
-})(["font:13px solid gray;padding-left:12px;list-style:none;"]);
-const DivList = styled_components__WEBPACK_IMPORTED_MODULE_2___default.a.div.withConfig({
-  displayName: "registerList__DivList",
-  componentId: "sc-1484dgo-4"
-})(["grid-column:1;"]);
-const DivButtons = styled_components__WEBPACK_IMPORTED_MODULE_2___default.a.div.withConfig({
-  displayName: "registerList__DivButtons",
-  componentId: "sc-1484dgo-5"
-})(["grid-column:2;"]);
-const ConquerButton = styled_components__WEBPACK_IMPORTED_MODULE_2___default.a.button.withConfig({
-  displayName: "registerList__ConquerButton",
-  componentId: "sc-1484dgo-6"
-})(["background-color:#eccc68;"]); // 신기하게 ul에 display: inline; 붙이니까 점이 사라짐. 
-// <style jsx >global로 해야하는 이유? global로 해야 뿌려진 다음것도 다 바꿔주게 되는건가? 
-
-/* harmony default export */ __webpack_exports__["default"] = (registerList);
-
-/***/ }),
-
-/***/ "./style.scss":
-/*!********************!*\
-  !*** ./style.scss ***!
-  \********************/
-/*! no static exports found */
-/***/ (function(module, exports) {
 
 
+
+const Index = () => __jsx("div", {
+  __source: {
+    fileName: _jsxFileName,
+    lineNumber: 6
+  },
+  __self: undefined
+}, __jsx(_components_Header__WEBPACK_IMPORTED_MODULE_2__["default"], {
+  __source: {
+    fileName: _jsxFileName,
+    lineNumber: 7
+  },
+  __self: undefined
+}), __jsx(_components_BasicInfo__WEBPACK_IMPORTED_MODULE_3__["default"], {
+  __source: {
+    fileName: _jsxFileName,
+    lineNumber: 8
+  },
+  __self: undefined
+}));
+
+/* harmony default export */ __webpack_exports__["default"] = (Index);
 
 /***/ }),
 
@@ -3013,8 +2340,19 @@ const ConquerButton = styled_components__WEBPACK_IMPORTED_MODULE_2___default.a.b
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
-module.exports = __webpack_require__(/*! /Users/yonggyukwon/Downloads/코딩/코드스테이츠/Flex/CafeAndConquer-client/pages/index.js */"./pages/index.js");
+module.exports = __webpack_require__(/*! /Users/gomidev/Documents/Projects/CafeAndConquer-client/pages/index.js */"./pages/index.js");
 
+
+/***/ }),
+
+/***/ "core-js/library/fn/json/stringify":
+/*!****************************************************!*\
+  !*** external "core-js/library/fn/json/stringify" ***!
+  \****************************************************/
+/*! no static exports found */
+/***/ (function(module, exports) {
+
+module.exports = require("core-js/library/fn/json/stringify");
 
 /***/ }),
 
@@ -3095,14 +2433,14 @@ module.exports = require("core-js/library/fn/promise");
 
 /***/ }),
 
-/***/ "next/head":
-/*!****************************!*\
-  !*** external "next/head" ***!
-  \****************************/
+/***/ "next/router":
+/*!******************************!*\
+  !*** external "next/router" ***!
+  \******************************/
 /*! no static exports found */
 /***/ (function(module, exports) {
 
-module.exports = require("next/head");
+module.exports = require("next/router");
 
 /***/ }),
 
@@ -3139,14 +2477,14 @@ module.exports = require("react");
 
 /***/ }),
 
-/***/ "react-star-ratings":
-/*!*************************************!*\
-  !*** external "react-star-ratings" ***!
-  \*************************************/
+/***/ "react-is":
+/*!***************************!*\
+  !*** external "react-is" ***!
+  \***************************/
 /*! no static exports found */
 /***/ (function(module, exports) {
 
-module.exports = require("react-star-ratings");
+module.exports = require("react-is");
 
 /***/ }),
 

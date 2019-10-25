@@ -1329,7 +1329,6 @@ module.exports = __webpack_require__(/*! ./dist/pages/_document */ "./node_modul
 "use strict";
 __webpack_require__.r(__webpack_exports__);
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "default", function() { return MyDocument; });
-<<<<<<< HEAD
 /* harmony import */ var _babel_runtime_corejs2_helpers_esm_objectSpread__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! @babel/runtime-corejs2/helpers/esm/objectSpread */ "./node_modules/@babel/runtime-corejs2/helpers/esm/objectSpread.js");
 /* harmony import */ var _babel_runtime_corejs2_helpers_esm_extends__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! @babel/runtime-corejs2/helpers/esm/extends */ "./node_modules/@babel/runtime-corejs2/helpers/esm/extends.js");
 /* harmony import */ var react__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! react */ "react");
@@ -1340,7 +1339,7 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var styled_components__WEBPACK_IMPORTED_MODULE_4___default = /*#__PURE__*/__webpack_require__.n(styled_components__WEBPACK_IMPORTED_MODULE_4__);
 
 
-var _jsxFileName = "/Users/yonggyukwon/Downloads/\u110F\u1169\u1103\u1175\u11BC/\u110F\u1169\u1103\u1173\u1109\u1173\u1110\u1166\u110B\u1175\u110E\u1173/Flex/CafeAndConquer-client/pages/_document.js";
+var _jsxFileName = "/Users/gomidev/Documents/Projects/CafeAndConquer-client/pages/_document.js";
 
 var __jsx = react__WEBPACK_IMPORTED_MODULE_2___default.a.createElement;
 
@@ -1371,66 +1370,6 @@ class MyDocument extends next_document__WEBPACK_IMPORTED_MODULE_3___default.a {
   }
 
 } // <>이 뭔지?
-=======
-/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! react */ "react");
-/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_0__);
-/* harmony import */ var next_document__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! next/document */ "./node_modules/next/document.js");
-/* harmony import */ var next_document__WEBPACK_IMPORTED_MODULE_1___default = /*#__PURE__*/__webpack_require__.n(next_document__WEBPACK_IMPORTED_MODULE_1__);
-var _jsxFileName = "/Users/gomidev/Documents/Projects/CafeAndConquer-client/pages/_document.js";
-
-var __jsx = react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement;
-
-class MyDocument extends next_document__WEBPACK_IMPORTED_MODULE_1___default.a {
-  static getInitialProps({
-    renderPage
-  }) {
-    // Returns an object like: { html, head, errorHtml, chunks, styles }
-    return renderPage();
-  }
-
-  render() {
-    return __jsx("html", {
-      __source: {
-        fileName: _jsxFileName,
-        lineNumber: 11
-      },
-      __self: this
-    }, __jsx(next_document__WEBPACK_IMPORTED_MODULE_1__["Head"], {
-      __source: {
-        fileName: _jsxFileName,
-        lineNumber: 12
-      },
-      __self: this
-    }, __jsx("script", {
-      src: "https://developers.kakao.com/sdk/js/kakao.min.js",
-      __source: {
-        fileName: _jsxFileName,
-        lineNumber: 13
-      },
-      __self: this
-    })), __jsx("body", {
-      __source: {
-        fileName: _jsxFileName,
-        lineNumber: 15
-      },
-      __self: this
-    }, __jsx(next_document__WEBPACK_IMPORTED_MODULE_1__["Main"], {
-      __source: {
-        fileName: _jsxFileName,
-        lineNumber: 21
-      },
-      __self: this
-    }), __jsx(next_document__WEBPACK_IMPORTED_MODULE_1__["NextScript"], {
-      __source: {
-        fileName: _jsxFileName,
-        lineNumber: 22
-      },
-      __self: this
-    })));
-  }
-
-}
->>>>>>> develop
 
 /***/ }),
 
