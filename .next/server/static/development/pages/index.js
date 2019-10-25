@@ -481,7 +481,7 @@ const SignModal = props => {
 
   Object(react__WEBPACK_IMPORTED_MODULE_1__["useEffect"])(() => {
     if (!alReadyCalled) {
-      Kakao.init(process.env.KAKAO_LOGIN_KEY);
+      Kakao.init("1234567890");
     }
 
     Kakao.Auth.createLoginButton({
@@ -2309,25 +2309,28 @@ var __jsx = react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement;
 
 
 
-const Index = () => __jsx("div", {
-  __source: {
-    fileName: _jsxFileName,
-    lineNumber: 6
-  },
-  __self: undefined
-}, __jsx(_components_Header__WEBPACK_IMPORTED_MODULE_2__["default"], {
-  __source: {
-    fileName: _jsxFileName,
-    lineNumber: 7
-  },
-  __self: undefined
-}), __jsx(_components_BasicInfo__WEBPACK_IMPORTED_MODULE_3__["default"], {
-  __source: {
-    fileName: _jsxFileName,
-    lineNumber: 8
-  },
-  __self: undefined
-}));
+const Index = () => {
+  console.log("1234567890");
+  return __jsx("div", {
+    __source: {
+      fileName: _jsxFileName,
+      lineNumber: 8
+    },
+    __self: undefined
+  }, __jsx(_components_Header__WEBPACK_IMPORTED_MODULE_2__["default"], {
+    __source: {
+      fileName: _jsxFileName,
+      lineNumber: 9
+    },
+    __self: undefined
+  }), __jsx(_components_BasicInfo__WEBPACK_IMPORTED_MODULE_3__["default"], {
+    __source: {
+      fileName: _jsxFileName,
+      lineNumber: 10
+    },
+    __self: undefined
+  }));
+};
 
 /* harmony default export */ __webpack_exports__["default"] = (Index);
 
