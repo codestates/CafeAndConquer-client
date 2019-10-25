@@ -239,7 +239,7 @@ var Header = function Header() {
   }, __jsx(_LogoImage__WEBPACK_IMPORTED_MODULE_7__["default"], {
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 67
+      lineNumber: 66
     },
     __self: this
   }), __jsx(SearchFrame, {
@@ -13908,7 +13908,7 @@ var Index = function Index() {
 
 /***/ }),
 
-/***/ 2:
+/***/ 0:
 /*!****************************************************************************************************************************************!*\
   !*** multi next-client-pages-loader?page=%2F&absolutePagePath=%2FUsers%2Fhasubin%2FDesktop%2FCafeAndConquer-client%2Fpages%2Findex.js ***!
   \****************************************************************************************************************************************/
@@ -13931,5 +13931,5 @@ module.exports = dll_13346faca0e924a89b24;
 
 /***/ })
 
-},[[2,"static/runtime/webpack.js","styles"]]]);
+},[[0,"static/runtime/webpack.js","styles"]]]);
 //# sourceMappingURL=index.js.map

@@ -62,9 +62,9 @@ const Header = () => {
 
   return (
     <MainFrame>
-      {/* 로고 링크가 작동은 하는데 잘 안 됨 
-      Router.push 영향 때문인 거 같은데 기존 파일에서는 문제가 없었음 */}
+      {/* 로고 링크가 작동 가끔 안 됨 이유를 모르겠음. 호버 처리해야함  */}
       <LogoImage />
+    
       <SearchFrame>
         <Search onKeyPress={handleKeyPress} {...useSearch} />
         <Link href="/search/[id]" as={`/search/${searchAddress}`}>
@@ -98,6 +98,7 @@ const MainFrame = styled.div`
   z-index: 10;
   /* border: 1px solid black; */
 `;
+
 
 const SearchFrame = styled.div`
   position: relative;
