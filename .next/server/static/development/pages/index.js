@@ -260,6 +260,9 @@ const Header = ({
     },
     __self: undefined
   }); // 로그인 유무에 따라 바뀜
+  // if(!logined){
+  //   menuButtons = <TopMenuBttons />
+  // }
   // if(logined){
   //   menuButtons = <AfterLogin />
   // }
@@ -268,19 +271,19 @@ const Header = ({
   return __jsx(MainFrame, {
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 29
+      lineNumber: 32
     },
     __self: undefined
   }, __jsx(_Headers_LogoImage__WEBPACK_IMPORTED_MODULE_2__["default"], {
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 31
+      lineNumber: 34
     },
     __self: undefined
   }), __jsx(_Headers_SearchBox__WEBPACK_IMPORTED_MODULE_3__["default"], {
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 32
+      lineNumber: 35
     },
     __self: undefined
   }), menuButtons);

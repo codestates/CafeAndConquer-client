@@ -21,6 +21,9 @@ const Header = ({ logined }) => {
   let menuButtons = <TopMenuBttons />;
 
   // 로그인 유무에 따라 바뀜
+  // if(!logined){
+  //   menuButtons = <TopMenuBttons />
+  // }
   // if(logined){
   //   menuButtons = <AfterLogin />
   // }
