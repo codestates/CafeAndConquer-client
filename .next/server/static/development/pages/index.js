@@ -113,7 +113,7 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var next_link__WEBPACK_IMPORTED_MODULE_3___default = /*#__PURE__*/__webpack_require__.n(next_link__WEBPACK_IMPORTED_MODULE_3__);
 /* harmony import */ var next_router__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! next/router */ "next/router");
 /* harmony import */ var next_router__WEBPACK_IMPORTED_MODULE_4___default = /*#__PURE__*/__webpack_require__.n(next_router__WEBPACK_IMPORTED_MODULE_4__);
-var _jsxFileName = "/Users/hasubin/Desktop/CafeAndConquer-client/components/BasicInfo.js";
+var _jsxFileName = "/Users/hasubin/Desktop/project/CafeAndConquer-client/components/BasicInfo.js";
 var __jsx = react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement;
 
 
@@ -158,8 +158,11 @@ function BasicInfo() {
 
   const registerCafeHandler = () => {
     next_router__WEBPACK_IMPORTED_MODULE_4___default.a.push({
-      pathname: '/register' // query: { lat: position.lat, lng: position.lng },
-
+      pathname: '/register',
+      query: {
+        lat: position.lat,
+        lng: position.lng
+      }
     });
   };
 
@@ -237,7 +240,7 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _Headers_SearchBox__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ./Headers/SearchBox */ "./components/Headers/SearchBox.js");
 /* harmony import */ var _headers_TopMenuButtons__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ./headers/TopMenuButtons */ "./components/headers/TopMenuButtons.js");
 /* harmony import */ var _Headers_AfterLogin__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! ./Headers/AfterLogin */ "./components/Headers/AfterLogin.js");
-var _jsxFileName = "/Users/hasubin/Desktop/CafeAndConquer-client/components/Header.js";
+var _jsxFileName = "/Users/hasubin/Desktop/project/CafeAndConquer-client/components/Header.js";
 var __jsx = react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement;
 
 
@@ -308,7 +311,7 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var next_link__WEBPACK_IMPORTED_MODULE_1___default = /*#__PURE__*/__webpack_require__.n(next_link__WEBPACK_IMPORTED_MODULE_1__);
 /* harmony import */ var styled_components__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! styled-components */ "styled-components");
 /* harmony import */ var styled_components__WEBPACK_IMPORTED_MODULE_2___default = /*#__PURE__*/__webpack_require__.n(styled_components__WEBPACK_IMPORTED_MODULE_2__);
-var _jsxFileName = "/Users/hasubin/Desktop/CafeAndConquer-client/components/Headers/AfterLogin.js";
+var _jsxFileName = "/Users/hasubin/Desktop/project/CafeAndConquer-client/components/Headers/AfterLogin.js";
 var __jsx = react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement;
 
 
@@ -356,7 +359,7 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var next_link__WEBPACK_IMPORTED_MODULE_2___default = /*#__PURE__*/__webpack_require__.n(next_link__WEBPACK_IMPORTED_MODULE_2__);
 /* harmony import */ var next_router__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! next/router */ "next/router");
 /* harmony import */ var next_router__WEBPACK_IMPORTED_MODULE_3___default = /*#__PURE__*/__webpack_require__.n(next_router__WEBPACK_IMPORTED_MODULE_3__);
-var _jsxFileName = "/Users/hasubin/Desktop/CafeAndConquer-client/components/Headers/LogoImage.js";
+var _jsxFileName = "/Users/hasubin/Desktop/project/CafeAndConquer-client/components/Headers/LogoImage.js";
 var __jsx = react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement;
 
 
@@ -417,7 +420,7 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var next_router__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! next/router */ "next/router");
 /* harmony import */ var next_router__WEBPACK_IMPORTED_MODULE_5___default = /*#__PURE__*/__webpack_require__.n(next_router__WEBPACK_IMPORTED_MODULE_5__);
 
-var _jsxFileName = "/Users/hasubin/Desktop/CafeAndConquer-client/components/Headers/SearchBox.js";
+var _jsxFileName = "/Users/hasubin/Desktop/project/CafeAndConquer-client/components/Headers/SearchBox.js";
 var __jsx = react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement;
 
 
@@ -551,7 +554,7 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var styled_components__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! styled-components */ "styled-components");
 /* harmony import */ var styled_components__WEBPACK_IMPORTED_MODULE_2___default = /*#__PURE__*/__webpack_require__.n(styled_components__WEBPACK_IMPORTED_MODULE_2__);
 
-var _jsxFileName = "/Users/hasubin/Desktop/CafeAndConquer-client/components/SignModal.js";
+var _jsxFileName = "/Users/hasubin/Desktop/project/CafeAndConquer-client/components/SignModal.js";
 var __jsx = react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement;
 
 
@@ -584,6 +587,8 @@ const SignModal = props => {
     Kakao.Auth.createLoginButton({
       container: '#kakao-login-btn',
       success: function (authObj) {
+        // a
+        // let auth = JSON.stringify(authObj)
         alert(_babel_runtime_corejs2_core_js_json_stringify__WEBPACK_IMPORTED_MODULE_0___default()(authObj));
       },
       fail: function (err) {
@@ -592,32 +597,32 @@ const SignModal = props => {
     });
   }, []);
 
-  const closeKakao = () => {// setTimeout(onClose, 1000);
+  const closeKakao = () => {
+    setTimeout(onClose, 1000);
   };
 
-  console.log(alReadyCalled);
   return __jsx(MyModal, {
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 57
+      lineNumber: 61
     },
     __self: undefined
   }, __jsx(Content, {
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 58
+      lineNumber: 62
     },
     __self: undefined
   }, __jsx("h3", {
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 59
+      lineNumber: 63
     },
     __self: undefined
   }, "\uC2E0\uADDC \uD68C\uC6D0\uAC00\uC785"), __jsx("p", {
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 60
+      lineNumber: 64
     },
     __self: undefined
   }, props.children), __jsx("a", {
@@ -625,14 +630,14 @@ const SignModal = props => {
     id: "kakao-login-btn",
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 61
+      lineNumber: 65
     },
     __self: undefined
   }), __jsx("a", {
     href: "http://developers.kakao.com/logout",
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 62
+      lineNumber: 66
     },
     __self: undefined
   }), __jsx("button", {
@@ -641,7 +646,7 @@ const SignModal = props => {
     },
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 63
+      lineNumber: 67
     },
     __self: undefined
   }, "Close")));
@@ -667,7 +672,7 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var styled_components__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! styled-components */ "styled-components");
 /* harmony import */ var styled_components__WEBPACK_IMPORTED_MODULE_2___default = /*#__PURE__*/__webpack_require__.n(styled_components__WEBPACK_IMPORTED_MODULE_2__);
 /* harmony import */ var _SignModal__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ../SignModal */ "./components/SignModal.js");
-var _jsxFileName = "/Users/hasubin/Desktop/CafeAndConquer-client/components/headers/TopMenuButtons.js";
+var _jsxFileName = "/Users/hasubin/Desktop/project/CafeAndConquer-client/components/headers/TopMenuButtons.js";
 var __jsx = react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement;
 
 
@@ -2479,7 +2484,7 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _components_BasicInfo__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ../components/BasicInfo */ "./components/BasicInfo.js");
 /* harmony import */ var _style_scss__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ../style.scss */ "./style.scss");
 /* harmony import */ var _style_scss__WEBPACK_IMPORTED_MODULE_3___default = /*#__PURE__*/__webpack_require__.n(_style_scss__WEBPACK_IMPORTED_MODULE_3__);
-var _jsxFileName = "/Users/hasubin/Desktop/CafeAndConquer-client/pages/index.js";
+var _jsxFileName = "/Users/hasubin/Desktop/project/CafeAndConquer-client/pages/index.js";
 
 var __jsx = react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement;
 
@@ -2530,7 +2535,7 @@ const Index = () => {
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
-module.exports = __webpack_require__(/*! /Users/hasubin/Desktop/CafeAndConquer-client/pages/index.js */"./pages/index.js");
+module.exports = __webpack_require__(/*! /Users/hasubin/Desktop/project/CafeAndConquer-client/pages/index.js */"./pages/index.js");
 
 
 /***/ }),

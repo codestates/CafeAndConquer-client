@@ -8,7 +8,7 @@ import AfterLogin from './Headers/AfterLogin';
 
 const MainFrame = styled.div`
   position: fixed;
-  height: 100px;
+  height:100px;
   max-width: 100%;
   width: 100%;
   top: 0;
