@@ -486,7 +486,7 @@ var SignModal = function SignModal(props) {
     Kakao.Auth.createLoginButton({
       container: '#kakao-login-btn',
       success: function success(authObj) {
-        // a
+        // access_token, refresh_token, scope 정보
         // let auth = JSON.stringify(authObj)
         alert(_babel_runtime_corejs2_core_js_json_stringify__WEBPACK_IMPORTED_MODULE_0___default()(authObj));
       },

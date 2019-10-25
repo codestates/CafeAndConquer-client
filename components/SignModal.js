@@ -40,7 +40,7 @@ const SignModal = (props) => {
     Kakao.Auth.createLoginButton({
       container: '#kakao-login-btn',
       success: function(authObj) {
-        // a
+        // access_token, refresh_token, scope 정보
         // let auth = JSON.stringify(authObj)
       
         alert(JSON.stringify(authObj));

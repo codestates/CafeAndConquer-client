@@ -3,41 +3,37 @@ import styled from 'styled-components';
 import search from './[id]';
 
 const Mainframe = styled.div`
-  position: absolute;
+  position: relative;
   top: 100px;
   left: 0;
   width: 100%;
   height: auto;
   overflow: hidden;
-  border-bottom: 1px solid black;
 `;
 
 const db = ['info1', 'info2', 'info3'];
 
-const SearchForm = (props) => {
-  let name = props.name;
-
- 
+const SearchTruthy = ({ name }) => {
   if (name === '[id]') {
     name = "' '";
   }
-  let searchhResult;
+  let noneResult;
 
-  if (!db.includes(props.name)) {
-    searchhResult = (
-      <p style={{ position: 'relative', left: '5%' }}>
-        {name}의 검색 결과를 찾을 수 없습니다.
-      </p>
-    );
-  }
+  // if (!db.includes(name)) {
+  //   noneResult = (
+  //     <p style={{ position: 'relative', left: '5%' }}>
+  //       {name}의 검색 결과를 찾을 수 없습니다.
+  //     </p>
+  //   );
+  // }
   return (
     <Mainframe>
       <h3 style={{ position: 'relative', left: '5%' }}>
         {name}의 검색 결과입니다.
       </h3>
-      {searchhResult}
+      {noneResult}
     </Mainframe>
   );
 };
 
-export default SearchForm;
+export default SearchTruthy;
