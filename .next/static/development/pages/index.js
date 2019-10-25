@@ -151,9 +151,11 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var next_router__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! next/router */ "./node_modules/next/dist/client/router.js");
 /* harmony import */ var next_router__WEBPACK_IMPORTED_MODULE_5___default = /*#__PURE__*/__webpack_require__.n(next_router__WEBPACK_IMPORTED_MODULE_5__);
 /* harmony import */ var _SignModal__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! ./SignModal */ "./components/SignModal.js");
+/* harmony import */ var _LogoImage__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(/*! ./LogoImage */ "./components/LogoImage.js");
 
 var _jsxFileName = "/Users/hasubin/Desktop/CafeAndConquer-client/components/Header.js";
 var __jsx = react__WEBPACK_IMPORTED_MODULE_3___default.a.createElement;
+
 
 
 
@@ -183,7 +185,10 @@ var searchBtnHandler = function searchBtnHandler(value, current) {
   if (value === '') {
     console.log(current);
   }
-};
+}; // const BacktoHome = () => {
+//   Router.push('/')
+// }
+
 
 var Header = function Header() {
   var useSearch = useInput('');
@@ -207,13 +212,12 @@ var Header = function Header() {
   var handleKeyPress = function handleKeyPress(e) {
     if (e.charCode === 13) {
       if (searchAddress !== '') {
-        next_router__WEBPACK_IMPORTED_MODULE_5___default.a.push({
-          pathname: "/search/".concat(searchAddress),
-          query: {
-            lat: position.lat,
-            lng: position.lng
-          }
-        });
+        next_router__WEBPACK_IMPORTED_MODULE_5___default.a.push("/search/".concat(searchAddress)); // Router.push({
+        //   pathname: `/search/${searchAddress}`,
+        //   // 쿼리 지저분함
+        //   // query: { lat: position.lat, lng: position.lng },
+        //   as: `/search/${searchAddress}`
+        // });
       }
     }
   };
@@ -229,26 +233,19 @@ var Header = function Header() {
   return __jsx(MainFrame, {
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 56
+      lineNumber: 64
     },
     __self: this
-  }, __jsx(next_link__WEBPACK_IMPORTED_MODULE_4___default.a, {
-    href: "/",
+  }, __jsx(_LogoImage__WEBPACK_IMPORTED_MODULE_7__["default"], {
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 57
+      lineNumber: 67
     },
     __self: this
-  }, __jsx(Logo, {
+  }), __jsx(SearchFrame, {
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 58
-    },
-    __self: this
-  }, "C&C")), __jsx(SearchFrame, {
-    __source: {
-      fileName: _jsxFileName,
-      lineNumber: 60
+      lineNumber: 68
     },
     __self: this
   }, __jsx(Search, Object(_babel_runtime_corejs2_helpers_esm_extends__WEBPACK_IMPORTED_MODULE_0__["default"])({
@@ -256,7 +253,7 @@ var Header = function Header() {
   }, useSearch, {
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 61
+      lineNumber: 69
     },
     __self: this
   })), __jsx(next_link__WEBPACK_IMPORTED_MODULE_4___default.a, {
@@ -264,7 +261,7 @@ var Header = function Header() {
     as: "/search/".concat(searchAddress),
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 62
+      lineNumber: 70
     },
     __self: this
   }, __jsx(Button, {
@@ -273,13 +270,13 @@ var Header = function Header() {
     },
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 63
+      lineNumber: 71
     },
     __self: this
   }, "\uD0D0\uC0C9"))), __jsx(TopMenuBtton, {
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 68
+      lineNumber: 76
     },
     __self: this
   }, __jsx("button", {
@@ -288,7 +285,7 @@ var Header = function Header() {
     },
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 70
+      lineNumber: 78
     },
     __self: this
   }, "sign"), __jsx(_SignModal__WEBPACK_IMPORTED_MODULE_6__["default"], {
@@ -296,14 +293,14 @@ var Header = function Header() {
     show: show,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 71
+      lineNumber: 79
     },
     __self: this
   }, "\uD658\uC601\uD569\uB2C8\uB2E4"), __jsx(next_link__WEBPACK_IMPORTED_MODULE_4___default.a, {
     href: "/login",
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 74
+      lineNumber: 82
     },
     __self: this
   }, __jsx("a", {
@@ -312,7 +309,7 @@ var Header = function Header() {
     },
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 75
+      lineNumber: 83
     },
     __self: this
   }, "login"))));
@@ -322,30 +319,71 @@ var MainFrame = styled_components__WEBPACK_IMPORTED_MODULE_1__["default"].div.wi
   displayName: "Header__MainFrame",
   componentId: "sc-1yui16o-0"
 })(["position:fixed;height:100px;max-width:100%;width:100%;top:0;left:0;background-color:lightgray;z-index:10;"]);
-var Logo = styled_components__WEBPACK_IMPORTED_MODULE_1__["default"].a.withConfig({
-  displayName: "Header__Logo",
-  componentId: "sc-1yui16o-1"
-})(["position:relative;top:18%;left:3%;font-family:Monospace,Helvetica,sans-serif;position:absolute;font-size:3.4rem;text-decoration:none;"]);
 var SearchFrame = styled_components__WEBPACK_IMPORTED_MODULE_1__["default"].div.withConfig({
   displayName: "Header__SearchFrame",
-  componentId: "sc-1yui16o-2"
+  componentId: "sc-1yui16o-1"
 })(["position:relative;top:10%;left:25%;width:50%;height:70px;"]);
 var Search = styled_components__WEBPACK_IMPORTED_MODULE_1__["default"].input.attrs({
   placeholder: '지역 또는 카페 탐색하기',
   type: 'text'
 }).withConfig({
   displayName: "Header__Search",
-  componentId: "sc-1yui16o-3"
+  componentId: "sc-1yui16o-2"
 })(["position:relative;top:20%;width:70%;padding-left:45px;height:44px;border:0px;border:3px solid #ff7f00;font-size:18px;color:#ff7f00;background:url(https://s3-ap-northeast-1.amazonaws.com/dcicons/new/images/web/common/search@2x.png) no-repeat left;background-size:40px;outline:none;&:focus{border-color:blue;}"]);
 var Button = styled_components__WEBPACK_IMPORTED_MODULE_1__["default"].button.attrs({}).withConfig({
   displayName: "Header__Button",
-  componentId: "sc-1yui16o-4"
+  componentId: "sc-1yui16o-3"
 })(["position:relative;top:15%;width:40px;height:50px;"]);
 var TopMenuBtton = styled_components__WEBPACK_IMPORTED_MODULE_1__["default"].div.withConfig({
   displayName: "Header__TopMenuBtton",
-  componentId: "sc-1yui16o-5"
+  componentId: "sc-1yui16o-4"
 })(["position:absolute;top:35%;left:70%;height:30px;width:25%;text-align:center;"]);
 /* harmony default export */ __webpack_exports__["default"] = (Header);
+
+/***/ }),
+
+/***/ "./components/LogoImage.js":
+/*!*********************************!*\
+  !*** ./components/LogoImage.js ***!
+  \*********************************/
+/*! exports provided: default */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! react */ "./node_modules/react/index.js");
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_0__);
+/* harmony import */ var styled_components__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! styled-components */ "./node_modules/styled-components/dist/styled-components.browser.esm.js");
+/* harmony import */ var next_link__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! next/link */ "./node_modules/next/link.js");
+/* harmony import */ var next_link__WEBPACK_IMPORTED_MODULE_2___default = /*#__PURE__*/__webpack_require__.n(next_link__WEBPACK_IMPORTED_MODULE_2__);
+var _jsxFileName = "/Users/hasubin/Desktop/CafeAndConquer-client/components/LogoImage.js";
+var __jsx = react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement;
+
+
+
+var Logo = styled_components__WEBPACK_IMPORTED_MODULE_1__["default"].a.withConfig({
+  displayName: "LogoImage__Logo",
+  componentId: "tmulxw-0"
+})(["position:relative;top:18%;left:3%;font-family:Monospace,Helvetica,sans-serif;position:absolute;font-size:3.4rem;text-decoration:none;"]);
+
+var LogoImage = function LogoImage() {
+  return __jsx(next_link__WEBPACK_IMPORTED_MODULE_2___default.a, {
+    href: "/",
+    __source: {
+      fileName: _jsxFileName,
+      lineNumber: 15
+    },
+    __self: this
+  }, __jsx(Logo, {
+    __source: {
+      fileName: _jsxFileName,
+      lineNumber: 16
+    },
+    __self: this
+  }, "C&C"));
+};
+
+/* harmony default export */ __webpack_exports__["default"] = (LogoImage);
 
 /***/ }),
 
@@ -13870,7 +13908,7 @@ var Index = function Index() {
 
 /***/ }),
 
-/***/ 0:
+/***/ 2:
 /*!****************************************************************************************************************************************!*\
   !*** multi next-client-pages-loader?page=%2F&absolutePagePath=%2FUsers%2Fhasubin%2FDesktop%2FCafeAndConquer-client%2Fpages%2Findex.js ***!
   \****************************************************************************************************************************************/
@@ -13893,5 +13931,5 @@ module.exports = dll_13346faca0e924a89b24;
 
 /***/ })
 
-},[[0,"static/runtime/webpack.js","styles"]]]);
+},[[2,"static/runtime/webpack.js","styles"]]]);
 //# sourceMappingURL=index.js.map

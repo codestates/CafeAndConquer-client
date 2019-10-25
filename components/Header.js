@@ -5,6 +5,8 @@ import Link from 'next/link';
 import Router from 'next/router';
 import SignModal from './SignModal';
 
+import LogoImage from './LogoImage';
+
 const useInput = (initialValue) => {
   const [value, setValue] = useState(initialValue);
   const onChange = (event) => {
@@ -24,6 +26,9 @@ const searchBtnHandler = (value, current) => {
   }
 };
 
+// const BacktoHome = () => {
+//   Router.push('/')
+// }
 const Header = () => {
   let useSearch = useInput('');
   const { latitude, longitude, error } = usePosition();
@@ -39,10 +44,13 @@ const Header = () => {
   const handleKeyPress = (e) => {
     if (e.charCode === 13) {
       if (searchAddress !== '') {
-        Router.push({
-          pathname: `/search/${searchAddress}`,
-          query: { lat: position.lat, lng: position.lng },
-        });
+        Router.push(`/search/${searchAddress}`);
+        // Router.push({
+        //   pathname: `/search/${searchAddress}`,
+        //   // 쿼리 지저분함
+        //   // query: { lat: position.lat, lng: position.lng },
+        //   as: `/search/${searchAddress}`
+        // });
       }
     }
   };
@@ -54,9 +62,9 @@ const Header = () => {
 
   return (
     <MainFrame>
-      <Link href="/">
-        <Logo>C&C</Logo>
-      </Link>
+      {/* 로고 링크가 작동은 하는데 잘 안 됨 
+      Router.push 영향 때문인 거 같은데 기존 파일에서는 문제가 없었음 */}
+      <LogoImage />
       <SearchFrame>
         <Search onKeyPress={handleKeyPress} {...useSearch} />
         <Link href="/search/[id]" as={`/search/${searchAddress}`}>
@@ -89,16 +97,6 @@ const MainFrame = styled.div`
   background-color: lightgray;
   z-index: 10;
   /* border: 1px solid black; */
-`;
-
-const Logo = styled.a`
-  position: relative;
-  top: 18%;
-  left: 3%;
-  font-family: Monospace, Helvetica, sans-serif;
-  position: absolute;
-  font-size: 3.4rem;
-  text-decoration: none;
 `;
 
 const SearchFrame = styled.div`

@@ -5,8 +5,8 @@ import { useRouter } from 'next/router';
 
 const search = (props) => {
   const router = useRouter();
-  const currentLocation = [router.query.lat, router.query.lng];
-
+  // const currentLocation = [router.query.lat, router.query.lng];
+  // console.log('search test: ', currentLocation)
 
   return (
     <div>
