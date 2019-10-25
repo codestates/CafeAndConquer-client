@@ -18,9 +18,10 @@ const useInput = (initialValue) => {
   return { value, onChange };
 };
 
+
 const searchBtnHandler = (value, current) => {
   if (value === '') {
-    console.log(current);
+    // console.log(current);
   }
 };
 
@@ -38,8 +39,12 @@ const Header = () => {
   }
   const handleKeyPress = (e) => {
     if (e.charCode === 13) {
-      if (useSearch.value !== '') {
-        Router.push(`/search/${useSearch.value}`);
+      if (searchAddress !== '') {
+        // Router.push(`/search/${searchAddress}`);
+        Router.push({
+          pathname: `/search/${searchAddress}`,
+          query: { lat: position.lat, lng: position.lng },
+        });
       }
     }
   };
@@ -58,16 +63,14 @@ const Header = () => {
         {/* 비구조화 할당 // 노마드코더 */}
         <Search onKeyPress={handleKeyPress} {...useSearch} />
         <Link href="/search/[id]" as={`/search/${searchAddress}`}>
-          {/* 위도 정보, 검색  정보  넘기기? */}
           <Button onClick={() => searchBtnHandler(useSearch.value, position)}>
             탐색
           </Button>
         </Link>
       </SearchFrame>
       <TopMenuBtton>
-        {/* 의문1. link를 감싸는 방법을 왜 써야하며 다른 방법은 없는가? */}
         <button onClick={() => showSign()}>sign</button>
-        <SignModal onClose={showSign} show={show} alreadyCalled={false}>
+        <SignModal onClose={showSign} show={show}>
           환영합니다
         </SignModal>
         <Link href="/login">
@@ -87,7 +90,6 @@ const MainFrame = styled.div`
   left: 0;
   background-color: lightgray;
   z-index: 10;
-  /* border: 1px solid black; */
 `;
 
 const Logo = styled.a`
@@ -144,7 +146,6 @@ const TopMenuBtton = styled.div`
   left: 70%;
   height: 30px;
   width: 25%;
-  /* border: 1px solid black; */
   text-align: center;
 `;
 

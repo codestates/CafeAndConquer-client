@@ -19,7 +19,7 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var next_link__WEBPACK_IMPORTED_MODULE_3___default = /*#__PURE__*/__webpack_require__.n(next_link__WEBPACK_IMPORTED_MODULE_3__);
 /* harmony import */ var next_router__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! next/router */ "./node_modules/next/dist/client/router.js");
 /* harmony import */ var next_router__WEBPACK_IMPORTED_MODULE_4___default = /*#__PURE__*/__webpack_require__.n(next_router__WEBPACK_IMPORTED_MODULE_4__);
-var _jsxFileName = "/Users/gomidev/Documents/Projects/CafeAndConquer-client/components/BasicInfo.js";
+var _jsxFileName = "/Users/hasubin/Desktop/C&C/CafeAndConquer-client/components/BasicInfo.js";
 var __jsx = react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement;
 
 
@@ -152,7 +152,7 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var next_router__WEBPACK_IMPORTED_MODULE_5___default = /*#__PURE__*/__webpack_require__.n(next_router__WEBPACK_IMPORTED_MODULE_5__);
 /* harmony import */ var _SignModal__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! ./SignModal */ "./components/SignModal.js");
 
-var _jsxFileName = "/Users/gomidev/Documents/Projects/CafeAndConquer-client/components/Header.js";
+var _jsxFileName = "/Users/hasubin/Desktop/C&C/CafeAndConquer-client/components/Header.js";
 var __jsx = react__WEBPACK_IMPORTED_MODULE_3___default.a.createElement;
 
 
@@ -180,8 +180,7 @@ var useInput = function useInput(initialValue) {
 };
 
 var searchBtnHandler = function searchBtnHandler(value, current) {
-  if (value === '') {
-    console.log(current);
+  if (value === '') {// console.log(current);
   }
 };
 
@@ -206,8 +205,15 @@ var Header = function Header() {
 
   var handleKeyPress = function handleKeyPress(e) {
     if (e.charCode === 13) {
-      if (useSearch.value !== '') {
-        next_router__WEBPACK_IMPORTED_MODULE_5___default.a.push("/search/".concat(useSearch.value));
+      if (searchAddress !== '') {
+        // Router.push(`/search/${searchAddress}`);
+        next_router__WEBPACK_IMPORTED_MODULE_5___default.a.push({
+          pathname: "/search/".concat(searchAddress),
+          query: {
+            lat: position.lat,
+            lng: position.lng
+          }
+        });
       }
     }
   };
@@ -223,26 +229,26 @@ var Header = function Header() {
   return __jsx(MainFrame, {
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 53
+      lineNumber: 58
     },
     __self: this
   }, __jsx(next_link__WEBPACK_IMPORTED_MODULE_4___default.a, {
     href: "/",
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 54
+      lineNumber: 59
     },
     __self: this
   }, __jsx(Logo, {
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 55
+      lineNumber: 60
     },
     __self: this
   }, "C&C")), __jsx(SearchFrame, {
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 57
+      lineNumber: 62
     },
     __self: this
   }, __jsx(Search, Object(_babel_runtime_corejs2_helpers_esm_extends__WEBPACK_IMPORTED_MODULE_0__["default"])({
@@ -250,7 +256,7 @@ var Header = function Header() {
   }, useSearch, {
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 59
+      lineNumber: 64
     },
     __self: this
   })), __jsx(next_link__WEBPACK_IMPORTED_MODULE_4___default.a, {
@@ -258,7 +264,7 @@ var Header = function Header() {
     as: "/search/".concat(searchAddress),
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 60
+      lineNumber: 65
     },
     __self: this
   }, __jsx(Button, {
@@ -267,13 +273,13 @@ var Header = function Header() {
     },
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 62
+      lineNumber: 66
     },
     __self: this
   }, "\uD0D0\uC0C9"))), __jsx(TopMenuBtton, {
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 67
+      lineNumber: 71
     },
     __self: this
   }, __jsx("button", {
@@ -282,23 +288,22 @@ var Header = function Header() {
     },
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 69
+      lineNumber: 72
     },
     __self: this
   }, "sign"), __jsx(_SignModal__WEBPACK_IMPORTED_MODULE_6__["default"], {
     onClose: showSign,
     show: show,
-    alreadyCalled: false,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 70
+      lineNumber: 73
     },
     __self: this
   }, "\uD658\uC601\uD569\uB2C8\uB2E4"), __jsx(next_link__WEBPACK_IMPORTED_MODULE_4___default.a, {
     href: "/login",
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 73
+      lineNumber: 76
     },
     __self: this
   }, __jsx("a", {
@@ -307,7 +312,7 @@ var Header = function Header() {
     },
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 74
+      lineNumber: 77
     },
     __self: this
   }, "login"))));
@@ -359,7 +364,7 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var react__WEBPACK_IMPORTED_MODULE_1___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_1__);
 /* harmony import */ var styled_components__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! styled-components */ "./node_modules/styled-components/dist/styled-components.browser.esm.js");
 
-var _jsxFileName = "/Users/gomidev/Documents/Projects/CafeAndConquer-client/components/SignModal.js";
+var _jsxFileName = "/Users/hasubin/Desktop/C&C/CafeAndConquer-client/components/SignModal.js";
 var __jsx = react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement;
 
 
@@ -386,7 +391,7 @@ var SignModal = function SignModal(props) {
 
   Object(react__WEBPACK_IMPORTED_MODULE_1__["useEffect"])(function () {
     if (!alReadyCalled) {
-      Kakao.init("1234567890");
+      Kakao.init("cad26943f3f53f49ee29f15228abed78");
     }
 
     Kakao.Auth.createLoginButton({
@@ -5463,10 +5468,10 @@ function concatArrays(originVal, newVal) {
 
 /***/ }),
 
-/***/ "./node_modules/next/dist/build/webpack/loaders/next-client-pages-loader.js?page=%2F&absolutePagePath=%2FUsers%2Fgomidev%2FDocuments%2FProjects%2FCafeAndConquer-client%2Fpages%2Findex.js!./":
-/*!*************************************************************************************************************************************************************************************************!*\
-  !*** ./node_modules/next/dist/build/webpack/loaders/next-client-pages-loader.js?page=%2F&absolutePagePath=%2FUsers%2Fgomidev%2FDocuments%2FProjects%2FCafeAndConquer-client%2Fpages%2Findex.js ***!
-  \*************************************************************************************************************************************************************************************************/
+/***/ "./node_modules/next/dist/build/webpack/loaders/next-client-pages-loader.js?page=%2F&absolutePagePath=%2FUsers%2Fhasubin%2FDesktop%2FC%26C%2FCafeAndConquer-client%2Fpages%2Findex.js!./":
+/*!********************************************************************************************************************************************************************************************!*\
+  !*** ./node_modules/next/dist/build/webpack/loaders/next-client-pages-loader.js?page=%2F&absolutePagePath=%2FUsers%2Fhasubin%2FDesktop%2FC%26C%2FCafeAndConquer-client%2Fpages%2Findex.js ***!
+  \********************************************************************************************************************************************************************************************/
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
@@ -13830,9 +13835,9 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_0__);
 /* harmony import */ var _components_Header__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ../components/Header */ "./components/Header.js");
 /* harmony import */ var _components_BasicInfo__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ../components/BasicInfo */ "./components/BasicInfo.js");
-/* harmony import */ var _style_scss__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ../style.scss */ "./style.scss");
-/* harmony import */ var _style_scss__WEBPACK_IMPORTED_MODULE_4___default = /*#__PURE__*/__webpack_require__.n(_style_scss__WEBPACK_IMPORTED_MODULE_4__);
-var _jsxFileName = "/Users/gomidev/Documents/Projects/CafeAndConquer-client/pages/index.js";
+/* harmony import */ var _style_scss__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ../style.scss */ "./style.scss");
+/* harmony import */ var _style_scss__WEBPACK_IMPORTED_MODULE_3___default = /*#__PURE__*/__webpack_require__.n(_style_scss__WEBPACK_IMPORTED_MODULE_3__);
+var _jsxFileName = "/Users/hasubin/Desktop/C&C/CafeAndConquer-client/pages/index.js";
 
 var __jsx = react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement;
 
@@ -13865,14 +13870,14 @@ var Index = function Index() {
 
 /***/ }),
 
-/***/ 0:
-/*!*****************************************************************************************************************************************************!*\
-  !*** multi next-client-pages-loader?page=%2F&absolutePagePath=%2FUsers%2Fgomidev%2FDocuments%2FProjects%2FCafeAndConquer-client%2Fpages%2Findex.js ***!
-  \*****************************************************************************************************************************************************/
+/***/ 4:
+/*!************************************************************************************************************************************************!*\
+  !*** multi next-client-pages-loader?page=%2F&absolutePagePath=%2FUsers%2Fhasubin%2FDesktop%2FC%26C%2FCafeAndConquer-client%2Fpages%2Findex.js ***!
+  \************************************************************************************************************************************************/
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
-module.exports = __webpack_require__(/*! next-client-pages-loader?page=%2F&absolutePagePath=%2FUsers%2Fgomidev%2FDocuments%2FProjects%2FCafeAndConquer-client%2Fpages%2Findex.js! */"./node_modules/next/dist/build/webpack/loaders/next-client-pages-loader.js?page=%2F&absolutePagePath=%2FUsers%2Fgomidev%2FDocuments%2FProjects%2FCafeAndConquer-client%2Fpages%2Findex.js!./");
+module.exports = __webpack_require__(/*! next-client-pages-loader?page=%2F&absolutePagePath=%2FUsers%2Fhasubin%2FDesktop%2FC%26C%2FCafeAndConquer-client%2Fpages%2Findex.js! */"./node_modules/next/dist/build/webpack/loaders/next-client-pages-loader.js?page=%2F&absolutePagePath=%2FUsers%2Fhasubin%2FDesktop%2FC%26C%2FCafeAndConquer-client%2Fpages%2Findex.js!./");
 
 
 /***/ }),
@@ -13888,5 +13893,5 @@ module.exports = dll_13346faca0e924a89b24;
 
 /***/ })
 
-},[[0,"static/runtime/webpack.js","styles"]]]);
+},[[4,"static/runtime/webpack.js","styles"]]]);
 //# sourceMappingURL=index.js.map
