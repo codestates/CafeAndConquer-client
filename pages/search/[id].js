@@ -1,7 +1,7 @@
 import React from 'react';
 import Header from '../../components/Header';
-import SearchTruthy from '../../components/Searches/SearchTruthy';
-import SearchInfo from '../../components/Searches/SearchInfo';
+import SearchTruthy from '../../components/Search/SearchTruthy';
+import SearchInfo from '../../components/Search/SearchInfo';
 import { useRouter } from 'next/router';
 
 import axios from 'axios';
@@ -20,7 +20,7 @@ const search = (props) => {
     </div>
   );
 };
-
+// cors 오류 수호님과 논의 해본다 
 search.getInitialProps = async function() {
   //props.cafeInfo 로 변경될 거 같다
   //숫자를 어떻게 받아 올 것인가?

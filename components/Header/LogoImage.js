@@ -24,6 +24,7 @@ const Logo = styled.a`
 //   }, 1000);
 // };
 
+// 
 const LogoImage = () => {
   return (
     <Link href="/">

@@ -44,7 +44,6 @@ const SearchInfo = (props) => {
   if(!props.info.open24Hour) {
     twentyFour = '비영업';
   }
- 
   if(props.info.enoughOutlets === "NORMAL") {
     concent = '보통'
   }
