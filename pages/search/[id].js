@@ -1,7 +1,7 @@
 import React from 'react';
 import Header from '../../components/Header';
-import SearchTruthy from './SearchTruthy';
-import SearchInfo from './SearchInfo'
+import SearchTruthy from '../../components/Searches/SearchTruthy';
+import SearchInfo from '../../components/Searches/SearchInfo';
 import { useRouter } from 'next/router';
 
 const search = (props) => {
