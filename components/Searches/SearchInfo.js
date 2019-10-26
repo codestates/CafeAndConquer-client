@@ -38,19 +38,29 @@ let test = ['hi', 'hello', 'how are you?'].map((e,i) => (
 ));
 
 const SearchInfo = (props) => {
+  console.log(props.info)
+  let twentyFour = '영업';
+  let concent = '충분함'
+  if(!props.info.open24Hour) {
+    twentyFour = '비영업';
+  }
+ 
+  if(props.info.enoughOutlets === "NORMAL") {
+    concent = '보통'
+  }
   return (
     <div>
       <Mainframe>
         <Title>
           <p>
-            투썸플레이스 대구
+            {props.info.cafeName}
           </p>
         </Title>
         <Info>
-          <p>산격4동 1498-199</p>
-          <p>7:00 ~ 23:00 open</p>
-          <p>콘센트 ***</p>
-          <p>아늑함 · 캐주얼 · 단체석</p>
+          <p>{props.address}</p>
+          <p>24시 영업 : {twentyFour}</p>
+          <p>콘센트 : {concent}</p>
+          <p>점령자 닉네임 : {props.info.user.nick}</p>
         </Info>
       </Mainframe>
       {test}
