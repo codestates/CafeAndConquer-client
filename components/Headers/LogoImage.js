@@ -1,6 +1,7 @@
-import React from 'react';
+
 import styled from 'styled-components';
 import Link from 'next/link';
+import Router from 'next/router';
 const Logo = styled.a`
   position: relative;
   top: 18%;
@@ -14,6 +15,15 @@ const Logo = styled.a`
     cursor: pointer;
   }
 `;
+
+// const BacktoHome = () => {
+//   console.log('BTH is Ok');
+//   setInterval(() => {
+//     console.log('a');
+//     Router.push('/');
+//   }, 1000);
+// };
+
 const LogoImage = () => {
   return (
     <Link href="/">

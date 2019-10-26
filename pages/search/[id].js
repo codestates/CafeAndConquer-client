@@ -1,6 +1,7 @@
 import React from 'react';
 import Header from '../../components/Header';
-import SearchForm from '../../components/SearchForm';
+import SearchTruthy from './SearchTruthy';
+import SearchInfo from './SearchInfo'
 import { useRouter } from 'next/router';
 
 const search = (props) => {
@@ -11,10 +12,11 @@ const search = (props) => {
   return (
     <div>
       <Header />
-      <SearchForm name={router.query.id} />
+      <SearchTruthy name={router.query.id} />
+      {/* SearchTruhty의 boolean 값에 따라 SearchInfo */}
+      <SearchInfo />
     </div>
   );
 };
 
 export default search;
-

@@ -55,6 +55,12 @@ const useInput = (initialValue) => {
   return { value, onChange };
 };
 
+const searchBtnHandler = (value, current) => {
+  if (value === '') {
+    // console.log(current);
+  }
+};
+
 const SearchBox = (props) => {
   let useSearch = useInput('');
   const { latitude, longitude, error } = usePosition();
@@ -88,7 +94,6 @@ const SearchBox = (props) => {
           탐색
         </Button>
       </Link>
-      {props.children}
     </SearchFrame>
   );
 };

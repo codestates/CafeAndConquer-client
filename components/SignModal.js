@@ -2,6 +2,7 @@ import React, { useEffect } from 'react';
 import styled from 'styled-components';
 let alReadyCalled;
 
+
 const MyModal = styled.div`
   background: rgba(0, 0, 0, 0.25);
   position: fixed;
@@ -39,7 +40,11 @@ const SignModal = (props) => {
     Kakao.Auth.createLoginButton({
       container: '#kakao-login-btn',
       success: function(authObj) {
+        // access_token, refresh_token, scope 정보
+        // let auth = JSON.stringify(authObj)
+      
         alert(JSON.stringify(authObj));
+        
       },
       fail: function(err) {
         alert(JSON.stringify(err));
@@ -51,7 +56,6 @@ const SignModal = (props) => {
     setTimeout(onClose, 1000);
   };
 
-  console.log(alReadyCalled);
   
   return (
     <MyModal>
