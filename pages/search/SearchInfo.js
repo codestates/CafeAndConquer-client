@@ -7,9 +7,9 @@ const Mainframe = styled.div`
   position: relative;
   top: 150px;
   height: 160px;
-  left: 10;
+  left: 0%;
   width: 50%;
-  /* overflow: hidden; */
+  overflow: hidden;
   border: 1px solid black;
 `;
 
@@ -33,8 +33,8 @@ const Info = styled.div`
   border: 1px solid black;
 `;
 
-let test = ['hi', 'hello', 'how are you?'].map((i) => (
-  <Mainframe>{i}</Mainframe>
+let test = ['hi', 'hello', 'how are you?'].map((e,i) => (
+  <Mainframe key={i}>{e}</Mainframe>
 ));
 
 const SearchInfo = (props) => {

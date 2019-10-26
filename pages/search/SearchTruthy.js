@@ -1,6 +1,7 @@
 import Link from 'next/link';
 import styled from 'styled-components';
 import search from './[id]';
+import LogoImage from '../../components/Headers/LogoImage';
 
 const Mainframe = styled.div`
   position: relative;
