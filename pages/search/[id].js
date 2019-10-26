@@ -22,6 +22,8 @@ const search = (props) => {
 };
 
 search.getInitialProps = async function() {
+  //props.cafeInfo 로 변경될 거 같다
+  //숫자를 어떻게 받아 올 것인가?
   const cafeInfo = '7968405';
   const res = await axios.get(`http://18.221.57.226:8080/api/cafe/${cafeInfo}`);
   const data = await res.data;
