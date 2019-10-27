@@ -11,6 +11,10 @@ export default class MyDocument extends Document {
       <html>
         <Head>
           <script src="https://developers.kakao.com/sdk/js/kakao.min.js"></script>
+                 <script
+          type="text/javascript"
+          src={`//dapi.kakao.com/v2/maps/sdk.js?appkey=${process.env.KAKAO_API_MAP_KEY}&libraries=services`}
+        ></script>
         </Head>
         <body>
           {/* <Head>
