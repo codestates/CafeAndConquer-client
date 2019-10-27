@@ -28,6 +28,20 @@ export default class MyDocument extends Document {
       sheet.seal();
     }
   }
+
+  render() {
+    return (
+        <Html>
+            <head>
+                <style />
+              </head>
+            <body>
+                <Main />
+                <NextScript />
+            </body>
+        </Html>
+    );
+  }
 }
 
 // <>이 뭔지?

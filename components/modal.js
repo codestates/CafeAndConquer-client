@@ -3,8 +3,11 @@ import './modal.scss';
 import Head from 'next/head';
 import StarRatings from 'react-star-ratings';
 
-const Modal = ({ showModal, cafeInfo }) => {
+const Modal = ({ showModal, cafeInfo, setCafeInfo }) => {
   const [starRate, setStarRate] = useState(0);
+
+  const change = {onChange : (e)=> {
+    setCafeInfo({...cafeInfo, [e.target.name]: e.target.value})}}
 
   return (
     <div className="modal" id="modal">
@@ -16,19 +19,24 @@ const Modal = ({ showModal, cafeInfo }) => {
       </Head>
       <div className="content">
         <h2>
-          <span style={{ color: 'red' }}>{cafeInfo.name}</span> 카페에 대한
-          점령을 진행합니다
+          <span style={{ color: 'red' }}>{cafeInfo.name}</span> 카페에 대한 점령을 진행합니다
         </h2>
         <div className="content">
           <div>24시간 카페인가요?</div>
-          <input type="radio" name="24hr" value="true" /> 네
-          <input type="radio" name="24hr" value="false" /> 아니오
-          <br />
-          <br />
+            <input type="radio" name="open24Hour" value="0" {...change}/> 네
+            <input type="radio" name="open24Hour" value="1" {...change}/> 아니오
+            <br />
+            <br />
           <div>콘센트는 풍족한가요?</div>
-          <input type="radio" name="concent" value="true" /> 부족
-          <input type="radio" name="concent" value="false" /> 그럭저럭
-          <input type="radio" name="concent" value="true" /> 넉넉
+            <input type="radio" name="enoughOutlets" value="LACK" {...change}/> 부족
+            <input type="radio" name="enoughOutlets" value="NORMAL" {...change}/> 그럭저럭
+            <input type="radio" name="enoughOutlets" value="MANY" {...change}/> 넉넉
+            <br />
+            <br />
+          <div>가장 작은 사이즈의 아이스 아메리카노 가격은 얼마인가요? 숫자만 (ex: 3000)
+            <br />
+            <input type="text" name="priceIceAmericano" {...change}/> 
+          </div>
           <br />
           <br />
           <div>카페에 대한 종합적인 당신의 평점은?</div>
