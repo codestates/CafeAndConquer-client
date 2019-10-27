@@ -4,15 +4,28 @@ import { usePosition } from 'use-position';
 import Head from 'next/head';
 import './map.scss';
 
-const Map = ({ setList, confirmRegister }) => {
-  const { latitude, longitude, timestamp, accuracy, error } = usePosition(true);
-
+const Map = ({ setList, confirmRegister, lati, longi }) => {
   const [zooms, setZooms] = useState([]);
   // const [zoomIn, zoomOut] = zooms;
   // console.log(zooms);
   // console이 왜 [] 1번, 들어간걸로는 3번이 불리지?? useState 빼고 실험해보기. 아, useEffect 안이 새로 불리지 않는 거지 바깥의 내용은 Map이 새로 불리면서 계속 불리는듯.
 
+  const { latitude, longitude, timestamp, accuracy, error } = usePosition(true);
+
+  // const [coords, setCoords] = useState({
+  //   lat: null, 
+  //   long: null
+  // })
+ 
+  // useEffect(() => {
+  //   setCoords({
+  //     lat: latitude, 
+  //     long: longitude
+  //   })
+  // }, [latitude, longitude])
+
   useEffect(() => {
+
     // let script = document.createElement('script');
     // script.type = "text/javascript";
     // script.src = `//dapi.kakao.com/v2/maps/sdk.js?appkey=${process.env.KAKAO_API_MAP_KEY}&libraries=services`;
@@ -26,9 +39,13 @@ const Map = ({ setList, confirmRegister }) => {
       markers = [], // 마커를 담을 배열입니다
       currCategory = ''; // 현재 선택된 카테고리를 가지고 있을 변수입니다
 
+    // console.log(1, coords.lat, coords.long)
+    console.log(2, latitude, longitude)
+    // 첨엔 제대로 바로 넘어오는데 새로고침을 하면 undefined가 첨에 들어가 버림. 
+
     var mapContainer = document.getElementById('map'), // 지도를 표시할 div
       mapOption = {
-        center: new kakao.maps.LatLng(37.566826, 126.9786567), // 지도의 중심좌표
+        center: new kakao.maps.LatLng(latitude, longitude), // 지도의 중심좌표
         level: 4, // 지도의 확대 레벨
       };
 
@@ -166,7 +183,7 @@ const Map = ({ setList, confirmRegister }) => {
         '">' +
         place.place_name +
         '</a>' +
-        '<button class="conquerInMap">정복하기</button>';
+        '<button class="conquerInMap">정령하기</button>';
 
       if (place.road_address_name) {
         content +=
@@ -255,7 +272,7 @@ const Map = ({ setList, confirmRegister }) => {
     }
 
     setZooms([zoomIn, zoomOut]);
-  }, []);
+  }, [latitude, longitude]);
 
   return (
     <div>
