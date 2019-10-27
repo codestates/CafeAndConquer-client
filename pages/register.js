@@ -13,17 +13,20 @@ const Register = () => {
     setList(data);
   }, []);
 
-  const [showed, setShowed] = useState(false);
-  const showModal = (boolean) => {
-    setShowed(boolean);
-  };
+  const router = useRouter();
+  console.log(router.query.lat, router.query.lng)
 
   const [cafeInfo, setCafeInfo] = useState({
     name: '',  
     open24Hour: null,
     priceIceAmericano: null, 
     enoughOutlets: '', 
-    // pioneer:
+    id: '',
+    phone: '',
+    address: '',
+    latitude: '',
+    longitude: '',
+    pioneer: 1
   });
 
   useEffect(()=> {
@@ -32,25 +35,48 @@ const Register = () => {
     }
   }, [cafeInfo])
 
-  const confirmRegister = (place) => {
-    if (confirm(`${place.place_name} 카페를 점령하시겠습니까?`)) {
-      setCafeInfo({...cafeInfo, name: place.place_name})      
+  const [showed, setShowed] = useState(false);
+  const showModal = (boolean) => {
+    setShowed(boolean);
+  };
 
-      const {address_name, id, phone, place_name, x, y} = place
-      const {open24Hour, priceIceAmericano, enoughOutlets} = cafeInfo
-      axios.post('http://18.221.57.226:8080/api/cafe', {
+  useEffect(() => {
+    if (showed === false && cafeInfo.name !== '') {
+      const {name, open24Hour, priceIceAmericano, enoughOutlets, id, phone, address, latitude, longitude, pioneer} = cafeInfo; 
+      let body = {
         cafeId: id,
         phone: phone, 
-        cafeName: place_name, 
-        address: address_name, 
-        latitude: y, 
-        longitude: x, 
+        cafeName: name, 
+        address: address, 
+        latitude: latitude, 
+        longitude: longitude, 
         open24Hour: Number(open24Hour), 
         priceIceAmericano: Number(priceIceAmericano), 
         enoughOutlets: enoughOutlets, 
-        // pioneer: 로그인 정보도 받아와야 함. 
-      }).then(res => alert(res.message))
+        pioneer: pioneer 
+        // 로그인 정보도 받아와야 함.
+      }
+
+      axios.post('http://18.221.57.226:8080/api/cafe', body
+      ).then(res => console.log(res))
     }
+  }, [showed]);
+
+
+  const confirmRegister = (place) => {
+    // if (confirm(`${place.place_name} 카페를 점령하시겠습니까?`)) {
+      const {place_name, id, phone, address_name, x, y} = place
+      setCafeInfo({
+        name: place_name, 
+        id: id,
+        phone: phone,
+        address: address_name,
+        latitude: y,
+        longitude: x,
+        pioneer: 1
+      })      
+
+    // }
   };
   const confirmDelete = (place) => {
     if (
@@ -88,9 +114,7 @@ const Register = () => {
   }
 
 
-  const router = useRouter();
-  // console.log('lat : ', router.query.lat);
-  // console.log('lng : ', router.query.lng);
+
 
   return (
     <div>
