@@ -14,7 +14,7 @@ const search = (props) => {
   return (
     <div>
       <Header />
-      <SearchTruthy name={router.query.id} />
+      <SearchTruthy name={router.query.id} info={props.cafes}/>
       {/* SearchTruhty의 boolean 값에 따라 SearchInfo */}
       <SearchInfo info={props.cafes}/>
     </div>

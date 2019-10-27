@@ -1,7 +1,7 @@
 
 import styled from 'styled-components';
 import Link from 'next/link';
-import Router from 'next/router';
+
 const Logo = styled.a`
   position: relative;
   top: 18%;

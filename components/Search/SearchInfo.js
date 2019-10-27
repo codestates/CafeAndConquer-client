@@ -37,14 +37,13 @@ let test = ['hi', 'hello', 'how are you?'].map((e,i) => (
   <Mainframe key={i}>{e}</Mainframe>
 ));
 
-const SearchInfo = (props) => {
-  console.log(props.info)
+const SearchInfo = ({info}) => {
   let twentyFour = '영업';
   let concent = '충분함'
-  if(!props.info.open24Hour) {
+  if(!info.open24Hour) {
     twentyFour = '비영업';
   }
-  if(props.info.enoughOutlets === "NORMAL") {
+  if(info.enoughOutlets === "NORMAL") {
     concent = '보통'
   }
   return (
@@ -52,14 +51,14 @@ const SearchInfo = (props) => {
       <Mainframe>
         <Title>
           <p>
-            {props.info.cafeName}
+            {info.cafeName}
           </p>
         </Title>
         <Info>
-          <p>{props.address}</p>
+          <p>{info.address}</p>
           <p>24시 영업 : {twentyFour}</p>
           <p>콘센트 : {concent}</p>
-          <p>점령자 닉네임 : {props.info.user.nick}</p>
+          <p>점령자 닉네임 : {info.user.nick}</p>
         </Info>
       </Mainframe>
       {test}
