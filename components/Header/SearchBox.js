@@ -76,6 +76,7 @@ const SearchBox = (props) => {
   const handleKeyPress = (e) => {
     if (e.charCode === 13) {
       if (searchAddress !== '') {
+        console.log('enter is working')
         Router.push(`/search/${searchAddress}`);
         // Router.push({
         //   pathname: `/search/${searchAddress}`,

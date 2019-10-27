@@ -1,6 +1,6 @@
 import React from 'react';
 import Link from 'next/link';
-import HeaderLogin from '../components/HeaderLogin';
+import LoginPageLogo from '../components/LoginPageLogo';
 import styled from 'styled-components';
 
 const MainFrame = styled.div`
@@ -77,7 +77,7 @@ const FaceBookHandler = () => {
 const login = (props) => {
   return (
     <div>
-      <HeaderLogin />
+      <LoginPageLogo />
       <MainFrame>
         <LoginSignup>로그인 및 회원가입</LoginSignup>
         <LoginInfo>로그인을 통해 다양한 혜택을 누리세요.</LoginInfo>

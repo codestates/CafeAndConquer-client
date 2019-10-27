@@ -25,7 +25,7 @@ const MainLogo = styled.h1`
     1px 1px #fff, -1px -1px 0 #fff, 1px -1px 0 #fff, -1px 1px 0 #fff;
 `;
 
-const HeaderLogin = () => {
+const LoginPageHeader = () => {
   return (
     <div>
       <Header>
@@ -37,4 +37,4 @@ const HeaderLogin = () => {
   );
 };
 
-export default HeaderLogin;
+export default LoginPageHeader;

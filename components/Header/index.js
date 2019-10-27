@@ -1,10 +1,10 @@
 import styled from 'styled-components';
 import React from 'react';
 
-import LogoImage from './Headers/LogoImage';
-import SearchBox from './Headers/SearchBox';
-import TopMenuBttons from './headers/TopMenuButtons';
-import AfterLogin from './Headers/AfterLogin';
+import LogoImage from './LogoImage';
+import SearchBox from './SearchBox';
+import TopMenuBttons from './TopMenuButtons';
+import AfterLogin from './AfterLogin';
 
 const MainFrame = styled.div`
   position: fixed;
