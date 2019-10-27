@@ -37,20 +37,28 @@ let test = ['hi', 'hello', 'how are you?'].map((e,i) => (
   <Mainframe key={i}>{e}</Mainframe>
 ));
 
-const SearchInfo = (props) => {
+const SearchInfo = ({info}) => {
+  let twentyFour = '영업';
+  let concent = '충분함'
+  if(!info.open24Hour) {
+    twentyFour = '비영업';
+  }
+  if(info.enoughOutlets === "NORMAL") {
+    concent = '보통'
+  }
   return (
     <div>
       <Mainframe>
         <Title>
           <p>
-            투썸플레이스 대구
+            {info.cafeName}
           </p>
         </Title>
         <Info>
-          <p>산격4동 1498-199</p>
-          <p>7:00 ~ 23:00 open</p>
-          <p>콘센트 ***</p>
-          <p>아늑함 · 캐주얼 · 단체석</p>
+          <p>{info.address}</p>
+          <p>24시 영업 : {twentyFour}</p>
+          <p>콘센트 : {concent}</p>
+          <p>점령자 닉네임 : {info.user.nick}</p>
         </Info>
       </Mainframe>
       {test}
