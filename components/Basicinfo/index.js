@@ -72,11 +72,16 @@ export default function BasicInfo() {
   };
 
   const registerCafeHandler = () => {
+    console.log('-------------', position.lat, position.lng)
     Router.push({
       pathname: '/register',
       query: { lat: position.lat, lng: position.lng },
     });
   };
+
+  // useEffect(()=> {
+  //   registerCafeHandler()
+  // }, [position.lat, position.lng])
 
   return (
     <MainFrame>
