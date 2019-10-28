@@ -10,7 +10,7 @@ import axios from 'axios';
 
 const search = (props) => {
   const router = useRouter();
-  
+
   return (
     <div>
       <Header />
@@ -22,7 +22,6 @@ const search = (props) => {
 
 search.getInitialProps = async function(address) {
   const { id } = address.query;
-
   const res = await axios({
     method: 'get',
     url: 'https://dapi.kakao.com/v2/local/search/address.json',
@@ -32,14 +31,16 @@ search.getInitialProps = async function(address) {
   });
   const geocode = await res.data;
   // 서버 500 번일 때 기본 값 되게 하는 법
+  // 전체를 불러오는 건 어떨까?
   let lat = '126.9786567859313';
   let lng = '37.566826005485716';
 
-  if (geocode.meta.pageable_count !== 0) {
-    lat = geocode.documents[0].y;
-    lng = geocode.documents[0].x;
-  }
+   console.log(geocode)
+  lat = geocode.documents[0].y;
+  lng = geocode.documents[0].x;
 
+  
+  console.log('test gecode', lat);
   const res2 = await axios({
     method: 'post',
     url: 'http://18.221.57.226:8080/api/cafe/search',
@@ -47,12 +48,11 @@ search.getInitialProps = async function(address) {
     data: {
       latitude: lat,
       longitude: lng,
-      maxDistance: 10000,
+      maxDistance: 1000,
     },
   });
   const cafes = await res2.data;
 
-  // let cafename = cafes.data.map(name => name.cafeName)
 
   return { cafes: cafes.data.map((cafes) => cafes) };
 };

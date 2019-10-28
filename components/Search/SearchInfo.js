@@ -34,13 +34,21 @@ const Info = styled.div`
   border: 1px solid black;
 `;
 
+// 점령표시 어떻게 하나?
 const SearchInfo = ({ info }) => {
-  console.log(info.map((name) => name.cafeName));
+
+  console.log(info);
   return (
     <div>
       {info.map((show) => (
         <Mainframe key={show.id}>
           <Title>{show.cafeName}</Title>
+          <Info>
+            <p>주소: {show.address}</p>
+            <p>24시 영업: {show.open24Hour === 0 ? 'x' : 'o' }</p>
+            <p>콘센트 양: {show.enoughOutlets === 'NORMAL' ? '보통' : '많음'}</p>
+            {/* <p>점령자 닉네임: {show.user.nick}</p> */}
+          </Info>
         </Mainframe>
       ))}
     </div>
