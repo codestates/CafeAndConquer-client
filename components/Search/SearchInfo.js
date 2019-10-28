@@ -1,5 +1,6 @@
 import React from 'react';
 import styled from 'styled-components';
+import Link from 'next/link';
 
 // css 질문 원석님
 
@@ -29,39 +30,19 @@ const Info = styled.div`
   left: 160px;
   height: 150px;
   width: 300px;
-  overflow:scroll;
+  overflow: scroll;
   border: 1px solid black;
 `;
 
-let test = ['hi', 'hello', 'how are you?'].map((e,i) => (
-  <Mainframe key={i}>{e}</Mainframe>
-));
-
-const SearchInfo = ({info}) => {
-  let twentyFour = '영업';
-  let concent = '충분함'
-  if(!info.open24Hour) {
-    twentyFour = '비영업';
-  }
-  if(info.enoughOutlets === "NORMAL") {
-    concent = '보통'
-  }
+const SearchInfo = ({ info }) => {
+  console.log(info.map((name) => name.cafeName));
   return (
     <div>
-      <Mainframe>
-        <Title>
-          <p>
-            {info.cafeName}
-          </p>
-        </Title>
-        <Info>
-          <p>{info.address}</p>
-          <p>24시 영업 : {twentyFour}</p>
-          <p>콘센트 : {concent}</p>
-          <p>점령자 닉네임 : {info.user.nick}</p>
-        </Info>
-      </Mainframe>
-      {test}
+      {info.map((show) => (
+        <Mainframe key={show.id}>
+          <Title>{show.cafeName}</Title>
+        </Mainframe>
+      ))}
     </div>
   );
 };
