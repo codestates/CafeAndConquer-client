@@ -20,7 +20,7 @@ Index.getInitialProps = async function() {
 
   const res = await axios.get(`http://18.221.57.226:8080/api/cafe/${cafeInfo}`);
   const data = await res.data;
-
+  
   return {cafes : data.data.cafe};
 };
 
