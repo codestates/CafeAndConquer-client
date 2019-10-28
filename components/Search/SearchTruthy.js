@@ -9,19 +9,22 @@ const Mainframe = styled.div`
   overflow: hidden;
 `;
 
-
-
-const SearchTruthy = ({ name, info }) => {
+const SearchTruthy = ({ name, info, truthy }) => {
   if (name === '[id]') {
     name = "' '";
   }
   let noneResult;
 
-  if (!info) {
+  if (!truthy) {
     noneResult = (
-      <p style={{ position: 'relative', left: '5%' }}>
-        {name}의 검색 결과를 찾을 수 없습니다.
-      </p>
+      <div>
+        <p style={{ position: 'relative', left: '5%' }}>
+          {name}는/은 미지의 영역입니다.
+        </p>
+        <p style={{ position: 'relative', left: '5%' }}>
+          새로운 지역을 개척해보세요.
+        </p>
+      </div>
     );
   }
   return (

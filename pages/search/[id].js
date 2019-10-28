@@ -6,14 +6,14 @@ import { useRouter } from 'next/router';
 import fetch from 'isomorphic-unfetch';
 import axios from 'axios';
 
-const Search = (props) => {
+const Search = ({cafes, truthy}) => {
   const router = useRouter();
 
   return (
     <div>
       <Header />
-      {/* <SearchTruthy name={router.query.id} info={props.cafes}/> */}
-      <SearchInfo info={props.cafes} />
+      <SearchTruthy name={router.query.id} info={cafes} truthy={truthy} />
+      <SearchInfo info={cafes} truthy={truthy}/>
     </div>
   );
 };
@@ -31,11 +31,14 @@ Search.getInitialProps = async function(address) {
   const geocode = await res.data;
   console.log('test gecode', geocode);
 
-  let lat = geocode.documents[0].y;
-  let lng = geocode.documents[0].x;
-
-  // let lat = '37.566826005485716'
-  // let lng = '126.9786567859313'
+  let lat = '37.566826005485716';
+  let lng = '126.9786567859313';
+  let truthy = true;
+  if (geocode.meta.total_count !== 0) {
+    lat = geocode.documents[0].y;
+    lng = geocode.documents[0].x;
+    truthy = false;
+  }
 
   const res2 = await axios({
     method: 'post',
@@ -49,7 +52,7 @@ Search.getInitialProps = async function(address) {
   });
   const cafes = await res2.data;
 
-  return { cafes: cafes.data.map((cafes) => cafes) };
+  return { cafes: cafes.data.map((cafes) => cafes), truthy };
 };
 
 export default Search;

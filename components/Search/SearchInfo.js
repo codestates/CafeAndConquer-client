@@ -35,9 +35,10 @@ const Info = styled.div`
 `;
 
 // 점령표시 어떻게 하나?
-const SearchInfo = ({ info }) => {
-
-  console.log(info);
+const SearchInfo = ({ info, truthy }) => {
+  if(!truthy){
+    return <div></div>
+  }
   return (
     <div>
       {info.map((show) => (

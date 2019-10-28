@@ -13,7 +13,7 @@ Index.getInitialProps = async function(address) {
   const { id } = address.query;
   console.log(id);
 
-  let query = '강남';
+  let query = '강남역';
   const res = await axios({
     method: 'get',
     url: 'https://dapi.kakao.com/v2/local/search/address.json',
