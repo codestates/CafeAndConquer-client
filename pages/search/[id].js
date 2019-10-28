@@ -3,12 +3,10 @@ import Header from '../../components/Header';
 import SearchTruthy from '../../components/Search/SearchTruthy';
 import SearchInfo from '../../components/Search/SearchInfo';
 import { useRouter } from 'next/router';
-import Home from '../../pages/index';
-import Router from 'next/router';
-
+import fetch from 'isomorphic-unfetch';
 import axios from 'axios';
 
-const search = (props) => {
+const Search = (props) => {
   const router = useRouter();
 
   return (
@@ -20,27 +18,25 @@ const search = (props) => {
   );
 };
 
-search.getInitialProps = async function(address) {
+Search.getInitialProps = async function(address) {
   const { id } = address.query;
+  console.log('query id ok', id);
+
   const res = await axios({
     method: 'get',
     url: 'https://dapi.kakao.com/v2/local/search/address.json',
     params: { query: id },
-    // process env
     headers: { Authorization: `KakaoAK ${process.env.KAKAO_ADDRESS_KEY}` },
   });
   const geocode = await res.data;
-  // 서버 500 번일 때 기본 값 되게 하는 법
-  // 전체를 불러오는 건 어떨까?
-  let lat = '126.9786567859313';
-  let lng = '37.566826005485716';
+  console.log('test gecode', geocode);
 
-   console.log(geocode)
-  lat = geocode.documents[0].y;
-  lng = geocode.documents[0].x;
+  let lat = geocode.documents[0].y;
+  let lng = geocode.documents[0].x;
 
-  
-  console.log('test gecode', lat);
+  // let lat = '37.566826005485716'
+  // let lng = '126.9786567859313'
+
   const res2 = await axios({
     method: 'post',
     url: 'http://18.221.57.226:8080/api/cafe/search',
@@ -48,13 +44,12 @@ search.getInitialProps = async function(address) {
     data: {
       latitude: lat,
       longitude: lng,
-      maxDistance: 1000,
+      maxDistance: 10000,
     },
   });
   const cafes = await res2.data;
 
-
   return { cafes: cafes.data.map((cafes) => cafes) };
 };
 
-export default search;
+export default Search;
