@@ -89,7 +89,10 @@ export default function BasicInfo() {
     err: error,
   };
   const currentLocationHandler = (current) => {
-    console.log(current);
+    https: Router.push({
+      pathname: '/search/근처',
+      query: { lat: position.lat, lng: position.lng },
+    });
   };
 
   // 위도 , 경도
@@ -106,11 +109,11 @@ export default function BasicInfo() {
       <Title />
       <ButtonFrame>
         {/* link 사용법에 대해서 공부하기 */}
-        <Link href="/search/[address]">
-          <CurrentLocation onClick={() => currentLocationHandler(position)}>
-            <InnerP>가까운 카페</InnerP>
-          </CurrentLocation>
-        </Link>
+
+        <CurrentLocation onClick={() => currentLocationHandler(position)}>
+          <InnerP>가까운 카페</InnerP>
+        </CurrentLocation>
+
         <RegisterCafe onClick={registerCafeHandler}>
           <InnerP itemProp={position}>등록하기</InnerP>
         </RegisterCafe>
