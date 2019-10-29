@@ -7,7 +7,7 @@ import Router from 'next/router';
 const SearchFrame = styled.div`
   position: relative;
   top: 0px;
-  left: 15%;
+  left: 20%;
   width: 50%;
   height: 70px;
 `;
@@ -24,14 +24,14 @@ const Search = styled.input.attrs({
   border: 0px;
   border-bottom: 3px solid black;
   font-size: 18px;
-  color: #ff7f00;
+  color: white;
   background: url(https://s3-ap-northeast-1.amazonaws.com/dcicons/new/images/web/common/search@2x.png)
     no-repeat left;
   background-size: 40px;
   outline: none;
 
   &:focus {
-    border-color: blue;
+    border-color: palevioletred;
   }
 `;
 
@@ -62,7 +62,7 @@ const searchBtnHandler = (value, current) => {
   }
 };
 
-const SearchBox = (props) => {
+const InputBox = () => {
   let useSearch = useInput('');
   const { latitude, longitude, error } = usePosition();
   const position = {
@@ -72,7 +72,7 @@ const SearchBox = (props) => {
   };
   let searchAddress = useSearch.value;
   if (useSearch.value === '') {
-    searchAddress = '[id]';
+    searchAddress = '[address]';
   }
   const handleKeyPress = (e) => {
     if (e.charCode === 13) {
@@ -84,7 +84,7 @@ const SearchBox = (props) => {
   return (
     <SearchFrame>
       <Search onKeyPress={handleKeyPress} {...useSearch} />
-      <Link href="/search/[id]" as={`/search/${searchAddress}`}>
+      <Link href="/search/[address]" as={`/search/${searchAddress}`}>
         <Button onClick={() => searchBtnHandler(useSearch.value, position)}>
           탐색
         </Button>
@@ -93,4 +93,4 @@ const SearchBox = (props) => {
   );
 };
 
-export default SearchBox;
+export default InputBox;

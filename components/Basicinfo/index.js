@@ -19,17 +19,17 @@ const MainFrame = styled.div`
   display: block;
   overflow: hidden;
 `;
-
 const ButtonFrame = styled.div`
   position: absolute;
-  top: 60%;
+  top: 410px;
   bottom: 0;
   left: 0;
   right: 0;
-  width: 60%;
+  width: 510px;
   height: 30%;
   font-size: x-large;
   /* background: #f00; */
+
   margin: auto;
   text-align: center;
 `;
@@ -102,21 +102,19 @@ export default function BasicInfo() {
   };
 
   return (
-    <div>
-      <MainFrame>
-        <Title />
-        <ButtonFrame>
-          {/* link 사용법에 대해서 공부하기 */}
-          <Link href="/search/[id]">
-            <CurrentLocation onClick={() => currentLocationHandler(position)}>
-              <InnerP>가까운 카페</InnerP>
-            </CurrentLocation>
-          </Link>
-          <RegisterCafe onClick={registerCafeHandler}>
-            <InnerP itemProp={position}>등록하기</InnerP>
-          </RegisterCafe>
-        </ButtonFrame>
-      </MainFrame>
-    </div>
+    <MainFrame>
+      <Title />
+      <ButtonFrame>
+        {/* link 사용법에 대해서 공부하기 */}
+        <Link href="/search/[id]">
+          <CurrentLocation onClick={() => currentLocationHandler(position)}>
+            <InnerP>가까운 카페</InnerP>
+          </CurrentLocation>
+        </Link>
+        <RegisterCafe onClick={registerCafeHandler}>
+          <InnerP itemProp={position}>등록하기</InnerP>
+        </RegisterCafe>
+      </ButtonFrame>
+    </MainFrame>
   );
 }

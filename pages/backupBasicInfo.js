@@ -11,6 +11,7 @@ const MainFrame = styled.div`
   left: 0;
   height: 100vh;
   width: 100vw;
+
   background-image: url('https://images.unsplash.com/photo-1501339847302-ac426a4a7cbb?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=900&q=60');
   background-repeat: no-repeat;
   background-size: cover;
@@ -47,14 +48,15 @@ const MainInfo = styled.h2`
 
 const ButtonFrame = styled.div`
   position: absolute;
-  top: 60%;
+  top: 410px;
   bottom: 0;
   left: 0;
   right: 0;
-  width: 60%;
+  width: 510px;
   height: 30%;
   font-size: x-large;
   /* background: #f00; */
+
   margin: auto;
   text-align: center;
 `;

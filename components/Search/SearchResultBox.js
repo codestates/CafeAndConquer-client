@@ -69,7 +69,7 @@ const SearchResultBox = ({ info, truthy }) => {
           {/* 카페 박스를 눌렀을 때 점령하러가기 의도한대로 동작은 안 됨 */}
           <Link
             href={{
-              pathname: '/login',
+              pathname: '/register',
               // cafe.point.coordinates <- geocode 카페별
               query: {
                 lat: `${cafe.point.coordinates[1]}`,

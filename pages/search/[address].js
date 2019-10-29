@@ -29,7 +29,6 @@ const address = ({ cafes, truthy }) => {
   );
 };
 
-
 address.getInitialProps = async function(comment) {
   // getInitialProps에서 query를 받는 방법
 
@@ -43,7 +42,6 @@ address.getInitialProps = async function(comment) {
     headers: { Authorization: `KakaoAK ${process.env.KAKAO_ADDRESS_KEY}` },
   });
   const geocode = await res.data;
-  console.log('test gecode', geocode);
 
   let lat = '37.566826005485716';
   let lng = '126.9786567859313';
@@ -70,7 +68,6 @@ address.getInitialProps = async function(comment) {
   });
   const cafes = await res2.data;
 
-  console.log(typeof cafes.data);
   if (cafes.data.length === 0) {
     truthy = false;
   }

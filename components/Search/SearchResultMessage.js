@@ -11,7 +11,7 @@ const Mainframe = styled.div`
 `;
 
 const SearchResultMessage = ({ name, info, truthy }) => {
-  if (name === '[id]') {
+  if (name === '[address]') {
     name = "' '";
   }
   let noneResult;
