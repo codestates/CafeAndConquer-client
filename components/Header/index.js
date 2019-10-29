@@ -8,13 +8,15 @@ import AfterLogin from './AfterLogin';
 
 const MainFrame = styled.div`
   position: absolute;
-  height: 100px;
+  height: 80px;
   max-width: 100%;
   width: 100%;
   top: 0;
   left: 0;
   /* background: palevioletred; */
-  background-color: lightgray;
+  text-align:center;
+  /* border: 2px solid black; */
+  background-color: lightskyblue;
   z-index: 1;
 `;
 

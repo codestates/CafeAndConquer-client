@@ -6,8 +6,8 @@ import Router from 'next/router';
 
 const SearchFrame = styled.div`
   position: relative;
-  top: 10%;
-  left: 25%;
+  top: 0px;
+  left: 15%;
   width: 50%;
   height: 70px;
 `;
@@ -22,7 +22,7 @@ const Search = styled.input.attrs({
   padding-left: 45px;
   height: 44px;
   border: 0px;
-  border: 3px solid #ff7f00;
+  border-bottom: 3px solid black;
   font-size: 18px;
   color: #ff7f00;
   background: url(https://s3-ap-northeast-1.amazonaws.com/dcicons/new/images/web/common/search@2x.png)
@@ -37,7 +37,8 @@ const Search = styled.input.attrs({
 
 const Button = styled.button.attrs({})`
   position: relative;
-  top: 15%;
+  top: 15px;
+  left: 10px;
   width: 40px;
   height: 50px;
 `;

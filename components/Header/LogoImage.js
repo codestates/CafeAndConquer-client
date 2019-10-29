@@ -4,7 +4,7 @@ import Link from 'next/link';
 
 const Logo = styled.a`
   position: relative;
-  top: 18%;
+  top: 10px;
   left: 3%;
   font-family: Monospace, Helvetica, sans-serif;
   position: absolute;

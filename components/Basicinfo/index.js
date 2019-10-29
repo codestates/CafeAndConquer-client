@@ -6,16 +6,16 @@ import Router from 'next/router';
 
 const MainFrame = styled.div`
   position: absolute;
-  top: 14%;
+  top: 0;
   left: 0;
   height: 100vh;
   width: 100vw;
   background-image: url('https://images.unsplash.com/photo-1501339847302-ac426a4a7cbb?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=900&q=60');
   background-repeat: no-repeat;
-  background-size:cover;
+  background-size: cover;
   z-index: 0;
-  display:block;
-  overflow:hidden;
+  display: block;
+  overflow: hidden;
 `;
 
 const MainLogo = styled.h1`
@@ -57,7 +57,6 @@ const ButtonFrame = styled.div`
   margin: auto;
   text-align: center;
 `;
-
 
 const CurrentLocation = styled.a`
   position: relative;
@@ -135,7 +134,7 @@ export default function BasicInfo() {
         {/* link 사용법에 대해서 공부하기 */}
         <Link href="/search/[id]">
           <CurrentLocation onClick={() => currentLocationHandler(position)}>
-           <InnerP>가까운 카페</InnerP> 
+            <InnerP>가까운 카페</InnerP>
           </CurrentLocation>
         </Link>
         <RegisterCafe onClick={registerCafeHandler}>
