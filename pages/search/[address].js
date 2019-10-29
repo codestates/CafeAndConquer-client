@@ -80,8 +80,10 @@ address.getInitialProps = async function(comment) {
   });
   const cafes = await res2.data;
 
-  console.log(cafes);
-
+  console.log(typeof cafes.data);
+  if (cafes.data.length === 0) {
+    truthy = false;
+  }
   // Search로 return을 해줌
   return { cafes: cafes.data.map((cafes) => cafes), truthy };
 };

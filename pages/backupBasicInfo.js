@@ -3,8 +3,7 @@ import React from 'react';
 import { usePosition } from 'use-position';
 import Link from 'next/link';
 import Router from 'next/router';
-
-import Title from './Title';
+import Header from '../components/Header';
 
 const MainFrame = styled.div`
   position: absolute;
@@ -18,6 +17,32 @@ const MainFrame = styled.div`
   z-index: 0;
   display: block;
   overflow: hidden;
+`;
+
+const MainLogo = styled.h1`
+  font-family: Monospace, Helvetica, sans-serif;
+  position: absolute;
+  font-size: 4.5rem;
+  color: black;
+  width: 100%;
+  top: 25%;
+  margin: 0 auto;
+  text-align: center;
+  text-shadow: 2px 0 0 #fff, -2px 0 0 #fff, 0 2px 0 #fff, 0 -2px 0 #fff,
+    1px 1px #fff, -1px -1px 0 #fff, 1px -1px 0 #fff, -1px 1px 0 #fff;
+`;
+
+const MainInfo = styled.h2`
+  font-family: Monospace, Helvetica, sans-serif;
+  position: relative;
+  font-size: 2.5rem;
+  color: black;
+  width: 100%;
+  top: 45%;
+  margin: 0 auto;
+  text-align: center;
+  text-shadow: 2px 0 0 #fff, -2px 0 0 #fff, 0 2px 0 #fff, 0 -2px 0 #fff,
+    1px 1px #fff, -1px -1px 0 #fff, 1px -1px 0 #fff, -1px 1px 0 #fff;
 `;
 
 const ButtonFrame = styled.div`
@@ -103,8 +128,11 @@ export default function BasicInfo() {
 
   return (
     <div>
+      <Header />
       <MainFrame>
-        <Title />
+        <MainLogo>Cafe&Conqeur</MainLogo>
+        <MainInfo>카페를 발견하고 등록하세요</MainInfo>
+
         <ButtonFrame>
           {/* link 사용법에 대해서 공부하기 */}
           <Link href="/search/[id]">
