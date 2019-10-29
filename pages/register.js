@@ -1,6 +1,6 @@
 import { useState, useCallback, useEffect } from 'react';
 import { Map } from '../components/map';
-import RegisterList from './registerList';
+import RegisterList from '../components/registerList';
 import Modal from '../components/modal';
 import styled from 'styled-components';
 import { useRouter } from 'next/router';
