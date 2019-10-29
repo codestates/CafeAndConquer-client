@@ -1,12 +1,11 @@
 import React from 'react';
 import Header from '../../components/Header';
-import SearchResultMessage from '../../components/Search/SearchResultMessage';
-import SearchResultBox from '../../components/Search/SearchResultBox';
+import SearchResultMessage from '../../components/SearchResult/SearchResultMessage';
+import SearchResultBox from '../../components/SearchResult/SearchResultBox';
 import { useRouter } from 'next/router';
 import axios from 'axios';
 import styled from 'styled-components';
 
-import Router from 'next/router';
 // 카페 별 점령까지 완료
 import '../../style.scss';
 
