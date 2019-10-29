@@ -7,15 +7,15 @@ import TopMenuBttons from './TopMenuButtons';
 import AfterLogin from './AfterLogin';
 
 const MainFrame = styled.div`
-  position: fixed;
-  height:100px;
+  position: absolute;
+  height: 100px;
   max-width: 100%;
   width: 100%;
   top: 0;
   left: 0;
   /* background: palevioletred; */
   background-color: lightgray;
-  z-index: 10;
+  z-index: 1;
 `;
 
 const Header = ({ logined }) => {

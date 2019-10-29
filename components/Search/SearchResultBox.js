@@ -6,8 +6,8 @@ import Link from 'next/link';
 const Body = styled.div`
   position: relative;
   margin: 0 auto;
-  top: 150px;
-  left: 0;
+  top: 0px;
+  left: 0px;
   height: 100%;
   width: 100%;
 `;
@@ -41,7 +41,7 @@ const CafeName = styled.p`
 `;
 
 const CafeInfoBox = styled.div`
-  position: absolute;
+  position: relative;
   top: 0px;
   left: 165px;
   height: 130px;
@@ -63,36 +63,32 @@ const SearchResultBox = ({ info, truthy }) => {
     return <div></div>;
   }
   return (
-    <div>
-      <Body>
-        {info.map((show) => (
-          <Mainframe key={show.id}>
-            {/* 카페 박스를 눌렀을 때 점령하러가기 의도한대로 동작은 안 됨 */}
-            <Link
-              href={{
-                pathname: '/',
-                query: { lat: '35.8709422', lng: '128.5941623' },
-              }}
-            >
-              <CafeNameBox>
-                {/* 띄어쓰기 */}
-                <CafeName>{show.cafeName.split(' ')[0]}</CafeName>
-                <CafeName>{show.cafeName.split(' ')[1]}</CafeName>
-              </CafeNameBox>
-            </Link>
-            <CafeInfoBox>
-              <CafeInfo>주소: {show.address}</CafeInfo>
-              <CafeInfo>
-                24시 영업: {show.open24Hour === 0 ? 'X' : 'O'}
-              </CafeInfo>
-              <CafeInfo>
-                콘센트 양: {show.enoughOutlets === 'NORMAL' ? '보통' : '많음'}
-              </CafeInfo>
-            </CafeInfoBox>
-          </Mainframe>
-        ))}
-      </Body>
-    </div>
+    <Body>
+      {info.map((show) => (
+        <Mainframe key={show.id}>
+          {/* 카페 박스를 눌렀을 때 점령하러가기 의도한대로 동작은 안 됨 */}
+          <Link
+            href={{
+              pathname: '/',
+              query: { lat: '35.8709422', lng: '128.5941623' },
+            }}
+          >
+            <CafeNameBox>
+              {/* 띄어쓰기 */}
+              <CafeName>{show.cafeName.split(' ')[0]}</CafeName>
+              <CafeName>{show.cafeName.split(' ')[1]}</CafeName>
+            </CafeNameBox>
+          </Link>
+          <CafeInfoBox>
+            <CafeInfo>주소: {show.address}</CafeInfo>
+            <CafeInfo>24시 영업: {show.open24Hour === 0 ? 'X' : 'O'}</CafeInfo>
+            <CafeInfo>
+              콘센트 양: {show.enoughOutlets === 'NORMAL' ? '보통' : '많음'}
+            </CafeInfo>
+          </CafeInfoBox>
+        </Mainframe>
+      ))}
+    </Body>
   );
 };
 

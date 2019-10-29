@@ -9,28 +9,23 @@ import styled from 'styled-components';
 const Background = styled.div`
   font-family: Monospace, Helvetica, sans-serif;
   color: black;
-  /* text-shadow: 2px 0 0 #fff, -2px 0 0 #fff, 0 2px 0 #fff, 0 -2px 0 #fff,
-    1px 1px #fff, -1px -1px 0 #fff, 1px -1px 0 #fff, -1px 1px 0 #fff; */
   overflow: scroll;
-
 `;
 
 const address = ({ cafes, truthy }) => {
   const router = useRouter();
 
   return (
-    <div>
-      <Background>
-        <Header />
-        {/* search 네임 -> searchbox */}
-        <SearchResultMessage
-          name={router.query.address}
-          info={cafes}
-          truthy={truthy}
-        />
-        <SearchResultBox info={cafes} truthy={truthy} />
-      </Background>
-    </div>
+    <Background>
+      <Header />
+      {/* search 네임 -> searchbox */}
+      <SearchResultMessage
+        name={router.query.address}
+        info={cafes}
+        truthy={truthy}
+      />
+      <SearchResultBox info={cafes} truthy={truthy} />
+    </Background>
   );
 };
 
