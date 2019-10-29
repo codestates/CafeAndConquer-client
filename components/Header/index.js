@@ -13,6 +13,7 @@ const MainFrame = styled.div`
   width: 100%;
   top: 0;
   left: 0;
+  /* background: palevioletred; */
   background-color: lightgray;
   z-index: 10;
 `;
