@@ -1,0 +1,14 @@
+{
+  "env": {
+    "KAKAO_LOGIN_KEY": "@kakao_login_key",
+    "KAKAO_API_MAP_KEY": "@kakao_api_map_key",
+    "KAKAO_ADDRESS_KEY": "@kakao_address_key"
+  },
+  "build": {
+    "env": {
+      "KAKAO_LOGIN_KEY": "@kakao_login_key",
+      "KAKAO_API_MAP_KEY": "@kakao_api_map_key",
+      "KAKAO_ADDRESS_KEY": "@kakao_address_key"
+    }
+  }
+}
