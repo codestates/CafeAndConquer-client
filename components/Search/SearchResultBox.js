@@ -64,26 +64,30 @@ const SearchResultBox = ({ info, truthy }) => {
   }
   return (
     <Body>
-      {info.map((show) => (
-        <Mainframe key={show.id}>
+      {info.map((cafe) => (
+        <Mainframe key={cafe.id}>
           {/* 카페 박스를 눌렀을 때 점령하러가기 의도한대로 동작은 안 됨 */}
           <Link
             href={{
-              pathname: '/',
-              query: { lat: '35.8709422', lng: '128.5941623' },
+              pathname: '/login',
+              // cafe.point.coordinates <- geocode 카페별
+              query: {
+                lat: `${cafe.point.coordinates[1]}`,
+                lng: `${cafe.point.coordinates[0]}`,
+              },
             }}
           >
             <CafeNameBox>
               {/* 띄어쓰기 */}
-              <CafeName>{show.cafeName.split(' ')[0]}</CafeName>
-              <CafeName>{show.cafeName.split(' ')[1]}</CafeName>
+              <CafeName>{cafe.cafeName.split(' ')[0]}</CafeName>
+              <CafeName>{cafe.cafeName.split(' ')[1]}</CafeName>
             </CafeNameBox>
           </Link>
           <CafeInfoBox>
-            <CafeInfo>주소: {show.address}</CafeInfo>
-            <CafeInfo>24시 영업: {show.open24Hour === 0 ? 'X' : 'O'}</CafeInfo>
+            <CafeInfo>주소: {cafe.address}</CafeInfo>
+            <CafeInfo>24시 영업: {cafe.open24Hour === 0 ? 'X' : 'O'}</CafeInfo>
             <CafeInfo>
-              콘센트 양: {show.enoughOutlets === 'NORMAL' ? '보통' : '많음'}
+              콘센트 양: {cafe.enoughOutlets === 'NORMAL' ? '보통' : '많음'}
             </CafeInfo>
           </CafeInfoBox>
         </Mainframe>
