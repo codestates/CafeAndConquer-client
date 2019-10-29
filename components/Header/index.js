@@ -13,9 +13,7 @@ const MainFrame = styled.div`
   width: 100%;
   top: 0;
   left: 0;
-  /* background: palevioletred; */
-  text-align: center;
-  /* border: 2px solid black; */
+
   background-color: rgb(72 66 73);
   z-index: 1;
 `;

@@ -25,7 +25,7 @@ const TopMenuButtons = (props) => {
         환영합니다
       </SignModal>
       <Link href="/login">
-        <a style={{ padding: '10px' }}>login</a>
+        <button style={{ margin: '10px' }}>login</button>
       </Link>
     </TopMenuBtton>
   );

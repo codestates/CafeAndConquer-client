@@ -39,7 +39,7 @@ const CurrentLocation = styled.a`
   display: inline-block;
   top: 0px;
   left: 0px;
-  width: 150px;
+  width: 30%;
   height: 100px;
   padding: 8px;
   margin: 0px 40px;
@@ -60,10 +60,10 @@ const RegisterCafe = styled.a`
   display: inline-block;
   top: 0px;
   left: 0px;
-  width: 150px;
+  width: 30%;
   height: 100px;
   padding: 8px;
-  margin: 0px 40px;
+  margin: 0px 30px;
   color: #fff;
   border: 3px solid #fff;
   text-align: center;
