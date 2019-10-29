@@ -16,7 +16,7 @@ const MainFrame = styled.div`
   /* background: palevioletred; */
   text-align:center;
   /* border: 2px solid black; */
-  background-color: lightskyblue;
+  background-color: rgb(72 66 73);
   z-index: 1;
 `;
 
