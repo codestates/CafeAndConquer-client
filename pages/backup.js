@@ -17,14 +17,16 @@ Index.getInitialProps = async function(address) {
   const res = await axios({
     method: 'get',
     url: 'https://dapi.kakao.com/v2/local/search/address.json',
-    params: { query: query || id },
-    headers: { Authorization: `KakaoAK 2a3ab01651c3fe8a74eeea7a7ce7c0a7` },
+    params: { query: '강남역' },
+    headers: { Authorization: `KakaoAK ${process.env.KAKAO_ADDRESS_KEY}` },
   });
   const data = await res.data;
-  console.log(data)
+  console.log(data);
   const lat = data.documents[0].y;
   const lng = data.documents[0].x;
-  return { lat: lat, lng: lng };
+
+ 
+  return 1;
 };
 
 export default Index;

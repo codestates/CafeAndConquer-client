@@ -3,13 +3,14 @@ import styled from 'styled-components';
 const Mainframe = styled.div`
   position: relative;
   top: 100px;
-  left: 0;
+  left: 100px;
   width: 100%;
   height: auto;
+  color: palevioletred;
   overflow: hidden;
 `;
 
-const SearchTruthy = ({ name, info, truthy }) => {
+const SearchResultMessage = ({ name, info, truthy }) => {
   if (name === '[id]') {
     name = "' '";
   }
@@ -24,6 +25,7 @@ const SearchTruthy = ({ name, info, truthy }) => {
         <p style={{ position: 'relative', left: '5%' }}>
           새로운 지역을 개척해보세요.
         </p>
+        {/* 등록하기 기능을 넣으면 좋을 거 같다 */}
       </div>
     );
   }
@@ -37,4 +39,4 @@ const SearchTruthy = ({ name, info, truthy }) => {
   );
 };
 
-export default SearchTruthy;
+export default SearchResultMessage;

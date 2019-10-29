@@ -16,15 +16,6 @@ const Logo = styled.a`
   }
 `;
 
-// const BacktoHome = () => {
-//   console.log('BTH is Ok');
-//   setInterval(() => {
-//     console.log('a');
-//     Router.push('/');
-//   }, 1000);
-// };
-
-// 
 const LogoImage = () => {
   return (
     <Link href="/">

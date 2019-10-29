@@ -10,7 +10,7 @@ const MainFrame = styled.div`
   left: 0;
   height: 100vh;
   width: 100vw;
-  background-image: url('https://images.unsplash.com/photo-1422207049116-cfaf69531072?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1440&q=80');
+  background-image: url('https://images.unsplash.com/photo-1514371879740-2e7d2068f502?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1334&q=80');
   background-repeat: no-repeat;
   z-index: 0;
   /* display:block;
@@ -71,8 +71,10 @@ export default function BasicInfo() {
     console.log(current);
   };
 
+  // 위도 , 경도
   const registerCafeHandler = () => {
-    Router.push({
+    //dapi.kakao.com/v2/local/search/address.json
+    https: Router.push({
       pathname: '/register',
       query: { lat: position.lat, lng: position.lng },
     });

@@ -76,14 +76,7 @@ const SearchBox = (props) => {
   const handleKeyPress = (e) => {
     if (e.charCode === 13) {
       if (searchAddress !== '') {
-        console.log('enter is working')
         Router.push(`/search/${searchAddress}`);
-        // Router.push({
-        //   pathname: `/search/${searchAddress}`,
-        //   // 쿼리 지저분함
-        //   // query: { lat: position.lat, lng: position.lng },
-        //   as: `/search/${searchAddress}`
-        // });
       }
     }
   };
