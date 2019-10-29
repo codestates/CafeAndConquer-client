@@ -61,6 +61,7 @@ address.getInitialProps = async function(comment) {
   }
 
   // 가까운 카페 검색시
+  // 근처 카페 등록 후 검증이 필요함
   if (address === '근처') {
     lat = comment.query.lat;
     lng = comment.query.lng;
