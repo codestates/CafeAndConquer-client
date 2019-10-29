@@ -66,7 +66,7 @@ const SearchResultBox = ({ info, truthy }) => {
     <Body>
       {info.map((cafe) => (
         <Mainframe key={cafe.id}>
-          {/* 카페 박스를 눌렀을 때 점령하러가기 의도한대로 동작은 안 됨 */}
+          {/* 카페 박스를 눌렀을 때 점령하러가기 import '../../style.scss';를 serach/[address]에 해야 함 */}
           <Link
             href={{
               pathname: '/register',

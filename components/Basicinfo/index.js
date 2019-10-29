@@ -106,7 +106,7 @@ export default function BasicInfo() {
       <Title />
       <ButtonFrame>
         {/* link 사용법에 대해서 공부하기 */}
-        <Link href="/search/[id]">
+        <Link href="/search/[address]">
           <CurrentLocation onClick={() => currentLocationHandler(position)}>
             <InnerP>가까운 카페</InnerP>
           </CurrentLocation>
