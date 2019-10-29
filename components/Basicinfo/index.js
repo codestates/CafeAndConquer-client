@@ -90,7 +90,7 @@ export default function BasicInfo() {
   };
   const currentLocationHandler = (current) => {
     https: Router.push({
-      pathname: '/search/근처',
+      pathname: '/search/가까운 카페',
       query: { lat: position.lat, lng: position.lng },
     });
   };
