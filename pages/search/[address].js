@@ -1,11 +1,12 @@
 import React from 'react';
 import Header from '../../components/Header';
-import SearchResultMessage from '../../components/Search/SearchResultMessage';
-import SearchResultBox from '../../components/Search/SearchResultBox';
+import SearchResultMessage from '../../components/SearchResult/SearchResultMessage';
+import SearchResultBox from '../../components/SearchResult/SearchResultBox';
 import { useRouter } from 'next/router';
 import axios from 'axios';
 import styled from 'styled-components';
 
+// 카페 별 점령까지 완료
 import '../../style.scss';
 
 const Background = styled.div`
@@ -56,6 +57,13 @@ address.getInitialProps = async function(comment) {
     lat = geocode.documents[0].y;
     lng = geocode.documents[0].x;
     truthy = true;
+  }
+
+  // 가까운 카페 검색시
+  // 근처 카페 등록 후 검증이 필요함
+  if (address === '근처') {
+    lat = comment.query.lat;
+    lng = comment.query.lng;
   }
 
   const res2 = await axios({

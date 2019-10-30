@@ -5,6 +5,7 @@ import Link from 'next/link';
 import Router from 'next/router';
 
 import Title from './Title';
+import ButtonFrame from './ButtonFrame';
 
 const MainFrame = styled.div`
   position: absolute;
@@ -18,20 +19,6 @@ const MainFrame = styled.div`
   z-index: 0;
   display: block;
   overflow: hidden;
-`;
-const ButtonFrame = styled.div`
-  position: absolute;
-  top: 410px;
-  bottom: 0;
-  left: 0;
-  right: 0;
-  width: 510px;
-  height: 30%;
-  font-size: x-large;
-  /* background: #f00; */
-
-  margin: auto;
-  text-align: center;
 `;
 
 const CurrentLocation = styled.a`
@@ -89,7 +76,10 @@ export default function BasicInfo() {
     err: error,
   };
   const currentLocationHandler = (current) => {
-    console.log(current);
+    https: Router.push({
+      pathname: '/search/가까운 카페',
+      query: { lat: position.lat, lng: position.lng },
+    });
   };
 
   // 위도 , 경도
@@ -105,12 +95,10 @@ export default function BasicInfo() {
     <MainFrame>
       <Title />
       <ButtonFrame>
-        {/* link 사용법에 대해서 공부하기 */}
-        <Link href="/search/[address]">
-          <CurrentLocation onClick={() => currentLocationHandler(position)}>
-            <InnerP>가까운 카페</InnerP>
-          </CurrentLocation>
-        </Link>
+        <CurrentLocation onClick={() => currentLocationHandler(position)}>
+          <InnerP>가까운 카페</InnerP>
+        </CurrentLocation>
+
         <RegisterCafe onClick={registerCafeHandler}>
           <InnerP itemProp={position}>등록하기</InnerP>
         </RegisterCafe>
