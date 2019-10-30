@@ -14,7 +14,7 @@ const Register = () => {
   }, []);
 
   const router = useRouter();
-  console.log(router.query.lat, router.query.lng)
+  // console.log(router.query.lat, router.query.lng)
 
 
 
@@ -58,7 +58,7 @@ const Register = () => {
         pioneer: pioneer 
         // 로그인 정보도 받아와야 함.
       }
-      console.log(body);
+      // console.log(body);
 
       axios.post('http://18.221.57.226:8080/api/cafe', body
       ).then(res => console.log(res))
@@ -106,8 +106,8 @@ const Register = () => {
         phone: phone, 
         cafeName: place_name, 
         address: address_name, 
-        latitude: y, 
-        longitude: x, 
+        latitude: x, 
+        longitude: y, 
         open24Hour: Number(open24Hour), 
         priceIceAmericano: Number(priceIceAmericano), 
         enoughOutlets: enoughOutlets, 
