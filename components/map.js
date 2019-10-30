@@ -8,8 +8,6 @@ const Map = ({ setList, confirmRegister, lati, longi }) => {
   const [zooms, setZooms] = useState([]);
   
   // const [zoomIn, zoomOut] = zooms;
-  // console.log(zooms);
-  // console이 왜 [] 1번, 들어간걸로는 3번이 불리지?? useState 빼고 실험해보기. 아, useEffect 안이 새로 불리지 않는 거지 바깥의 내용은 Map이 새로 불리면서 계속 불리는듯.
 
   // const { latitude, longitude, timestamp, accuracy, error } = usePosition(true);
 
@@ -26,6 +24,9 @@ const Map = ({ setList, confirmRegister, lati, longi }) => {
   // }, [latitude, longitude])
 
   useEffect(() => {
+    // document.getElementById('category').children[0].className='on';
+    // onClickCategory();
+    // searchPlaces();
 
     // let script = document.createElement('script');
     // script.type = "text/javascript";
@@ -58,6 +59,7 @@ const Map = ({ setList, confirmRegister, lati, longi }) => {
 
     // 지도에 idle 이벤트를 등록합니다
     kakao.maps.event.addListener(map, 'idle', searchPlaces);
+    // kakao.maps.event.addListener(map, 'center_changed', searchPlaces);
 
     // 커스텀 오버레이의 컨텐츠 노드에 css class를 추가합니다
     contentNode.className = 'placeinfo_wrap';
@@ -89,12 +91,12 @@ const Map = ({ setList, confirmRegister, lati, longi }) => {
         return;
       }
 
-      // 커스텀 오버레이를 숨깁니다
-      placeOverlay.setMap(null);
-
-      // 지도에 표시되고 있는 마커를 제거합니다
-      removeMarker();
-
+        // 커스텀 오버레이를 숨깁니다
+        placeOverlay.setMap(null);
+        // 지도에 표시되고 있는 마커를 제거합니다
+        removeMarker();
+  
+      // var ps = new kakao.maps.services.Places(map)
       ps.categorySearch(currCategory, placesSearchCB, { useMapBounds: true });
     }
 
@@ -104,6 +106,7 @@ const Map = ({ setList, confirmRegister, lati, longi }) => {
         displayPlaces(data);
         setList(data);
       } else if (status === kakao.maps.services.Status.ZERO_RESULT) {
+        console.log('여긴 카페가 없군요')
         // 검색결과가 없는경우 해야할 처리가 있다면 이곳에 작성해 주세요
       } else if (status === kakao.maps.services.Status.ERROR) {
         // 에러로 인해 검색결과가 나오지 않은 경우 해야할 처리가 있다면 이곳에 작성해 주세요
@@ -114,6 +117,9 @@ const Map = ({ setList, confirmRegister, lati, longi }) => {
     function displayPlaces(places) {
       // 몇번째 카테고리가 선택되어 있는지 얻어옵니다
       // 이 순서는 스프라이트 이미지에서의 위치를 계산하는데 사용됩니다
+
+      // console.log(document
+        // .getElementById(currCategory))
 
       var order = document
         .getElementById(currCategory)
@@ -138,6 +144,7 @@ const Map = ({ setList, confirmRegister, lati, longi }) => {
         })(marker, places[i]);
       }
     }
+
 
     // 마커를 생성하고 지도 위에 마커를 표시하는 함수입니다
     function addMarker(position, order) {
@@ -229,12 +236,13 @@ const Map = ({ setList, confirmRegister, lati, longi }) => {
       }
     }
 
+    
+
     // 카테고리를 클릭했을 때 호출되는 함수입니다
     function onClickCategory() {
       var id = this.id,
-        className = this.className;
-
-      placeOverlay.setMap(null);
+       className = this.className;
+        placeOverlay.setMap(null);
 
       if (className === 'on') {
         currCategory = '';
@@ -247,6 +255,15 @@ const Map = ({ setList, confirmRegister, lati, longi }) => {
       }
     }
 
+    if (document.getElementById('category').children[0].className==='') {
+      let id = 'CE7';
+      placeOverlay.setMap(null);
+      
+      currCategory = id;
+      changeCategoryClass(document.getElementById('category').children[0]);
+      searchPlaces();
+    }
+    
     // 클릭된 카테고리에만 클릭된 스타일을 적용하는 함수입니다
     function changeCategoryClass(el) {
       var category = document.getElementById('category'),
@@ -273,6 +290,12 @@ const Map = ({ setList, confirmRegister, lati, longi }) => {
     }
 
     setZooms([zoomIn, zoomOut]);
+  }, []);
+
+  useEffect(() => {
+    // document.getElementById('category').children[0].className='on'
+        // onClickCategory();
+    // searchPlaces();
   }, []);
 
   return (

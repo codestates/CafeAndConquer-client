@@ -91,6 +91,10 @@ export default function BasicInfo() {
     });
   };
 
+  // useEffect(()=> {
+  //   registerCafeHandler()
+  // }, [position.lat, position.lng])
+
   return (
     <MainFrame>
       <Title />
