@@ -256,10 +256,7 @@ const Map = ({ setList, confirmRegister, lati, longi }) => {
     }
 
     if (document.getElementById('category').children[0].className==='') {
-      let id = 'CE7';
-      placeOverlay.setMap(null);
-      
-      currCategory = id;
+      currCategory = 'CE7'
       changeCategoryClass(document.getElementById('category').children[0]);
       searchPlaces();
     }
@@ -290,12 +287,6 @@ const Map = ({ setList, confirmRegister, lati, longi }) => {
     }
 
     setZooms([zoomIn, zoomOut]);
-  }, []);
-
-  useEffect(() => {
-    // document.getElementById('category').children[0].className='on'
-        // onClickCategory();
-    // searchPlaces();
   }, []);
 
   return (

@@ -16,6 +16,8 @@ const Register = () => {
   const router = useRouter();
   // console.log(router.query.lat, router.query.lng)
 
+  console.log('내가 env', process.env.REACT_APP_GOOGLE_API_KEY)
+  console.log('카카오', process.env.KAKAO_API_MAP_KEY)
 
 
   const [cafeInfo, setCafeInfo] = useState({
