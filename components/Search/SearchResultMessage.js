@@ -5,13 +5,13 @@ const Mainframe = styled.div`
   top: 100px;
   left: 100px;
   width: 100%;
-  height: auto;
+  height: 200px;
   color: palevioletred;
-  overflow: hidden;
+
 `;
 
 const SearchResultMessage = ({ name, info, truthy }) => {
-  if (name === '[id]') {
+  if (name === '[address]') {
     name = "' '";
   }
   let noneResult;

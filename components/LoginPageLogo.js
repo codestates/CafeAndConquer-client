@@ -9,7 +9,7 @@ const Header = styled.div`
   top: 0;
   left: 0;
   border-bottom: 1px solid gray;
-  z-index: 10;
+  /* z-index: 10; */
 `;
 
 const MainLogo = styled.h1`

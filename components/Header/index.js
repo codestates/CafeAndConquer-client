@@ -2,20 +2,19 @@ import styled from 'styled-components';
 import React from 'react';
 
 import LogoImage from './LogoImage';
-import SearchBox from './SearchBox';
+import InputBox from './InputBox';
 import TopMenuBttons from './TopMenuButtons';
 import AfterLogin from './AfterLogin';
 
 const MainFrame = styled.div`
-  position: fixed;
-  height:100px;
+  position: absolute;
+  height: 90px;
   max-width: 100%;
   width: 100%;
   top: 0;
   left: 0;
-  /* background: palevioletred; */
-  background-color: lightgray;
-  z-index: 10;
+  background-color: rgb(72 66 73);
+  z-index: 1;
 `;
 
 const Header = ({ logined }) => {
@@ -33,7 +32,7 @@ const Header = ({ logined }) => {
     <MainFrame>
       {/* 로고 링크가 작동 안 되는 이유를 모르겠음.   */}
       <LogoImage />
-      <SearchBox />
+      <InputBox />
       {menuButtons}
     </MainFrame>
   );
