@@ -1,5 +1,5 @@
 import styled from 'styled-components';
-import React from 'react';
+import React, {useEffect} from 'react';
 import { usePosition } from 'use-position';
 import Link from 'next/link';
 import Router from 'next/router';
@@ -70,30 +70,23 @@ const InnerP = styled.p`
 
 export default function BasicInfo() {
   const { latitude, longitude, error } = usePosition();
-  const position = {
+
+  let position = {
     lat: latitude,
     lng: longitude,
     err: error,
   };
-  const currentLocationHandler = (current) => {
-    https: Router.push({
-      pathname: '/search/가까운 카페',
-      query: { lat: position.lat, lng: position.lng },
-    });
+  
+  let registerCafeHandler = () => {
+    if (latitude && longitude) {
+      Router.push({
+        pathname: '/register',
+        query: { lat: latitude, lng: longitude },
+      });
+    } else {
+      console.log('로딩중..')
+    }
   };
-
-  // 위도 , 경도
-  const registerCafeHandler = () => {
-    //dapi.kakao.com/v2/local/search/address.json
-    https: Router.push({
-      pathname: '/register',
-      query: { lat: position.lat, lng: position.lng },
-    });
-  };
-
-  // useEffect(()=> {
-  //   registerCafeHandler()
-  // }, [position.lat, position.lng])
 
   return (
     <MainFrame>
