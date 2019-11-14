@@ -47,7 +47,8 @@ const useInput = (initialValue) => {
   const [value, setValue] = useState(initialValue);
   const onChange = (event) => {
     // Destructuring assignment
-    // evnt.target.value
+    // event.target.value
+    // 거꾸로 집어넣었다. 찾아보겠습니다
     const {
       target: { value },
     } = event;
@@ -56,14 +57,16 @@ const useInput = (initialValue) => {
   return { value, onChange };
 };
 
-const searchBtnHandler = (value, current) => {
-  if (value === '') {
-    // console.log(current);
-  }
-};
+// const searchBtnHandler = (value, current) => {
+//   if (value === '') {
+//     // console.log(current);
+//   }
+// };
 
 const InputBox = () => {
   let useSearch = useInput('');
+  console.log(useSearch)
+
   const { latitude, longitude, error } = usePosition();
   const position = {
     lat: latitude,
@@ -83,9 +86,11 @@ const InputBox = () => {
   };
   return (
     <SearchFrame>
+      {/* value=useSearch.value, onChange=useSerch.onChange */}
+    {/* ...스프레드 오퍼레이터 */}
       <Search onKeyPress={handleKeyPress} {...useSearch} />
       <Link href="/search/[address]" as={`/search/${searchAddress}`}>
-        <Button onClick={() => searchBtnHandler(useSearch.value, position)}>
+        <Button onClick={() => searchBtnHandler(searchAddress, position)}>
           탐색
         </Button>
       </Link>

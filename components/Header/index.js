@@ -30,7 +30,6 @@ const Header = ({ logined }) => {
 
   return (
     <MainFrame>
-      {/* 로고 링크가 작동 안 되는 이유를 모르겠음.   */}
       <LogoImage />
       <InputBox />
       {menuButtons}

@@ -25,7 +25,6 @@ const Content = styled.div`
 const SignModal = (props) => {
   const onClose = (e) => {
     alReadyCalled = true;
-    console.log(alReadyCalled);
     props.onClose && props.onClose(e);
   };
   if (!props.show) {
@@ -53,14 +52,14 @@ const SignModal = (props) => {
   }, []);
 
   const closeKakao = () => {
-    // setTimeout(onClose, 1000);
+    setTimeout(onClose, 4000);
   };
 
   
   return (
     <MyModal>
       <Content>
-        <h3>신규 회원가입</h3>
+        <h3>신규 회원가입</h3> 
         <p>{props.children}</p>
         <a onClick={closeKakao} id="kakao-login-btn"></a>
         <a href="http://developers.kakao.com/logout"></a>

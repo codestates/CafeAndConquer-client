@@ -21,7 +21,6 @@ const address = ({ cafes, truthy }) => {
   return (
     <Background>
       <Header />
-      {/* search 네임 -> searchbox */}
       <SearchResultMessage
         name={router.query.address}
         info={cafes}

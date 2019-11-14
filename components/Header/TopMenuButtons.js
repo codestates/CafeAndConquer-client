@@ -13,7 +13,7 @@ const TopMenuBtton = styled.div`
   text-align: center;
 `;
 
-const TopMenuButtons = (props) => {
+const TopMenuButtons = () => {
   const [show, setShow] = useState(false);
   const showSign = () => {
     setShow(!show);

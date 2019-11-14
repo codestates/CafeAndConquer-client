@@ -121,8 +121,8 @@ export default function BasicInfo() {
 
   // 위도 , 경도
   const registerCafeHandler = () => {
-    //dapi.kakao.com/v2/local/search/address.json
-    https: Router.push({
+    console.log('a')
+    Router.push({
       pathname: '/register',
       query: { lat: position.lat, lng: position.lng },
     });
